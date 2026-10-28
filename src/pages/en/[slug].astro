@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PostNavigation from '../../components/PostNavigation.astro';
+import PostTags from '../../components/PostTags.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -50,5 +51,6 @@ const { Content } = await render(entry);
     </div>
   </article>
 
+  <PostTags lang="en" data={entry.data} />
   <PostNavigation lang="en" prevPost={prevPost} nextPost={nextPost} />
 </Layout>

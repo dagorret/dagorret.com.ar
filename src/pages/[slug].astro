@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PostNavigation from '../components/PostNavigation.astro';
+import PostTags from '../components/PostTags.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -55,5 +56,6 @@ const category = entry.data.categories?.[0] || 'MATEMÁTICAS';
     </div>
   </article>
 
+  <PostTags lang="es" data={entry.data} />
   <PostNavigation lang="es" prevPost={prevPost} nextPost={nextPost} />
 </Layout>

@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+interface Props { lang: 'es' | 'en'; label: string; posts: CollectionEntry<'blog'>[]; }
+const { lang, label, posts } = Astro.props;
+const en = lang === 'en';
+---
+
+<Layout title={`${en ? 'Tag' : 'Etiqueta'}: ${label}`} lang={lang}>
+  <header>
+    <h1>{label}</h1>
+    <p>{posts.length} {en ? 'articles with this tag or category.' : 'artículos con esta etiqueta o categoría.'}</p>
+  </header>
+  <ul class="tag-results">
+    {posts.map(({ data }) => (
+      <li>
+        <time datetime={data.date.toISOString()}>{data.date.toISOString().split('T')[0]}</time>
+        <h2><a href={`${en ? '/en' : ''}/${data.slug}/`}>{data.title}</a></h2>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
+<style>
+  header { margin-bottom: 2.5rem; }
+  p, time { color: var(--text-sub); font-size: 0.85rem; }
+  .tag-results { list-style: none; }
+  li { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+  time { display: block; margin-bottom: 0.5rem; }
+  h2 { font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.35; }
+  a:hover, a:focus-visible { color: var(--accent-rust); }
+</style>

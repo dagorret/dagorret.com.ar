@@ -10,7 +10,9 @@ const { title, lang = 'es', translationUrl, category = 'MATEMÁTICAS' } = Astro.
 const isEnglish = lang === 'en';
 const homeUrl = isEnglish ? '/en/' : '/';
 const rssUrl = isEnglish ? '/en/rss.xml' : '/rss.xml';
+const booksUrl = 'https://matematicas.dagorret.com.ar';
 const navigation = [
+  { href: booksUrl, label: isEnglish ? 'Books' : 'Libros', external: true },
   { href: isEnglish ? '/en/archive/' : '/archivo/', label: isEnglish ? 'Archive' : 'Archivo' },
   { href: isEnglish ? '/en/search/' : '/buscar/', label: isEnglish ? 'Search' : 'Buscador' },
   { href: rssUrl, label: 'RSS' },
@@ -351,6 +353,24 @@ const navigation = [
       padding: 16px 0;
     }
 
+    .site-footer {
+      max-width: 1100px;
+      width: 92%;
+      margin: 0 auto;
+      padding: 1.75rem 0 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 2rem;
+      color: var(--text-sub);
+      font-size: 0.8rem;
+    }
+    .site-footer nav { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+    .site-footer a:hover, .site-footer a:focus-visible { color: var(--accent-rust); }
+    .site-footer small { font-size: inherit; }
+
   </style>
 </head>
 <body>
@@ -359,7 +379,9 @@ const navigation = [
       <a href={homeUrl} class="brand-logo">Carlos Dagorret</a>
 
       <nav class="nav-group" aria-label={isEnglish ? 'Main navigation' : 'Navegación principal'}>
-        {navigation.map(({ href, label }) => <a href={href}>{label}</a>)}
+        {navigation.map(link => (
+          <a href={link.href} target={'external' in link ? '_blank' : undefined} rel={'external' in link ? 'noopener noreferrer' : undefined}>{link.label}</a>
+        ))}
 
         {translationUrl ? (
           <a href={translationUrl} class="pill-btn" aria-label={isEnglish ? 'Read in Spanish' : 'Leer en inglés'}>
@@ -379,6 +401,15 @@ const navigation = [
   <main class="article-container">
     <slot />
   </main>
+
+  <footer class="site-footer">
+    <nav aria-label={isEnglish ? 'Footer navigation' : 'Navegación del pie de página'}>
+      <a href="mailto:carlos@dagorret.com.ar">{isEnglish ? 'Contact' : 'Contacto'}</a>
+      <a href={booksUrl} target="_blank" rel="noopener noreferrer">{isEnglish ? 'Books' : 'Libros'}</a>
+      <a href={rssUrl}>RSS</a>
+    </nav>
+    <small>© Carlos Dagorret</small>
+  </footer>
 
   <script is:inline>
     document.getElementById('theme-toggle')?.addEventListener('click', () => {
