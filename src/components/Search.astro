@@ -1,0 +1,68 @@
+---
+interface Props {
+  lang: 'es' | 'en';
+}
+
+const { lang } = Astro.props;
+const translations = lang === 'en'
+  ? {
+      placeholder: 'Search for a concept or author...',
+      zero_results: "No articles found for '[SEARCH_TERM]'",
+    }
+  : {
+      placeholder: 'Escribe un concepto o autor...',
+      zero_results: "No se encontraron artículos para '[SEARCH_TERM]'",
+    };
+---
+
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <div id="search"></div>
+
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline define:vars={{ translations }}>
+    window.addEventListener('DOMContentLoaded', () => {
+      new PagefindUI({
+        element: "#search",
+        showImages: false,
+        translations
+      });
+    });
+  </script>
+
+  <style is:global>
+    .pagefind-ui {
+      --pagefind-ui-scale: 0.95;
+      --pagefind-ui-font: var(--font-sans);
+      --pagefind-ui-primary: var(--accent-rust);
+      --pagefind-ui-text: var(--text);
+      --pagefind-ui-background: var(--bg-body);
+      --pagefind-ui-border: var(--border);
+      --pagefind-ui-tag: var(--bg-body);
+      --pagefind-ui-border-radius: 8px;
+    }
+    .pagefind-ui .pagefind-ui__search-input {
+      font-family: var(--font-sans) !important;
+      background: var(--bg-body) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      padding: 12px 16px !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03) !important;
+    }
+    .pagefind-ui .pagefind-ui__result {
+      border-top: 1px solid var(--border) !important;
+      padding: 20px 0 !important;
+    }
+    .pagefind-ui .pagefind-ui__result-title a {
+      font-family: var(--font-serif) !important;
+      font-size: 1.25rem !important;
+      color: var(--text) !important;
+    }
+    .pagefind-ui .pagefind-ui__result-title a:hover {
+      color: var(--accent-rust) !important;
+    }
+    .pagefind-ui .pagefind-ui__result-excerpt {
+      color: var(--muted) !important;
+      font-size: 0.95rem !important;
+      margin-top: 6px !important;
+    }
+  </style>

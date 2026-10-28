@@ -1,0 +1,155 @@
+---
+title: "La frontera física dura: holografía y gravedad entrópica"
+date: 2026-08-12
+slug: "la-frontera-fisica-dura-holografia-y-gravedad-entropica"
+translation_key: "la-frontera-fisica-dura-holografia-y-gravedad-entropica"
+lang: "es"
+categories: ["Ciencia"]
+tags: ["bekenstein-hawking","Entropía","holografia","Termodinámica","verlinde"]
+---
+
+### _Tercer artículo de la serie Entropía: física, información, sociedad_
+
+El primer artículo de esta serie dejó señalada, pero no desarrollada, la frontera más dura de toda la investigación contemporánea sobre entropía: la que conecta la termodinámica de los agujeros negros con la gravedad cuántica. El segundo bajó al aparato matemático de la homología Boltzmann-Shannon y mostró dónde esa homología deja de sostener las extrapolaciones ontológicas que suele arrastrar.
+
+Esta tercera entrega hace el mismo ejercicio con la frontera gravitacional: reconstruyo la fórmula de Bekenstein-Hawking con el rigor que merece, explico por qué obliga a postular el principio holográfico, sigo el hilo hasta la conjetura de Maldacena y la curva de Page, y cierro con la propuesta más audaz de todas —que la gravedad misma no sea fundamental, sino una fuerza entrópica emergente— evaluando con el mismo estándar de prueba que usé en el artículo anterior qué está demostrado, qué es plausible y qué sigue siendo, con toda honestidad, especulación no resuelta.
+
+* * *
+
+## I. La anomalía de partida: entropía proporcional al área, no al volumen
+
+Jacob Bekenstein planteó en 1972 y 1973 una pregunta incómoda: si un observador deja caer materia con entropía dentro de un agujero negro, y el agujero negro no tiene —según la relatividad general clásica— ninguna propiedad interna observable más allá de masa, carga y momento angular (el llamado teorema de “no pelo”), ¿qué impide que el Segundo Principio se viole simplemente arrojando entropía dentro del horizonte y dejándola desaparecer del universo observable?
+
+Bekenstein resolvió la tensión proponiendo que el propio agujero negro debe cargar una entropía, proporcional a su área de horizonte $A$, y formuló lo que llamó la Ley Generalizada de la Termodinámica: la suma de la entropía externa al agujero negro más la entropía del agujero negro nunca puede disminuir. Lo hizo notando que, en relatividad general clásica, el teorema del área de Hawking —$dA/dt \ge 0$, el área del horizonte nunca decrece en ningún proceso clásico— tiene exactamente la misma estructura formal que el Segundo Principio.
+
+La propuesta inicial de Bekenstein, $S = \eta\, k_B A/\ell_P^2$, dejaba la constante $\eta$ indeterminada. Stephen Hawking, que en un primer momento rechazó la idea porque parecía forzar una analogía sin sustento físico, terminó fijándola él mismo al año siguiente por una vía completamente distinta: aplicando teoría cuántica de campos en el espacio-tiempo curvo de un agujero negro, descubrió que este emite radiación térmica genuina, con una temperatura precisa determinada por la gravedad superficial $\kappa$ del horizonte,
+
+$$
+T_H = \frac{\hbar \kappa}{2\pi k_B}
+$$
+
+que para un agujero negro de Schwarzschild de masa $M$ se escribe
+
+$$
+T_H = \frac{\hbar c^3}{8\pi G k_B M}
+$$
+
+Nótese la relación inversa con la masa: cuanto más grande el agujero negro, más frío. Combinando esa temperatura con la primera ley de la termodinámica de agujeros negros, $dM = T dS$, se obtiene la fórmula que hoy lleva ambos nombres,
+
+$$
+S_{BH} = \frac{k_B A}{4\ell_P^2}
+$$
+
+donde $\ell_P$ es la longitud de Planck. El coeficiente $1/4$, que Bekenstein no podía derivar por argumentos generales, quedó fijado exactamente por el cálculo de Hawking, y esa fijación es lo que convierte una analogía sugestiva en una ley física con un número preciso.
+
+Hoy esa fórmula está reproducida además —de manera independiente— por al menos dos programas de gravedad cuántica que no comparten supuestos entre sí: la teoría de cuerdas, que para configuraciones específicas de agujeros negros extremales reproduce el coeficiente $1/4$ contando microestados de cuerdas y D-branas, y la gravedad cuántica de lazos, donde Rovelli y luego Ashtekar y colaboradores obtienen el mismo resultado contando grados de libertad geométricos cuánticos asociados a la superficie del horizonte.
+
+Que dos programas de gravedad cuántica con axiomas de partida casi opuestos converjan en el mismo coeficiente numérico es, en el estado del arte actual, uno de los indicios más fuertes de que la fórmula de Bekenstein-Hawking capta algo genuinamente físico y no es un artefacto de ningún esquema particular.
+
+* * *
+
+## II. Por qué el área, y no el volumen: la necesidad lógica de la holografía
+
+La anomalía que señalé en el título de esta sección no es un detalle estético. En cualquier sistema termodinámico ordinario —un gas, un sólido, un plasma— la entropía escala con el volumen, porque escala con el número de partículas, y el número de partículas que caben en una región escala con su volumen.
+
+Que la entropía máxima que puede contener una región del espacio escale, en cambio, con el área de su frontera, es una afirmación mucho más fuerte de lo que parece a primera vista: dice que el número de grados de libertad físicos independientes que puede haber dentro de cualquier volumen está acotado por su superficie, no por su interior.
+
+Bekenstein formalizó esto como una cota general —el llamado límite de Bekenstein— para la entropía máxima de cualquier sistema de energía y tamaño dados, y esa cota, aplicada a una región arbitraria del espacio, es lo que Gerard ‘t Hooft y después Leonard Susskind elevaron a principio: el principio holográfico, la conjetura de que toda la información física contenida en un volumen de espacio puede codificarse, sin pérdida, en los grados de libertad de su frontera bidimensional.
+
+Esto contradice frontalmente la intuición de la teoría cuántica de campos local, donde los grados de libertad escalan con el volumen, y ese es exactamente el punto de fricción que Bekenstein señala: si la teoría de campos local estuviera completa, sería posible construir sistemas que violan el Segundo Principio, así que algo en la descripción local tiene que ceder. El principio holográfico es la hipótesis de que lo que cede es la localidad misma en su forma ingenua, no el Segundo Principio.
+
+* * *
+
+## III. Maldacena y la primera realización explícita: AdS/CFT
+
+Durante casi veinticinco años el principio holográfico fue una conjetura general sin una realización matemática concreta que permitiera calcular algo con ella. Eso cambió en 1997, cuando Juan Maldacena, estudiando la geometría cercana al horizonte de un conjunto de D3-branas coincidentes en teoría de cuerdas, conjeturó una dualidad exacta: la teoría de cuerdas tipo IIB en un espacio-tiempo Anti-de Sitter de cinco dimensiones ($\text{AdS}_5$) multiplicado por una esfera de cinco dimensiones ($S^5$) es, literalmente, la misma teoría física que una teoría de campos conforme supersimétrica con simetría de norma $SU(N)$ en el límite de $N$ grande, viviendo en el borde de cuatro dimensiones de ese espacio AdS.
+
+Esta es la primera realización explícita, calculable, del principio holográfico: una teoría gravitacional en $D$ dimensiones resulta exactamente equivalente —no aproximada, no análoga, sino dual en el sentido técnico preciso de compartir la misma función de partición— a una teoría cuántica de campos sin gravedad en $D-1$ dimensiones.
+
+La correspondencia AdS/CFT no está demostrada en el sentido de una prueba matemática completa —sigue siendo, formalmente, una conjetura, aunque respaldada por una cantidad enorme de evidencia circunstancial acumulada en más de dos décadas de cálculos que coinciden en ambos lados de la dualidad— pero se convirtió, desde 1997, en la herramienta de cálculo dominante de toda la gravedad cuántica no perturbativa, y es el marco técnico específico dentro del cual se resolvió, parcialmente, el problema que dejé abierto en el primer artículo de esta serie: la paradoja de la información de Hawking.
+
+* * *
+
+## IV. La curva de Page: la forma precisa del problema
+
+Don Page, en 1993, le dio a la paradoja de la información una forma cuantitativa muy específica, que es la que hoy organiza todo el debate. Si un agujero negro se forma a partir de un estado puro —materia en un estado cuántico bien definido, sin mezcla estadística— y se evapora por completo emitiendo radiación de Hawking, la unitariedad de la mecánica cuántica exige que la radiación final, tomada en su totalidad, también sea un estado puro.
+
+Page se preguntó cómo debería evolucionar en el tiempo la entropía de entrelazamiento entre la radiación ya emitida y lo que queda del agujero negro, si el proceso completo es unitario. El cálculo semiclásico ingenuo de Hawking —tratando cada cuanto de radiación como emitido independientemente, en un estado exactamente térmico— predice que esa entropía crece de manera monótona durante toda la evaporación, hasta un valor máximo, y esa es precisamente la firma de la pérdida de información: una entropía que solo crece nunca puede volver a cero, y por lo tanto la radiación final nunca puede ser un estado puro.
+
+Page mostró que, si el proceso fuera unitario, la curva tendría que hacer otra cosa: crecer al principio, siguiendo aproximadamente la predicción térmica de Hawking, pero llegar a un punto de inflexión —hoy llamado el tiempo de Page, aproximadamente la mitad de la vida del agujero negro— a partir del cual la entropía debe empezar a decrecer, hasta volver a cero cuando el agujero negro termina de evaporarse.
+
+Esa forma de “tienda de campaña” es la curva de Page, y durante más de veinticinco años fue una predicción sin derivación: se sabía que la unitariedad la exigía, pero ningún cálculo gravitacional explícito lograba reproducirla a partir de primeros principios.
+
+* * *
+
+## V. Wormholes de réplica: cómo se obtuvo, por fin, la curva correcta
+
+La resolución llegó en 2019 y 2020, casi simultáneamente, de dos grupos que convergieron en el mismo mecanismo técnico: Penington por un lado, y Almheiri, Engelhardt, Marolf y Maxfield —a los que pronto se sumó el propio Maldacena junto con Hartman, Shaghoulian y Tajdini— por otro.
+
+La herramienta central es una generalización de la fórmula de Ryu-Takayanagi, que en el contexto de AdS/CFT calcula la entropía de entrelazamiento de una región del borde a partir del área de una superficie mínima en el interior gravitacional (la superficie extremal cuántica).
+
+Lo que Penington y los demás mostraron es que, para calcular correctamente la entropía de la radiación de Hawking usando la integral de caminos gravitacional, no basta con considerar la geometría “obvia” y desconectada que corresponde al cálculo semiclásico de Hawking: hay que sumar también configuraciones geométricas donde las distintas réplicas del cálculo —una técnica estándar, el “truco de réplicas”, para calcular entropías de entrelazamiento mediante continuación analítica— están conectadas entre sí por geometrías de agujero de gusano, sin ningún viajero físico que las atraviese, sino como una contribución puramente matemática a la suma sobre topologías de la gravedad cuántica.
+
+Antes del tiempo de Page, la geometría desconectada domina la suma y se reproduce la curva creciente de Hawking; después del tiempo de Page, la geometría conectada por el wormhole de réplica pasa a dominar, y su contribución hace que la entropía calculada empiece a decrecer, reproduciendo exactamente la forma que Page había predicho por argumentos de unitariedad veintisiete años antes.
+
+Es importante ser preciso sobre qué logra este resultado y qué no: muestra, dentro del marco semiclásico de la gravedad holográfica, que la entropía de la radiación sigue la curva de Page, lo cual es fuerte evidencia de que la evaporación es unitaria y de que la información no se pierde en el sentido agregado.
+
+Lo que no muestra es el mecanismo explícito por el cual un bit específico de información, el que cayó en un momento dado, queda codificado en un cuanto específico de radiación emitida —ese es el contenido preciso de lo que en la literatura se llama el problema de reconstrucción de la cuña de entrelazamiento, y sigue sin una respuesta completa y consensuada—.
+
+Por eso el propio campo, en los encuentros dedicados en 2025 a conmemorar los cincuenta años de la paradoja, se refiere a esto como progreso sustancial pero no como resolución completa: coexisten, sin resolverse entre sí, el enfoque de wormholes de réplica que acabo de describir, las construcciones explícitas de microestados de cuerdas conocidas como “fuzzballs”, y posiciones minoritarias que todavía defienden que la información podría quedar genuinamente perdida o depositada en remanentes de larga vida.
+
+* * *
+
+## VI. El salto más audaz: Verlinde y la gravedad como fuerza entrópica
+
+Todo lo anterior trata a la gravedad como un dato de partida —la geometría curva del espacio-tiempo de Einstein— y estudia su termodinámica. Erik Verlinde, en 2010 y 2011, propuso invertir esa relación de dependencia: que la gravedad no sea una interacción fundamental sino, ella misma, una consecuencia termodinámica, del mismo tipo que la elasticidad de un polímero, que no es una fuerza fundamental sino el resultado estadístico de la tendencia entrópica de una cadena molecular a maximizar su número de configuraciones.
+
+El argumento técnico parte de un antecedente que conviene distinguir con cuidado del propio Verlinde: en 1995, Ted Jacobson había mostrado que las ecuaciones de campo de Einstein pueden derivarse, con toda generalidad, exigiendo que la relación de Clausius
+
+$$
+\delta Q = T\,\delta S
+$$
+
+se cumpla en todo horizonte causal local de Rindler, usando la temperatura de Unruh y la entropía de Bekenstein-Hawking como entrada. Ese resultado de Jacobson es aceptado, dentro del campo, como una derivación termodinámica legítima —aunque no unitariamente interpretada como prueba de que la gravedad sea “solo” termodinámica, sino como evidencia de una conexión profunda entre ambas—.
+
+Verlinde fue un paso más allá: propuso que la fuerza misma,
+
+$$
+F\,\Delta x = T\,\Delta S
+$$
+
+emerge de gradientes de entropía asociados a “pantallas holográficas” —superficies imaginarias que codifican, según el principio holográfico, la información de todo lo que encierran a razón de un bit por área de Planck— y que un objeto de masa $m$ que se aproxima a esa pantalla experimenta una fuerza proporcional al gradiente de entropía que su cercanía induce en los grados de libertad de la pantalla.
+
+Con supuestos mínimos adicionales, Verlinde logró rederivar exactamente la segunda ley de Newton y, en un trabajo posterior de 2016, una explicación de la relación de Tully-Fisher que aparece en las curvas de rotación galáctica —el fenómeno que convencionalmente se atribuye a la materia oscura— sin postular ninguna partícula nueva, sino como una corrección de volumen a la ley de área-entropía en presencia de energía oscura.
+
+* * *
+
+## VII. Por qué la comunidad no aceptó la propuesta: el balance de la controversia
+
+Acá es donde este artículo tiene que aplicar el mismo estándar de prueba que usé en el artículo anterior para la extrapolación de Wheeler, porque la situación es estructuralmente parecida: hay un núcleo técnico sólido (Jacobson) del que Verlinde parte, y una extrapolación (las pantallas holográficas como mecanismo general para toda la gravedad, no solo para horizontes) cuya justificación es mucho más débil que el núcleo del que parte.
+
+Las objeciones documentadas provienen de figuras que no pueden descartarse como escépticos externos al campo. El propio Jacobson, cuyo trabajo de 1995 Verlinde cita como fundamento, declaró públicamente no poder “darle sentido” a la extensión de Verlinde. Thanu Padmanabhan, otro de los pioneros de la conexión gravedad-termodinámica, cuestionó explícitamente el rigor matemático de la noción de pantalla holográfica, calificándola de heurística y dudando abiertamente de que la idea “resistiera el paso del tiempo”.
+
+Un análisis técnico posterior, revisando la derivación con cuidado, señaló que las magnitudes de temperatura y entropía que usa Verlinde carecen de la motivación física independiente que sí tienen en la relatividad general estándar: son postuladas ad hoc para que la derivación funcione, no derivadas de primeros principios más generales, lo cual invierte el orden explicativo que la propuesta pretende tener.
+
+Hubo además un intento de falsación empírica directa: Kobakhidze argumentó, usando experimentos de neutrones ultrafríos en el campo gravitacional terrestre, que si la gravedad fuera genuinamente una fuerza entrópica —intrínsecamente ruidosa, como cualquier fuerza que emerge de fluctuaciones estadísticas— debería producir una decoherencia cuántica mayor de la que efectivamente se observa en esos experimentos de precisión, lo cual constituiría evidencia en contra.
+
+Esa objeción generó una réplica técnica —trabajos que muestran que, modelando la gravedad entrópica como un sistema cuántico abierto con la estadística no aditiva adecuada, la decoherencia predicha puede reducirse por debajo del umbral observado— pero la réplica no cierra el debate, porque introduce sus propios supuestos adicionales para lograrlo.
+
+El resultado neto, hacia 2026, es que la gravedad entrópica de Verlinde no ha sido descartada experimentalmente, pero tampoco ha producido una sola predicción que la distinga inequívocamente de la relatividad general estándar en un régimen accesible a la observación actual —sus predicciones coinciden con las de Einstein en el límite de campo débil ordinario, y solo divergen, especulativamente, en escalas galácticas donde compite con la materia oscura convencional sin que ninguna de las dos explicaciones tenga hoy una ventaja empírica decisiva—.
+
+* * *
+
+## VIII. El mismo diagnóstico que en el artículo anterior, aplicado a otro tramo de la cadena
+
+Lo que este recorrido permite hacer, siguiendo el método del artículo 2, es separar con la misma precisión los niveles de garantía epistémica de esta frontera.
+
+Está sólidamente establecido, con dos derivaciones microscópicas independientes que convergen en el mismo coeficiente: la fórmula de Bekenstein-Hawking. Está matemáticamente formalizado y respaldado por evidencia circunstancial masiva, aunque no demostrado como teorema: la correspondencia AdS/CFT de Maldacena como realización concreta del principio holográfico.
+
+Está resuelto de manera sustancial pero no completa, con un mecanismo de cálculo validado —los wormholes de réplica— que reproduce la curva de Page pero no explica todavía la codificación bit a bit: la paradoja de la información de Hawking. Y está en el terreno de la hipótesis minoritaria, técnicamente fértil pero rechazada por una parte sustancial de los propios fundadores del campo de la termodinámica gravitacional, empíricamente indistinguible de la relatividad general en casi todos los regímenes accesibles: la propuesta de Verlinde de que la gravedad entera sea una fuerza entrópica emergente.
+
+Repetir acá el error que diagnostiqué en el artículo anterior sería fácil: usar la solidez de Bekenstein-Hawking y de Jacobson para prestarle autoridad prestada a la extrapolación de Verlinde, tratando los cuatro niveles como si fueran peldaños equivalentes de una misma escalera de evidencia. No lo son, por las mismas razones estructurales que no lo eran en el caso de “it from bit”: cada extensión agrega supuestos que no están garantizados por el resultado del que parte, y el estado del arte exige sostener cada nivel con el grado de confianza que efectivamente le corresponde.
+
+* * *
+
+> **Notas y fuentes consultadas:** Bekenstein (1972-1973) y la Ley Generalizada de la Termodinámica; derivación de la temperatura de Hawking mediante teoría cuántica de campos en espacio-tiempo curvo y fijación del coeficiente 1/4; conteo microscópico independiente vía teoría de cuerdas (D-branas) y gravedad cuántica de lazos (Rovelli, Ashtekar); límite de Bekenstein y principio holográfico (‘t Hooft, Susskind); Maldacena (1997), conjetura AdS/CFT; Page (1993), forma cuantitativa de la paradoja de la información; Penington (2019-2020) y Almheiri, Hartman, Maldacena, Shaghoulian, Tajdini (2020), wormholes de réplica y fórmula de superficies extremales cuánticas; encuentro “50 years of the black hole information paradox” (Simons Center for Geometry and Physics, 2025); Jacobson (1995), derivación termodinámica de las ecuaciones de Einstein; Verlinde (2010, 2011, 2016), gravedad entrópica y relación de Tully-Fisher; objeciones de Jacobson y Padmanabhan; Kobakhidze, falsación con neutrones ultrafríos, y réplica de Schimmoller, McCaul, Abele y Bondar (2021).

@@ -1,0 +1,127 @@
+---
+interface Props {
+  title?: string;
+  lang?: string;
+}
+
+const { title = "Carlos Dagorret", lang = "es" } = Astro.props;
+const isEnglish = lang === 'en';
+const homeUrl = isEnglish ? '/en/' : '/';
+const rssUrl = isEnglish ? '/en/rss.xml' : '/rss.xml';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Carlos Dagorret RSS" href={rssUrl} />
+
+    <!-- Estilos de KaTeX para fórmulas matemáticas -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav aria-label={isEnglish ? 'Main navigation' : 'Navegación principal'}>
+        <a href={homeUrl} class="site-title">Carlos Dagorret</a>
+        <div class="nav-links">
+          <a href={isEnglish ? '/en/archive/' : '/archivo/'}>{isEnglish ? 'Archive' : 'Archivo'}</a>
+          <a href={isEnglish ? '/en/search/' : '/buscar/'}>{isEnglish ? 'Search' : 'Buscador'}</a>
+          <a href={rssUrl}>RSS</a>
+          <a href={lang === "en" ? "/" : "/en"}>{lang === "en" ? "ES" : "EN"}</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <style is:global>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.65;
+        color: #222;
+        background-color: #fff;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .site-header {
+        max-width: 68ch;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 1rem;
+      }
+
+      .site-header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .site-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a:hover {
+        color: #000;
+      }
+
+      main,
+      article {
+        max-width: 68ch;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 4rem;
+      }
+
+      /* Contención estricta para imágenes en posts */
+      article img,
+      main img,
+      .prose img,
+      figure img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block;
+        margin: 2rem auto;
+        border-radius: 4px;
+      }
+
+      /* Scroll horizontal para fórmulas matemáticas largas */
+      .katex-display {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0.5rem 0;
+      }
+    </style>
+  </body>
+</html>

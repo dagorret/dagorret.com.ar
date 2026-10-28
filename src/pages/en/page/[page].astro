@@ -1,0 +1,16 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import PostIndex from '../../../components/PostIndex.astro';
+import { sortedPosts, POSTS_PER_PAGE } from '../../../lib/posts';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return paginate(await sortedPosts('en'), { pageSize: POSTS_PER_PAGE })
+    .filter(({ props }) => props.page.currentPage > 1);
+}) satisfies GetStaticPaths;
+
+interface Props { page: Page<CollectionEntry<'blog'>>; }
+const { page } = Astro.props;
+---
+
+<PostIndex lang="en" posts={page.data} currentPage={page.currentPage} lastPage={page.lastPage} />

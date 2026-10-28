@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dagorret.com.ar/sitemap-index.xml

@@ -1,0 +1,54 @@
+---
+title: "Memoria que sobrevive a su dueño"
+date: 2026-10-21
+slug: "memoria-que-sobrevive-a-su-dueno"
+translation_key: "memoria-que-sobrevive-a-su-dueno"
+lang: "es"
+categories: ["Sistemas"]
+tags: ["Debian","php","Vulnerabilidad"]
+---
+
+_Borrador del 21 de octubre de 2026, escrito pocas horas después de que PHP publicara los parches. Los hechos técnicos se verificaron contra los dos avisos oficiales de php-src; las lecturas propias están marcadas como tales._
+
+Esta tarde nos llegó, a quienes administramos instalaciones del SIU, un comunicado con dos identificadores, CVE-2026-109618 y CVE-2026-109619, y un pedido de urgencia: aplicar los parches a la brevedad. Para mañana, el equipo del SIU convocó a dos encuentros de trabajo, a las 10:00 y a las 15:00, con el fin de acompañar tanto la instalación de los parches como los cambios en el `php.ini`. Es la reacción correcta ante dos fallas críticas en el propio intérprete.
+
+La respuesta rápida a qué hay que hacer es evidente: actualizar. Pero esa respuesta confunde el remedio con el diagnóstico. Lo que sostengo en este texto no es una demostración, sino una lectura: lo más instructivo de estas fallas no es su gravedad, sino su forma. Se trata de estado que sobrevive a la petición que lo creó, y esa forma explica por qué los propios avisos oficiales desconfían de casi cualquier mitigación por configuración.
+
+## Dos fallas, un mismo hábito
+
+PHP2Shell es el apodo con que circulan las dos fallas. Ambas están calificadas con 9.2 en CVSS 4.0, ambas permiten, según los avisos de php-src, ejecución remota de código sin autenticación y con los privilegios del proceso web, y ambas se corrigen en las versiones 8.2.35, 8.3.36, 8.4.27 y 8.5.12. Antes de la publicación circuló la cifra de 10.0; conviene quedarse con la oficial, que además declara complejidad de ataque alta y requisitos presentes. Es crítica, pero no trivial de explotar, y tampoco por eso admite demora.
+
+La primera, CVE-2026-109618, nace del manejo de memoria agotada. Cuando una petición excede la memoria disponible, PHP abandona lo que estaba haciendo con un salto no local (`longjmp()`). Si en ese instante la memoria de la petición estaba solo a medio inicializar, el salto la deja en un estado inválido, y el procedimiento de cierre de la petición la lee igual. El aviso señala que Apache con mod\_php ejecuta ese cierre de forma incondicional, incluso cuando el arranque de la petición falló, de modo que el problema ocurre antes de que corra una sola línea de la aplicación. PHP-FPM, en cambio, termina el proceso hijo cuando el arranque falla; el análisis de código lo considera susceptible por otras rutas, aunque no se ha demostrado un exploit completo para ese modo.
+
+La segunda, CVE-2026-109619, es más difícil de explicar y más instructiva. Un proceso de PHP que atiende muchas peticiones mantiene estado global (de errores, de sesión, de objetos, de extensiones) que apunta a memoria perteneciente a una sola de ellas. Si esa petición termina sin reiniciarlo, la siguiente puede encontrar un puntero a memoria ya liberada antes de que la inicialización normal lo reemplace. El aviso lo describe como la conjunción de un productor y un consumidor, en peticiones distintas atendidas por el mismo proceso. Entre los consumidores confirmados figuran el progreso de subida de sesiones y los diagnósticos de configuración que se emiten antes de inicializar la petición; en PHP 8.5, la traza de errores fatales aporta el caso mejor demostrado. Para esta segunda falla, el aviso informa de ejecución remota validada contra mod\_php y también contra FPM, aunque en FPM depende de que la aplicación ofrezca una operación adecuada que un atacante pueda hacer fallar.
+
+Hay un hilo común, y es una interpretación mía, no una frase de los avisos: en los dos casos PHP deja algo a medias y confía en que el cierre lo limpie. La vulnerabilidad no está en ningún paso aislado, sino en el límite entre una petición y la siguiente.
+
+## Lo que la configuración no alcanza
+
+Aquí está lo que, a mi juicio, vale la pena leer despacio. El aviso de CVE-2026-109619 afirma sin rodeos que no existe una mitigación genérica completa por configuración, porque una ruta de la aplicación, de una extensión o del servidor puede publicar o consumir estado obsoleto sin dejar una línea de log predecible. Actualizar es la única medida confiable; el aviso de CVE-2026-109618 dice lo mismo.
+
+Para quienes no pueden actualizar hoy, los avisos ofrecen contención parcial. Contra la 109619: desactivar `session.upload_progress.enabled` y reiniciar todos los procesos; en PHP 8.5, desactivar además `fatal_error_backtraces`; depurar los diagnósticos de configuración que se emiten antes de inicializar la petición, prefiriendo la configuración de arranque a las sobrescrituras por petición; y, si el rendimiento no importa, limitar `pm.max_requests` a 1. Contra la 109618: fijar `memory_limit` en `-1` de forma administrativa, mantener conservador `post_max_size` y acotar en el frontend el tamaño de la petición y la cantidad de partes y de cabeceras. Los dos avisos aclaran que ninguna de estas medidas es completa.
+
+Dos advertencias contradicen el reflejo habitual. La primera: lo que el aviso recomienda es quitar el techo de memoria, no ajustarlo, porque un límite finito y predecible es justamente lo que el exploit confirmado necesita para provocar el agotamiento a voluntad. La segunda: los límites del sistema operativo `RLIMIT_AS` y `RLIMIT_DATA` no deben usarse, porque hacen fallar `mmap()` al alcanzar el límite y devuelven a PHP al mismo salto vulnerable. Los límites de contenedor (cgroup) sirven solo en parte: matar un contenedor puede matar también al proceso maestro y a todos los workers.
+
+Mi inferencia, que no figura en los avisos: quitar el techo de memoria de un servicio expuesto cambia un riesgo de ejecución remota por uno de denegación de servicio. Solo se justifica como puente de horas, mientras se prepara el parche, no como configuración de trabajo. Para quien administra contenedores la consecuencia práctica es directa: editar el `php.ini` de una imagen contiene el riesgo, pero no lo cura; la cura es reconstruir sobre una base ya parcheada.
+
+```ini
+; Contención temporal mientras se prepara el parche.
+; Debe imponerse de forma administrativa (php_admin_value en el pool de FPM,
+; php_admin_* en Apache) para que ninguna aplicación restituya el valor anterior.
+session.upload_progress.enabled = 0
+fatal_error_backtraces = 0   ; solo PHP 8.5
+memory_limit = -1            ; puente de horas; ver el texto
+```
+
+Tras cualquier cambio hay que reiniciar todos los procesos y confirmar que ningún pool, directorio o aplicación restituye un límite de memoria finito, como indica el aviso.
+
+Verificar el parche tiene su trampa. Como las distribuciones suelen incorporar la corrección sin saltar al número de versión de origen, `php -v` no alcanza; la comprobación fiable pasa por el registro de cambios del paquete (hay que reemplazar `php8.3-cli` por el paquete instalado):
+
+```bash
+# Debian y Ubuntu
+apt changelog php8.3-cli | grep -n "CVE-2026-109618"
+q
+```

@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import type { BlogLanguage } from '../lib/posts';
+
+interface Props { lang: BlogLanguage; posts: CollectionEntry<'blog'>[]; }
+const { lang, posts } = Astro.props;
+const en = lang === 'en';
+const groups = new Map<number, Map<number, CollectionEntry<'blog'>[]>>();
+for (const post of posts) {
+  const year = post.data.date.getUTCFullYear();
+  const month = post.data.date.getUTCMonth();
+  if (!groups.has(year)) groups.set(year, new Map());
+  const months = groups.get(year)!;
+  if (!months.has(month)) months.set(month, []);
+  months.get(month)!.push(post);
+}
+const monthFormat = new Intl.DateTimeFormat(en ? 'en' : 'es', { month: 'long', timeZone: 'UTC' });
+---
+
+<Layout title={en ? 'Archive' : 'Archivo'} lang={lang} translationUrl={en ? '/archivo/' : '/en/archive/'}>
+  <header class="archive-heading">
+    <h1>{en ? 'Archive' : 'Archivo'}</h1>
+    <p>{posts.length} {en ? 'articles, organized by year and month.' : 'artículos, organizados por año y mes.'}</p>
+  </header>
+  {[...groups].map(([year, months]) => (
+    <section class="archive-year" aria-labelledby={`year-${year}`}>
+      <h2 id={`year-${year}`}>{year}</h2>
+      {[...months].map(([month, entries]) => (
+        <section class="archive-month" aria-labelledby={`month-${year}-${month}`}>
+          <h3 id={`month-${year}-${month}`}>{monthFormat.format(new Date(Date.UTC(year, month, 1)))}</h3>
+          <ul>
+            {entries.map(({ data }) => (
+              <li>
+                <time datetime={data.date.toISOString()}>{data.date.toISOString().split('T')[0]}</time>
+                <a href={`${en ? '/en' : ''}/${data.slug}/`}>{data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </section>
+  ))}
+</Layout>
+
+<style>
+  .archive-heading { margin-bottom: 3rem; }
+  .archive-heading p { color: var(--text-sub); font-size: 0.9rem; }
+  .archive-year { margin-bottom: 4rem; }
+  h2 { font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: var(--accent-rust); border-bottom: 2px solid var(--border); padding-bottom: 0.75rem; }
+  h3 { font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; color: var(--accent-rust); text-transform: capitalize; margin: 2rem 0 1rem; }
+  ul { list-style: none; }
+  li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); line-height: 1.6; }
+  time { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-variant-numeric: tabular-nums; color: var(--text-sub); font-size: 0.8rem; padding-top: 0.2rem; }
+  a { font-size: 1.05rem; font-weight: 500; overflow-wrap: break-word; }
+  a:hover, a:focus-visible { color: var(--accent-rust); text-decoration: underline; text-underline-offset: 0.2em; }
+  @media (max-width: 400px) { li { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; } }
+</style>

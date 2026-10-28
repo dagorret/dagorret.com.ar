@@ -1,0 +1,19 @@
+---
+title: "Al infierno vamos"
+date: 2026-08-11
+slug: "al-infierno-vamos"
+translation_key: "al-infierno-vamos"
+lang: "es"
+categories: ["Filosofía"]
+tags: ["Autenticidad","Literatura"]
+---
+
+El debate sobre las marcas de agua y la obsesión por rastrear el origen de cada palabra suele disfrazarse de rigor técnico o defensa del trabajo humano, pero su verdadero efecto es mucho más oscuro. La marca no existe para señalar un fraude; existe para marcarte antes de que alguien se atreva a leerte. Es la marca de Caín dada vuelta: un sello en la frente no para proteger al creador, sino para convocar al tribunal antes del primer párrafo. El contenido se vuelve secundario frente al expediente de procedencia. Ya nadie juzga la fuerza de una idea, la música de una frase o la verdad contenida en un texto; la mirada contemporánea solo busca el certificado de fabricación para decidir si otorga o deniega el permiso de sentir algo.
+
+Ahí habita la primera perversión de esta época: la excelencia se ha convertido en la prueba del delito. En un mundo acobardado, cuanto más precisa es la metáfora, más limpia la estructura y más hondo el golpe de una frase, más sospechoso se vuelve el autor. El castigo no es para el mediocre que busca un atajo para salir del paso; el castigo es para el que usa el fuego disponible para llegar más lejos, para pulir el hueso, para decir lo incólume. La norma social ha terminado por construir una equivalencia ridícula y desesperada: la torpeza, la errata y la pobreza del estilo son ahora las únicas credenciales aceptadas de «autenticidad humana». Se nos exige escribir peor para demostrar que somos nosotros.
+
+Nada de esto es enteramente nuevo, aunque la escala sea monstruosa. Sarmiento usó la tecnología voraz de su tiempo —la imprenta rabiosa, el folletín, el periodismo que chorreaba tinta fresca— y la aristocracia ilustrada lo acusó en la cara de bárbaro, de mentiroso y de plagiario. No esperó el permiso de los puros ni pidió perdón por la velocidad del soporte que utilizaba. Escribió con la furia del que sabe que la urgencia quema. Sobrevivió porque no le importó el aplauso de los fiscales de su época; dejó que el tiempo, y no la mezquindad de sus contemporáneos, hiciera el trabajo de separar la ceniza de la llama.
+
+Pero el juicio ajeno es apenas la superficie del problema. El rechazo social, el descarte acelerado, el «esto no vale porque usaste ayuda» son molestias menores, ruido de época. El verdadero infierno no viene de afuera; el verdadero infierno es interior. Es levantarse a la mitad de la noche, masticando la bronca que quema el pecho, y volcar en una página algo desgarradoramente real, una pieza que tiene sangre, belleza y una verdad pura que te costó el cuerpo alcanzar, para después mirar el texto y comprender la condena: no importa cuánto de tu vida hayas dejado en esas líneas, el mundo las va a tirar a la basura sin leerlas solo por la herramienta que rozó la mesa.
+
+Ese es el horror. Saber que la verdad que lograste parir ya no le importa a nadie porque prefieren la seguridad de un sello antes que el riesgo de conmoverse. Escribir entonces deja de ser un ejercicio de vanidad o un oficio tranquilo. Se vuelve una trinchera, un acto de supervivencia primaria. Escribimos para no volvernos locos, para no romper nada, para que la rabia no se nos vuelva hacia adentro y nos destruya. Escribimos, en definitiva, para no matar.

@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { homePageUrl, type BlogLanguage } from '../lib/posts';
+
+interface Props {
+  lang: BlogLanguage;
+  posts: CollectionEntry<'blog'>[];
+  currentPage: number;
+  lastPage: number;
+}
+
+const { lang, posts, currentPage, lastPage } = Astro.props;
+const en = lang === 'en';
+const title = en ? 'Writing' : 'Ensayos y Artículos';
+---
+
+<Layout title={currentPage === 1 ? title : `${title} — ${currentPage}`} lang={lang} translationUrl={en ? '/' : '/en/'}>
+  <header class="index-heading">
+    <h1>{title}</h1>
+    <p>{en ? 'Essays, models, and technical notes.' : 'Notas sobre sistemas, modelos matemáticos y tecnología.'}</p>
+  </header>
+  <section class="post-list" aria-label={en ? 'Articles' : 'Artículos'}>
+    {posts.map(post => (
+      <article class="post-summary">
+        <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().split('T')[0]}</time>
+        <h2><a href={`${en ? '/en' : ''}/${post.data.slug}/`}>{post.data.title}</a></h2>
+      </article>
+    ))}
+  </section>
+  <nav class="pagination" aria-label={en ? 'Pagination' : 'Paginación'}>
+    <div>{currentPage > 1 && <a href={homePageUrl(lang, currentPage - 1)} rel="prev">{en ? '← Previous' : '← Anteriores'}</a>}</div>
+    <span>{en ? 'Page' : 'Página'} {currentPage} / {lastPage}</span>
+    <div>{currentPage < lastPage && <a href={homePageUrl(lang, currentPage + 1)} rel="next">{en ? 'Next →' : 'Siguientes →'}</a>}</div>
+  </nav>
+</Layout>
+
+<style>
+  .index-heading { margin-bottom: 3rem; }
+  .index-heading p { color: var(--text-sub); font-size: 0.95rem; }
+  .post-summary { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  time { color: var(--muted); font-size: 0.8rem; display: block; margin-bottom: 0.5rem; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.25; }
+  a:hover { color: var(--accent-rust); }
+  .pagination { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 3rem; font-size: 0.85rem; }
+  .pagination span { color: var(--text-sub); }
+</style>

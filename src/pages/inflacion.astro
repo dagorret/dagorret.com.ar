@@ -1,0 +1,266 @@
+---
+import Layout from '../layout/Layout.astro';
+
+const datosHistoricos = [
+    { anio: 1991, inflacion: 84.0 },
+    { anio: 1992, inflacion: 17.5 },
+    { anio: 1993, inflacion: 7.4 },
+    { anio: 1994, inflacion: 3.9 },
+    { anio: 1995, inflacion: 1.6 },
+    { anio: 1996, inflacion: 0.0 },
+    { anio: 1997, inflacion: 0.3 },
+    { anio: 1998, inflacion: 0.7 },
+    { anio: 1999, inflacion: -1.8 },
+    { anio: 2000, inflacion: -0.7 },
+    { anio: 2001, inflacion: -1.5 },
+    { anio: 2002, inflacion: 40.9 },
+    { anio: 2003, inflacion: 3.7 },
+    { anio: 2004, inflacion: 6.1 },
+    { anio: 2005, inflacion: 12.3 },
+    { anio: 2006, inflacion: 9.8 },
+    { anio: 2007, inflacion: 8.5 },
+    { anio: 2008, inflacion: 7.2 },
+    { anio: 2009, inflacion: 7.7 },
+    { anio: 2010, inflacion: 10.9 },
+    { anio: 2011, inflacion: 9.5 },
+    { anio: 2012, inflacion: 10.8 },
+    { anio: 2013, inflacion: 10.9 },
+    { anio: 2014, inflacion: 23.9 },
+    { anio: 2015, inflacion: 26.9 },
+    { anio: 2016, inflacion: 40.3 },
+    { anio: 2017, inflacion: 24.8 },
+    { anio: 2018, inflacion: 47.6 },
+    { anio: 2019, inflacion: 53.8 },
+    { anio: 2020, inflacion: 36.1 },
+    { anio: 2021, inflacion: 50.9 },
+    { anio: 2022, inflacion: 94.8 },
+    { d_anio: 2023, inflacion: 211.4 },
+    { anio: 2024, inflacion: 117.8 },
+    { anio: 2025, inflacion: 31.5 },
+    { anio: 2026, inflacion: 23.7 },
+].map(d => ({ anio: d.anio || d.d_anio, inflacion: d.inflacion }));
+---
+
+<Layout title="Inflación Histórica Argentina">
+    <article class="contenedor-inflacion">
+        <header>
+            <h1>Evolución de la Inflación en Argentina</h1>
+            <p class="bajada">
+                Variación anual del IPC desde 1991. Pasa el cursor sobre cada barra para ver los datos detallados.
+            </p>
+        </header>
+
+        <div class="grafico-card">
+            <div class="header-controles">
+                <div class="controles">
+                    <label for="filtro-periodo">Período:</label>
+                    <select id="filtro-periodo">
+                        <option value="reciente" selected>Últimos 15 años (2011 - 2026)</option>
+                        <option value="todos">Serie completa (1991 - 2026)</option>
+                        <option value="convertibilidad">Convertibilidad (1991 - 2001)</option>
+                    </select>
+                </div>
+                <div id="tooltip-display" class="tooltip-display">
+                    Selecciona o toca una barra
+                </div>
+            </div>
+
+            <!-- Contenedor del gráfico en SVG interactivo -->
+            <div id="chart-container" class="chart-container"></div>
+        </div>
+
+        <!-- Tabla -->
+        <details class="tabla-desplegable">
+            <summary>Ver tabla de datos completa</summary>
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Año</th>
+                        <th>Variación Anual</th>
+                        <th>Contexto</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {datosHistoricos.slice().reverse().map((d) => (
+                            <tr>
+                                <td><strong>{d.anio}</strong></td>
+                                <td class={d.inflacion > 50 ? 'alta' : d.inflacion < 0 ? 'deflacion' : ''}>
+                                    {d.inflacion > 0 ? `+${d.inflacion}%` : `${d.inflacion}%`}
+                                </td>
+                                <td>
+                                    {d.anio === 2023 ? 'Pico inflacionario reciente' :
+                                        d.anio === 2002 ? 'Salida de convertibilidad' :
+                                            d.anio === 1991 ? 'Plan Convertibilidad' :
+                                                d.inflacion < 0 ? 'Deflación' : 'Régimen estándar'}
+                                </td>
+                            </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </article>
+
+    <script is:inline define:vars={{ datosHistoricos }}>
+        const container = document.getElementById('chart-container');
+        const select = document.getElementById('filtro-periodo');
+        const tooltip = document.getElementById('tooltip-display');
+
+        function filtrar(modo) {
+            if (modo === 'reciente') return datosHistoricos.filter(d => d.anio >= 2011);
+            if (modo === 'convertibilidad') return datosHistoricos.filter(d => d.anio >= 1991 && d.anio <= 2001);
+            return datosHistoricos;
+        }
+
+        function dibujar(datos) {
+            const w = 800;
+            const h = 320;
+            const padLeft = 45;
+            const padRight = 20;
+            const padTop = 25;
+            const padBottom = 35;
+            const plotW = w - padLeft - padRight;
+            const plotH = h - padTop - padBottom;
+
+            const maxVal = Math.max(...datos.map(d => d.inflacion), 10);
+            const minVal = Math.min(...datos.map(d => d.inflacion), 0);
+            const span = maxVal - minVal;
+
+            const yZero = padTop + ((maxVal - 0) / span) * plotH;
+            const barW = Math.max(8, (plotW / datos.length) * 0.7);
+            const gap = plotW / datos.length;
+
+            let svg = `<svg viewBox="0 0 ${w} ${h}" class="svg-chart">`;
+
+            // Eje cero
+            svg += `<line x1="${padLeft}" y1="${yZero}" x2="${w - padRight}" y2="${yZero}" stroke="currentColor" stroke-dasharray="3,3" opacity="0.3"/>`;
+
+            // Barras y etiquetas
+            datos.forEach((d, i) => {
+                const x = padLeft + i * gap + (gap - barW) / 2;
+                let y, barHeight, color;
+
+                if (d.inflacion >= 0) {
+                    y = padTop + ((maxVal - d.inflacion) / span) * plotH;
+                    barHeight = yZero - y;
+                    color = d.inflacion > 100 ? '#ef4444' : (d.inflacion > 40 ? '#f97316' : '#10b981');
+                } else {
+                    y = yZero;
+                    barHeight = ((0 - d.inflacion) / span) * plotH;
+                    color = '#3b82f6';
+                }
+
+                svg += `
+          <g class="bar-group" data-anio="${d.anio}" data-val="${d.inflacion}">
+            <rect x="${x}" y="${y}" width="${barW}" height="${Math.max(barHeight, 2)}" rx="3" fill="${color}" class="chart-bar" />
+            <text x="${x + barW / 2}" y="${h - 10}" font-size="11" text-anchor="middle" fill="currentColor" opacity="0.7">${String(d.anio).slice(-2)}'</text>
+          </g>
+        `;
+            });
+
+            svg += `</svg>`;
+            container.innerHTML = svg;
+
+            // Eventos interactivos en las barras
+            container.querySelectorAll('.bar-group').forEach(group => {
+                group.addEventListener('mouseenter', () => {
+                    const anio = group.getAttribute('data-anio');
+                    const val = group.getAttribute('data-val');
+                    tooltip.innerHTML = `<strong>Año ${anio}:</strong> <span style="font-size:1.15em; font-weight:bold;">${val > 0 ? '+' : ''}${val}%</span>`;
+                });
+            });
+        }
+
+        dibujar(filtrar('reciente'));
+
+        select.addEventListener('change', (e) => {
+            dibujar(filtrar(e.target.value));
+            tooltip.innerText = 'Selecciona o toca una barra';
+        });
+    </script>
+
+    <style>
+        .contenedor-inflacion {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .bajada {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+        .grafico-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(150, 150, 150, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .header-controles {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .controles select {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid rgba(150, 150, 150, 0.4);
+            background: inherit;
+            color: inherit;
+        }
+        .tooltip-display {
+            background: rgba(150, 150, 150, 0.1);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .chart-container {
+            width: 100%;
+            height: 320px;
+        }
+        .svg-chart {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .chart-bar {
+            cursor: pointer;
+            transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+        .chart-bar:hover {
+            opacity: 0.8;
+            filter: brightness(1.2);
+        }
+        .tabla-desplegable {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(150, 150, 150, 0.15);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+        }
+        .tabla-desplegable summary {
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .tabla-scroll {
+            max-height: 280px;
+            overflow-y: auto;
+            margin-top: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid rgba(150, 150, 150, 0.1);
+        }
+        .alta { color: #ef4444; font-weight: 600; }
+        .deflacion { color: #3b82f6; font-weight: 600; }
+    </style>
+</Layout>

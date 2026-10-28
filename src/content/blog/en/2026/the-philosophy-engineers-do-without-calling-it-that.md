@@ -1,0 +1,19 @@
+---
+title: "The Philosophy Engineers Do Without Calling It That"
+date: 2026-10-15
+slug: "the-philosophy-engineers-do-without-calling-it-that"
+translation_key: "la-filosofia-que-hacen-los-ingenieros-sin-llamarla-asi"
+lang: "en"
+categories: ["Philosophy"]
+tags: ["Engineering","Epistemology","Goodhart's law","Interpretability"]
+---
+
+_Part three of a three-part series on the actual work inside artificial intelligence. Part one describes [the AI shed: factory and research](https://en.dagorret.com.ar/the-ai-shed-factory-and-research/); part two, [what philosophers do in AI](https://en.dagorret.com.ar/what-philosophers-do-in-ai/)._ In the usual picture, the philosopher asks questions and the engineer solves problems. Looked at closely, the last decade of artificial intelligence does not support that division. Several of the field’s central technical debates are, to a large extent, philosophical problems, even though they are published on arXiv, formulated in equations and argued over by people who never took a course in epistemology. This third part walks through that technical heart of the shed and the unnamed philosophy it contains.
+
+## The trade in the factory
+
+It is worth starting with what is not philosophy. Most engineering work in the industry is building and operating: data engineering at petabyte scale, distributed training infrastructure, post-training and labeling operations, evaluation engineering, efficient inference, operational safety, product integration. In [part one](https://en.dagorret.com.ar/the-ai-shed-factory-and-research/) I described that chain. Its central demand is reliability: that a system of enormous complexity work every day, with constant hardware failures, millions of users and costs measured in hundreds of millions of dollars. That trade is engineering in the most classical sense, and its value does not depend on any philosophical reflection. But it is also where decisions with normative consequences are made, often without anyone noticing: which data is included and which is not, which metric defines success in an evaluation, which threshold triggers a safety filter. Each of those decisions is a value judgment disguised as a parameter.
+
+## The research milestones
+
+The lab of the last decade has few theoretical milestones, and very concrete ones. The [Transformer](https://arxiv.org/abs/1706.03762) architecture (Vaswani et al., 2017) is the basis of almost everything that came afterward. Its central idea, the attention mechanism, lets every word in a text relate directly to all the others, and it parallelizes very well on available hardware. That last, more prosaic property explains its success as much as the first. [Scaling laws](https://arxiv.org/abs/2001.08361) (Kaplan et al., 2020) showed that the performance of these models improves predictably, following power laws, as parameters, data and compute increase. Two years later, [Chinchilla](https://arxiv.org/abs/2203.15556) (Hoffmann et al., 2022) corrected the optimal ratio between model size and amount of data: the models of the time were undertrained. Richard Sutton had summed up the spirit of the era in [_The Bitter Lesson_](http://www.incompleteideas.net/IncIdeas/BitterLesson.html) (2019): in the long run, general methods that leverage growing compute beat those that try to encode human knowledge. It is a bitter lesson for anyone who devoted a career to the latter, and a strong epistemological thesis about the relationship between knowledge and search. Reinforcement learning from human preferences ([Christiano et al., 2017](https://arxiv.org/abs/1706.03741); [InstructGPT](https://arxiv.org/abs/2203.02155), 2022) turned models that predict text into assistants that follow instructions. More recently, inference-time compute, which lets the model [reason for longer](https://openai.com/index/learning-to-reason-with-llms/) before answering, opened a second axis of scaling.

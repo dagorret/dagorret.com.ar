@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostNavigation from '../../components/PostNavigation.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const enPosts = allPosts
+    .filter(p => p.data.lang === 'en')
+    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+
+  return enPosts.map((entry, index) => {
+    let translationUrl = undefined;
+    
+    if (entry.data.translation_key) {
+      const match = allPosts.find(
+        p => p.data.lang === 'es' && p.data.translation_key === entry.data.translation_key
+      );
+      if (match) {
+        translationUrl = `/${match.data.slug}/`;
+      }
+    }
+
+    return {
+      params: { slug: entry.data.slug },
+      props: {
+        entry,
+        translationUrl,
+        prevPost: index > 0 ? enPosts[index - 1] : null,
+        nextPost: index < enPosts.length - 1 ? enPosts[index + 1] : null,
+      },
+    };
+  });
+}
+
+const { entry, translationUrl, prevPost, nextPost } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout title={entry.data.title} lang="en" translationUrl={translationUrl}>
+  <article data-pagefind-body>
+    <header class="article-header">
+      <h1 class="article-title">{entry.data.title}</h1>
+      <div class="meta">
+        <time datetime={entry.data.date.toISOString()}>{entry.data.date.toISOString().split('T')[0]}</time>
+      </div>
+    </header>
+    <div class="article-body">
+      <Content />
+    </div>
+  </article>
+
+  <PostNavigation lang="en" prevPost={prevPost} nextPost={nextPost} />
+</Layout>

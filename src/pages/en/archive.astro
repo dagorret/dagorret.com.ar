@@ -1,0 +1,8 @@
+---
+import Archive from '../../components/Archive.astro';
+import { sortedPosts } from '../../lib/posts';
+
+const posts = await sortedPosts('en');
+---
+
+<Archive lang="en" posts={posts} />
