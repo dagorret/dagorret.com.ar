@@ -1,18 +1,25 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   lang?: 'es' | 'en';
+  frontmatter?: { title?: string; lang?: 'es' | 'en' };
   translationUrl?: string;
   category?: string;
 }
 
-const { title, lang = 'es', translationUrl, category = 'MATEMÁTICAS' } = Astro.props;
+const {
+  title = Astro.props.frontmatter?.title ?? 'Carlos Dagorret',
+  lang = Astro.props.frontmatter?.lang ?? 'es',
+  translationUrl,
+  category = 'MATEMÁTICAS',
+} = Astro.props;
 const isEnglish = lang === 'en';
 const homeUrl = isEnglish ? '/en/' : '/';
 const rssUrl = isEnglish ? '/en/rss.xml' : '/rss.xml';
 const booksUrl = 'https://matematicas.dagorret.com.ar';
 const navigation = [
   { href: booksUrl, label: isEnglish ? 'Books' : 'Libros', external: true },
+  { href: isEnglish ? '/en/lab/' : '/lab/', label: 'Lab' },
   { href: isEnglish ? '/en/archive/' : '/archivo/', label: isEnglish ? 'Archive' : 'Archivo' },
   { href: isEnglish ? '/en/search/' : '/buscar/', label: isEnglish ? 'Search' : 'Buscador' },
   { href: rssUrl, label: 'RSS' },

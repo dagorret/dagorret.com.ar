@@ -1,0 +1,34 @@
+{
+  "indicator": "SP.DYN.TFRT.IN",
+  "source": "World Bank — World Development Indicators",
+  "sourceUrl": "https://api.worldbank.org/v2/country/KOR;JPN;EUU;LCN/indicator/SP.DYN.TFRT.IN?date=2023&format=json&per_page=100",
+  "retrievedAt": "2026-10-28",
+  "lastUpdated": "2026-10-08",
+  "year": 2023,
+  "regions": [
+    {
+      "id": "KOR",
+      "es": "Corea del Sur",
+      "en": "South Korea",
+      "fertility": 0.721
+    },
+    {
+      "id": "JPN",
+      "es": "Japón",
+      "en": "Japan",
+      "fertility": 1.2
+    },
+    {
+      "id": "EUU",
+      "es": "Europa (UE)",
+      "en": "Europe (EU)",
+      "fertility": 1.3837480486422
+    },
+    {
+      "id": "LCN",
+      "es": "América Latina y el Caribe",
+      "en": "Latin America & Caribbean",
+      "fertility": 1.79509415879954
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+.demography-lab { border: 1px solid var(--border); border-radius: 8px; background: var(--bg-body); padding: clamp(1rem, 3vw, 2rem); margin: 0; }
+.demography-lab .demo-heading { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; margin: 0 0 1.5rem; font: 0.8rem/1.6 var(--font-sans); }
+.demography-lab .demo-heading span { color: var(--accent-rust); }
+.demography-lab .demo-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem 1.5rem; }
+.demography-lab label { display: grid; gap: 0.5rem; font: 600 0.75rem/1.6 var(--font-sans); color: var(--text-sub); min-width: min(100%, 220px); flex: 1; }
+.demography-lab input { width: 100%; min-height: 28px; accent-color: var(--accent-rust); }
+.demography-lab select, .demography-lab button { min-height: 42px; padding: 0.65rem 0.8rem; border: 1px solid var(--border); border-radius: 4px; font: 0.8rem var(--font-sans); color: var(--text); background: var(--card-bg); cursor: pointer; }
+.demography-lab .demo-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.demography-lab button:hover, .demography-lab button[aria-pressed="true"] { background: var(--accent-rust); border-color: var(--accent-rust); color: var(--bg-body); }
+.demography-lab :is(input, select, button):focus-visible { outline: 2px solid var(--accent-rust); outline-offset: 3px; }
+.demography-lab .demo-viewport { overflow-x: auto; margin: 1.5rem 0 0; }
+.demography-lab .demo-svg { display: block; width: 100%; min-width: 520px; height: auto; margin: 0; }
+.demography-lab .demo-grid { stroke: var(--border); stroke-width: 1; }
+.demography-lab .demo-label { fill: var(--text-sub); font: 12px var(--font-sans); }
+.demography-lab .demo-curve { fill: none; stroke: var(--accent-rust); stroke-width: 3; }
+.demography-lab .demo-reference { fill: none; stroke: var(--text-sub); opacity: 0.45; stroke-width: 1.5; stroke-dasharray: 5 5; }
+.demography-lab .demo-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0 1rem; }
+.demography-lab .demo-metrics > div { padding: 1rem; background: var(--card-bg); border-radius: 4px; }
+.demography-lab dt { color: var(--text-sub); font: 0.7rem/1.6 var(--font-sans); }
+.demography-lab dd { font: 700 clamp(1rem, 2vw, 1.6rem)/1.5 var(--font-serif); font-variant-numeric: tabular-nums; }
+.demography-lab .demo-note, .demography-lab .demo-readout { font: 0.78rem/1.8 var(--font-sans); color: var(--text-sub); margin: 0.75rem 0; }
+.demography-lab .demo-readout { display: block; color: var(--accent-rust); }
+.demography-lab .demo-note a { text-decoration: underline; text-underline-offset: 0.2em; }
+.demography-lab summary { color: var(--accent-rust); font-size: 0.8rem; cursor: pointer; }
+.demography-lab .table-scroll { max-height: 24rem; overflow: auto; }
+.demography-lab .pyramid-left { fill: #517575; }
+.demography-lab .pyramid-right { fill: var(--accent-rust); }
+.demography-lab .pyramid-initial { fill: none; stroke: var(--text-sub); stroke-dasharray: 3 3; opacity: 0.5; }
+@media (max-width: 600px) { .demography-lab .demo-controls { display: grid; grid-template-columns: minmax(0, 1fr); } .demography-lab .demo-metrics { gap: 0.5rem; } .demography-lab .demo-metrics > div { padding: 0.7rem 0.4rem; } }

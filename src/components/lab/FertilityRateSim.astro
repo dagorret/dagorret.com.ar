@@ -1,0 +1,91 @@
+---
+import reference from '../../data/demographic-reference.json';
+import { pyramidBars, REPLACEMENT } from '../../lib/demography';
+import '../../styles/demography.css';
+interface Props { lang?: 'es' | 'en'; }
+const { lang='es' }=Astro.props;
+const en=lang==='en';
+const presets=reference.regions.map(r=>({...r, rate:Math.round(r.fertility*100)/100}));
+const initial=pyramidBars(presets[0].rate,60);
+const number=new Intl.NumberFormat(lang,{maximumFractionDigits:2});
+const fertilityX=(value:number)=>270+value/3.5*400;
+---
+
+<figure class="demography-lab fertility-rate-sim" data-lang={lang} data-regions={JSON.stringify(presets)}>
+  <figcaption class="demo-heading"><strong>{en ? 'Fertility and generational replacement' : 'Fecundidad y reemplazo generacional'}</strong><span>{en ? 'Synthetic age-cohort model' : 'Modelo sintético por cohortes'}</span></figcaption>
+  <div class="demo-controls">
+    <label>{en ? 'Reference country / region (2023)' : 'País / región de referencia (2023)'}
+      <select data-region>{presets.map(r=><option value={r.id}>{r[lang]} · {number.format(r.rate)}</option>)}<option value="custom">{en?'Custom scenario':'Escenario personalizado'}</option></select>
+    </label>
+    <label>{en?'Fertility (births per woman)':'Fecundidad (hijos por mujer)'}<output data-fertility-value>{number.format(presets[0].rate)}</output><input type="range" data-fertility min="0" max="3.5" step="0.01" value={presets[0].rate}/></label>
+    <label>{en?'Years from synthetic starting point':'Años desde el inicio sintético'}<output data-years-value>60</output><input type="range" data-years min="0" max="100" step="5" value="60"/></label>
+  </div>
+  <div class="demo-buttons"><button type="button" data-replacement>{en?'Replacement: 2.1':'Reemplazo: 2,1'}</button><button type="button" data-next>{en?'+5 years':'+5 años'}</button><button type="button" data-reset>{en?'Reset':'Reiniciar'}</button></div>
+  <output class="demo-readout" data-fertility-status aria-live="polite">{en?'Below replacement':'Por debajo del reemplazo'}</output>
+  <div class="demo-viewport"><svg class="demo-svg" viewBox="0 0 760 250" role="img" aria-label={en?'Reference fertility rates for 2023, with a dashed replacement threshold of 2.1 and a solid marker for the selected rate.':'Fecundidad de referencia en 2023, con umbral discontinuo de reemplazo de 2,1 y marcador sólido de la tasa elegida.'}>
+    <line x1={fertilityX(REPLACEMENT)} x2={fertilityX(REPLACEMENT)} y1="28" y2="222" stroke="var(--accent-rust)" stroke-width="2" stroke-dasharray="5 4" />
+    <text x={fertilityX(REPLACEMENT)} y="18" text-anchor="middle" class="demo-label">{en?'Replacement 2.1':'Reemplazo 2,1'}</text>
+    {presets.map((r,i)=><g><text x="12" y={62+i*48} class="demo-label">{r[lang]}</text><rect data-reference-region={r.id} x="270" y={48+i*48} width={r.rate/3.5*400} height="20" fill="var(--accent-rust)" opacity="0.55"/><text x={fertilityX(r.rate)+8} y={63+i*48} class="demo-label">{number.format(r.rate)}</text></g>)}
+    <line data-rate-marker x1={fertilityX(presets[0].rate)} x2={fertilityX(presets[0].rate)} y1="28" y2="222" stroke="#517575" stroke-width="2" />
+  </svg></div>
+  <div class="demo-viewport"><svg class="demo-svg" viewBox="0 0 760 500" role="img" aria-label={en?'Synthetic population pyramid with eighteen five-year age groups. Dashed outlines show the initial population; the table provides exact cohort indices.':'Pirámide sintética con dieciocho grupos quinquenales. Los contornos discontinuos muestran la población inicial; la tabla presenta los índices exactos.'}>
+    <text x="220" y="24" text-anchor="middle" class="demo-label">{en?'Men (50%)':'Hombres (50%)'}</text><text x="550" y="24" text-anchor="middle" class="demo-label">{en?'Women (50%)':'Mujeres (50%)'}</text>
+    {initial.bars.map((bar,i)=><g data-age-bar={i}>
+      <rect class="pyramid-initial" data-initial-left x={355-bar.initialWidth} y={bar.y} width={bar.initialWidth} height="17"/>
+      <rect class="pyramid-initial" data-initial-right x="405" y={bar.y} width={bar.initialWidth} height="17"/>
+      <rect class="pyramid-left" data-left x={355-bar.width} y={bar.y} width={bar.width} height="17"/>
+      <rect class="pyramid-right" data-right x="405" y={bar.y} width={bar.width} height="17"/>
+      <text x="380" y={bar.y+13} text-anchor="middle" class="demo-label">{bar.age}</text>
+      <title>{bar.age}: {number.format(bar.value)}</title>
+    </g>)}
+    <text x="380" y="480" text-anchor="middle" class="demo-label">{en?'Age groups · synthetic cohort indices':'Grupos de edad · índices de cohortes sintéticas'}</text>
+  </svg></div>
+  <dl class="demo-metrics"><div><dt>{en?'Population index (start=100)':'Índice poblacional (inicio=100)'}</dt><dd data-total-index>{number.format(initial.totalIndex)}</dd></div><div><dt>{en?'Share aged 65–89 (%)':'Proporción de 65–89 años (%)'}</dt><dd data-older-share>{number.format(initial.olderShare)}</dd></div><div><dt>{en?'Age 0–4 cohort (start=100)':'Cohorte 0–4 (inicio=100)'}</dt><dd data-young-index>{number.format(initial.cohorts[0])}</dd></div></dl>
+  <p class="demo-note">{en?'Presets use World Bank 2023 total fertility rates, rounded to two decimals. Europe means the EU; Latin America includes the Caribbean. Every preset starts from the same synthetic pyramid: these are not national population forecasts. Mortality is fixed, migration is zero, sexes are split 50/50, and the model ends at age 89. Horizontal scale adjusts; dashed outlines retain the initial cohort sizes.' : 'Los presets usan fecundidad total de 2023 del Banco Mundial, redondeada a dos decimales. Europa significa UE; América Latina incluye el Caribe. Todos parten de la misma pirámide sintética: no son pronósticos nacionales. Mortalidad fija, migración nula, reparto por sexo 50/50 y edad máxima de 89 años. La escala horizontal se ajusta; los contornos conservan las cohortes iniciales.'}</p>
+  <details><summary>{en?'Cohort values (both sexes)':'Valores por cohorte (ambos sexos)'}</summary><div class="table-scroll"><table><thead><tr><th>{en?'Age':'Edad'}</th><th>{en?'Cohort index':'Índice de cohorte'}</th></tr></thead><tbody>{initial.bars.map((bar,i)=><tr><td>{bar.age}</td><td data-cohort-value={i}>{number.format(bar.value)}</td></tr>)}</tbody></table></div></details>
+  <p class="demo-note"><a href="https://data.worldbank.org/indicator/SP.DYN.TFRT.IN" target="_blank" rel="noopener noreferrer">{en?'World Bank · Total fertility rate':'Banco Mundial · Fecundidad total'}</a> · <a href={reference.sourceUrl} target="_blank" rel="noopener noreferrer">{en?'Reference API snapshot':'API de referencia'}</a> · {en?'Retrieved':'Descarga'} {reference.retrievedAt}.</p>
+  <noscript><p>{en?'Enable JavaScript to change the model. The initial scenario remains visible.':'Activá JavaScript para modificar el modelo. El escenario inicial está visible.'}</p></noscript>
+</figure>
+
+<script>
+  import { pyramidBars, REPLACEMENT } from '../../lib/demography';
+  for (const root of document.querySelectorAll<HTMLElement>('.fertility-rate-sim')) {
+    const en=root.dataset.lang==='en';
+    const number=new Intl.NumberFormat(en?'en':'es',{maximumFractionDigits:2});
+    const presets: {id:string;es:string;en:string;rate:number}[]=JSON.parse(root.dataset.regions!);
+    const region=root.querySelector<HTMLSelectElement>('[data-region]')!;
+    const rate=root.querySelector<HTMLInputElement>('[data-fertility]')!;
+    const years=root.querySelector<HTMLInputElement>('[data-years]')!;
+    function render() {
+      const fertility=Number(rate.value),horizon=Number(years.value),model=pyramidBars(fertility,horizon);
+      root.querySelector('[data-fertility-value]')!.textContent=number.format(fertility);
+      root.querySelector('[data-years-value]')!.textContent=String(horizon);
+      root.querySelector('[data-total-index]')!.textContent=number.format(model.totalIndex);
+      root.querySelector('[data-older-share]')!.textContent=number.format(model.olderShare);
+      root.querySelector('[data-young-index]')!.textContent=number.format(model.cohorts[0]);
+      const state=Math.abs(fertility-REPLACEMENT)<1e-8?(en?'At replacement':'En reemplazo'):fertility<REPLACEMENT?(en?'Below replacement':'Por debajo del reemplazo'):(en?'Above replacement':'Por encima del reemplazo');
+      root.querySelector('[data-fertility-status]')!.textContent=`${state} · ${en?'synthetic horizon':'horizonte sintético'}: ${horizon} ${en?'years':'años'}`;
+      for (const attr of ['x1','x2']) root.querySelector('[data-rate-marker]')!.setAttribute(attr,String(270+fertility/3.5*400));
+      for (const bar of root.querySelectorAll<SVGRectElement>('[data-reference-region]')) bar.style.opacity=bar.dataset.referenceRegion===region.value?'1':'0.4';
+      for (const [i,bar] of model.bars.entries()) {
+        const group=root.querySelector(`[data-age-bar="${i}"]`)!;
+        for (const side of ['left','right']) {
+          group.querySelector(`[data-${side}]`)!.setAttribute('width',String(bar.width));
+          group.querySelector(`[data-initial-${side}]`)!.setAttribute('width',String(bar.initialWidth));
+        }
+        group.querySelector('[data-left]')!.setAttribute('x',String(355-bar.width));
+        group.querySelector('[data-initial-left]')!.setAttribute('x',String(355-bar.initialWidth));
+        group.querySelector('title')!.textContent=`${bar.age}: ${number.format(bar.value)}`;
+        root.querySelector(`[data-cohort-value="${i}"]`)!.textContent=number.format(bar.value);
+      }
+      root.querySelector<HTMLButtonElement>('[data-next]')!.disabled=horizon>=100;
+    }
+    region.addEventListener('change',()=>{const preset=presets.find(p=>p.id===region.value);if(preset)rate.value=String(preset.rate);render();});
+    rate.addEventListener('input',()=>{region.value='custom';render();});
+    years.addEventListener('input',render);
+    root.querySelector('[data-replacement]')!.addEventListener('click',()=>{rate.value=String(REPLACEMENT);region.value='custom';render();});
+    root.querySelector('[data-next]')!.addEventListener('click',()=>{years.value=String(Math.min(100,Number(years.value)+5));render();});
+    root.querySelector('[data-reset]')!.addEventListener('click',()=>{region.value=presets[0].id;rate.value=String(presets[0].rate);years.value='60';render();});
+    render();
+  }
+</script>

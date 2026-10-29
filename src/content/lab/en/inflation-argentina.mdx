@@ -1,0 +1,37 @@
+---
+title: "Inflation in Argentina"
+description: "Time series and price dynamics."
+slug: "inflation-argentina"
+lang: "en"
+translation_key: "inflation"
+category: "Economics · Time series"
+order: 1
+visual: "inflation"
+status: "interactive"
+---
+
+import InflationChart from '../../../components/lab/InflationChart.astro';
+
+Inflation has memory. Contracts, wage reviews, and pricing decisions incorporate recent outcomes and expectations. Their interaction can sustain inertia after the initial impulse changes. The chart makes that trajectory visible; explaining its causes requires additional information about fiscal policy, money, exchange rates, and expectations.
+
+## Two speeds in the same economy
+
+Monthly inflation compares the CPI with the previous month. Year-on-year inflation compares it with the same month a year earlier: it compounds twelve monthly changes rather than adding them. Monthly disinflation can therefore coexist with a high year-on-year rate for some time.
+
+Monetary regimes matter because they shape expectations about money creation, exchange rates, and policy responses. A regime change may alter expectations while existing contracts and delayed adjustments continue to operate. A time series helps identify accelerations and slowdowns; it does not, by itself, identify the causal effect of each policy.
+
+<div className="figure-wide">
+  <InflationChart lang="en" />
+</div>
+
+## Reading the scales
+
+Linear scale preserves differences in percentage points. Logarithmic scale displays proportional distances: moving from 2% to 4% takes the same space as moving from 20% to 40%. It applies to positive inflation rates, not to the price-index level. Switch between them to distinguish the size of spikes from developments at lower inflation rates.
+
+The chart uses the national headline CPI, with December 2016 = 100. Available monthly changes run from January 2017 through September 2026. Year-on-year observations begin in December 2017; unpublished observations are not estimated. Rates retain the official file’s one-decimal rounding. This is a dated local snapshot, not an automatically updated feed.
+
+## Technical conclusion
+
+A lower inflation rate means prices are rising more slowly, not returning to an earlier level. Assessing stabilization requires examining persistent monthly disinflation together with its transmission to year-on-year inflation. A high-inflation month leaving the twelve-month comparison window can also reduce the year-on-year rate without an equivalent change in current monthly inflation.
+
+**Sources and methodology.** Observed data: [INDEC, official national CPI series](https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv). Publications, coverage, and methodology: [INDEC, consumer price indices](https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31). For comparison with monetary and exchange-rate variables: [BCRA, statistics and indicators](https://www.bcra.gob.ar/estadisticas-indicadores/). This chart shows CPI observations and includes no forecasts.

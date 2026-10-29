@@ -1,0 +1,9 @@
+---
+import { getEntry } from 'astro:content';
+import LabExperiment from '../../components/LabExperiment.astro';
+
+const entry = await getEntry('lab', 'es/inflacion-argentina');
+if (!entry) throw new Error('Missing Spanish inflation Lab entry.');
+---
+
+<LabExperiment entry={entry} />

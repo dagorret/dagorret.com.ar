@@ -1,0 +1,12 @@
+---
+import type { GetStaticPaths } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import LabExperiment from '../../../components/LabExperiment.astro';
+import { labPaths } from '../../../lib/lab';
+
+export const getStaticPaths = (async () => labPaths('en')) satisfies GetStaticPaths;
+interface Props { entry: CollectionEntry<'lab'>; }
+const { entry } = Astro.props;
+---
+
+<LabExperiment entry={entry} />

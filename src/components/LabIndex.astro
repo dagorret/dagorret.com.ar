@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { labEntries, labUrl } from '../lib/lab';
+
+interface Props { lang: 'es' | 'en'; }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const entries = await labEntries(lang);
+const curves = {
+  inflation: 'M12 98 L42 89 L72 96 L102 65 L132 78 L162 36 L192 61 L222 22 L252 45 L288 13',
+  population: 'M12 105 C70 103 90 85 130 60 S200 20 288 14',
+  'birth-rate': 'M12 16 C65 17 85 35 130 68 S220 100 288 103',
+};
+---
+
+<Layout title="Lab" lang={lang} translationUrl={labUrl(en ? 'es' : 'en')}>
+  <header class="lab-heading">
+    <p class="eyebrow">{en ? 'Models · Data · Experiments' : 'Modelos · Datos · Experimentos'}</p>
+    <h1>Lab</h1>
+    <p class="intro">{en ? 'A space to explore ideas through interactive visualizations and simulations.' : 'Un espacio para explorar ideas a través de visualizaciones y simulaciones interactivas.'}</p>
+  </header>
+  <section class="lab-grid" aria-label={en ? 'Experiments' : 'Experimentos'}>
+    {entries.map(({ data }) => (
+      <a class="lab-card" href={labUrl(lang, data.slug)}>
+        <div class="card-top"><span class="badge">{data.category}</span><span class="status">{data.status === 'interactive' ? (en ? 'Interactive' : 'Interactivo') : (en ? 'In preparation' : 'En preparación')}</span></div>
+        <svg class="experiment-preview" viewBox="0 0 300 120" aria-hidden="true" focusable="false">
+          {data.visual === 'neural-network' ? (
+            <g>
+              {[28, 60, 92].flatMap(y => [20, 60, 100].map(target => <line x1="60" y1={y} x2="150" y2={target} />))}
+              {[20, 60, 100].flatMap(y => [38, 82].map(target => <line x1="150" y1={y} x2="240" y2={target} />))}
+              {[28, 60, 92].map(y => <circle cx="60" cy={y} r="7" />)}
+              {[20, 60, 100].map(y => <circle cx="150" cy={y} r="7" />)}
+              {[38, 82].map(y => <circle cx="240" cy={y} r="7" />)}
+            </g>
+          ) : (
+            <g><path class="axis" d="M12 8 V108 H290" /><path class="curve" d={curves[data.visual]} /></g>
+          )}
+        </svg>
+        <h2>{data.title}</h2>
+        <p class="description">{data.description}</p>
+        <span class="explore">{en ? 'Explore project' : 'Explorar proyecto'} <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .lab-heading { margin-bottom: 3rem; max-width: 48rem; }
+  .eyebrow { text-transform: uppercase; color: var(--accent-rust); letter-spacing: 0.13em; font-size: 0.7rem; font-weight: 600; margin-bottom: 1rem; }
+  .intro { color: var(--text-sub); font-size: 1.05rem; max-width: 55ch; }
+  .lab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem; }
+  .lab-card { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; padding: clamp(1.25rem, 3vw, 2.25rem); border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease; }
+  .lab-card::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; background: radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 50%), var(--card-hover), transparent 65%); transition: opacity 180ms ease; }
+  .lab-card:hover, .lab-card:focus-visible { border-color: var(--accent-rust); transform: translateY(-4px); box-shadow: 0 12px 28px #2624220a; }
+  .lab-card:hover::before, .lab-card:focus-visible::before { opacity: 1; }
+  .lab-card:focus-visible { outline: 2px solid var(--accent-rust); outline-offset: 4px; }
+  .card-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; }
+  .badge { color: var(--accent-rust); padding: 0.25rem 0.6rem; border: 1px solid var(--border); border-radius: 999px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .status { font-size: 0.65rem; color: var(--text-sub); }
+  .experiment-preview { width: 100%; height: 125px; margin: 1.75rem 0; color: var(--accent-rust); }
+  .experiment-preview g { fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .experiment-preview line { opacity: 0.25; }
+  .experiment-preview circle { fill: var(--card-bg); }
+  .axis { opacity: 0.2; }
+  .curve { stroke-width: 2.5; }
+  h2 { font-family: var(--font-serif); font-size: clamp(1.65rem, 3vw, 2.15rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+  .description { color: var(--text-sub); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.75rem; }
+  .explore { display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: var(--accent-rust); font-size: 0.8rem; font-weight: 600; margin-top: auto; }
+  .arrow { font-size: 1.5rem; transition: transform 180ms ease; }
+  .lab-card:hover .arrow, .lab-card:focus-visible .arrow { transform: translate(3px, -3px); }
+  @media (max-width: 700px) { .lab-grid { grid-template-columns: minmax(0, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { .lab-card, .lab-card::before, .arrow { transition: none; } .lab-card:hover, .lab-card:focus-visible, .lab-card:hover .arrow, .lab-card:focus-visible .arrow { transform: none; } }
+</style>
+
+<script>
+  for (const card of document.querySelectorAll<HTMLAnchorElement>('.lab-card')) {
+    card.addEventListener('pointermove', event => {
+      if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const bounds = card.getBoundingClientRect();
+      card.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
+      card.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.removeProperty('--pointer-x');
+      card.style.removeProperty('--pointer-y');
+    });
+  }
+</script>

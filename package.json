@@ -23,6 +23,7 @@
     "pagefind": "^1.5.2",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "turndown": "^7.2.4"
+    "turndown": "^7.2.4",
+    "wrangler": "^4.155.0"
   }
 }

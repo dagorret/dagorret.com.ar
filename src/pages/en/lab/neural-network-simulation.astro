@@ -1,0 +1,9 @@
+---
+import { getEntry } from 'astro:content';
+import LabExperiment from '../../../components/LabExperiment.astro';
+
+const entry = await getEntry('lab', 'en/neural-network-simulation');
+if (!entry) throw new Error('Missing English neural network Lab entry.');
+---
+
+<LabExperiment entry={entry} />

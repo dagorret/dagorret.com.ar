@@ -1,0 +1,65 @@
+---
+import { worldPopulation, worldPath } from '../../lib/demography';
+import '../../styles/demography.css';
+interface Props { lang?: 'es' | 'en'; }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+const initial = worldPopulation(0);
+const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 2 });
+---
+
+<figure class="demography-lab world-population-chart" data-lang={lang}>
+  <figcaption class="demo-heading"><strong>{en ? 'World population · 2024–2100' : 'Población mundial · 2024–2100'}</strong><span>{en ? 'Illustrative logistic model' : 'Modelo logístico didáctico'}</span></figcaption>
+  <label>{en ? 'Expected fertility: shift relative to the UN medium path (births per woman)' : 'Fecundidad esperada: desvío respecto de la trayectoria media ONU (hijos por mujer)'}
+    <input type="range" min="-0.5" max="0.5" step="0.01" value="0" data-fertility-offset />
+  </label>
+  <output class="demo-readout" data-scenario-label aria-live="polite">{en ? 'Medium reference · Δ = 0' : 'Referencia media · Δ = 0'}</output>
+  <div class="demo-buttons">
+    <button type="button" data-scenario="-0.5" aria-pressed="false">{en ? 'Low (−0.5)' : 'Bajo (−0,5)'}</button>
+    <button type="button" data-scenario="0" aria-pressed="true">{en ? 'Medium (0)' : 'Medio (0)'}</button>
+    <button type="button" data-scenario="0.5" aria-pressed="false">{en ? 'High (+0.5)' : 'Alto (+0,5)'}</button>
+  </div>
+  <div class="demo-viewport"><svg class="demo-svg" viewBox="0 0 760 390" role="img" aria-label={en ? 'Logistic population curves for low, medium and high fertility shifts. Values are also available in the table.' : 'Curvas logísticas para desvíos de fecundidad bajo, medio y alto. Valores disponibles en la tabla.'}>
+    {[0, 5, 10, 15, 20].map(value => <g><line x1="62" x2="716" y1={330-value/20*290} y2={330-value/20*290} class="demo-grid" /><text x="50" y={334-value/20*290} text-anchor="end" class="demo-label">{value}</text></g>)}
+    {[2024, 2040, 2060, 2080, 2100].map(year => <text x={62+(year-2024)/76*654} y="358" text-anchor="middle" class="demo-label">{year}</text>)}
+    <text x="62" y="20" class="demo-label">{en ? 'Billions of people' : 'Miles de millones de personas'}</text>
+    {[-0.5, 0, 0.5].map(offset => <path class="demo-reference" d={worldPath(offset)} />)}
+    <line class="demo-reference" data-plateau-line x1="62" x2="716" y1={330-initial.plateau/20*290} y2={330-initial.plateau/20*290} />
+    <path class="demo-curve" data-population-path d={worldPath(0)} />
+    <circle data-end-point cx="716" cy={330-initial.end/20*290} r="4" fill="var(--accent-rust)" />
+  </svg></div>
+  <dl class="demo-metrics">
+    <div><dt>{en ? 'Population in 2100 (bn)' : 'Población en 2100 (mil millones)'}</dt><dd data-population-end>{format.format(initial.end)}</dd></div>
+    <div><dt>{en ? 'Model plateau K (bn)' : 'Meseta del modelo K (mil millones)'}</dt><dd data-population-plateau>{format.format(initial.plateau)}</dd></div>
+    <div><dt>{en ? 'Versus medium in 2100 (bn)' : 'Frente al medio en 2100 (mil millones)'}</dt><dd data-population-delta>0</dd></div>
+  </dl>
+  <p class="demo-note">{en ? 'Solid: selected model. Dashed curves: model presets −0.5, 0 and +0.5. Horizontal dashed line: model plateau. This logistic approximation is not a UN forecast: it cannot reproduce a peak followed by decline. K is a model parameter, not Earth’s carrying capacity.' : 'Línea sólida: modelo elegido. Curvas discontinuas: presets −0,5, 0 y +0,5 del modelo. Horizontal discontinua: meseta. Esta aproximación logística no es una proyección ONU: no reproduce un pico seguido de descenso. K es un parámetro, no la capacidad de carga del planeta.'}</p>
+  <details><summary>{en ? 'Annual model values' : 'Valores anuales del modelo'}</summary><div class="table-scroll"><table><thead><tr><th>{en ? 'Year' : 'Año'}</th><th>{en ? 'Population (billions)' : 'Población (mil millones)'}</th></tr></thead><tbody>{initial.points.map(p => <tr><td>{p.year}</td><td data-population-year={p.year}>{format.format(p.population)}</td></tr>)}</tbody></table></div></details>
+  <p class="demo-note"><a href="https://www.un.org/en/UN-projects-world-population-to-peak-within-this-century" target="_blank" rel="noopener noreferrer">ONU · WPP 2024</a> · <a href="https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/files/documents/2024/Jul/undesa_pd_2024_wpp2024_methodology-report_web.pdf" target="_blank" rel="noopener noreferrer">{en ? 'Variant methodology' : 'Metodología de variantes'}</a></p>
+  <noscript><p>{en ? 'Enable JavaScript to adjust fertility. The default medium model and its table are visible.' : 'Activá JavaScript para modificar la fecundidad. El modelo medio y su tabla están visibles.'}</p></noscript>
+</figure>
+
+<script>
+  import { worldPopulation, worldPath, WORLD_MEDIUM_END } from '../../lib/demography';
+  for (const root of document.querySelectorAll<HTMLElement>('.world-population-chart')) {
+    const en = root.dataset.lang === 'en';
+    const number = new Intl.NumberFormat(en ? 'en' : 'es', { maximumFractionDigits: 2 });
+    const input = root.querySelector<HTMLInputElement>('[data-fertility-offset]')!;
+    function render() {
+      const offset = Number(input.value), model = worldPopulation(offset);
+      root.querySelector('[data-population-path]')!.setAttribute('d', worldPath(offset));
+      root.querySelector('[data-end-point]')!.setAttribute('cy', String(330-model.end/20*290));
+      for (const name of ['y1', 'y2']) root.querySelector('[data-plateau-line]')!.setAttribute(name, String(330-model.plateau/20*290));
+      root.querySelector('[data-population-end]')!.textContent = number.format(model.end);
+      root.querySelector('[data-population-plateau]')!.textContent = number.format(model.plateau);
+      root.querySelector('[data-population-delta]')!.textContent = number.format(model.end-WORLD_MEDIUM_END);
+      root.querySelector('[data-scenario-label]')!.textContent = `${en ? 'Relative to UN medium fertility' : 'Respecto de la fecundidad media ONU'}: ${offset>0?'+':''}${number.format(offset)} ${en ? 'births per woman' : 'hijos por mujer'}`;
+      input.setAttribute('aria-valuetext', root.querySelector('[data-scenario-label]')!.textContent!);
+      for (const button of root.querySelectorAll<HTMLButtonElement>('[data-scenario]')) button.setAttribute('aria-pressed', String(Number(button.dataset.scenario)===offset));
+      for (const point of model.points) root.querySelector(`[data-population-year="${point.year}"]`)!.textContent = number.format(point.population);
+    }
+    input.addEventListener('input', render);
+    for (const button of root.querySelectorAll<HTMLButtonElement>('[data-scenario]')) button.addEventListener('click', () => { input.value=button.dataset.scenario!;render(); });
+    render();
+  }
+</script>

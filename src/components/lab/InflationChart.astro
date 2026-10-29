@@ -1,0 +1,185 @@
+---
+import snapshot from '../../data/argentina-inflation.json';
+
+interface Props { lang?: 'es' | 'en'; }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+const month = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const rate = (value: number | null) => value === null ? '—' : `${new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value)}%`;
+---
+
+<figure class="inflation-chart" data-lang={lang} data-series={JSON.stringify(snapshot.points)}>
+  <figcaption class="chart-heading">
+    <strong>{en ? 'Argentina · National CPI' : 'Argentina · IPC nacional'}</strong>
+    <span>{en ? 'Official observations through' : 'Datos oficiales hasta'} {month.format(new Date(snapshot.through))}</span>
+  </figcaption>
+  <div class="chart-controls">
+    <label>{en ? 'Measure' : 'Medición'}
+      <select data-metric>
+        <option value="annual">{en ? 'Year-on-year (%)' : 'Interanual (%)'}</option>
+        <option value="monthly">{en ? 'Monthly (%)' : 'Mensual (%)'}</option>
+      </select>
+    </label>
+    <fieldset>
+      <legend>{en ? 'Scale' : 'Escala'}</legend>
+      <div class="scale-buttons">
+        <button type="button" data-scale="linear" aria-pressed="true">{en ? 'Linear' : 'Lineal'}</button>
+        <button type="button" data-scale="log" aria-pressed="false">{en ? 'Logarithmic' : 'Logarítmica'}</button>
+      </div>
+    </fieldset>
+    <label>{en ? 'Period' : 'Período'}
+      <select data-period>
+        <option value="all">{en ? 'Full series' : 'Serie completa'}</option>
+        <option value="recent">{en ? 'Last 5 years' : 'Últimos 5 años'}</option>
+      </select>
+    </label>
+  </div>
+  <div class="chart-plot">
+    <svg class="chart-svg" viewBox="0 0 960 420" tabindex="0" role="img" aria-label={en ? 'Inflation time series. Use Left and Right arrows to inspect each month; Home and End jump to the first and last.' : 'Serie temporal de inflación. Usá las flechas izquierda y derecha para recorrer los meses; Inicio y Fin van al primero y al último.'}></svg>
+    <div class="chart-tooltip" role="tooltip" hidden></div>
+  </div>
+  <output class="chart-readout" aria-live="polite"></output>
+  <p class="chart-help">{en ? 'Hover, tap, or focus the chart and use the arrow keys. Rates are shown as published by INDEC, to one decimal place. The last five years are the latest 60 published months.' : 'Mové el cursor, tocá el gráfico o usá las flechas del teclado al enfocarlo. Las tasas se muestran como las publica INDEC, con un decimal. Los últimos cinco años son los últimos 60 meses publicados.'}</p>
+  <p class="chart-help" data-log-note hidden>{en ? 'Logarithmic scale is only available for strictly positive rates.' : 'La escala logarítmica solo está disponible para tasas estrictamente positivas.'}</p>
+  <noscript><p>{en ? 'Enable JavaScript to use the controls, or consult the table below.' : 'Activá JavaScript para usar los controles o consultá la tabla inferior.'}</p></noscript>
+  <details class="chart-data">
+    <summary>{en ? 'View official observations' : 'Ver observaciones oficiales'}</summary>
+    <div class="table-scroll"><table>
+      <thead><tr><th>{en ? 'Month' : 'Mes'}</th><th>{en ? 'Monthly' : 'Mensual'}</th><th>{en ? 'Year-on-year' : 'Interanual'}</th></tr></thead>
+      <tbody>{snapshot.points.map(p => <tr><td>{month.format(new Date(p.date))}</td><td>{rate(p.monthly)}</td><td>{rate(p.annual)}</td></tr>)}</tbody>
+    </table></div>
+  </details>
+  <p class="chart-source"><a href={snapshot.sourceUrl} target="_blank" rel="noopener noreferrer">INDEC · {en ? 'Source CSV' : 'CSV de origen'}</a> · {en ? 'Snapshot retrieved' : 'Copia descargada'} {snapshot.retrievedAt}. {en ? 'Missing year-on-year observations are not estimated.' : 'Las observaciones interanuales faltantes no se estiman.'}</p>
+</figure>
+
+<style is:global>
+  .inflation-chart { background: var(--bg-body, #faf7f2); color: var(--text, #262422); border: 1px solid var(--border, #e5ded7); border-radius: 8px; padding: clamp(1rem, 3vw, 2rem); margin: 0; }
+  .inflation-chart .chart-heading { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; margin: 0 0 1.5rem; font-family: var(--font-sans); font-size: 0.8rem; }
+  .inflation-chart .chart-heading span { color: var(--text-sub); }
+  .inflation-chart .chart-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem 1.5rem; }
+  .inflation-chart label, .inflation-chart legend { font: 600 0.7rem var(--font-sans); color: var(--text-sub); }
+  .inflation-chart label { display: grid; gap: 0.5rem; }
+  .inflation-chart fieldset { border: 0; padding: 0; min-width: 0; }
+  .inflation-chart legend { margin-bottom: 0.5rem; }
+  .inflation-chart select, .inflation-chart button { font: 0.8rem var(--font-sans); color: var(--text); background: var(--card-bg); border: 1px solid var(--border); border-radius: 4px; padding: 0.65rem 0.75rem; min-height: 42px; cursor: pointer; }
+  .inflation-chart .scale-buttons { display: flex; gap: 0.35rem; }
+  .inflation-chart button[aria-pressed="true"] { color: var(--bg-body); background: var(--accent-rust, #9e5332); border-color: var(--accent-rust); }
+  .inflation-chart button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .inflation-chart :is(select, button, svg):focus-visible { outline: 2px solid var(--accent-rust); outline-offset: 3px; }
+  .inflation-chart .chart-plot { position: relative; margin-top: 1rem; min-width: 0; }
+  .inflation-chart .chart-svg { display: block; width: 100%; height: auto; margin: 0; overflow: visible; touch-action: pan-y; }
+  .inflation-chart .chart-grid { stroke: var(--border); stroke-width: 1; }
+  .inflation-chart .chart-axis-label { fill: var(--text-sub); font: 11px var(--font-sans); }
+  .inflation-chart .chart-line { fill: none; stroke: var(--accent-rust, #9e5332); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .inflation-chart .chart-crosshair { stroke: var(--text-sub); stroke-width: 1; stroke-dasharray: 4 4; }
+  .inflation-chart .chart-marker { fill: var(--bg-body); stroke: var(--accent-rust); stroke-width: 2.5; }
+  .inflation-chart .chart-tooltip { position: absolute; pointer-events: none; max-width: 240px; padding: 0.5rem 0.75rem; background: var(--text); color: var(--bg-body); border-radius: 4px; font: 0.75rem/1.6 var(--font-sans); white-space: nowrap; }
+  .inflation-chart .chart-readout { display: block; min-height: 1.75rem; margin-top: 0.75rem; font: 600 0.85rem/1.6 var(--font-sans); color: var(--accent-rust); }
+  .inflation-chart .chart-help, .inflation-chart .chart-source { font: 0.75rem/1.7 var(--font-sans); color: var(--text-sub); margin: 0.75rem 0 0; }
+  .inflation-chart .chart-source a { text-decoration: underline; text-underline-offset: 0.2em; }
+  .inflation-chart .chart-data { margin-top: 1rem; font-size: 0.8rem; }
+  .inflation-chart .chart-data summary { cursor: pointer; color: var(--accent-rust); }
+  .inflation-chart .table-scroll { max-height: 24rem; overflow: auto; }
+  .inflation-chart [hidden] { display: none; }
+</style>
+
+<script>
+  import { selectInflation, inflationGeometry, type InflationPoint, type Metric, type Scale } from '../../lib/inflation';
+
+  for (const root of document.querySelectorAll<HTMLElement>('.inflation-chart')) {
+    const points: InflationPoint[] = JSON.parse(root.dataset.series!);
+    const lang = root.dataset.lang === 'en' ? 'en' : 'es';
+    const en = lang === 'en';
+    const svg = root.querySelector<SVGSVGElement>('svg')!;
+    const plot = root.querySelector<HTMLElement>('.chart-plot')!;
+    const tooltip = root.querySelector<HTMLElement>('.chart-tooltip')!;
+    const readout = root.querySelector<HTMLOutputElement>('output')!;
+    const metricSelect = root.querySelector<HTMLSelectElement>('[data-metric]')!;
+    const periodSelect = root.querySelector<HTMLSelectElement>('[data-period]')!;
+    const buttons = root.querySelectorAll<HTMLButtonElement>('[data-scale]');
+    const number = new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const date = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric', timeZone: 'UTC' });
+    let scale: Scale = 'linear';
+    let metric: Metric = 'annual';
+    let visible = selectInflation(points, metric, false);
+    let width = 960, height = 420, selected = visible.length - 1;
+    let geometry = inflationGeometry(visible, metric, scale, width, height);
+    let crosshair: SVGLineElement, marker: SVGCircleElement;
+
+    function element<K extends keyof SVGElementTagNameMap>(tag: K, attributes: Record<string, string | number>, text?: string) {
+      const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      for (const [key, value] of Object.entries(attributes)) node.setAttribute(key, String(value));
+      if (text !== undefined) node.textContent = text;
+      svg.append(node);
+      return node;
+    }
+
+    function inspect(index: number, showTooltip = true) {
+      selected = Math.max(0, Math.min(visible.length - 1, index));
+      const point = visible[selected];
+      const x = geometry.x(selected), y = geometry.y(point[metric]!);
+      crosshair.setAttribute('x1', String(x)); crosshair.setAttribute('x2', String(x));
+      marker.setAttribute('cx', String(x)); marker.setAttribute('cy', String(y));
+      const label = `${date.format(new Date(point.date))} · ${metric === 'annual' ? (en ? 'Year-on-year' : 'Interanual') : (en ? 'Monthly' : 'Mensual')}: ${number.format(point[metric]!)}%`;
+      readout.textContent = label;
+      tooltip.textContent = label;
+      tooltip.hidden = !showTooltip;
+      if (showTooltip) {
+        const ratio = plot.getBoundingClientRect().width / width;
+        const tipWidth = tooltip.getBoundingClientRect().width;
+        tooltip.style.left = `${Math.max(0, Math.min(x * ratio - tipWidth / 2, plot.clientWidth - tipWidth))}px`;
+        tooltip.style.top = `${Math.max(0, y * ratio - 52)}px`;
+      }
+    }
+
+    function render() {
+      width = Math.max(280, plot.clientWidth || 960);
+      height = Math.min(420, Math.max(290, width * 0.48));
+      visible = selectInflation(points, metric, periodSelect.value === 'recent');
+      const positive = visible.every(p => p[metric]! > 0);
+      if (!positive) scale = 'linear';
+      root.querySelector<HTMLElement>('[data-log-note]')!.hidden = positive;
+      for (const button of buttons) {
+        button.disabled = button.dataset.scale === 'log' && !positive;
+        button.setAttribute('aria-pressed', String(button.dataset.scale === scale));
+      }
+      geometry = inflationGeometry(visible, metric, scale, width, height);
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      svg.replaceChildren();
+      for (const tick of geometry.ticks) {
+        const y = geometry.y(tick);
+        element('line', { x1: geometry.left, x2: geometry.right, y1: y, y2: y, class: 'chart-grid' });
+        element('text', { x: geometry.left - 10, y: y + 4, 'text-anchor': 'end', class: 'chart-axis-label' }, `${number.format(tick)}%`);
+      }
+      const count = width < 500 ? 3 : 6;
+      const shortDate = new Intl.DateTimeFormat(lang, { month: 'short', year: '2-digit', timeZone: 'UTC' });
+      for (let i = 0; i < count; i++) {
+        const index = Math.round(i / (count - 1) * (visible.length - 1));
+        element('text', { x: geometry.x(index), y: geometry.bottom + 28, 'text-anchor': i === 0 ? 'start' : i === count - 1 ? 'end' : 'middle', class: 'chart-axis-label' }, shortDate.format(new Date(visible[index].date)));
+      }
+      element('path', { d: geometry.path, class: 'chart-line' });
+      crosshair = element('line', { y1: geometry.top, y2: geometry.bottom, class: 'chart-crosshair' });
+      marker = element('circle', { r: 4.5, class: 'chart-marker' });
+      inspect(visible.length - 1, false);
+    }
+
+    for (const button of buttons) button.addEventListener('click', () => { scale = button.dataset.scale as Scale; render(); });
+    metricSelect.addEventListener('change', () => { metric = metricSelect.value as Metric; render(); });
+    periodSelect.addEventListener('change', render);
+    svg.addEventListener('pointermove', event => {
+      const bounds = svg.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) * width / bounds.width;
+      inspect(Math.round((x - geometry.left) / (geometry.right - geometry.left) * (visible.length - 1)));
+    });
+    svg.addEventListener('pointerleave', () => { tooltip.hidden = true; });
+    svg.addEventListener('focus', () => inspect(selected));
+    svg.addEventListener('blur', () => { tooltip.hidden = true; });
+    svg.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      inspect(event.key === 'Home' ? 0 : event.key === 'End' ? visible.length - 1 : selected + (event.key === 'ArrowLeft' ? -1 : 1));
+    });
+    render();
+    new ResizeObserver(render).observe(plot);
+  }
+</script>

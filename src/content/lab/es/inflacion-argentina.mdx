@@ -1,0 +1,37 @@
+---
+title: "Inflación en Argentina"
+description: "Series temporales y dinámica de precios."
+slug: "inflacion-argentina"
+lang: "es"
+translation_key: "inflation"
+category: "Economía · Series temporales"
+order: 1
+visual: "inflation"
+status: "interactive"
+---
+
+import InflationChart from '../../../components/lab/InflationChart.astro';
+
+La inflación tiene memoria. Los contratos, las revisiones salariales y las decisiones de precios incorporan lo que acaba de ocurrir y lo que se espera que ocurra. Esa interacción puede sostener la inercia incluso cuando cambia el impulso inicial. El gráfico permite observar su trayectoria; identificar sus causas exige información adicional sobre política fiscal, dinero, tipo de cambio y formación de expectativas.
+
+## Dos velocidades, una misma economía
+
+La variación mensual compara el IPC con el mes anterior. La interanual lo compara con el mismo mes del año previo: resume doce variaciones mensuales compuestas, no su suma. Por eso una desaceleración mensual puede convivir durante un tiempo con una inflación interanual elevada.
+
+Los regímenes monetarios importan porque organizan las expectativas sobre la emisión, el tipo de cambio y la respuesta de la política económica. Un cambio de régimen puede modificar esas expectativas sin borrar de inmediato los contratos y ajustes pendientes. La serie ayuda a reconocer aceleraciones y desaceleraciones, pero no constituye por sí sola una identificación causal del efecto de cada política.
+
+<div className="figure-wide">
+  <InflationChart lang="es" />
+</div>
+
+## Cómo leer los cambios de escala
+
+La escala lineal conserva las diferencias en puntos porcentuales. La logarítmica representa distancias proporcionales: pasar de 2% a 4% ocupa la misma distancia que pasar de 20% a 40%. Se aplica a las tasas positivas, no al nivel del índice de precios. Alterná ambas para distinguir la magnitud de los picos de la evolución de los tramos de menor inflación.
+
+Esta visualización utiliza la serie nacional de nivel general, base diciembre de 2016 = 100. Las variaciones mensuales disponibles van de enero de 2017 a septiembre de 2026. La interanual comienza en diciembre de 2017; los meses sin observación publicada quedan sin estimar. Las tasas se conservan con el redondeo de un decimal del archivo oficial. La copia local tiene fecha de descarga: no se actualiza automáticamente.
+
+## Conclusión técnica
+
+Una tasa menor indica que los precios aumentan más lentamente, no que vuelven a su nivel previo. Para evaluar una estabilización conviene observar la persistencia de la desaceleración mensual junto con su transmisión a la medición interanual. La salida de un mes de alta inflación de la ventana de doce meses también puede reducir la tasa interanual, aun sin un cambio equivalente en el mes actual.
+
+**Fuentes y metodología.** Datos observados: [INDEC, serie oficial del IPC nacional](https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv). Para consultar publicaciones, cobertura y metodología: [INDEC, índices de precios al consumidor](https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-5-31). Para contrastar con las variables monetarias y cambiarias: [BCRA, estadísticas e indicadores](https://www.bcra.gob.ar/estadisticas-indicadores/). El gráfico representa observaciones del IPC; no incluye pronósticos.

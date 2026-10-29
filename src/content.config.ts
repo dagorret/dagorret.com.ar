@@ -14,4 +14,23 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const lab = defineCollection({
+  loader: glob({
+    pattern: '**/*.mdx',
+    base: './src/content/lab',
+    generateId: ({ data }) => `${data.lang}/${data.slug}`,
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    slug: z.string(),
+    lang: z.enum(['es', 'en']),
+    translation_key: z.string().optional(),
+    category: z.string(),
+    order: z.number().int(),
+    visual: z.enum(['inflation', 'population', 'birth-rate', 'neural-network']),
+    status: z.enum(['preparation', 'interactive']).default('preparation'),
+  }),
+});
+
+export const collections = { blog, lab };

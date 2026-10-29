@@ -1,0 +1,31 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { labUrl } from '../lib/lab';
+
+interface Props { entry: CollectionEntry<'lab'>; }
+const { entry } = Astro.props;
+const { lang, title, category, description, translation_key, status } = entry.data;
+const en = lang === 'en';
+const match = translation_key
+  ? (await getCollection('lab')).find(p => p.data.lang !== lang && p.data.translation_key === translation_key)
+  : undefined;
+const { Content } = await render(entry);
+---
+
+<Layout title={title} lang={lang} translationUrl={match ? labUrl(match.data.lang, match.data.slug) : undefined}>
+  <header class="article-header">
+    <a class="back" href={labUrl(lang)}>{en ? '← Back to Lab' : '← Volver al Lab'}</a>
+    <p class="experiment-meta">{category} · {status === 'interactive' ? (en ? 'Interactive' : 'Interactivo') : (en ? 'In preparation' : 'En preparación')}</p>
+    <h1 class="article-title">{title}</h1>
+    <p class="description">{description}</p>
+  </header>
+  <article class="article-body"><Content /></article>
+</Layout>
+
+<style>
+  .back { display: inline-block; font-size: 0.8rem; color: var(--accent-rust); margin-bottom: 2rem; }
+  .back:hover { text-decoration: underline; }
+  .experiment-meta { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-rust); margin-bottom: 1rem; }
+  .description { color: var(--text-sub); }
+</style>

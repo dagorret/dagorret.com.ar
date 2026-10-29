@@ -1,0 +1,43 @@
+---
+title: "Birth Rate"
+description: "Demographic transition and replacement models."
+slug: "birth-rate"
+lang: "en"
+translation_key: "birth-rate"
+category: "Demographics · Models"
+order: 3
+visual: "birth-rate"
+status: "interactive"
+---
+
+import FertilityRateSim from '../../../components/lab/FertilityRateSim.astro';
+
+**Total fertility**, measured in births per woman, differs from the annual birth rate per thousand people. Here we explore fertility and generational replacement: what happens to younger cohorts when a rate persists for decades.
+
+## One initial pyramid, different rates
+
+Presets for South Korea, Japan, the European Union, and Latin America and the Caribbean use World Bank fertility observations for 2023. Only fertility changes: all start with the same synthetic population. This isolates its effect without presenting the diagram as an actual national population pyramid.
+
+<div className="figure-wide">
+  <FertilityRateSim lang="en" />
+</div>
+
+## The replacement threshold
+
+In low-mortality populations, approximately $2.1$ births per woman is a common replacement reference without migration. It is not universal: survival and sex ratios matter. Persistently lower fertility narrows new cohorts, but does not imply an immediate collapse of total population.
+
+This experiment calibrates replacement exactly at $f_*=2.1$. Ages advance in five-year steps with fixed survival. For cohort size $n_i$ and survival $s_i$:
+
+$$
+n_{i+1}(t+5)=s_i n_i(t).
+$$
+
+New births depend on ages 20–44, using synthetic reproductive weights $w_i$:
+
+$$
+n_0(t+5)=100\,\frac{f}{2.1}\,\frac{\sum_i w_i n_i(t)}{\sum_i w_i n_i(0)}.
+$$
+
+The initial distribution is stationary at $f=2.1$. There is no migration, survival is identical across presets, sexes are split 50/50, and the model ends at ages 85–89. The reference line, initial outlines, and indices help distinguish relative ageing from absolute shrinkage. Horizontal scale adjusts to the scenario; use the indices and table to compare magnitudes.
+
+**Preset source:** [World Bank, total fertility rate](https://data.worldbank.org/indicator/SP.DYN.TFRT.IN), indicator SP.DYN.TFRT.IN, 2023 observations rounded to two decimals. “Europe” means the EU here, and “Latin America” includes the Caribbean. The horizon is simulated time from an invented population, not a dated forecast.

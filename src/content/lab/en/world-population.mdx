@@ -1,0 +1,43 @@
+---
+title: "World Population"
+description: "Demographic projections and growth rates."
+slug: "world-population"
+lang: "en"
+translation_key: "population"
+category: "Demographics · Projections"
+order: 2
+visual: "population"
+status: "interactive"
+---
+
+import WorldPopulationChart from '../../../components/lab/WorldPopulationChart.astro';
+
+Future population depends on fertility, survival, and age structure. This Lab varies expected fertility relative to a reference path and shows how a logistic curve changes through 2100.
+
+## UN reference, Lab model
+
+The UN’s WPP 2024 summary gives roughly 8.2 billion people in 2024 and 10.2 billion in 2100 for its medium reference, following a peak in the 2080s. Low and high variants shift fertility by approximately half a birth per woman relative to the medium trajectory. These are assumption-based scenarios, not confidence intervals.
+
+The slider represents that **fertility shift**, not a constant global fertility rate. The plotted curves are our own teaching model: a simple logistic cannot reproduce the peak and subsequent decline of the official projection.
+
+<div className="figure-wide">
+  <WorldPopulationChart lang="en" />
+</div>
+
+## What the slider recalculates
+
+The model trajectory is:
+
+$$
+P(t)=\frac{K}{1+(K/P_0-1)e^{-r(t-2024)}}.
+$$
+
+We fix $P_0=8.2$ and $r=0.035$. The central plateau $K_0$ is calibrated to reach $P(2100)=10.2$. The control $\Delta f$ changes that plateau using an illustrative sensitivity chosen for this experiment:
+
+$$
+K(\Delta f)=K_0\,e^{0.75\Delta f},\qquad -0.5\leq\Delta f\leq0.5.
+$$
+
+The coefficient 0.75 is not a UN estimate. The plateau is the model’s mathematical asymptote, not an ecological limit or validated forecast. In the low scenario it can fall below the initial value and cause immediate decline: this model omits age-structure momentum. Explore that mechanism in the [fertility and replacement Lab](/en/lab/birth-rate/).
+
+**Sources:** [UN, WPP 2024 summary](https://www.un.org/en/UN-projects-world-population-to-peak-within-this-century) and [projection methodology](https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/files/documents/2024/Jul/undesa_pd_2024_wpp2024_methodology-report_web.pdf). The simulation runs locally and downloads no data when controls change.

@@ -1,0 +1,43 @@
+---
+title: "Tasa de Natalidad"
+description: "Transición demográfica y modelos de reemplazo."
+slug: "tasa-de-natalidad"
+lang: "es"
+translation_key: "birth-rate"
+category: "Demografía · Modelos"
+order: 3
+visual: "birth-rate"
+status: "interactive"
+---
+
+import FertilityRateSim from '../../../components/lab/FertilityRateSim.astro';
+
+La **fecundidad total**, medida en hijos por mujer, no es lo mismo que la natalidad anual por cada mil habitantes. Aquí exploramos fecundidad y reemplazo generacional: qué ocurre con las cohortes jóvenes cuando una tasa persiste durante décadas.
+
+## Una misma pirámide inicial, distintas tasas
+
+Los presets de Corea del Sur, Japón, la Unión Europea y América Latina y el Caribe toman valores de fecundidad de 2023 del Banco Mundial. Solo cambia la tasa: todos parten de la misma población sintética. Así se puede aislar su efecto sin presentar la forma dibujada como una pirámide real del país seleccionado.
+
+<div className="figure-wide">
+  <FertilityRateSim lang="es" />
+</div>
+
+## El umbral de reemplazo
+
+En poblaciones de baja mortalidad se usa aproximadamente $2.1$ hijos por mujer como referencia de reemplazo sin migración. No es una constante universal: depende de la supervivencia y de la composición por sexo. Una tasa inferior estrecha las nuevas cohortes si se sostiene, pero no implica un colapso inmediato de la población total.
+
+Para este experimento se calibró el reemplazo exactamente en $f_*=2.1$. Las edades avanzan en pasos de cinco años con supervivencia fija. Si $n_i$ es el tamaño de una cohorte y $s_i$ su supervivencia:
+
+$$
+n_{i+1}(t+5)=s_i n_i(t).
+$$
+
+Los nuevos nacimientos se calculan a partir de las cohortes de 20 a 44 años, con pesos reproductivos sintéticos $w_i$:
+
+$$
+n_0(t+5)=100\,\frac{f}{2.1}\,\frac{\sum_i w_i n_i(t)}{\sum_i w_i n_i(0)}.
+$$
+
+La distribución inicial es estacionaria para $f=2.1$. No hay migración, la supervivencia es idéntica para todos los presets, el reparto por sexo es 50/50 y el esquema termina en 85–89 años. La línea crítica, los contornos iniciales y los índices ayudan a distinguir envejecimiento relativo de reducción absoluta. La escala horizontal se reajusta al escenario: para comparar magnitudes usá también los índices y la tabla.
+
+**Fuente de presets:** [Banco Mundial, fecundidad total](https://data.worldbank.org/indicator/SP.DYN.TFRT.IN), indicador SP.DYN.TFRT.IN, observaciones de 2023, redondeadas a dos decimales. “Europa” se representa aquí mediante la UE y “América Latina” incluye el Caribe. El horizonte es tiempo simulado desde una población inventada, no un pronóstico fechado.

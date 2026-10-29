@@ -1,0 +1,57 @@
+---
+title: "Neural Network Simulation"
+description: "Forward propagation and real-time weight adjustment."
+slug: "neural-network-simulation"
+lang: "en"
+translation_key: "neural-network"
+category: "Artificial intelligence · Simulation"
+order: 4
+visual: "neural-network"
+status: "interactive"
+---
+
+import NeuralNetSim from '../../../components/lab/NeuralNetSim.astro';
+
+A neural network transforms numbers through weighted sums and nonlinear functions. This simulation exposes a network with two inputs, three hidden neurons, and one output. Adjust the inputs to inspect the calculation, choose a target, and run a training step to change the weights.
+
+## The forward pass
+
+Each neuron combines its inputs with weights and a bias. For one layer, the operation is:
+
+$$
+y = \sigma(W \cdot x + b).
+$$
+
+Here we distinguish the hidden activation $\phi$ from the sigmoid output:
+
+$$
+h = \phi(W_1x+b_1), \qquad \hat y = \sigma(W_2h+b_2).
+$$
+
+The **forward pass** evaluates these operations in order. Changing an input changes the sums, activations, and prediction while keeping the weights fixed. Training is a separate operation.
+
+<div className="figure-wide">
+  <NeuralNetSim lang="en" />
+</div>
+
+## Sigmoid and ReLU
+
+Sigmoid maps any real number to a value between zero and one. ReLU preserves positive values and sets negative values to zero:
+
+$$
+\sigma(z)=\frac{1}{1+e^{-z}}, \qquad \operatorname{ReLU}(z)=\max(0,z).
+$$
+
+The selector changes the three hidden neurons. The output always uses sigmoid. Node intensity represents activation, while connections show the magnitude and sign of the contribution $w\,a$, not a probability or causal explanation. Changing an input’s sign can change the contribution’s sign even if its weight remains unchanged.
+
+## One gradient-descent step
+
+For a target $t$, the loss on this example is:
+
+$$
+\mathcal L=\frac12(\hat y-t)^2, \qquad \theta_{k+1}=\theta_k-\eta\,\nabla_{\theta}\mathcal L.
+$$
+
+The button computes derivatives using **backpropagation** and updates both layers’ weights and biases simultaneously. If the chosen learning rate fails to reduce the loss, it tries a smaller step. The interface reports the loss before and after the update and the effective learning rate. ReLU uses a zero derivative at the origin; an inactive neuron can receive a zero gradient.
+
+Each click trains on **the visible example**, not on a dataset. A lower loss here does not demonstrate generalization. Reset restores the initial inputs, weights, and target so the experiment can be repeated.

@@ -1,0 +1,57 @@
+---
+title: "Simulación de una Red Neuronal"
+description: "Propagación hacia adelante y ajuste de pesos en tiempo real."
+slug: "simulacion-red-neuronal"
+lang: "es"
+translation_key: "neural-network"
+category: "Inteligencia artificial · Simulación"
+order: 4
+visual: "neural-network"
+status: "interactive"
+---
+
+import NeuralNetSim from '../../../components/lab/NeuralNetSim.astro';
+
+Una red neuronal transforma números mediante sumas ponderadas y funciones no lineales. Esta simulación expone una red de dos entradas, tres neuronas ocultas y una salida. Mové las entradas para observar el cálculo; elegí un objetivo y ejecutá un paso de entrenamiento para cambiar los pesos.
+
+## Paso hacia adelante
+
+Cada neurona combina sus entradas con pesos y un sesgo. Para una capa, la operación se escribe:
+
+$$
+y = \sigma(W \cdot x + b).
+$$
+
+En esta red distinguimos la activación oculta $\phi$ de la salida sigmoide:
+
+$$
+h = \phi(W_1x+b_1), \qquad \hat y = \sigma(W_2h+b_2).
+$$
+
+El **forward pass** recorre estas operaciones en orden. Cambiar una entrada modifica las sumas, las activaciones y la predicción sin ajustar los pesos. El entrenamiento es una operación distinta.
+
+<div className="figure-wide">
+  <NeuralNetSim lang="es" />
+</div>
+
+## Sigmoide y ReLU
+
+La sigmoide comprime cualquier número real al intervalo entre cero y uno. ReLU conserva los valores positivos y pone los negativos en cero:
+
+$$
+\sigma(z)=\frac{1}{1+e^{-z}}, \qquad \operatorname{ReLU}(z)=\max(0,z).
+$$
+
+El selector cambia las tres neuronas ocultas. La salida mantiene sigmoide en ambos casos. La intensidad de cada nodo representa su activación; las conexiones muestran la magnitud y el signo de la contribución $w\,a$, no una probabilidad ni una explicación causal. Al cambiar el signo de una entrada, también puede cambiar el signo de una contribución aunque su peso siga igual.
+
+## Un paso de descenso de gradiente
+
+Para un objetivo $t$ usamos el error cuadrático de este ejemplo:
+
+$$
+\mathcal L=\frac12(\hat y-t)^2, \qquad \theta_{k+1}=\theta_k-\eta\,\nabla_{\theta}\mathcal L.
+$$
+
+El botón calcula las derivadas mediante **backpropagation** y actualiza los pesos y los sesgos de ambas capas al mismo tiempo. Si la tasa elegida no reduce la pérdida, se prueba un paso más pequeño. La interfaz muestra la pérdida antes y después y la tasa efectiva. En ReLU se toma derivada cero en el origen; una neurona inactiva puede recibir gradiente cero.
+
+Cada clic entrena sobre **el ejemplo visible**, no sobre un conjunto de datos. Que la pérdida disminuya aquí no demuestra generalización. Reiniciar restaura las entradas, los pesos y el objetivo iniciales para repetir el experimento.

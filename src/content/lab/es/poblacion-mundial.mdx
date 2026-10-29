@@ -1,0 +1,43 @@
+---
+title: "Población Mundial"
+description: "Proyecciones demográficas y tasas de crecimiento."
+slug: "poblacion-mundial"
+lang: "es"
+translation_key: "population"
+category: "Demografía · Proyecciones"
+order: 2
+visual: "population"
+status: "interactive"
+---
+
+import WorldPopulationChart from '../../../components/lab/WorldPopulationChart.astro';
+
+La población futura depende de la fecundidad, la supervivencia y la estructura por edades. Este Lab permite variar la fecundidad esperada respecto de una trayectoria de referencia y observar cómo cambia una curva logística hasta 2100.
+
+## Referencia ONU, modelo del Lab
+
+La ONU resume su revisión WPP 2024 con unos 8,2 mil millones de habitantes en 2024 y unos 10,2 mil millones en 2100 para la referencia media, después de un pico durante la década de 2080. Las variantes baja y alta desplazan la fecundidad aproximadamente medio hijo por mujer respecto de la trayectoria media. Son escenarios de supuestos, no intervalos de confianza.
+
+El control representa ese **desvío de fecundidad**, no una tasa mundial constante. Las curvas del gráfico son un modelo didáctico propio: una logística simple no reproduce el pico y descenso de la proyección oficial.
+
+<div className="figure-wide">
+  <WorldPopulationChart lang="es" />
+</div>
+
+## Qué recalcula el slider
+
+La trayectoria del modelo es:
+
+$$
+P(t)=\frac{K}{1+(K/P_0-1)e^{-r(t-2024)}}.
+$$
+
+Se fija $P_0=8.2$ y $r=0.035$. La meseta central $K_0$ se calibra para alcanzar $P(2100)=10.2$. El control $\Delta f$ modifica la meseta mediante una sensibilidad ilustrativa elegida para este experimento:
+
+$$
+K(\Delta f)=K_0\,e^{0.75\Delta f},\qquad -0.5\leq\Delta f\leq0.5.
+$$
+
+El coeficiente 0,75 no es una estimación de la ONU. La meseta es la asíntota matemática del modelo, no un límite ecológico ni un pronóstico validado. En el escenario bajo puede quedar por debajo del valor inicial y producir descenso inmediato; el modelo no incorpora el impulso de la estructura etaria. Para explorar ese mecanismo, consultá el [Lab de fecundidad y reemplazo](/lab/tasa-de-natalidad/).
+
+**Fuentes:** [ONU, resumen WPP 2024](https://www.un.org/en/UN-projects-world-population-to-peak-within-this-century) y [metodología de proyecciones](https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/files/documents/2024/Jul/undesa_pd_2024_wpp2024_methodology-report_web.pdf). La simulación se ejecuta localmente y no descarga datos al mover el control.

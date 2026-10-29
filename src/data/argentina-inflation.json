@@ -1,0 +1,711 @@
+{
+  "source": "INDEC — IPC nacional, nivel general, base diciembre 2016 = 100",
+  "sourceUrl": "https://www.indec.gob.ar/ftp/cuadros/economia/serie_ipc_divisiones.csv",
+  "retrievedAt": "2026-10-28",
+  "sourceSha256": "1b1742354bcbcd53e85b15bb76311e5a607f94ab4497ebd3a91f00b426a40e38",
+  "through": "2026-09-01",
+  "points": [
+    {
+      "date": "2017-01-01",
+      "index": 101.5859,
+      "monthly": 1.6,
+      "annual": null
+    },
+    {
+      "date": "2017-02-01",
+      "index": 103.6859,
+      "monthly": 2.1,
+      "annual": null
+    },
+    {
+      "date": "2017-03-01",
+      "index": 106.1476,
+      "monthly": 2.4,
+      "annual": null
+    },
+    {
+      "date": "2017-04-01",
+      "index": 108.9667,
+      "monthly": 2.7,
+      "annual": null
+    },
+    {
+      "date": "2017-05-01",
+      "index": 110.5301,
+      "monthly": 1.4,
+      "annual": null
+    },
+    {
+      "date": "2017-06-01",
+      "index": 111.8477,
+      "monthly": 1.2,
+      "annual": null
+    },
+    {
+      "date": "2017-07-01",
+      "index": 113.7852,
+      "monthly": 1.7,
+      "annual": null
+    },
+    {
+      "date": "2017-08-01",
+      "index": 115.3819,
+      "monthly": 1.4,
+      "annual": null
+    },
+    {
+      "date": "2017-09-01",
+      "index": 117.5719,
+      "monthly": 1.9,
+      "annual": null
+    },
+    {
+      "date": "2017-10-01",
+      "index": 119.3528,
+      "monthly": 1.5,
+      "annual": null
+    },
+    {
+      "date": "2017-11-01",
+      "index": 120.994,
+      "monthly": 1.4,
+      "annual": null
+    },
+    {
+      "date": "2017-12-01",
+      "index": 124.7956,
+      "monthly": 3.1,
+      "annual": 24.8
+    },
+    {
+      "date": "2018-01-01",
+      "index": 126.9887,
+      "monthly": 1.8,
+      "annual": 25.0
+    },
+    {
+      "date": "2018-02-01",
+      "index": 130.0606,
+      "monthly": 2.4,
+      "annual": 25.4
+    },
+    {
+      "date": "2018-03-01",
+      "index": 133.1054,
+      "monthly": 2.3,
+      "annual": 25.4
+    },
+    {
+      "date": "2018-04-01",
+      "index": 136.7512,
+      "monthly": 2.7,
+      "annual": 25.5
+    },
+    {
+      "date": "2018-05-01",
+      "index": 139.5893,
+      "monthly": 2.1,
+      "annual": 26.3
+    },
+    {
+      "date": "2018-06-01",
+      "index": 144.8053,
+      "monthly": 3.7,
+      "annual": 29.5
+    },
+    {
+      "date": "2018-07-01",
+      "index": 149.2966,
+      "monthly": 3.1,
+      "annual": 31.2
+    },
+    {
+      "date": "2018-08-01",
+      "index": 155.1034,
+      "monthly": 3.9,
+      "annual": 34.4
+    },
+    {
+      "date": "2018-09-01",
+      "index": 165.2383,
+      "monthly": 6.5,
+      "annual": 40.5
+    },
+    {
+      "date": "2018-10-01",
+      "index": 174.1473,
+      "monthly": 5.4,
+      "annual": 45.9
+    },
+    {
+      "date": "2018-11-01",
+      "index": 179.6388,
+      "monthly": 3.2,
+      "annual": 48.5
+    },
+    {
+      "date": "2018-12-01",
+      "index": 184.2552,
+      "monthly": 2.6,
+      "annual": 47.6
+    },
+    {
+      "date": "2019-01-01",
+      "index": 189.6101,
+      "monthly": 2.9,
+      "annual": 49.3
+    },
+    {
+      "date": "2019-02-01",
+      "index": 196.7501,
+      "monthly": 3.8,
+      "annual": 51.3
+    },
+    {
+      "date": "2019-03-01",
+      "index": 205.9571,
+      "monthly": 4.7,
+      "annual": 54.7
+    },
+    {
+      "date": "2019-04-01",
+      "index": 213.0517,
+      "monthly": 3.4,
+      "annual": 55.8
+    },
+    {
+      "date": "2019-05-01",
+      "index": 219.5691,
+      "monthly": 3.1,
+      "annual": 57.3
+    },
+    {
+      "date": "2019-06-01",
+      "index": 225.537,
+      "monthly": 2.7,
+      "annual": 55.8
+    },
+    {
+      "date": "2019-07-01",
+      "index": 230.494,
+      "monthly": 2.2,
+      "annual": 54.4
+    },
+    {
+      "date": "2019-08-01",
+      "index": 239.6077,
+      "monthly": 4.0,
+      "annual": 54.5
+    },
+    {
+      "date": "2019-09-01",
+      "index": 253.7102,
+      "monthly": 5.9,
+      "annual": 53.5
+    },
+    {
+      "date": "2019-10-01",
+      "index": 262.0661,
+      "monthly": 3.3,
+      "annual": 50.5
+    },
+    {
+      "date": "2019-11-01",
+      "index": 273.2158,
+      "monthly": 4.3,
+      "annual": 52.1
+    },
+    {
+      "date": "2019-12-01",
+      "index": 283.4442,
+      "monthly": 3.7,
+      "annual": 53.8
+    },
+    {
+      "date": "2020-01-01",
+      "index": 289.8299,
+      "monthly": 2.3,
+      "annual": 52.9
+    },
+    {
+      "date": "2020-02-01",
+      "index": 295.666,
+      "monthly": 2.0,
+      "annual": 50.3
+    },
+    {
+      "date": "2020-03-01",
+      "index": 305.5515,
+      "monthly": 3.3,
+      "annual": 48.4
+    },
+    {
+      "date": "2020-04-01",
+      "index": 310.1243,
+      "monthly": 1.5,
+      "annual": 45.6
+    },
+    {
+      "date": "2020-05-01",
+      "index": 314.9087,
+      "monthly": 1.5,
+      "annual": 43.4
+    },
+    {
+      "date": "2020-06-01",
+      "index": 321.9738,
+      "monthly": 2.2,
+      "annual": 42.8
+    },
+    {
+      "date": "2020-07-01",
+      "index": 328.2014,
+      "monthly": 1.9,
+      "annual": 42.4
+    },
+    {
+      "date": "2020-08-01",
+      "index": 337.0632,
+      "monthly": 2.7,
+      "annual": 40.7
+    },
+    {
+      "date": "2020-09-01",
+      "index": 346.6207,
+      "monthly": 2.8,
+      "annual": 36.6
+    },
+    {
+      "date": "2020-10-01",
+      "index": 359.657,
+      "monthly": 3.8,
+      "annual": 37.2
+    },
+    {
+      "date": "2020-11-01",
+      "index": 371.0211,
+      "monthly": 3.2,
+      "annual": 35.8
+    },
+    {
+      "date": "2020-12-01",
+      "index": 385.8826,
+      "monthly": 4.0,
+      "annual": 36.1
+    },
+    {
+      "date": "2021-01-01",
+      "index": 401.5071,
+      "monthly": 4.0,
+      "annual": 38.5
+    },
+    {
+      "date": "2021-02-01",
+      "index": 415.8595,
+      "monthly": 3.6,
+      "annual": 40.7
+    },
+    {
+      "date": "2021-03-01",
+      "index": 435.8657,
+      "monthly": 4.8,
+      "annual": 42.6
+    },
+    {
+      "date": "2021-04-01",
+      "index": 453.6503,
+      "monthly": 4.1,
+      "annual": 46.3
+    },
+    {
+      "date": "2021-05-01",
+      "index": 468.725,
+      "monthly": 3.3,
+      "annual": 48.8
+    },
+    {
+      "date": "2021-06-01",
+      "index": 483.6049,
+      "monthly": 3.2,
+      "annual": 50.2
+    },
+    {
+      "date": "2021-07-01",
+      "index": 498.0987,
+      "monthly": 3.0,
+      "annual": 51.8
+    },
+    {
+      "date": "2021-08-01",
+      "index": 510.3942,
+      "monthly": 2.5,
+      "annual": 51.4
+    },
+    {
+      "date": "2021-09-01",
+      "index": 528.4968,
+      "monthly": 3.5,
+      "annual": 52.5
+    },
+    {
+      "date": "2021-10-01",
+      "index": 547.0802,
+      "monthly": 3.5,
+      "annual": 52.1
+    },
+    {
+      "date": "2021-11-01",
+      "index": 560.9184,
+      "monthly": 2.5,
+      "annual": 51.2
+    },
+    {
+      "date": "2021-12-01",
+      "index": 582.4575,
+      "monthly": 3.8,
+      "annual": 50.9
+    },
+    {
+      "date": "2022-01-01",
+      "index": 605.0317,
+      "monthly": 3.9,
+      "annual": 50.7
+    },
+    {
+      "date": "2022-02-01",
+      "index": 633.4341,
+      "monthly": 4.7,
+      "annual": 52.3
+    },
+    {
+      "date": "2022-03-01",
+      "index": 676.0566,
+      "monthly": 6.7,
+      "annual": 55.1
+    },
+    {
+      "date": "2022-04-01",
+      "index": 716.9399,
+      "monthly": 6.0,
+      "annual": 58.0
+    },
+    {
+      "date": "2022-05-01",
+      "index": 753.147,
+      "monthly": 5.1,
+      "annual": 60.7
+    },
+    {
+      "date": "2022-06-01",
+      "index": 793.0278,
+      "monthly": 5.3,
+      "annual": 64.0
+    },
+    {
+      "date": "2022-07-01",
+      "index": 851.761,
+      "monthly": 7.4,
+      "annual": 71.0
+    },
+    {
+      "date": "2022-08-01",
+      "index": 911.1316,
+      "monthly": 7.0,
+      "annual": 78.5
+    },
+    {
+      "date": "2022-09-01",
+      "index": 967.3076,
+      "monthly": 6.2,
+      "annual": 83.0
+    },
+    {
+      "date": "2022-10-01",
+      "index": 1028.706,
+      "monthly": 6.3,
+      "annual": 88.0
+    },
+    {
+      "date": "2022-11-01",
+      "index": 1079.2787,
+      "monthly": 4.9,
+      "annual": 92.4
+    },
+    {
+      "date": "2022-12-01",
+      "index": 1134.5875,
+      "monthly": 5.1,
+      "annual": 94.8
+    },
+    {
+      "date": "2023-01-01",
+      "index": 1202.979,
+      "monthly": 6.0,
+      "annual": 98.8
+    },
+    {
+      "date": "2023-02-01",
+      "index": 1282.7091,
+      "monthly": 6.6,
+      "annual": 102.5
+    },
+    {
+      "date": "2023-03-01",
+      "index": 1381.1601,
+      "monthly": 7.7,
+      "annual": 104.3
+    },
+    {
+      "date": "2023-04-01",
+      "index": 1497.2147,
+      "monthly": 8.4,
+      "annual": 108.8
+    },
+    {
+      "date": "2023-05-01",
+      "index": 1613.5895,
+      "monthly": 7.8,
+      "annual": 114.2
+    },
+    {
+      "date": "2023-06-01",
+      "index": 1709.6115,
+      "monthly": 6.0,
+      "annual": 115.6
+    },
+    {
+      "date": "2023-07-01",
+      "index": 1818.0838,
+      "monthly": 6.3,
+      "annual": 113.4
+    },
+    {
+      "date": "2023-08-01",
+      "index": 2044.2832,
+      "monthly": 12.4,
+      "annual": 124.4
+    },
+    {
+      "date": "2023-09-01",
+      "index": 2304.9242,
+      "monthly": 12.7,
+      "annual": 138.3
+    },
+    {
+      "date": "2023-10-01",
+      "index": 2496.273,
+      "monthly": 8.3,
+      "annual": 142.7
+    },
+    {
+      "date": "2023-11-01",
+      "index": 2816.0628,
+      "monthly": 12.8,
+      "annual": 160.9
+    },
+    {
+      "date": "2023-12-01",
+      "index": 3533.1922,
+      "monthly": 25.5,
+      "annual": 211.4
+    },
+    {
+      "date": "2024-01-01",
+      "index": 4261.5324,
+      "monthly": 20.6,
+      "annual": 254.2
+    },
+    {
+      "date": "2024-02-01",
+      "index": 4825.7881,
+      "monthly": 13.2,
+      "annual": 276.2
+    },
+    {
+      "date": "2024-03-01",
+      "index": 5357.0929,
+      "monthly": 11.0,
+      "annual": 287.9
+    },
+    {
+      "date": "2024-04-01",
+      "index": 5830.227,
+      "monthly": 8.8,
+      "annual": 289.4
+    },
+    {
+      "date": "2024-05-01",
+      "index": 6073.717,
+      "monthly": 4.2,
+      "annual": 276.4
+    },
+    {
+      "date": "2024-06-01",
+      "index": 6351.715,
+      "monthly": 4.6,
+      "annual": 271.5
+    },
+    {
+      "date": "2024-07-01",
+      "index": 6607.748,
+      "monthly": 4.0,
+      "annual": 263.4
+    },
+    {
+      "date": "2024-08-01",
+      "index": 6883.441,
+      "monthly": 4.2,
+      "annual": 236.7
+    },
+    {
+      "date": "2024-09-01",
+      "index": 7122.242,
+      "monthly": 3.5,
+      "annual": 209.0
+    },
+    {
+      "date": "2024-10-01",
+      "index": 7313.954,
+      "monthly": 2.7,
+      "annual": 193.0
+    },
+    {
+      "date": "2024-11-01",
+      "index": 7491.431,
+      "monthly": 2.4,
+      "annual": 166.0
+    },
+    {
+      "date": "2024-12-01",
+      "index": 7694.0075,
+      "monthly": 2.7,
+      "annual": 117.8
+    },
+    {
+      "date": "2025-01-01",
+      "index": 7864.1257,
+      "monthly": 2.2,
+      "annual": 84.5
+    },
+    {
+      "date": "2025-02-01",
+      "index": 8052.9927,
+      "monthly": 2.4,
+      "annual": 66.9
+    },
+    {
+      "date": "2025-03-01",
+      "index": 8353.3158,
+      "monthly": 3.7,
+      "annual": 55.9
+    },
+    {
+      "date": "2025-04-01",
+      "index": 8585.6078,
+      "monthly": 2.8,
+      "annual": 47.3
+    },
+    {
+      "date": "2025-05-01",
+      "index": 8714.4871,
+      "monthly": 1.5,
+      "annual": 43.5
+    },
+    {
+      "date": "2025-06-01",
+      "index": 8855.5681,
+      "monthly": 1.6,
+      "annual": 39.4
+    },
+    {
+      "date": "2025-07-01",
+      "index": 9023.973,
+      "monthly": 1.9,
+      "annual": 36.6
+    },
+    {
+      "date": "2025-08-01",
+      "index": 9193.2441,
+      "monthly": 1.9,
+      "annual": 33.6
+    },
+    {
+      "date": "2025-09-01",
+      "index": 9384.0922,
+      "monthly": 2.1,
+      "annual": 31.8
+    },
+    {
+      "date": "2025-10-01",
+      "index": 9603.8623,
+      "monthly": 2.3,
+      "annual": 31.3
+    },
+    {
+      "date": "2025-11-01",
+      "index": 9841.3581,
+      "monthly": 2.5,
+      "annual": 31.4
+    },
+    {
+      "date": "2025-12-01",
+      "index": 10121.3715,
+      "monthly": 2.8,
+      "annual": 31.5
+    },
+    {
+      "date": "2026-01-01",
+      "index": 10413.0309,
+      "monthly": 2.9,
+      "annual": 32.4
+    },
+    {
+      "date": "2026-02-01",
+      "index": 10714.6255,
+      "monthly": 2.9,
+      "annual": 33.1
+    },
+    {
+      "date": "2026-03-01",
+      "index": 11077.0608,
+      "monthly": 3.4,
+      "annual": 32.6
+    },
+    {
+      "date": "2026-04-01",
+      "index": 11363.0904,
+      "monthly": 2.6,
+      "annual": 32.4
+    },
+    {
+      "date": "2026-05-01",
+      "index": 11607.3937,
+      "monthly": 2.1,
+      "annual": 33.2
+    },
+    {
+      "date": "2026-06-01",
+      "index": 11826.4103,
+      "monthly": 1.9,
+      "annual": 33.5
+    },
+    {
+      "date": "2026-07-01",
+      "index": 12076.3937,
+      "monthly": 2.1,
+      "annual": 33.8
+    },
+    {
+      "date": "2026-08-01",
+      "index": 12276.766,
+      "monthly": 1.7,
+      "annual": 33.5
+    },
+    {
+      "date": "2026-09-01",
+      "index": 12514.1508,
+      "monthly": 1.9,
+      "annual": 33.4
+    }
+  ]
+}
