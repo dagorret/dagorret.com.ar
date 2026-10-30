@@ -1,4 +1,15 @@
 ---
+import 'katex/dist/katex.min.css';
+import '@fontsource/playfair-display/400.css';
+import '@fontsource/playfair-display/700.css';
+import '@fontsource/playfair-display/800.css';
+import '@fontsource/playfair-display/400-italic.css';
+import '@fontsource/playfair-display/700-italic.css';
+import '@fontsource/plus-jakarta-sans/300.css';
+import '@fontsource/plus-jakarta-sans/400.css';
+import '@fontsource/plus-jakarta-sans/500.css';
+import '@fontsource/plus-jakarta-sans/600.css';
+
 interface Props {
   title?: string;
   lang?: 'es' | 'en';
@@ -34,13 +45,6 @@ const navigation = [
   <title>{title} — Carlos Dagorret</title>
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="alternate" type="application/rss+xml" title={isEnglish ? 'Carlos Dagorret — English articles' : 'Carlos Dagorret — Artículos en español'} href={rssUrl} />
-
-  <!-- Serif editorial de peso marcado y sans para lectura y navegación. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" />
 
   <script is:inline>
     const theme = (() => {

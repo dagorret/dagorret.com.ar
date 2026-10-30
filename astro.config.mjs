@@ -7,6 +7,10 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   site: 'https://dagorret.com.ar',
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
   integrations: [sitemap(), mdx()],
   markdown: {
     processor: unified({
