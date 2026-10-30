@@ -103,9 +103,10 @@ const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 4 });
 </style>
 
 <script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
   import { initialNetwork, forward, trainStep, connections, type Activation, type Inputs } from '../../lib/neural-network';
 
-  for (const root of document.querySelectorAll<HTMLElement>('.neural-sim')) {
+  onPageLoad<HTMLElement>('.neural-sim', root => {
     const en = root.dataset.lang === 'en';
     const number = new Intl.NumberFormat(en ? 'en' : 'es', { maximumFractionDigits: 4 });
     const precise = new Intl.NumberFormat(en ? 'en' : 'es', { maximumSignificantDigits: 6 });
@@ -170,5 +171,5 @@ const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 4 });
       render(); feedback.textContent = en ? 'Initial inputs and weights restored.' : 'Entradas y pesos iniciales restaurados.';
     });
     render();
-  }
+  });
 </script>

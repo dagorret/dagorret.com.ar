@@ -48,8 +48,9 @@ const fertilityX=(value:number)=>270+value/3.5*400;
 </figure>
 
 <script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
   import { pyramidBars, REPLACEMENT } from '../../lib/demography';
-  for (const root of document.querySelectorAll<HTMLElement>('.fertility-rate-sim')) {
+  onPageLoad<HTMLElement>('.fertility-rate-sim', root => {
     const en=root.dataset.lang==='en';
     const number=new Intl.NumberFormat(en?'en':'es',{maximumFractionDigits:2});
     const presets: {id:string;es:string;en:string;rate:number}[]=JSON.parse(root.dataset.regions!);
@@ -87,5 +88,5 @@ const fertilityX=(value:number)=>270+value/3.5*400;
     root.querySelector('[data-next]')!.addEventListener('click',()=>{years.value=String(Math.min(100,Number(years.value)+5));render();});
     root.querySelector('[data-reset]')!.addEventListener('click',()=>{region.value=presets[0].id;rate.value=String(presets[0].rate);years.value='60';render();});
     render();
-  }
+  });
 </script>

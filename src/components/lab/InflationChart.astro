@@ -84,9 +84,10 @@ const rate = (value: number | null) => value === null ? '—' : `${new Intl.Numb
 </style>
 
 <script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
   import { selectInflation, inflationGeometry, type InflationPoint, type Metric, type Scale } from '../../lib/inflation';
 
-  for (const root of document.querySelectorAll<HTMLElement>('.inflation-chart')) {
+  onPageLoad<HTMLElement>('.inflation-chart', root => {
     const points: InflationPoint[] = JSON.parse(root.dataset.series!);
     const lang = root.dataset.lang === 'en' ? 'en' : 'es';
     const en = lang === 'en';
@@ -180,6 +181,8 @@ const rate = (value: number | null) => value === null ? '—' : `${new Intl.Numb
       inspect(event.key === 'Home' ? 0 : event.key === 'End' ? visible.length - 1 : selected + (event.key === 'ArrowLeft' ? -1 : 1));
     });
     render();
-    new ResizeObserver(render).observe(plot);
-  }
+    const observer = new ResizeObserver(render);
+    observer.observe(plot);
+    return () => observer.disconnect();
+  });
 </script>

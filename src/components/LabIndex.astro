@@ -73,7 +73,8 @@ const curves = {
 </style>
 
 <script>
-  for (const card of document.querySelectorAll<HTMLAnchorElement>('.lab-card')) {
+  import { onPageLoad } from '../lib/page-lifecycle';
+  onPageLoad<HTMLAnchorElement>('.lab-card', card => {
     card.addEventListener('pointermove', event => {
       if (event.pointerType !== 'mouse' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const bounds = card.getBoundingClientRect();
@@ -84,5 +85,5 @@ const curves = {
       card.style.removeProperty('--pointer-x');
       card.style.removeProperty('--pointer-y');
     });
-  }
+  });
 </script>

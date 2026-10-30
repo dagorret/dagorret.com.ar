@@ -42,7 +42,7 @@ const datosHistoricos = [
 ---
 
 <Layout title="Inflación Histórica Argentina">
-    <article class="contenedor-inflacion">
+    <article class="contenedor-inflacion" data-series={JSON.stringify(datosHistoricos)}>
         <header>
             <h1>Evolución de la Inflación en Argentina</h1>
             <p class="bajada">
@@ -102,18 +102,22 @@ const datosHistoricos = [
         </details>
     </article>
 
-    <script is:inline define:vars={{ datosHistoricos }}>
-        const container = document.getElementById('chart-container');
-        const select = document.getElementById('filtro-periodo');
-        const tooltip = document.getElementById('tooltip-display');
+    <script>
+      import { onPageLoad } from '../lib/page-lifecycle';
 
-        function filtrar(modo) {
+      onPageLoad('.contenedor-inflacion', root => {
+        const datosHistoricos: { anio: number; inflacion: number }[] = JSON.parse(root.dataset.series!);
+        const container = root.querySelector<HTMLElement>('#chart-container')!;
+        const select = root.querySelector<HTMLSelectElement>('#filtro-periodo')!;
+        const tooltip = root.querySelector<HTMLElement>('#tooltip-display')!;
+
+        function filtrar(modo: string) {
             if (modo === 'reciente') return datosHistoricos.filter(d => d.anio >= 2011);
             if (modo === 'convertibilidad') return datosHistoricos.filter(d => d.anio >= 1991 && d.anio <= 2001);
             return datosHistoricos;
         }
 
-        function dibujar(datos) {
+        function dibujar(datos: typeof datosHistoricos) {
             const w = 800;
             const h = 320;
             const padLeft = 45;
@@ -166,7 +170,7 @@ const datosHistoricos = [
             container.querySelectorAll('.bar-group').forEach(group => {
                 group.addEventListener('mouseenter', () => {
                     const anio = group.getAttribute('data-anio');
-                    const val = group.getAttribute('data-val');
+                    const val = Number(group.getAttribute('data-val'));
                     tooltip.innerHTML = `<strong>Año ${anio}:</strong> <span style="font-size:1.15em; font-weight:bold;">${val > 0 ? '+' : ''}${val}%</span>`;
                 });
             });
@@ -174,10 +178,11 @@ const datosHistoricos = [
 
         dibujar(filtrar('reciente'));
 
-        select.addEventListener('change', (e) => {
-            dibujar(filtrar(e.target.value));
+        select.addEventListener('change', () => {
+            dibujar(filtrar(select.value));
             tooltip.innerText = 'Selecciona o toca una barra';
         });
+      });
     </script>
 
     <style>

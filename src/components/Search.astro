@@ -16,16 +16,25 @@ const translations = lang === 'en'
 ---
 
   <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-  <div id="search"></div>
+  <div id="search" data-translations={JSON.stringify(translations)}></div>
 
-  <script is:inline src="/pagefind/pagefind-ui.js"></script>
-  <script is:inline define:vars={{ translations }}>
-    window.addEventListener('DOMContentLoaded', () => {
-      new PagefindUI({
-        element: "#search",
+  <script is:inline defer src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    import { onPageLoad } from '../lib/page-lifecycle';
+
+    declare const PagefindUI: new (options: {
+      element: string;
+      showImages: boolean;
+      translations: Record<string, string>;
+    }) => { destroy(): void };
+
+    onPageLoad('#search', element => {
+      const search = new PagefindUI({
+        element: '#search',
         showImages: false,
-        translations
+        translations: JSON.parse(element.dataset.translations!),
       });
+      return () => search.destroy();
     });
   </script>
 

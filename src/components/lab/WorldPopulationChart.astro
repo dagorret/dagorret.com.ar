@@ -40,8 +40,9 @@ const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 2 });
 </figure>
 
 <script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
   import { worldPopulation, worldPath, WORLD_MEDIUM_END } from '../../lib/demography';
-  for (const root of document.querySelectorAll<HTMLElement>('.world-population-chart')) {
+  onPageLoad<HTMLElement>('.world-population-chart', root => {
     const en = root.dataset.lang === 'en';
     const number = new Intl.NumberFormat(en ? 'en' : 'es', { maximumFractionDigits: 2 });
     const input = root.querySelector<HTMLInputElement>('[data-fertility-offset]')!;
@@ -61,5 +62,5 @@ const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 2 });
     input.addEventListener('input', render);
     for (const button of root.querySelectorAll<HTMLButtonElement>('[data-scenario]')) button.addEventListener('click', () => { input.value=button.dataset.scenario!;render(); });
     render();
-  }
+  });
 </script>
