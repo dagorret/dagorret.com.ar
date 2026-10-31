@@ -17,7 +17,38 @@ export function ols(points: readonly Point[]) {
   const se = n > 2 ? Math.sqrt(ssr / (n - 2)) : null;
   const dw = ssr > 1e-12
     ? residuals.slice(1).reduce((s, e, i) => s + (e - residuals[i]) ** 2, 0) / ssr : null;
-  return { n, meanX, meanY, intercept, slope, residuals, ssr, sst, r2, se, dw };
+  return { n, meanX, meanY, sxx, intercept, slope, residuals, ssr, sst, r2, se, dw };
+}
+
+export function lineSsr(points: readonly Point[], intercept: number, slope: number) {
+  return points.reduce((sum, point) => sum + (point.y - intercept - slope * point.x) ** 2, 0);
+}
+
+/** A narrow x range makes the contrast between residual size and leverage visible. */
+export function olsExample(): Point[] {
+  const xs = [8, 8.4, 8.8, 9.2, 9.6, 10, 10.4, 10.8, 11.2, 11.6, 12, 10];
+  const noise = [-2, 1, -1, 2, -1, 0, -2, 2, -1, 1, 1, 0];
+  return xs.map((x, i) => ({ x, y: 20 + 2 * x + noise[i] }));
+}
+
+export function olsWitness(points: readonly Point[], kind: 'vertical' | 'leverage') {
+  const before = ols(points);
+  if (!before || points.length >= 250) return null;
+  const x = kind === 'vertical' ? before.meanX : before.meanX <= 10 ? 20 : 0;
+  const predicted = before.intercept + before.slope * x;
+  const y = kind === 'vertical'
+    ? (before.meanY <= 50 ? 100 : 0)
+    : Math.max(0, Math.min(100, predicted + (predicted <= 85 ? 15 : -15)));
+  const point = { x, y };
+  const after = ols([...points, point]);
+  if (!after) return null;
+  return {
+    kind, point, before, after,
+    residualBefore: y - predicted,
+    residualAfter: y - after.intercept - after.slope * x,
+    leverage: 1 / after.n + (x - after.meanX) ** 2 / after.sxx,
+    slopeChange: after.slope - before.slope,
+  };
 }
 
 /** Seeded Gaussian innovations: reproducible draws, with separate streams per series. */
