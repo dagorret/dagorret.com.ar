@@ -1,0 +1,53 @@
+---
+title: "Series de Tiempo y Regresión Espuria"
+description: "Procesos AR(1), raíz unitaria y divergencia estocástica. Detección del fenómeno de regresión espuria de Granger–Newbold."
+slug: "series-tiempo-ar1"
+lang: "es"
+translation_key: "time-series-ar1"
+category: "SERIES TEMPORALES"
+order: -1
+visual: "time-series"
+status: "interactive"
+---
+
+import TimeSeriesLab from '../../../components/lab/TimeSeriesLab.astro';
+
+Dos series pueden parecer relacionadas porque ambas conservan su propia historia. La persistencia hace que observaciones consecutivas se parezcan y reduce la información nueva que aporta cada dato. Este laboratorio conecta esa memoria con el problema de la **regresión espuria**: un ajuste convincente entre procesos que se generaron independientemente.
+
+## De la reversión a la media a la raíz unitaria
+
+Un proceso autorregresivo de primer orden satisface:
+
+$$
+X_t=c+\rho X_{t-1}+\varepsilon_t,\quad
+\varepsilon_t\overset{\mathrm{iid}}{\sim}N(0,1),\quad t=1,\ldots,250.
+$$
+
+Fijamos $c=0$ y $X_0=0$. Para $|\rho|<1$, el efecto de un shock decae como $\rho^k$ y la varianza converge a $1/(1-\rho^2)$. Con $\rho<0$ la respuesta alterna de signo. Como el inicio es fijo, la trayectoria tiene un transitorio: no parte de la distribución estacionaria.
+
+Cuando $\rho=1$, obtenemos un paseo aleatorio. Sus shocks no se disipan:
+
+$$
+X_t=\sum_{j=1}^t\varepsilon_j,
+\qquad \operatorname{Var}(X_t\mid X_0=0)=t.
+$$
+
+La varianza crece **linealmente**, no exponencialmente. Una raíz unitaria es no estacionaria; se reserva habitualmente «explosivo» para $|\rho|>1$, que queda fuera de este experimento.
+
+<div className="figure-wide"><TimeSeriesLab lang="es" /></div>
+
+## Cuando el ajuste engaña
+
+El segundo gráfico genera dos paseos independientes y ajusta $Y_t=\alpha+\beta X_t+e_t$. Como ambos acumulan shocks, pueden producir tendencias coincidentes, una pendiente aparente y un $R^2$ elevado sin un vínculo causal ni un mecanismo común.
+
+Los residuos se mantienen en orden temporal para calcular Durbin–Watson:
+
+$$
+DW=\frac{\sum_{t=2}^{250}(e_t-e_{t-1})^2}{\sum_{t=1}^{250}e_t^2}.
+$$
+
+Residuos muy persistentes tienden a producir un DW pequeño. La comparación $R^2>DW$, asociada a la discusión de Granger–Newbold, sirve aquí como **señal orientativa**. No es una prueba con un nivel de significación definido, no ocurre en todas las realizaciones y su ausencia tampoco valida la regresión.
+
+**Advertencia empírica.** Antes de interpretar una regresión en niveles, investigá estacionariedad, tendencias determinísticas y posible cointegración. Diferenciar puede ayudar en algunos procesos, pero modifica la pregunta y no sustituye un diagnóstico. Las semillas cambian de forma reproducible: no se buscan muestras que garanticen una correlación vistosa.
+
+Referencias: [BYU–Idaho, ruido blanco y paseos aleatorios](https://byuistats.github.io/timeseries/chapter_4_lesson_1.html) y [statsmodels, definición de Durbin–Watson](https://www.statsmodels.org/stable/generated/statsmodels.stats.stattools.durbin_watson.html).

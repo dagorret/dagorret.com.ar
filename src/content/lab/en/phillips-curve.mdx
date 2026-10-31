@@ -1,0 +1,39 @@
+---
+title: "Phillips Curve and Expectations"
+description: "Explore the historical inflation–unemployment trade-off, shifting expectations and the natural unemployment rate (NAIRU)."
+slug: "phillips-curve"
+lang: "en"
+translation_key: "phillips-curve"
+category: "MACROECONOMETRICS"
+order: -3
+visual: "phillips"
+status: "interactive"
+---
+
+import PhillipsLab from '../../../components/lab/PhillipsLab.astro';
+
+The inflation–unemployment relationship resembles a policy menu only when expectations and economic structure are held constant. The history of the **Phillips curve** shows why that assumption matters: a short-run correlation can shift when expectations, supply shocks or the monetary regime change.
+
+## A curve conditional on expectations
+
+This experiment uses a simplified expectations-augmented relationship:
+
+$$
+\pi_t=\pi_t^e-\beta(u_t-u_n),\qquad \beta>0.
+$$
+
+$\pi_t$ denotes inflation, $\pi_t^e$ expected inflation, $u_t$ unemployment and $u_n$ a natural-rate reference. Holding expectations constant, greater unemployment lowers predicted inflation. Increasing $\pi_t^e$ shifts the whole curve upwards. Increasing $u_n$ moves the point where $\pi=\pi^e$ to the right.
+
+The simplified model uses $u_n$ as a NAIRU reference. In empirical work, the natural rate and the non-accelerating-inflation rate of unemployment need not be identical, and neither is directly observed.
+
+<div className="figure-wide"><PhillipsLab lang="en" /></div>
+
+## Three periods, no immutable law
+
+Dots are actual annual US observations from the 1960s, the 1970s–80s and 2000–2020. Inflation is the World Bank annual consumer-price inflation indicator. Unemployment is the annual mean of twelve monthly, seasonally adjusted BLS observations. Both series are available through FRED and bundled locally, requiring no runtime data requests.
+
+The slope $\beta$ in each scenario is **illustrative**, not estimated from the displayed observations. A smaller slope represents flattening in the recent scenario. Neither sliders nor historical presets reconstruct actual expectations; they help distinguish movement along a curve from a shift of the curve.
+
+**Empirical warning.** A stable curve does not imply a permanent policy trade-off. Supply shocks can increase inflation and unemployment together; the equation omits them to isolate expectations. The displayed curve is neither a forecast nor a NAIRU estimate.
+
+Sources: [BLS monthly unemployment via FRED](https://fred.stlouisfed.org/series/UNRATE) and [World Bank annual inflation via FRED](https://fred.stlouisfed.org/series/FPCPITOTLZGUSA).

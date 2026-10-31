@@ -1,0 +1,112 @@
+---
+import '../../styles/econometrics.css';
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+---
+
+<section class="econ-lab ols-lab" data-lang={lang} aria-label={en ? 'Interactive ordinary least squares' : 'Mínimos cuadrados interactivos'}>
+  <div class="econ-heading"><strong>{en ? 'Draw a sample. Fit a line.' : 'Dibujá una muestra. Ajustá una recta.'}</strong><span>{en ? 'Synthetic data · n ≤ 250' : 'Datos simulados · n ≤ 250'}</span></div>
+  <p class="econ-note">{en ? 'Click inside the plot or enter coordinates below. Salary is in arbitrary units; the example is not a real earnings estimate.' : 'Hacé clic dentro del gráfico o ingresá coordenadas debajo. El salario usa unidades arbitrarias; el ejemplo no es una estimación salarial real.'}</p>
+  <div class="econ-controls">
+    <button type="button" data-action="sample">{en ? 'Load sample data' : 'Precargar datos de prueba'}</button>
+    <button type="button" data-action="clear">{en ? 'Clear plot' : 'Limpiar lienzo'}</button>
+    <label class="econ-check"><input type="checkbox" data-residuals checked />{en ? 'Show residuals (eᵢ)' : 'Mostrar residuos (eᵢ)'}</label>
+    <label class="econ-check"><input type="checkbox" data-squares />{en ? 'Show squares (eᵢ²)' : 'Mostrar cuadrados (eᵢ²)'}</label>
+  </div>
+  <svg class="econ-click-plot" data-plot viewBox="0 0 740 410" role="img" aria-label={en ? 'Education versus salary, fitted line and residuals' : 'Educación frente a salario, recta ajustada y residuos'}></svg>
+  <div class="econ-controls">
+    <label>{en ? 'Education (years, 0–20)' : 'Educación (años, 0–20)'}<input data-x type="number" min="0" max="20" step="0.1" value="10" /></label>
+    <label>{en ? 'Salary (0–100)' : 'Salario (0–100)'}<input data-y type="number" min="0" max="100" step="0.1" value="50" /></label>
+    <button type="button" data-action="add">{en ? 'Add observation' : 'Agregar observación'}</button>
+  </div>
+  <dl class="econ-metrics">
+    <div><dt>n</dt><dd data-value="n">0</dd></div>
+    <div><dt>β̂₀</dt><dd data-value="intercept">—</dd></div>
+    <div><dt>β̂₁</dt><dd data-value="slope">—</dd></div>
+    <div><dt>R²</dt><dd data-value="r2">—</dd></div>
+    <div><dt>SSR = Σeᵢ²</dt><dd data-value="ssr">—</dd></div>
+    <div><dt>{en ? 'Residual standard error' : 'Error estándar residual'}</dt><dd data-value="se">—</dd></div>
+  </dl>
+  <p class="econ-status" data-status role="status" aria-live="polite"></p>
+  <details><summary>{en ? 'Observations and residuals' : 'Observaciones y residuos'}</summary><div class="econ-table"><table><thead><tr><th>xᵢ</th><th>yᵢ</th><th>ŷᵢ</th><th>eᵢ</th><th>eᵢ²</th></tr></thead><tbody data-rows></tbody></table></div></details>
+  <noscript>{en ? 'Enable JavaScript to fit a sample. The formulas and methodological notes remain available below.' : 'Activá JavaScript para ajustar una muestra. Las fórmulas y notas metodológicas siguen disponibles debajo.'}</noscript>
+</section>
+
+<script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
+  import { ols, type Point } from '../../lib/econometrics';
+  import { chart, drawPath, svgNode, plot, numberFormatter } from '../../lib/econometrics-chart';
+  onPageLoad('.ols-lab', root => {
+    const controller = new AbortController();
+    const { signal } = controller;
+    const lang = root.dataset.lang!;
+    const en = lang === 'en';
+    const fmt = numberFormatter(lang);
+    const svg = root.querySelector<SVGSVGElement>('[data-plot]')!;
+    const inputX = root.querySelector<HTMLInputElement>('[data-x]')!;
+    const inputY = root.querySelector<HTMLInputElement>('[data-y]')!;
+    let points: Point[] = [];
+    function render() {
+      const fit = ols(points);
+      const { x, y, layer } = chart(svg, [0, 20], [0, 100], [en ? 'Education (years)' : 'Educación (años)', en ? 'Salary (arbitrary units)' : 'Salario (unidades arbitrarias)'], lang);
+      if (fit) {
+        points.forEach((p, i) => {
+          const predicted = fit.intercept + fit.slope * p.x;
+          if (root.querySelector<HTMLInputElement>('[data-squares]')!.checked) {
+            const side = Math.abs(y(p.y) - y(predicted));
+            layer.append(svgNode('rect', { x: x(p.x), y: Math.min(y(p.y), y(predicted)), width: side, height: side, class: 'econ-square' }));
+          }
+          if (root.querySelector<HTMLInputElement>('[data-residuals]')!.checked) {
+            const line = svgNode('line', { x1: x(p.x), x2: x(p.x), y1: y(p.y), y2: y(predicted), class: 'econ-residual' });
+            line.append(svgNode('title', {}, `e = ${fmt(fit.residuals[i])}`));
+            layer.append(line);
+          }
+        });
+        drawPath(layer, [{ x: 0, y: fit.intercept }, { x: 20, y: fit.intercept + 20 * fit.slope }], x, y);
+      }
+      for (const p of points) {
+        const circle = svgNode('circle', { cx: x(p.x), cy: y(p.y), r: 5, class: 'econ-point' });
+        circle.append(svgNode('title', {}, `x = ${fmt(p.x)}, y = ${fmt(p.y)}`)); layer.append(circle);
+      }
+      for (const key of ['intercept', 'slope', 'r2', 'ssr', 'se'] as const) root.querySelector(`[data-value="${key}"]`)!.textContent = fmt(fit?.[key]);
+      root.querySelector('[data-value="n"]')!.textContent = String(points.length);
+      root.querySelector('[data-status]')!.textContent = !fit
+        ? (en ? 'At least two observations with different x values are needed.' : 'Se necesitan al menos dos observaciones con valores de x distintos.')
+        : (en ? 'Standard error = √(SSR / (n − 2)); undefined with only two points. R² is undefined when all y values are equal.' : 'Error estándar = √(SSR / (n − 2)); no está definido con solo dos puntos. R² no está definido si todos los valores de y son iguales.');
+      const rows = root.querySelector('[data-rows]')!;
+      rows.replaceChildren(...points.map((p, i) => {
+        const tr = document.createElement('tr');
+        const predicted = fit ? fit.intercept + fit.slope * p.x : null;
+        const residual = fit?.residuals[i] ?? null;
+        for (const value of [p.x, p.y, predicted, residual, residual === null ? null : residual ** 2]) {
+          const td = document.createElement('td'); td.textContent = fmt(value); tr.append(td);
+        }
+        return tr;
+      }));
+    }
+    function add(x: number, y: number) {
+      if (!Number.isFinite(x) || !Number.isFinite(y) || x < 0 || x > 20 || y < 0 || y > 100 || points.length >= 250) return;
+      points.push({ x, y }); render();
+    }
+    root.addEventListener('click', event => {
+      const action = (event.target as Element).closest<HTMLButtonElement>('button')?.dataset.action;
+      if (action === 'sample') points = [3, 5, 6, 7, 8, 9, 10, 12, 13, 14, 16, 18].map((x, i) => ({ x, y: 12 + 3.3 * x + [-6, 4, -2, 8, -5, 7, -8, 3, -4, 9, -3, 2][i] }));
+      if (action === 'clear') points = [];
+      if (action === 'add') {
+        if (inputX.value === '' || inputY.value === '' || !inputX.reportValidity() || !inputY.reportValidity()) return;
+        add(inputX.valueAsNumber, inputY.valueAsNumber); return;
+      }
+      if (action) render();
+    }, { signal });
+    root.addEventListener('change', render, { signal });
+    svg.addEventListener('click', event => {
+      const matrix = svg.getScreenCTM(); if (!matrix) return;
+      const cursor = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
+      if (cursor.x < plot.left || cursor.x > plot.right || cursor.y < plot.top || cursor.y > plot.bottom) return;
+      add((cursor.x - plot.left) / (plot.right - plot.left) * 20, (plot.bottom - cursor.y) / (plot.bottom - plot.top) * 100);
+    }, { signal });
+    render();
+    return () => controller.abort();
+  });
+</script>

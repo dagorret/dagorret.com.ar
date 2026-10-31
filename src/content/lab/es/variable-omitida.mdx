@@ -1,0 +1,42 @@
+---
+title: "Sesgo de Variable Omitida"
+description: "Comparación gráfica entre regresión simple y controlada. Descomposición matemática del sesgo por covariables ocultas."
+slug: "variable-omitida"
+lang: "es"
+translation_key: "omitted-variable-bias"
+category: "INFERENCIA CAUSAL"
+order: -2
+visual: "omitted-variable"
+status: "interactive"
+---
+
+import OmittedVariableLab from '../../../components/lab/OmittedVariableLab.astro';
+
+Una regresión entre educación y salario puede mezclar el efecto de estudiar con otras características asociadas tanto con la educación como con los ingresos. **Omitir una variable relevante** no siempre genera sesgo: debe afectar al resultado y estar correlacionada con el regresor incluido.
+
+## Dos modelos, dos pendientes
+
+Supongamos que el mecanismo generador es:
+
+$$
+Y_i=\beta_0+\beta_1X_{1i}+\beta_2X_{2i}+\varepsilon_i,
+\qquad E[\varepsilon_i\mid X_{1i},X_{2i}]=0.
+$$
+
+$X_1$ representa educación y $X_2$ una habilidad latente inventada. Si ajustamos solamente $Y_i=\alpha_0+\alpha_1X_{1i}+v_i$, la pendiente poblacional de esa proyección es:
+
+$$
+\alpha_1=\beta_1+\underbrace{\beta_2\frac{\operatorname{Cov}(X_1,X_2)}{\operatorname{Var}(X_1)}}_{\text{Sesgo por omisión}}.
+$$
+
+Con $\beta_2>0$ y correlación positiva, la recta simple atribuye a la educación parte del efecto de $X_2$: su pendiente se infla. Al llevar la correlación a cero, ese término desaparece; al volverla negativa, cambia de signo.
+
+<div className="figure-wide"><OmittedVariableLab lang="es" /></div>
+
+## Qué significa controlar
+
+La regresión controlada estima simultáneamente los coeficientes de ambas variables. Las tres rectas son predicciones condicionales para tres valores de $X_2$; comparten pendiente respecto de $X_1$ y tienen distintos interceptos. No son tres regresiones independientes.
+
+La simulación fija $\beta_1=2$ y $\beta_2=8$ con 90 observaciones. Mantiene constantes las dispersiones marginales al cambiar la correlación. El ruido se construye ortogonal a los regresores para que la descomposición sea exacta también en esta muestra; en datos reales aparece además variación muestral. El panel calcula tanto el ajuste simple como el múltiple: no se limita a dibujar pendientes prefijadas.
+
+**Conclusión metodológica.** Controlar una covariable no convierte automáticamente una asociación en causalidad. Importan su medición, su posición en el mecanismo causal y las variables que todavía faltan. La habilidad de este experimento es un recurso didáctico: no una medida empírica de diferencias innatas ni una explicación definitiva de la desigualdad salarial.

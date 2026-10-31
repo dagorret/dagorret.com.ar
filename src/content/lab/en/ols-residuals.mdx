@@ -1,0 +1,43 @@
+---
+title: "Ordinary Least Squares (OLS)"
+description: "Explore linear fits, squared residuals and the coefficient of determination R² in real time."
+slug: "ols-residuals"
+lang: "en"
+translation_key: "ols-residuals"
+category: "BASIC ECONOMETRICS"
+order: -4
+visual: "ols"
+status: "interactive"
+---
+
+import OlsLab from '../../../components/lab/OlsLab.astro';
+
+A scatter plot does not come with a line attached. **Ordinary least squares** chooses the line that minimizes the sum of squared residuals. Each residual is a **vertical** distance: the observed outcome minus the prediction for that same value of $x$.
+
+## From distances to a fitting criterion
+
+In $y_i=\beta_0+\beta_1x_i+\varepsilon_i$, predictions are $\hat y_i=\hat\beta_0+\hat\beta_1x_i$ and residuals are $e_i=y_i-\hat y_i$. Provided $x$ varies, the solution is:
+
+$$
+\hat\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},
+\qquad \hat\beta_0=\bar y-\hat\beta_1\bar x.
+$$
+
+Squaring prevents positive and negative errors from cancelling, while giving large deviations more influence. The drawn squares visualize this penalty; some may be clipped by the plot boundary.
+
+<div className="figure-wide"><OlsLab lang="en" /></div>
+
+## What does a good fit mean?
+
+With an intercept, define $\mathrm{SSR}=\sum_i e_i^2$ and $\mathrm{SST}=\sum_i(y_i-\bar y)^2$. SSR here means the **residual sum of squares**, not the explained sum:
+
+$$
+R^2=1-\frac{\mathrm{SSR}}{\mathrm{SST}},
+\qquad \hat\sigma=\sqrt{\frac{\mathrm{SSR}}{n-2}}.
+$$
+
+The panel reports the **residual standard error**, in outcome units, rather than the standard error of the estimated slope. Two points leave no residual degrees of freedom; constant outcomes make $R^2$ undefined; constant $x$ values leave the slope unidentified. Those cases display a dash.
+
+**Methodological conclusion.** Add an extreme observation and watch the fitted line move. High $R^2$ describes an in-sample fit: it establishes neither causation nor out-of-sample accuracy and does not solve omitted variable bias. The education and salary example is entirely synthetic.
+
+Reference: [NIST, least squares and residual standard deviation](https://itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm).
