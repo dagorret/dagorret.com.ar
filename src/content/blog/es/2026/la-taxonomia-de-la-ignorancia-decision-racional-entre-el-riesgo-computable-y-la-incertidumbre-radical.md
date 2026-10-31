@@ -2,6 +2,8 @@
 title: "La taxonomía de la ignorancia: decisión racional entre el riesgo computable y la incertidumbre radical"
 description: "Un examen epistemológico sobre la frontera entre el riesgo estocástico computable y la incertidumbre knightiana, desde Wald y Ellsberg hasta Taleb."
 pubDate: 2026-09-30
+date: 2026-09-30
+lang: "es"
 slug: "la-taxonomia-de-la-ignorancia-decision-racional-entre-el-riesgo-computable-y-la-incertidumbre-radical"
 categories: ["Filosofía", "Matemáticas"]
 tags: ["Cisne negro", "Incertidumbre Knightiana", "Paradoja de Ellsberg", "Teoría de la decisión"]

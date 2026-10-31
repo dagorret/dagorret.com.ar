@@ -1,0 +1,72 @@
+---
+import data from '../../data/phillips-us.json';
+import '../../styles/econometrics.css';
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+---
+<section class="econ-lab phillips-lab" data-lang={lang} data-observations={JSON.stringify(data.observations)} aria-label={en ? 'Phillips curve and expectations' : 'Curva de Phillips y expectativas'}>
+  <div class="econ-heading"><strong>π = πᵉ − β(u − uₙ)</strong><span>{en ? 'US annual observations · 1960–2020' : 'Observaciones anuales de EE. UU. · 1960–2020'}</span></div>
+  <div class="econ-controls">
+    <label>{en ? 'Historical period' : 'Época histórica'}<select data-era>
+      <option value="sixties">{en ? '1960s · stable curve' : 'Años 60 · curva estable'}</option>
+      <option value="stagflation">{en ? '1970s–80s · stagflation / break' : 'Años 70–80 · estanflación / quiebre'}</option>
+      <option value="recent">{en ? '2000–2020 · flattening' : '2000–2020 · aplanamiento'}</option>
+    </select></label>
+    <label>{en ? 'Expected inflation πᵉ (%)' : 'Inflación esperada πᵉ (%)'} <output data-expected-value>2,5</output><input type="range" data-expected min="0" max="15" step="0.1" value="2.5" /></label>
+    <label>{en ? 'Natural unemployment uₙ (%)' : 'Tasa natural de desempleo uₙ (%)'} <output data-natural-value>5,5</output><input type="range" data-natural min="3" max="10" step="0.1" value="5.5" /></label>
+  </div>
+  <svg data-plot viewBox="0 0 740 410" role="img" aria-label={en ? 'Historical unemployment and inflation with an adjustable theoretical Phillips curve' : 'Desempleo e inflación históricos con una curva teórica de Phillips ajustable'}></svg>
+  <dl class="econ-metrics"><div><dt>{en ? 'Illustrative slope β' : 'Pendiente ilustrativa β'}</dt><dd data-beta>—</dd></div><div><dt>{en ? 'At u = 5%: inflation (%)' : 'Con u = 5%: inflación (%)'}</dt><dd data-prediction>—</dd></div><div><dt>{en ? 'Annual observations' : 'Observaciones anuales'}</dt><dd data-count>—</dd></div></dl>
+  <p class="econ-status" data-status role="status" aria-live="polite"></p>
+  <p class="econ-note">{en ? 'Dots are observed data; the curve, expectations, β and uₙ are illustrative scenarios, not estimates. Changing the period resets the sliders. The dashed line marks uₙ.' : 'Los puntos son datos observados; la curva, las expectativas, β y uₙ son escenarios ilustrativos, no estimaciones. Cambiar de época reinicia los sliders. La línea discontinua señala uₙ.'}</p>
+  <details><summary>{en ? 'Historical data and sources' : 'Datos históricos y fuentes'}</summary>
+    <p class="econ-note">{en ? 'Unemployment: annual mean of the 12 seasonally adjusted monthly observations (BLS). Inflation: annual consumer-price inflation (World Bank). Snapshot: October 31, 2026; values rounded to 3 decimals.' : 'Desempleo: promedio anual de las 12 observaciones mensuales desestacionalizadas (BLS). Inflación: variación anual de precios al consumidor (Banco Mundial). Corte: 31 de octubre de 2026; valores redondeados a 3 decimales.'} <a href={data.sources.unemployment}>FRED · UNRATE</a> · <a href={data.sources.inflation}>FRED · FPCPITOTLZGUSA</a></p>
+    <div class="econ-table"><table><thead><tr><th>{en ? 'Year' : 'Año'}</th><th>{en ? 'Unemployment (%)' : 'Desempleo (%)'}</th><th>{en ? 'Inflation (%)' : 'Inflación (%)'}</th></tr></thead><tbody data-rows></tbody></table></div>
+  </details>
+  <noscript>{en ? 'Enable JavaScript to move the theoretical curve.' : 'Activá JavaScript para desplazar la curva teórica.'}</noscript>
+</section>
+<script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
+  import { chart, drawPath, svgNode, plot, numberFormatter } from '../../lib/econometrics-chart';
+  onPageLoad('.phillips-lab', root => {
+    const controller = new AbortController(), { signal } = controller;
+    const lang = root.dataset.lang!, en = lang === 'en', fmt = numberFormatter(lang);
+    const observations: { year: number; unemployment: number; inflation: number }[] = JSON.parse(root.dataset.observations!);
+    const era = root.querySelector<HTMLSelectElement>('[data-era]')!;
+    const expected = root.querySelector<HTMLInputElement>('[data-expected]')!;
+    const natural = root.querySelector<HTMLInputElement>('[data-natural]')!;
+    const svg = root.querySelector<SVGSVGElement>('[data-plot]')!;
+    const periods = { sixties: { start: 1960, end: 1969, beta: .9, expected: 2.5, natural: 5.5 }, stagflation: { start: 1970, end: 1989, beta: .7, expected: 8, natural: 6 }, recent: { start: 2000, end: 2020, beta: .2, expected: 2, natural: 4.5 } };
+    function render() {
+      const period = periods[era.value as keyof typeof periods];
+      const points = observations.filter(p => p.year >= period.start && p.year <= period.end);
+      const pi = Number(expected.value), un = Number(natural.value);
+      const { x, y, layer } = chart(svg, [0, 14], [-12, 26], [en ? 'Unemployment (%)' : 'Desempleo (%)', en ? 'Inflation (%)' : 'Inflación (%)'], lang);
+      layer.append(svgNode('line', { x1: x(un), x2: x(un), y1: plot.top, y2: plot.bottom, class: 'econ-residual' }));
+      for (const p of points) {
+        const circle = svgNode('circle', { cx: x(p.unemployment), cy: y(p.inflation), r: 5, class: 'econ-point' });
+        circle.append(svgNode('title', {}, `${p.year}: u=${fmt(p.unemployment)}%; π=${fmt(p.inflation)}%`)); layer.append(circle);
+      }
+      drawPath(layer, [{ x: 0, y: pi + period.beta * un }, { x: 14, y: pi - period.beta * (14 - un) }], x, y);
+      root.querySelector('[data-expected-value]')!.textContent = fmt(pi);
+      root.querySelector('[data-natural-value]')!.textContent = fmt(un);
+      root.querySelector('[data-beta]')!.textContent = fmt(period.beta);
+      root.querySelector('[data-prediction]')!.textContent = fmt(pi - period.beta * (5 - un));
+      root.querySelector('[data-count]')!.textContent = String(points.length);
+      root.querySelector('[data-status]')!.textContent = `π = ${fmt(pi)} − ${fmt(period.beta)} × (u − ${fmt(un)}). ${en ? 'At natural unemployment, inflation equals expected inflation.' : 'En la tasa natural de desempleo, la inflación coincide con la esperada.'}`;
+      root.querySelector('[data-rows]')!.replaceChildren(...points.map(p => {
+        const row = document.createElement('tr');
+        for (const value of [String(p.year), fmt(p.unemployment), fmt(p.inflation)]) { const td = document.createElement('td'); td.textContent = value; row.append(td); }
+        return row;
+      }));
+    }
+    root.addEventListener('input', render, { signal });
+    era.addEventListener('change', () => {
+      const period = periods[era.value as keyof typeof periods];
+      expected.value = String(period.expected); natural.value = String(period.natural); render();
+    }, { signal });
+    render();
+    return () => controller.abort();
+  });
+</script>

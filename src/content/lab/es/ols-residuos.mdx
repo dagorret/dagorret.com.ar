@@ -1,0 +1,43 @@
+---
+title: "Mínimos Cuadrados Ordinarios (MCO / OLS)"
+description: "Simulación interactiva del ajuste lineal, cálculo de residuos cuadráticos y coeficiente de determinación R² en tiempo real."
+slug: "ols-residuos"
+lang: "es"
+translation_key: "ols-residuals"
+category: "ECONOMETRÍA BÁSICA"
+order: -4
+visual: "ols"
+status: "interactive"
+---
+
+import OlsLab from '../../../components/lab/OlsLab.astro';
+
+Una nube de puntos no trae una recta incorporada. **Mínimos Cuadrados Ordinarios** elige, entre las rectas posibles, la que minimiza la suma de los residuos al cuadrado. El residuo es una distancia **vertical**: la diferencia entre el valor observado y el que predice la recta para ese mismo valor de $x$.
+
+## De la distancia al criterio de ajuste
+
+En el modelo $y_i=\beta_0+\beta_1x_i+\varepsilon_i$, la predicción es $\hat y_i=\hat\beta_0+\hat\beta_1x_i$ y el residuo es $e_i=y_i-\hat y_i$. Si existe variación en $x$, la solución es:
+
+$$
+\hat\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},
+\qquad \hat\beta_0=\bar y-\hat\beta_1\bar x.
+$$
+
+Elevar al cuadrado evita que residuos positivos y negativos se cancelen, pero también hace que observaciones extremas influyan mucho en el ajuste. Los cuadrados dibujados representan la magnitud de esa penalización; pueden quedar recortados por los límites del gráfico.
+
+<div className="figure-wide"><OlsLab lang="es" /></div>
+
+## ¿Qué significa un buen ajuste?
+
+Con intercepto, definimos $\mathrm{SSR}=\sum_i e_i^2$ y $\mathrm{SST}=\sum_i(y_i-\bar y)^2$. Aquí SSR significa **suma de residuos cuadrados**, no suma explicada:
+
+$$
+R^2=1-\frac{\mathrm{SSR}}{\mathrm{SST}},
+\qquad \hat\sigma=\sqrt{\frac{\mathrm{SSR}}{n-2}}.
+$$
+
+El error estándar mostrado es el **error estándar residual**, en unidades de $y$, no el error estándar del estimador de la pendiente. Con dos puntos no hay grados de libertad para estimarlo; con $y$ constante, $R^2$ no está definido; sin variación en $x$, no hay pendiente identificada. El panel muestra un guion en esos casos.
+
+**Conclusión metodológica.** Probá agregar un punto alejado y observá cuánto se mueve la recta. Un $R^2$ alto resume un ajuste dentro de la muestra: no prueba causalidad, no garantiza predicción fuera de ella y no elimina el problema de variables omitidas. Los datos de educación y salario de este laboratorio son inventados.
+
+Referencia: [NIST, mínimos cuadrados y desviación estándar residual](https://itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm).

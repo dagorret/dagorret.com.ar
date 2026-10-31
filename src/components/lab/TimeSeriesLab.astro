@@ -1,0 +1,94 @@
+---
+import '../../styles/econometrics.css';
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+---
+<section class="econ-lab time-series-lab" data-lang={lang} aria-label={en ? 'AR(1) processes and spurious regression' : 'Procesos AR(1) y regresión espuria'}>
+  <div class="econ-heading"><strong>{en ? 'Persistence and mean reversion' : 'Persistencia y reversión a la media'}</strong><span>n = 250 · c = 0 · σ² = 1 · X₀ = 0</span></div>
+  <div class="econ-controls">
+    <label>{en ? 'Persistence ρ' : 'Persistencia ρ'} <output data-rho-value>0,6</output><input data-rho type="range" min="-0.95" max="1" step="0.01" value="0.6" /></label>
+    <button type="button" data-action="trajectory">{en ? 'Simulate a new trajectory' : 'Simular nueva trayectoria'}</button>
+  </div>
+  <svg data-trajectory viewBox="0 0 740 410" role="img" aria-label={en ? '250 observations from an AR(1) process' : '250 observaciones de un proceso AR(1)'}></svg>
+  <dl class="econ-metrics"><div><dt>Var(X₂₅₀ | X₀ = 0)</dt><dd data-variance>—</dd></div><div><dt>{en ? 'Long-run variance' : 'Varianza de largo plazo'}</dt><dd data-long-variance>—</dd></div><div><dt>{en ? 'Trajectory seed' : 'Semilla de trayectoria'}</dt><dd data-seed>—</dd></div></dl>
+  <p class="econ-status" data-process-status role="status" aria-live="polite"></p>
+  <p class="econ-note">{en ? 'Moving ρ keeps the same innovations, isolating persistence. A new trajectory changes the seed. The vertical scale stays at least −35…35 for comparison and expands if needed.' : 'Mover ρ conserva las mismas innovaciones para aislar la persistencia. Una nueva trayectoria cambia la semilla. La escala vertical se mantiene al menos en −35…35 para comparar y se amplía si hace falta.'}</p>
+  <h3>{en ? 'Independent walks, misleading regression' : 'Paseos independientes, regresión engañosa'}</h3>
+  <div class="econ-controls"><button type="button" data-action="walks">{en ? 'Generate two independent random walks (Yₜ and Xₜ)' : 'Generar dos paseos aleatorios independientes (Yₜ y Xₜ)'}</button></div>
+  <svg data-scatter viewBox="0 0 740 410" role="img" aria-label={en ? 'Scatter plot of independent random walks with an OLS fit' : 'Dispersión de dos paseos aleatorios independientes con ajuste MCO'}></svg>
+  <dl class="econ-metrics"><div><dt>R²</dt><dd data-r2>—</dd></div><div><dt>Durbin–Watson (DW)</dt><dd data-dw>—</dd></div><div><dt>β̂₁</dt><dd data-slope>—</dd></div><div><dt>{en ? 'Walks seed' : 'Semilla de paseos'}</dt><dd data-walk-seed>—</dd></div></dl>
+  <p class="econ-status" data-spurious-status role="status" aria-live="polite"></p>
+  <p class="econ-note">{en ? 'R² > DW is a warning heuristic, not a formal test. Independent draws do not always satisfy it. Samples are never filtered to force the result; seeds make the displayed draws reproducible.' : 'R² > DW es una señal orientativa, no una prueba formal. No todas las muestras independientes la cumplen. No se seleccionan muestras para forzar el resultado; las semillas permiten reproducir cada realización.'}</p>
+  <details><summary>{en ? 'Simulated observations' : 'Observaciones simuladas'}</summary><div class="econ-table"><table><thead><tr><th>t</th><th>AR(1)</th><th>Xₜ</th><th>Yₜ</th></tr></thead><tbody data-rows></tbody></table></div></details>
+  <noscript>{en ? 'Enable JavaScript to simulate paths and regressions.' : 'Activá JavaScript para simular trayectorias y regresiones.'}</noscript>
+</section>
+<script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
+  import { ar1, arVariance, innovations, ols } from '../../lib/econometrics';
+  import { chart, drawPath, svgNode, extent, numberFormatter } from '../../lib/econometrics-chart';
+  onPageLoad('.time-series-lab', root => {
+    const controller = new AbortController(), { signal } = controller;
+    const lang = root.dataset.lang!, en = lang === 'en', fmt = numberFormatter(lang);
+    const rhoInput = root.querySelector<HTMLInputElement>('[data-rho]')!;
+    const trajectory = root.querySelector<SVGSVGElement>('[data-trajectory]')!;
+    const scatter = root.querySelector<SVGSVGElement>('[data-scatter]')!;
+    let seed = 20261031, walkSeed = 314159;
+    let noise = innovations(seed);
+    let xs = ar1(1, innovations(walkSeed));
+    let ys = ar1(1, innovations(walkSeed ^ 0xA5A5A5A5));
+    let path = ar1(Number(rhoInput.value), noise);
+    function table() {
+      root.querySelector('[data-rows]')!.replaceChildren(...path.map((v, i) => {
+        const tr = document.createElement('tr');
+        for (const value of [String(i + 1), fmt(v), fmt(xs[i]), fmt(ys[i])]) { const td = document.createElement('td'); td.textContent = value; tr.append(td); }
+        return tr;
+      }));
+    }
+    function renderTrajectory() {
+      const rho = Number(rhoInput.value);
+      path = ar1(rho, noise);
+      const limit = Math.max(35, ...path.map(v => Math.abs(v) * 1.1));
+      const { x, y, layer } = chart(trajectory, [0, 250], [-limit, limit], ['t', 'Xₜ'], lang);
+      drawPath(layer, [{ x: 0, y: 0 }, ...path.map((v, i) => ({ x: i + 1, y: v }))], x, y);
+      root.querySelector('[data-rho-value]')!.textContent = fmt(rho);
+      root.querySelector('[data-variance]')!.textContent = fmt(arVariance(rho, 250));
+      root.querySelector('[data-long-variance]')!.textContent = rho === 1 ? '∞' : fmt(1 / (1 - rho * rho));
+      root.querySelector('[data-seed]')!.textContent = String(seed);
+      root.querySelector('[data-process-status]')!.textContent = rho === 1
+        ? (en ? 'Unit root: a random walk. Shocks persist; Var(Xₜ) = t. Variance grows linearly, not exponentially. No finite stationary variance.' : 'Raíz unitaria: paseo aleatorio. Los shocks persisten; Var(Xₜ) = t. La varianza crece linealmente, no exponencialmente. No existe varianza estacionaria finita.')
+        : rho < 0
+          ? (en ? 'Mean reversion with alternating signs after a shock. Stationary long-run variance = 1 / (1 − ρ²).' : 'Reversión a la media con alternancia de signos tras un shock. Varianza estacionaria de largo plazo = 1 / (1 − ρ²).')
+          : (en ? 'Mean reversion: shocks decay at rate ρ. The fixed initial value creates a short transient before stationary behavior.' : 'Reversión a la media: los shocks decaen a tasa ρ. El valor inicial fijo produce un transitorio antes del comportamiento estacionario.');
+      table();
+    }
+    function renderWalks() {
+      const points = xs.map((v, i) => ({ x: v, y: ys[i] }));
+      const fit = ols(points)!;
+      const xd = extent(xs), yd = extent(ys);
+      const { x, y, layer } = chart(scatter, xd, yd, ['Xₜ', 'Yₜ'], lang);
+      points.forEach((p, i) => {
+        const circle = svgNode('circle', { cx: x(p.x), cy: y(p.y), r: 3.5, class: 'econ-point' });
+        circle.append(svgNode('title', {}, `t=${i + 1}; X=${fmt(p.x)}; Y=${fmt(p.y)}`)); layer.append(circle);
+      });
+      drawPath(layer, xd.map(v => ({ x: v, y: fit.intercept + fit.slope * v })), x, y);
+      root.querySelector('[data-r2]')!.textContent = fmt(fit.r2);
+      root.querySelector('[data-dw]')!.textContent = fmt(fit.dw);
+      root.querySelector('[data-slope]')!.textContent = fmt(fit.slope);
+      root.querySelector('[data-walk-seed]')!.textContent = String(walkSeed);
+      const warning = fit.r2 !== null && fit.dw !== null && fit.r2 > fit.dw;
+      root.querySelector('[data-spurious-status]')!.textContent = warning
+        ? (en ? 'R² > DW: warning sign observed in this draw. The data-generating processes are independent despite the apparent fit.' : 'R² > DW: se observa la señal de alerta en esta realización. Los procesos generadores son independientes pese al ajuste aparente.')
+        : (en ? 'R² ≤ DW in this draw. Absence of this heuristic does not validate a levels regression between independent nonstationary series.' : 'R² ≤ DW en esta realización. La ausencia de esta señal no valida una regresión en niveles entre series no estacionarias independientes.');
+      table();
+    }
+    rhoInput.addEventListener('input', renderTrajectory, { signal });
+    root.addEventListener('click', event => {
+      const action = (event.target as Element).closest<HTMLButtonElement>('[data-action]')?.dataset.action;
+      if (action === 'trajectory') { seed = (seed + 0x9E3779B9) >>> 0; noise = innovations(seed); renderTrajectory(); }
+      if (action === 'walks') { walkSeed = (walkSeed + 0x9E3779B9) >>> 0; xs = ar1(1, innovations(walkSeed)); ys = ar1(1, innovations(walkSeed ^ 0xA5A5A5A5)); renderWalks(); }
+    }, { signal });
+    renderTrajectory(); renderWalks();
+    return () => controller.abort();
+  });
+</script>

@@ -1,0 +1,42 @@
+---
+title: "Omitted Variable Bias"
+description: "Compare simple and controlled regressions and decompose bias from a hidden covariate in real time."
+slug: "omitted-variable-bias"
+lang: "en"
+translation_key: "omitted-variable-bias"
+category: "CAUSAL INFERENCE"
+order: -2
+visual: "omitted-variable"
+status: "interactive"
+---
+
+import OmittedVariableLab from '../../../components/lab/OmittedVariableLab.astro';
+
+A regression of salary on education may combine the effect of schooling with characteristics related to both schooling and earnings. **Leaving out a relevant variable** does not always bias the slope: the omitted variable must affect the outcome and correlate with the included regressor.
+
+## Two models, two slopes
+
+Suppose the data-generating mechanism is:
+
+$$
+Y_i=\beta_0+\beta_1X_{1i}+\beta_2X_{2i}+\varepsilon_i,
+\qquad E[\varepsilon_i\mid X_{1i},X_{2i}]=0.
+$$
+
+$X_1$ represents education and $X_2$ an invented latent ability variable. If we fit only $Y_i=\alpha_0+\alpha_1X_{1i}+v_i$, the population projection slope is:
+
+$$
+\alpha_1=\beta_1+\underbrace{\beta_2\frac{\operatorname{Cov}(X_1,X_2)}{\operatorname{Var}(X_1)}}_{\text{Omission bias}}.
+$$
+
+For positive $\beta_2$ and positive correlation, the simple regression attributes part of the effect of $X_2$ to education, inflating the slope. Setting correlation to zero removes this term; negative correlation reverses its sign.
+
+<div className="figure-wide"><OmittedVariableLab lang="en" /></div>
+
+## What controlling means
+
+The controlled regression estimates both coefficients simultaneously. The three lines are conditional predictions at three values of $X_2$: they share an education slope but have different intercepts. They are not three independent regressions.
+
+The simulation fixes $\beta_1=2$ and $\beta_2=8$ for 90 observations. Marginal dispersions remain constant as correlation changes. Disturbances are constructed orthogonal to the regressors so the decomposition also holds exactly in this sample; real datasets add sampling variation. The panel computes the simple and multiple fits rather than merely drawing preset slopes.
+
+**Methodological conclusion.** Controlling for a covariate does not automatically establish causality. Measurement, causal structure and remaining omitted variables all matter. Ability here is a teaching device, not an empirical measure of innate differences or a definitive account of wage inequality.

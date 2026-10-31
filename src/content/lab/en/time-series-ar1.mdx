@@ -1,0 +1,53 @@
+---
+title: "Time Series and Spurious Regression"
+description: "Explore AR(1) processes, unit roots, stochastic divergence and the Granger–Newbold spurious regression phenomenon."
+slug: "time-series-ar1"
+lang: "en"
+translation_key: "time-series-ar1"
+category: "TIME SERIES"
+order: -1
+visual: "time-series"
+status: "interactive"
+---
+
+import TimeSeriesLab from '../../../components/lab/TimeSeriesLab.astro';
+
+Two series can appear related because each retains its own history. Persistence makes consecutive observations similar and reduces the new information contributed by each observation. This experiment connects that memory to **spurious regression**: an apparently persuasive fit between independently generated processes.
+
+## From mean reversion to a unit root
+
+A first-order autoregressive process follows:
+
+$$
+X_t=c+\rho X_{t-1}+\varepsilon_t,\quad
+\varepsilon_t\overset{\mathrm{iid}}{\sim}N(0,1),\quad t=1,\ldots,250.
+$$
+
+We fix $c=0$ and $X_0=0$. For $|\rho|<1$, a shock decays at rate $\rho^k$ and variance converges to $1/(1-\rho^2)$. Negative $\rho$ produces alternating signs. Because the initial value is fixed, the process has a transient rather than starting in its stationary distribution.
+
+At $\rho=1$, it becomes a random walk. Shocks never dissipate:
+
+$$
+X_t=\sum_{j=1}^t\varepsilon_j,
+\qquad \operatorname{Var}(X_t\mid X_0=0)=t.
+$$
+
+Variance increases **linearly**, not exponentially. A unit root is nonstationary; “explosive” is usually reserved for $|\rho|>1$, outside this experiment's range.
+
+<div className="figure-wide"><TimeSeriesLab lang="en" /></div>
+
+## When a fit misleads
+
+The second plot generates two independent walks and fits $Y_t=\alpha+\beta X_t+e_t$. Accumulated shocks can create coincident trends, an apparent slope and high $R^2$ without a causal relationship or shared mechanism.
+
+Residuals retain their time order when computing Durbin–Watson:
+
+$$
+DW=\frac{\sum_{t=2}^{250}(e_t-e_{t-1})^2}{\sum_{t=1}^{250}e_t^2}.
+$$
+
+Highly persistent residuals tend to produce a small DW. The comparison $R^2>DW$, associated with the Granger–Newbold discussion, is a **warning heuristic** here. It is not a test with a specified significance level, need not occur in every draw and cannot validate a regression when absent.
+
+**Empirical warning.** Investigate stationarity, deterministic trends and possible cointegration before interpreting a levels regression. Differencing may help for some processes, but changes the question and does not replace diagnosis. Seeds change reproducibly: samples are not searched or filtered to guarantee an impressive correlation.
+
+References: [BYU–Idaho, white noise and random walks](https://byuistats.github.io/timeseries/chapter_4_lesson_1.html) and [statsmodels, Durbin–Watson definition](https://www.statsmodels.org/stable/generated/statsmodels.stats.stattools.durbin_watson.html).

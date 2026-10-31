@@ -10,6 +10,10 @@ const curves = {
   inflation: 'M12 98 L42 89 L72 96 L102 65 L132 78 L162 36 L192 61 L222 22 L252 45 L288 13',
   population: 'M12 105 C70 103 90 85 130 60 S200 20 288 14',
   'birth-rate': 'M12 16 C65 17 85 35 130 68 S220 100 288 103',
+  ols: 'M20 96 L280 22 M45 76 V90 M100 88 V74 M160 35 V58 M220 53 V38',
+  phillips: 'M25 16 L275 98 M25 45 L220 108 M170 12 V108',
+  'omitted-variable': 'M20 104 L235 50 M35 82 L250 28 M50 60 L265 6',
+  'time-series': 'M12 60 L32 44 L52 67 L72 42 L92 50 L112 27 L132 45 L152 25 L172 35 L192 13 L212 27 L232 12 L252 29 L282 16',
 };
 ---
 
@@ -17,7 +21,7 @@ const curves = {
   <header class="lab-heading">
     <p class="eyebrow">{en ? 'Models · Data · Experiments' : 'Modelos · Datos · Experimentos'}</p>
     <h1>Lab</h1>
-    <p class="intro">{en ? 'A space to explore ideas through interactive visualizations and simulations.' : 'Un espacio para explorar ideas a través de visualizaciones y simulaciones interactivas.'}</p>
+    <p class="intro">{en ? 'Explore econometrics, data and models through interactive experiments, with the theory and its empirical limits alongside each simulation.' : 'Explorá econometría, datos y modelos con experimentos interactivos, acompañados por su teoría y sus límites empíricos.'}</p>
   </header>
   <section class="lab-grid" aria-label={en ? 'Experiments' : 'Experimentos'}>
     {entries.map(({ data }) => (

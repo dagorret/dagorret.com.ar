@@ -1,0 +1,65 @@
+---
+import '../../styles/econometrics.css';
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+---
+<section class="econ-lab omitted-lab" data-lang={lang} aria-label={en ? 'Omitted variable bias simulation' : 'Simulación del sesgo de variable omitida'}>
+  <div class="econ-heading"><strong>{en ? 'The slope changes when a variable is missing' : 'La pendiente cambia al omitir una variable'}</strong><span>{en ? '90 synthetic observations' : '90 observaciones simuladas'}</span></div>
+  <div class="econ-controls">
+    <button type="button" data-mode="simple" aria-pressed="true">{en ? 'Simple regression' : 'Regresión Simple'}</button>
+    <button type="button" data-mode="controlled" aria-pressed="false">{en ? 'Controlled regression (multiple)' : 'Regresión Controlada (Múltiple)'}</button>
+    <label>Corr(X₁, X₂) <output data-rho-value>0,6</output><input data-rho type="range" min="-0.9" max="0.9" step="0.05" value="0.6" /></label>
+  </div>
+  <div class="econ-legend"><span class="ability-0">{en ? 'Low ability (X₂)' : 'Habilidad baja (X₂)'}</span><span class="ability-1">{en ? 'Medium ability (X₂)' : 'Habilidad media (X₂)'}</span><span class="ability-2">{en ? 'High ability (X₂)' : 'Habilidad alta (X₂)'}</span></div>
+  <svg data-plot viewBox="0 0 740 410" role="img" aria-label={en ? 'Salary versus education by three simulated ability groups' : 'Salario frente a educación por tres grupos de habilidad simulada'}></svg>
+  <dl class="econ-metrics">
+    <div><dt>{en ? 'Simple slope α̂₁' : 'Pendiente simple α̂₁'}</dt><dd data-value="simple">—</dd></div>
+    <div><dt>{en ? 'Controlled slope β̂₁' : 'Pendiente controlada β̂₁'}</dt><dd data-value="beta1">—</dd></div>
+    <div><dt>β̂₂</dt><dd data-value="beta2">—</dd></div>
+    <div><dt>Cov(X₁, X₂)</dt><dd data-value="covXZ">—</dd></div>
+    <div><dt>Var(X₁)</dt><dd data-value="varX">—</dd></div>
+    <div><dt>{en ? 'Bias = α̂₁ − β̂₁' : 'Sesgo = α̂₁ − β̂₁'}</dt><dd data-value="bias">—</dd></div>
+  </dl>
+  <p data-decomposition class="econ-status" role="status" aria-live="polite"></p>
+  <p class="econ-note">{en ? 'Simulation: Y = 10 + 2X₁ + 8X₂ + ε. Ability is an invented standardized variable, not an observed biological trait. All three controlled lines are conditional fits from one multiple regression.' : 'Simulación: Y = 10 + 2X₁ + 8X₂ + ε. La habilidad es una variable estandarizada inventada, no un rasgo biológico observado. Las tres rectas controladas son ajustes condicionales de una misma regresión múltiple.'}</p>
+  <noscript>{en ? 'Enable JavaScript to compare the regressions.' : 'Activá JavaScript para comparar las regresiones.'}</noscript>
+</section>
+<script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
+  import { omittedSample } from '../../lib/econometrics';
+  import { chart, drawPath, svgNode, numberFormatter } from '../../lib/econometrics-chart';
+  onPageLoad('.omitted-lab', root => {
+    const controller = new AbortController();
+    const { signal } = controller;
+    const lang = root.dataset.lang!, en = lang === 'en', fmt = numberFormatter(lang);
+    const input = root.querySelector<HTMLInputElement>('[data-rho]')!;
+    const svg = root.querySelector<SVGSVGElement>('[data-plot]')!;
+    let mode = 'simple';
+    function render() {
+      const sample = omittedSample(Number(input.value));
+      const { x, y, layer } = chart(svg, [0, 24], [0, 80], [en ? 'Education X₁ (years)' : 'Educación X₁ (años)', en ? 'Salary Y (arbitrary units)' : 'Salario Y (unidades arbitrarias)'], lang);
+      for (const point of sample.points) {
+        const circle = svgNode('circle', { cx: x(point.x), cy: y(point.y), r: 4, class: `econ-point group-${point.group}` });
+        circle.append(svgNode('title', {}, `X₁=${fmt(point.x)}; X₂=${fmt(point.z)}; Y=${fmt(point.y)}`)); layer.append(circle);
+      }
+      if (mode === 'simple') drawPath(layer, [{ x: 0, y: sample.simple.intercept }, { x: 24, y: sample.simple.intercept + 24 * sample.simple.slope }], x, y);
+      else for (let group = 0; group < 3; group++) {
+        const intercept = sample.beta0 + sample.beta2 * (group - 1) * Math.sqrt(1.5);
+        drawPath(layer, [{ x: 0, y: intercept }, { x: 24, y: intercept + 24 * sample.beta1 }], x, y, `group-${group}`);
+      }
+      root.querySelector('[data-rho-value]')!.textContent = fmt(sample.correlation);
+      for (const key of ['beta1', 'beta2', 'covXZ', 'varX', 'bias'] as const) root.querySelector(`[data-value="${key}"]`)!.textContent = fmt(sample[key]);
+      root.querySelector('[data-value="simple"]')!.textContent = fmt(sample.simple.slope);
+      root.querySelector('[data-decomposition]')!.textContent = `${en ? 'Bias' : 'Sesgo'} = ${fmt(sample.beta2)} × ${fmt(sample.covXZ)} / ${fmt(sample.varX)} = ${fmt(sample.bias)}. α̂₁ = ${fmt(sample.beta1)} + (${fmt(sample.bias)}) = ${fmt(sample.simple.slope)}.`;
+      for (const button of root.querySelectorAll<HTMLButtonElement>('[data-mode]')) button.setAttribute('aria-pressed', String(button.dataset.mode === mode));
+    }
+    root.addEventListener('input', render, { signal });
+    root.addEventListener('click', event => {
+      const button = (event.target as Element).closest<HTMLButtonElement>('[data-mode]');
+      if (button) { mode = button.dataset.mode!; render(); }
+    }, { signal });
+    render();
+    return () => controller.abort();
+  });
+</script>

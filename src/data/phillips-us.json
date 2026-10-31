@@ -1,0 +1,266 @@
+{
+  "country": "United States",
+  "retrieved": "2026-10-31",
+  "sources": {
+    "unemployment": "https://fred.stlouisfed.org/series/UNRATE",
+    "inflation": "https://fred.stlouisfed.org/series/FPCPITOTLZGUSA"
+  },
+  "method": "Unemployment: annual arithmetic mean of all 12 monthly seasonally adjusted BLS UNRATE observations. Inflation: World Bank annual consumer-price inflation (FPCPITOTLZGUSA). Rounded to 3 decimal places. US observations; not estimates of a structural Phillips curve.",
+  "observations": [
+    {
+      "year": 1960,
+      "unemployment": 5.542,
+      "inflation": 1.458
+    },
+    {
+      "year": 1961,
+      "unemployment": 6.692,
+      "inflation": 1.071
+    },
+    {
+      "year": 1962,
+      "unemployment": 5.567,
+      "inflation": 1.199
+    },
+    {
+      "year": 1963,
+      "unemployment": 5.642,
+      "inflation": 1.24
+    },
+    {
+      "year": 1964,
+      "unemployment": 5.158,
+      "inflation": 1.279
+    },
+    {
+      "year": 1965,
+      "unemployment": 4.508,
+      "inflation": 1.585
+    },
+    {
+      "year": 1966,
+      "unemployment": 3.792,
+      "inflation": 3.015
+    },
+    {
+      "year": 1967,
+      "unemployment": 3.842,
+      "inflation": 2.773
+    },
+    {
+      "year": 1968,
+      "unemployment": 3.558,
+      "inflation": 4.272
+    },
+    {
+      "year": 1969,
+      "unemployment": 3.492,
+      "inflation": 5.462
+    },
+    {
+      "year": 1970,
+      "unemployment": 4.983,
+      "inflation": 5.838
+    },
+    {
+      "year": 1971,
+      "unemployment": 5.95,
+      "inflation": 4.293
+    },
+    {
+      "year": 1972,
+      "unemployment": 5.6,
+      "inflation": 3.272
+    },
+    {
+      "year": 1973,
+      "unemployment": 4.858,
+      "inflation": 6.178
+    },
+    {
+      "year": 1974,
+      "unemployment": 5.642,
+      "inflation": 11.055
+    },
+    {
+      "year": 1975,
+      "unemployment": 8.475,
+      "inflation": 9.143
+    },
+    {
+      "year": 1976,
+      "unemployment": 7.7,
+      "inflation": 5.745
+    },
+    {
+      "year": 1977,
+      "unemployment": 7.05,
+      "inflation": 6.502
+    },
+    {
+      "year": 1978,
+      "unemployment": 6.067,
+      "inflation": 7.631
+    },
+    {
+      "year": 1979,
+      "unemployment": 5.85,
+      "inflation": 11.254
+    },
+    {
+      "year": 1980,
+      "unemployment": 7.175,
+      "inflation": 13.549
+    },
+    {
+      "year": 1981,
+      "unemployment": 7.617,
+      "inflation": 10.335
+    },
+    {
+      "year": 1982,
+      "unemployment": 9.708,
+      "inflation": 6.131
+    },
+    {
+      "year": 1983,
+      "unemployment": 9.6,
+      "inflation": 3.212
+    },
+    {
+      "year": 1984,
+      "unemployment": 7.508,
+      "inflation": 4.301
+    },
+    {
+      "year": 1985,
+      "unemployment": 7.192,
+      "inflation": 3.546
+    },
+    {
+      "year": 1986,
+      "unemployment": 7.0,
+      "inflation": 1.898
+    },
+    {
+      "year": 1987,
+      "unemployment": 6.175,
+      "inflation": 3.665
+    },
+    {
+      "year": 1988,
+      "unemployment": 5.492,
+      "inflation": 4.078
+    },
+    {
+      "year": 1989,
+      "unemployment": 5.258,
+      "inflation": 4.827
+    },
+    {
+      "year": 2000,
+      "unemployment": 3.967,
+      "inflation": 3.377
+    },
+    {
+      "year": 2001,
+      "unemployment": 4.742,
+      "inflation": 2.826
+    },
+    {
+      "year": 2002,
+      "unemployment": 5.783,
+      "inflation": 1.586
+    },
+    {
+      "year": 2003,
+      "unemployment": 5.992,
+      "inflation": 2.27
+    },
+    {
+      "year": 2004,
+      "unemployment": 5.542,
+      "inflation": 2.677
+    },
+    {
+      "year": 2005,
+      "unemployment": 5.083,
+      "inflation": 3.393
+    },
+    {
+      "year": 2006,
+      "unemployment": 4.608,
+      "inflation": 3.226
+    },
+    {
+      "year": 2007,
+      "unemployment": 4.617,
+      "inflation": 2.853
+    },
+    {
+      "year": 2008,
+      "unemployment": 5.8,
+      "inflation": 3.839
+    },
+    {
+      "year": 2009,
+      "unemployment": 9.283,
+      "inflation": -0.356
+    },
+    {
+      "year": 2010,
+      "unemployment": 9.608,
+      "inflation": 1.64
+    },
+    {
+      "year": 2011,
+      "unemployment": 8.933,
+      "inflation": 3.157
+    },
+    {
+      "year": 2012,
+      "unemployment": 8.075,
+      "inflation": 2.069
+    },
+    {
+      "year": 2013,
+      "unemployment": 7.358,
+      "inflation": 1.465
+    },
+    {
+      "year": 2014,
+      "unemployment": 6.158,
+      "inflation": 1.622
+    },
+    {
+      "year": 2015,
+      "unemployment": 5.275,
+      "inflation": 0.119
+    },
+    {
+      "year": 2016,
+      "unemployment": 4.875,
+      "inflation": 1.262
+    },
+    {
+      "year": 2017,
+      "unemployment": 4.358,
+      "inflation": 2.13
+    },
+    {
+      "year": 2018,
+      "unemployment": 3.892,
+      "inflation": 2.443
+    },
+    {
+      "year": 2019,
+      "unemployment": 3.675,
+      "inflation": 1.812
+    },
+    {
+      "year": 2020,
+      "unemployment": 8.1,
+      "inflation": 1.234
+    }
+  ]
+}

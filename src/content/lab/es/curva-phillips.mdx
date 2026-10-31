@@ -1,0 +1,39 @@
+---
+title: "Curva de Phillips y Expectativas"
+description: "Arbitraje histórico entre inflación y desempleo, desanclaje de expectativas y traslación de la tasa natural (NAIRU)."
+slug: "curva-phillips"
+lang: "es"
+translation_key: "phillips-curve"
+category: "MACROECONOMETRÍA"
+order: -3
+visual: "phillips"
+status: "interactive"
+---
+
+import PhillipsLab from '../../../components/lab/PhillipsLab.astro';
+
+La relación entre inflación y desempleo parece ofrecer un menú de política económica solo si tratamos las expectativas y la estructura productiva como constantes. La historia de la **curva de Phillips** muestra por qué ese supuesto es decisivo: una correlación de corto plazo puede cambiar cuando cambian las expectativas, los shocks de oferta o el régimen monetario.
+
+## Una curva condicionada por las expectativas
+
+El experimento usa una versión simplificada de la curva aumentada por expectativas:
+
+$$
+\pi_t=\pi_t^e-\beta(u_t-u_n),\qquad \beta>0.
+$$
+
+$\pi_t$ es la inflación, $\pi_t^e$ la inflación esperada, $u_t$ el desempleo y $u_n$ una tasa natural usada como referencia. Con expectativas constantes, más desempleo reduce la inflación predicha. Al aumentar $\pi_t^e$, toda la curva sube. Al aumentar $u_n$, el punto donde $\pi=\pi^e$ se mueve hacia la derecha.
+
+En esta simplificación usamos $u_n$ como referencia de NAIRU. En aplicaciones empíricas, la tasa natural y la tasa de desempleo que no acelera la inflación no son conceptos necesariamente idénticos ni directamente observables.
+
+<div className="figure-wide"><PhillipsLab lang="es" /></div>
+
+## Tres épocas, ninguna ley inmutable
+
+Los puntos muestran observaciones anuales reales de Estados Unidos: los años sesenta, los setenta y ochenta y el período 2000–2020. La inflación proviene del indicador anual de precios al consumidor del Banco Mundial; el desempleo es el promedio de los doce meses de la serie desestacionalizada del BLS. Ambas series están disponibles en FRED y se incluyen localmente, sin consultas durante la navegación.
+
+La pendiente $\beta$ de cada escenario es **ilustrativa**, no estimada sobre esos puntos. El aplanamiento se representa usando una pendiente menor en el escenario reciente. Ni los sliders ni el cambio de época permiten reconstruir las expectativas efectivamente observadas: sirven para separar un desplazamiento de la curva de un movimiento sobre ella.
+
+**Advertencia empírica.** Una curva estable no ofrece un arbitraje permanente. Los shocks de oferta pueden desplazar inflación y desempleo a la vez; esta ecuación los omite para aislar el papel de las expectativas. No uses la curva dibujada como pronóstico ni como estimación de la NAIRU.
+
+Fuentes: [BLS, desempleo mensual vía FRED](https://fred.stlouisfed.org/series/UNRATE) y [Banco Mundial, inflación anual vía FRED](https://fred.stlouisfed.org/series/FPCPITOTLZGUSA).
