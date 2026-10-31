@@ -14,7 +14,33 @@ const en = lang === 'en';
     <label class="econ-check"><input type="checkbox" data-residuals checked />{en ? 'Show residuals (eᵢ)' : 'Mostrar residuos (eᵢ)'}</label>
     <label class="econ-check"><input type="checkbox" data-squares />{en ? 'Show squares (eᵢ²)' : 'Mostrar cuadrados (eᵢ²)'}</label>
   </div>
+  <div class="econ-controls">
+    <label>{en ? 'Manual intercept b₀' : 'Intercepto manual b₀'} <output data-b0-value>20</output><input data-b0 type="range" min="-100" max="100" step="any" value="20" /></label>
+    <label>{en ? 'Manual slope b₁' : 'Pendiente manual b₁'} <output data-b1-value>1</output><input data-b1 type="range" min="-10" max="10" step="any" value="1" /></label>
+    <button type="button" class="ols-minimum" data-action="fit" disabled>{en ? 'Fit with OLS (Minimum)' : 'Ajustar por MCO (Mínimo)'}</button>
+  </div>
+  <p class="econ-status" data-fit-status role="status" aria-live="polite"></p>
+  <dl class="econ-metrics">
+    <div><dt>SSR{en ? ' manual / current line' : ' manual / recta actual'}</dt><dd data-value="manualSsr">—</dd></div>
+    <div><dt>SSR{en ? ' minimum (OLS)' : ' mínimo (MCO)'}</dt><dd data-value="ssr">—</dd></div>
+    <div><dt>{en ? 'Excess above the minimum' : 'Exceso sobre el mínimo'}</dt><dd data-value="gap">—</dd></div>
+  </dl>
+  <div class="econ-controls">
+    <button type="button" data-action="vertical" disabled>{en ? 'Vertical outlier' : 'Outlier vertical'}</button>
+    <button type="button" data-action="leverage" disabled>{en ? 'High-leverage point' : 'Punto de alto apalancamiento (Leverage)'}</button>
+  </div>
+  <p class="econ-note">{en ? 'Each witness adds one point to the current sample and activates OLS. Reload the sample between the two experiments for a fair comparison. The sample concentrates x between 8 and 12 to make leverage at the edge visible.' : 'Cada testigo agrega un punto a la muestra actual y activa MCO. Recargá la muestra entre ambos experimentos para comparar. Los datos de prueba concentran x entre 8 y 12 para hacer visible el apalancamiento en el extremo.'}</p>
   <svg class="econ-click-plot" data-plot viewBox="0 0 740 410" role="img" aria-label={en ? 'Education versus salary, fitted line and residuals' : 'Educación frente a salario, recta ajustada y residuos'}></svg>
+  <div data-diagnostics hidden>
+    <p class="econ-status" data-witness-status role="status" aria-live="polite"></p>
+    <dl class="econ-metrics">
+      <div><dt>{en ? 'New point leverage hᵢ' : 'Leverage del punto nuevo hᵢ'}</dt><dd data-effect="leverage">—</dd></div>
+      <div><dt>{en ? 'Residual before OLS refit' : 'Residuo antes del reajuste MCO'}</dt><dd data-effect="residualBefore">—</dd></div>
+      <div><dt>{en ? 'Residual after OLS refit' : 'Residuo después del reajuste MCO'}</dt><dd data-effect="residualAfter">—</dd></div>
+      <div><dt>{en ? 'Slope change Δβ̂₁' : 'Cambio de pendiente Δβ̂₁'}</dt><dd data-effect="slopeChange">—</dd></div>
+    </dl>
+    <p class="econ-note">{en ? 'Dashed teal line: OLS before the last witness point. Solid line: current fit. The outlined point is the witness; diagnostics compare OLS fits before and after its addition.' : 'Recta turquesa discontinua: MCO antes del último testigo. Recta continua: ajuste actual. El punto resaltado es el testigo; el diagnóstico compara MCO antes y después de agregarlo.'}</p>
+  </div>
   <div class="econ-controls">
     <label>{en ? 'Education (years, 0–20)' : 'Educación (años, 0–20)'}<input data-x type="number" min="0" max="20" step="0.1" value="10" /></label>
     <label>{en ? 'Salary (0–100)' : 'Salario (0–100)'}<input data-y type="number" min="0" max="100" step="0.1" value="50" /></label>
@@ -25,17 +51,17 @@ const en = lang === 'en';
     <div><dt>β̂₀</dt><dd data-value="intercept">—</dd></div>
     <div><dt>β̂₁</dt><dd data-value="slope">—</dd></div>
     <div><dt>R²</dt><dd data-value="r2">—</dd></div>
-    <div><dt>SSR = Σeᵢ²</dt><dd data-value="ssr">—</dd></div>
     <div><dt>{en ? 'Residual standard error' : 'Error estándar residual'}</dt><dd data-value="se">—</dd></div>
   </dl>
   <p class="econ-status" data-status role="status" aria-live="polite"></p>
-  <details><summary>{en ? 'Observations and residuals' : 'Observaciones y residuos'}</summary><div class="econ-table"><table><thead><tr><th>xᵢ</th><th>yᵢ</th><th>ŷᵢ</th><th>eᵢ</th><th>eᵢ²</th></tr></thead><tbody data-rows></tbody></table></div></details>
+  <p class="econ-note">{en ? 'Residuals, squares and the table follow the current line. Coefficients with hats, R² and residual standard error refer to the OLS minimum. That minimum changes when the sample changes.' : 'Los residuos, cuadrados y la tabla siguen la recta actual. Los coeficientes con gorro, R² y el error estándar residual corresponden al mínimo MCO. Ese mínimo cambia cuando cambia la muestra.'}</p>
+  <details><summary>{en ? 'Observations and current-line residuals' : 'Observaciones y residuos de la recta actual'}</summary><div class="econ-table"><table><thead><tr><th>xᵢ</th><th>yᵢ</th><th>b₀ + b₁xᵢ</th><th>eᵢ</th><th>eᵢ²</th></tr></thead><tbody data-rows></tbody></table></div></details>
   <noscript>{en ? 'Enable JavaScript to fit a sample. The formulas and methodological notes remain available below.' : 'Activá JavaScript para ajustar una muestra. Las fórmulas y notas metodológicas siguen disponibles debajo.'}</noscript>
 </section>
 
 <script>
   import { onPageLoad } from '../../lib/page-lifecycle';
-  import { ols, type Point } from '../../lib/econometrics';
+  import { ols, olsExample, olsWitness, lineSsr, type Point } from '../../lib/econometrics';
   import { chart, drawPath, svgNode, plot, numberFormatter } from '../../lib/econometrics-chart';
   onPageLoad('.ols-lab', root => {
     const controller = new AbortController();
@@ -46,28 +72,60 @@ const en = lang === 'en';
     const svg = root.querySelector<SVGSVGElement>('[data-plot]')!;
     const inputX = root.querySelector<HTMLInputElement>('[data-x]')!;
     const inputY = root.querySelector<HTMLInputElement>('[data-y]')!;
+    const inputB0 = root.querySelector<HTMLInputElement>('[data-b0]')!;
+    const inputB1 = root.querySelector<HTMLInputElement>('[data-b1]')!;
     let points: Point[] = [];
+    let b0 = 20, b1 = 1;
+    let mode: 'manual' | 'ols' = 'manual';
+    let witness: ReturnType<typeof olsWitness> = null;
+    function syncControls() {
+      for (const [input, value, limit] of [[inputB0, b0, 100], [inputB1, b1, 10]] as const) {
+        input.min = String(Math.min(-limit, Math.floor(value) - 1));
+        input.max = String(Math.max(limit, Math.ceil(value) + 1));
+        input.value = String(value);
+      }
+      root.querySelector('[data-b0-value]')!.textContent = fmt(b0);
+      root.querySelector('[data-b1-value]')!.textContent = fmt(b1);
+    }
     function render() {
       const fit = ols(points);
+      if (mode === 'ols' && fit) { b0 = fit.intercept; b1 = fit.slope; }
+      if (!fit) mode = 'manual';
+      syncControls();
+      const currentSsr = points.length ? lineSsr(points, b0, b1) : null;
+      const gap = fit && currentSsr !== null ? Math.max(0, currentSsr - fit.ssr) : null;
+      const atMinimum = fit && gap !== null && gap <= 1e-9 * Math.max(1, currentSsr!, fit.ssr);
+      root.querySelector('[data-value="manualSsr"]')!.textContent = fmt(currentSsr);
+      root.querySelector('[data-value="gap"]')!.textContent = fmt(atMinimum ? 0 : gap);
+      root.querySelector('[data-fit-status]')!.textContent = atMinimum
+        ? (en ? 'OLS minimum reached: the current SSR equals the absolute minimum for this sample.' : 'Mínimo MCO alcanzado: el SSR actual coincide con el mínimo absoluto para esta muestra.')
+        : (en ? 'Manual fit: move b₀ and b₁ to lower SSR, then compare with the exact OLS minimum.' : 'Ajuste manual: mové b₀ y b₁ para bajar el SSR y compará con el mínimo MCO exacto.');
+      root.querySelector<HTMLButtonElement>('[data-action="fit"]')!.disabled = !fit;
+      for (const action of ['vertical', 'leverage']) root.querySelector<HTMLButtonElement>(`[data-action="${action}"]`)!.disabled = !fit || points.length >= 250;
       const { x, y, layer } = chart(svg, [0, 20], [0, 100], [en ? 'Education (years)' : 'Educación (años)', en ? 'Salary (arbitrary units)' : 'Salario (unidades arbitrarias)'], lang);
-      if (fit) {
-        points.forEach((p, i) => {
-          const predicted = fit.intercept + fit.slope * p.x;
-          if (root.querySelector<HTMLInputElement>('[data-squares]')!.checked) {
-            const side = Math.abs(y(p.y) - y(predicted));
-            layer.append(svgNode('rect', { x: x(p.x), y: Math.min(y(p.y), y(predicted)), width: side, height: side, class: 'econ-square' }));
-          }
-          if (root.querySelector<HTMLInputElement>('[data-residuals]')!.checked) {
-            const line = svgNode('line', { x1: x(p.x), x2: x(p.x), y1: y(p.y), y2: y(predicted), class: 'econ-residual' });
-            line.append(svgNode('title', {}, `e = ${fmt(fit.residuals[i])}`));
-            layer.append(line);
-          }
-        });
-        drawPath(layer, [{ x: 0, y: fit.intercept }, { x: 20, y: fit.intercept + 20 * fit.slope }], x, y);
-      }
-      for (const p of points) {
-        const circle = svgNode('circle', { cx: x(p.x), cy: y(p.y), r: 5, class: 'econ-point' });
+      if (witness) drawPath(layer, [{ x: 0, y: witness.before.intercept }, { x: 20, y: witness.before.intercept + 20 * witness.before.slope }], x, y, 'econ-secondary ols-before');
+      points.forEach(p => {
+        const predicted = b0 + b1 * p.x;
+        if (root.querySelector<HTMLInputElement>('[data-squares]')!.checked) {
+          const side = Math.abs(y(p.y) - y(predicted));
+          layer.append(svgNode('rect', { x: x(p.x), y: Math.min(y(p.y), y(predicted)), width: side, height: side, class: 'econ-square' }));
+        }
+        if (root.querySelector<HTMLInputElement>('[data-residuals]')!.checked) {
+          const line = svgNode('line', { x1: x(p.x), x2: x(p.x), y1: y(p.y), y2: y(predicted), class: 'econ-residual' });
+          line.append(svgNode('title', {}, `e = ${fmt(p.y - predicted)}`));
+          layer.append(line);
+        }
+      });
+      if (points.length) drawPath(layer, [{ x: 0, y: b0 }, { x: 20, y: b0 + 20 * b1 }], x, y);
+      for (const [i, p] of points.entries()) {
+        const isWitness = witness && i === points.length - 1;
+        const circle = svgNode('circle', { cx: x(p.x), cy: y(p.y), r: isWitness ? 7 : 5, class: isWitness ? 'econ-point ols-witness' : 'econ-point' });
         circle.append(svgNode('title', {}, `x = ${fmt(p.x)}, y = ${fmt(p.y)}`)); layer.append(circle);
+      }
+      root.querySelector<HTMLElement>('[data-diagnostics]')!.hidden = !witness;
+      if (witness) {
+        root.querySelector('[data-witness-status]')!.textContent = `${witness.kind === 'vertical' ? (en ? 'Vertical outlier' : 'Outlier vertical') : (en ? 'High-leverage point' : 'Punto de alto apalancamiento')}: x = ${fmt(witness.point.x)}, y = ${fmt(witness.point.y)}. ${en ? 'OLS slope' : 'Pendiente MCO'}: ${fmt(witness.before.slope)} → ${fmt(witness.after.slope)}.`;
+        for (const key of ['leverage', 'residualBefore', 'residualAfter', 'slopeChange'] as const) root.querySelector(`[data-effect="${key}"]`)!.textContent = fmt(witness[key]);
       }
       for (const key of ['intercept', 'slope', 'r2', 'ssr', 'se'] as const) root.querySelector(`[data-value="${key}"]`)!.textContent = fmt(fit?.[key]);
       root.querySelector('[data-value="n"]')!.textContent = String(points.length);
@@ -75,11 +133,11 @@ const en = lang === 'en';
         ? (en ? 'At least two observations with different x values are needed.' : 'Se necesitan al menos dos observaciones con valores de x distintos.')
         : (en ? 'Standard error = √(SSR / (n − 2)); undefined with only two points. R² is undefined when all y values are equal.' : 'Error estándar = √(SSR / (n − 2)); no está definido con solo dos puntos. R² no está definido si todos los valores de y son iguales.');
       const rows = root.querySelector('[data-rows]')!;
-      rows.replaceChildren(...points.map((p, i) => {
+      rows.replaceChildren(...points.map(p => {
         const tr = document.createElement('tr');
-        const predicted = fit ? fit.intercept + fit.slope * p.x : null;
-        const residual = fit?.residuals[i] ?? null;
-        for (const value of [p.x, p.y, predicted, residual, residual === null ? null : residual ** 2]) {
+        const predicted = b0 + b1 * p.x;
+        const residual = p.y - predicted;
+        for (const value of [p.x, p.y, predicted, residual, residual ** 2]) {
           const td = document.createElement('td'); td.textContent = fmt(value); tr.append(td);
         }
         return tr;
@@ -87,17 +145,29 @@ const en = lang === 'en';
     }
     function add(x: number, y: number) {
       if (!Number.isFinite(x) || !Number.isFinite(y) || x < 0 || x > 20 || y < 0 || y > 100 || points.length >= 250) return;
-      points.push({ x, y }); render();
+      witness = null; points.push({ x, y }); render();
     }
     root.addEventListener('click', event => {
       const action = (event.target as Element).closest<HTMLButtonElement>('button')?.dataset.action;
-      if (action === 'sample') points = [3, 5, 6, 7, 8, 9, 10, 12, 13, 14, 16, 18].map((x, i) => ({ x, y: 12 + 3.3 * x + [-6, 4, -2, 8, -5, 7, -8, 3, -4, 9, -3, 2][i] }));
-      if (action === 'clear') points = [];
+      if (action === 'sample' || action === 'clear') {
+        points = action === 'sample' ? olsExample() : [];
+        witness = null; mode = 'manual'; b0 = 20; b1 = 1;
+      }
+      if (action === 'fit' && ols(points)) mode = 'ols';
+      if (action === 'vertical' || action === 'leverage') {
+        const next = olsWitness(points, action);
+        if (next) { witness = next; points.push(next.point); mode = 'ols'; }
+      }
       if (action === 'add') {
         if (inputX.value === '' || inputY.value === '' || !inputX.reportValidity() || !inputY.reportValidity()) return;
         add(inputX.valueAsNumber, inputY.valueAsNumber); return;
       }
       if (action) render();
+    }, { signal });
+    root.addEventListener('input', event => {
+      if (event.target === inputB0 || event.target === inputB1) {
+        b0 = Number(inputB0.value); b1 = Number(inputB1.value); mode = 'manual'; render();
+      }
     }, { signal });
     root.addEventListener('change', render, { signal });
     svg.addEventListener('click', event => {
@@ -110,3 +180,10 @@ const en = lang === 'en';
     return () => controller.abort();
   });
 </script>
+
+<style>
+  .ols-lab button.ols-minimum { background: var(--accent-rust); color: var(--bg-body); border-color: var(--accent-rust); font-weight: 600; }
+  .ols-lab button:disabled { opacity: .45; cursor: not-allowed; }
+  .ols-lab :global(.ols-before) { stroke-dasharray: 6 4; }
+  .ols-lab :global(.ols-witness) { stroke: var(--text); stroke-width: 2; fill-opacity: 1; }
+</style>

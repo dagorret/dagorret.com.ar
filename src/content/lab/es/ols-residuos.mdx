@@ -27,6 +27,39 @@ Elevar al cuadrado evita que residuos positivos y negativos se cancelen, pero ta
 
 <div className="figure-wide"><OlsLab lang="es" /></div>
 
+## Probar una recta antes de minimizar
+
+Los sliders eligen un intercepto $b_0$ y una pendiente $b_1$ arbitrarios. La recta, los residuos, los cuadrados y la tabla siguen esos valores, mientras el contador recalcula:
+
+$$
+\mathrm{SSR}_{\mathrm{manual}}(b_0,b_1)=\sum_i\left[y_i-(b_0+b_1x_i)\right]^2.
+$$
+
+Intentá reducirlo a mano y luego presioná **Ajustar por MCO (Mínimo)**. El botón coloca los coeficientes en la solución analítica, sin redondearlos a los valores mostrados en pantalla. El exceso sobre el mínimo pasa a cero. No es un mínimo local encontrado por tanteo: para esa misma muestra, ninguna otra recta obtiene un SSR menor. Si llamamos $S_{xx}=\sum_i(x_i-\bar x)^2$, la identidad que lo garantiza es:
+
+$$
+\mathrm{SSR}(b_0,b_1)=\mathrm{SSR}_{\mathrm{MCO}}
++n(b_0+b_1\bar x-\bar y)^2
++S_{xx}(b_1-\hat\beta_1)^2.
+$$
+
+El mínimo es único cuando $S_{xx}>0$. Después de ajustar, agregar puntos mantiene activo MCO; mover un slider vuelve al modo manual. El mínimo corresponde siempre a la **muestra actual**: no hay que comparar el SSR de muestras de distinto tamaño como si fueran el mismo problema.
+
+## Un residuo grande no es lo mismo que mucha influencia
+
+Para comparar los dos testigos, recargá los datos de prueba antes de cada uno. La muestra concentra la educación entre 8 y 12 años para que el contraste sea visible:
+
+- **Outlier vertical:** agrega una observación en $x=\bar x$ con un salario muy distante. Aumenta mucho el error, pero no cambia la pendiente MCO; sí puede desplazar el intercepto.
+- **Punto de alto apalancamiento:** agrega una observación en el extremo de $x$ más alejado del centro de la muestra. Apunta a un desvío de 15 unidades respecto de la recta anterior, menor que el del outlier vertical en la muestra de prueba. Al reajustar, puede cambiar mucho la pendiente y terminar con un residuo pequeño porque atrajo la recta hacia sí. Si ese desvío saliera del rango salarial del gráfico, se limita a 0–100 y el panel informa el residuo efectivo.
+
+El panel distingue explícitamente el residuo **antes** del reajuste del residuo **después**. Un punto exactamente sobre la recta anterior no la movería, por muy extremo que fuera su $x$: alto leverage significa **potencial** de influencia, no influencia garantizada. El apalancamiento del punto se calcula en la muestra ampliada:
+
+$$
+h_i=\frac{1}{n}+\frac{(x_i-\bar x)^2}{S_{xx}}.
+$$
+
+La línea turquesa discontinua conserva el ajuste MCO anterior y el punto resaltado identifica la observación agregada. El diagnóstico compara ese ajuste con el MCO posterior, incluso si después explorás otra recta manualmente.
+
 ## ¿Qué significa un buen ajuste?
 
 Con intercepto, definimos $\mathrm{SSR}=\sum_i e_i^2$ y $\mathrm{SST}=\sum_i(y_i-\bar y)^2$. Aquí SSR significa **suma de residuos cuadrados**, no suma explicada:
@@ -38,6 +71,14 @@ $$
 
 El error estándar mostrado es el **error estándar residual**, en unidades de $y$, no el error estándar del estimador de la pendiente. Con dos puntos no hay grados de libertad para estimarlo; con $y$ constante, $R^2$ no está definido; sin variación en $x$, no hay pendiente identificada. El panel muestra un guion en esos casos.
 
+## Geometría para ajustar, supuestos para inferir
+
+**Trazar la recta MCO es una operación algebraica y geométrica:** no exige normalidad, homocedasticidad ni independencia de los errores. Para una solución única sí hace falta variación en $x$ —o rango completo de la matriz de diseño en el caso múltiple—.
+
+Los supuestos probabilísticos justifican propiedades del estimador y procedimientos inferenciales. En la formulación clásica de **Gauss–Markov**, exogeneidad y errores homocedásticos no correlacionados, junto con rango completo, hacen que MCO sea el mejor estimador lineal insesgado; **no se requiere normalidad**, y errores no correlacionados no significa necesariamente independientes. La normalidad se añade para justificar los tests $t$, $F$ e intervalos clásicos exactos en muestras finitas. La inferencia asintótica y las matrices de covarianza robustas permiten otras condiciones, sin cambiar la recta que minimiza SSR.
+
 **Conclusión metodológica.** Probá agregar un punto alejado y observá cuánto se mueve la recta. Un $R^2$ alto resume un ajuste dentro de la muestra: no prueba causalidad, no garantiza predicción fuera de ella y no elimina el problema de variables omitidas. Los datos de educación y salario de este laboratorio son inventados.
 
 Referencia: [NIST, mínimos cuadrados y desviación estándar residual](https://itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm).
+
+Para profundizar: [Penn State, puntos influyentes y leverage](https://online.stat.psu.edu/stat501/Lesson11) y [Marco Taboga, teorema de Gauss–Markov](https://www.statlect.com/fundamentals-of-statistics/Gauss-Markov-theorem).

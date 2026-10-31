@@ -27,6 +27,39 @@ Squaring prevents positive and negative errors from cancelling, while giving lar
 
 <div className="figure-wide"><OlsLab lang="en" /></div>
 
+## Try a line before minimizing
+
+The sliders choose an arbitrary intercept $b_0$ and slope $b_1$. The line, residuals, squares and table follow those values while the counter recomputes:
+
+$$
+\mathrm{SSR}_{\mathrm{manual}}(b_0,b_1)=\sum_i\left[y_i-(b_0+b_1x_i)\right]^2.
+$$
+
+Try lowering it by hand, then press **Fit with OLS (Minimum)**. The button moves to the analytical coefficients without rounding them to the displayed values. Excess above the minimum becomes zero. This is not a local minimum found by trial and error: no other straight line can achieve a lower SSR for that same sample. Writing $S_{xx}=\sum_i(x_i-\bar x)^2$, the reason is:
+
+$$
+\mathrm{SSR}(b_0,b_1)=\mathrm{SSR}_{\mathrm{OLS}}
++n(b_0+b_1\bar x-\bar y)^2
++S_{xx}(b_1-\hat\beta_1)^2.
+$$
+
+The minimum is unique when $S_{xx}>0$. After fitting, adding observations keeps OLS active; moving either slider switches back to manual mode. The minimum always belongs to the **current sample**: comparing SSR across different sample sizes is not the same optimization problem.
+
+## A large residual is not the same as high influence
+
+Reload the sample before each witness experiment for a fair comparison. Sample education values are concentrated between 8 and 12 years to make the contrast visible:
+
+- **Vertical outlier:** adds an observation at $x=\bar x$ with a distant salary. It greatly increases error but leaves the OLS slope unchanged; it can still shift the intercept.
+- **High-leverage point:** adds an observation at the plot's x endpoint furthest from the sample center. It targets a deviation of 15 units from the previous fit, less than the vertical outlier's deviation in the sample preset. Refitting can substantially change the slope and leave a small final residual because the point has pulled the line towards itself. If the target falls outside the salary range, it is clipped to 0–100 and the panel reports its actual residual.
+
+The panel explicitly distinguishes residuals **before** and **after** refitting. A point exactly on the old line would not move it, however extreme its x value: high leverage means **potential** influence, not guaranteed influence. Leverage is calculated in the augmented sample:
+
+$$
+h_i=\frac{1}{n}+\frac{(x_i-\bar x)^2}{S_{xx}}.
+$$
+
+The dashed teal line preserves the previous OLS fit and the outlined point identifies the added observation. Diagnostics compare OLS before and after the addition, even if you subsequently explore another line manually.
+
 ## What does a good fit mean?
 
 With an intercept, define $\mathrm{SSR}=\sum_i e_i^2$ and $\mathrm{SST}=\sum_i(y_i-\bar y)^2$. SSR here means the **residual sum of squares**, not the explained sum:
@@ -38,6 +71,14 @@ $$
 
 The panel reports the **residual standard error**, in outcome units, rather than the standard error of the estimated slope. Two points leave no residual degrees of freedom; constant outcomes make $R^2$ undefined; constant $x$ values leave the slope unidentified. Those cases display a dash.
 
+## Geometry for fitting, assumptions for inference
+
+**Computing the OLS line is an algebraic and geometric operation:** normality, homoskedasticity and error independence are not required. A unique solution does require variation in $x$, or a full-rank design matrix in multiple regression.
+
+Probability assumptions justify estimator properties and inferential procedures. In the classical **Gauss–Markov** formulation, exogeneity and homoskedastic, uncorrelated errors, together with full rank, make OLS the best linear unbiased estimator. **Normality is not required**, and uncorrelated errors need not be independent. Normality is added for exact classical finite-sample $t$ and $F$ tests and confidence intervals. Asymptotic inference and robust covariance estimators allow other conditions without changing the line that minimizes SSR.
+
 **Methodological conclusion.** Add an extreme observation and watch the fitted line move. High $R^2$ describes an in-sample fit: it establishes neither causation nor out-of-sample accuracy and does not solve omitted variable bias. The education and salary example is entirely synthetic.
 
 Reference: [NIST, least squares and residual standard deviation](https://itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm).
+
+Further reading: [Penn State, influential points and leverage](https://online.stat.psu.edu/stat501/Lesson11) and [Marco Taboga, Gauss–Markov theorem](https://www.statlect.com/fundamentals-of-statistics/Gauss-Markov-theorem).
