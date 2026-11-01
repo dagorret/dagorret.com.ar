@@ -19,8 +19,10 @@ Una nube de puntos no trae una recta incorporada. **Mínimos Cuadrados Ordinario
 En el modelo $y_i=\beta_0+\beta_1x_i+\varepsilon_i$, la predicción es $\hat y_i=\hat\beta_0+\hat\beta_1x_i$ y el residuo es $e_i=y_i-\hat y_i$. Si existe variación en $x$, la solución es:
 
 $$
-\hat\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},
-\qquad \hat\beta_0=\bar y-\hat\beta_1\bar x.
+\begin{gathered}
+\hat\beta_1=\frac{\sum_i(x_i-\bar x)(y_i-\bar y)}{\sum_i(x_i-\bar x)^2},\\[0.5em]
+\hat\beta_0=\bar y-\hat\beta_1\bar x.
+\end{gathered}
 $$
 
 Elevar al cuadrado evita que residuos positivos y negativos se cancelen, pero también hace que observaciones extremas influyan mucho en el ajuste. Los cuadrados dibujados representan la magnitud de esa penalización; pueden quedar recortados por los límites del gráfico.
@@ -38,9 +40,11 @@ $$
 Intentá reducirlo a mano y luego presioná **Ajustar por MCO (Mínimo)**. El botón coloca los coeficientes en la solución analítica, sin redondearlos a los valores mostrados en pantalla. El exceso sobre el mínimo pasa a cero. No es un mínimo local encontrado por tanteo: para esa misma muestra, ninguna otra recta obtiene un SSR menor. Si llamamos $S_{xx}=\sum_i(x_i-\bar x)^2$, la identidad que lo garantiza es:
 
 $$
-\mathrm{SSR}(b_0,b_1)=\mathrm{SSR}_{\mathrm{MCO}}
-+n(b_0+b_1\bar x-\bar y)^2
-+S_{xx}(b_1-\hat\beta_1)^2.
+\begin{aligned}
+\mathrm{SSR}(b_0,b_1)={}&\mathrm{SSR}_{\mathrm{MCO}}\\
+&+n(b_0+b_1\bar x-\bar y)^2\\
+&+S_{xx}(b_1-\hat\beta_1)^2.
+\end{aligned}
 $$
 
 El mínimo es único cuando $S_{xx}>0$. Después de ajustar, agregar puntos mantiene activo MCO; mover un slider vuelve al modo manual. El mínimo corresponde siempre a la **muestra actual**: no hay que comparar el SSR de muestras de distinto tamaño como si fueran el mismo problema.
@@ -65,8 +69,10 @@ La línea turquesa discontinua conserva el ajuste MCO anterior y el punto resalt
 Con intercepto, definimos $\mathrm{SSR}=\sum_i e_i^2$ y $\mathrm{SST}=\sum_i(y_i-\bar y)^2$. Aquí SSR significa **suma de residuos cuadrados**, no suma explicada:
 
 $$
-R^2=1-\frac{\mathrm{SSR}}{\mathrm{SST}},
-\qquad \hat\sigma=\sqrt{\frac{\mathrm{SSR}}{n-2}}.
+\begin{gathered}
+R^2=1-\frac{\mathrm{SSR}}{\mathrm{SST}},\\[0.5em]
+\hat\sigma=\sqrt{\frac{\mathrm{SSR}}{n-2}}.
+\end{gathered}
 $$
 
 El error estándar mostrado es el **error estándar residual**, en unidades de $y$, no el error estándar del estimador de la pendiente. Con dos puntos no hay grados de libertad para estimarlo; con $y$ constante, $R^2$ no está definido; sin variación en $x$, no hay pendiente identificada. El panel muestra un guion en esos casos.
