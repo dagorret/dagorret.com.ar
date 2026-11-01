@@ -5,7 +5,7 @@ const { lang = 'es' } = Astro.props;
 const en = lang === 'en';
 ---
 
-<section class="econ-lab ols-lab" data-lang={lang} aria-label={en ? 'Interactive ordinary least squares' : 'Mínimos cuadrados interactivos'}>
+<section data-pagefind-ignore class="econ-lab ols-lab" data-lang={lang} aria-label={en ? 'Interactive ordinary least squares' : 'Mínimos cuadrados interactivos'}>
   <div class="econ-heading"><strong>{en ? 'Draw a sample. Fit a line.' : 'Dibujá una muestra. Ajustá una recta.'}</strong><span>{en ? 'Synthetic data · n ≤ 250' : 'Datos simulados · n ≤ 250'}</span></div>
   <p class="econ-note">{en ? 'Click inside the plot or enter coordinates below. Salary is in arbitrary units; the example is not a real earnings estimate.' : 'Hacé clic dentro del gráfico o ingresá coordenadas debajo. El salario usa unidades arbitrarias; el ejemplo no es una estimación salarial real.'}</p>
   <div class="econ-controls">

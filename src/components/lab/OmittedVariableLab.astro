@@ -4,7 +4,7 @@ interface Props { lang?: 'es' | 'en' }
 const { lang = 'es' } = Astro.props;
 const en = lang === 'en';
 ---
-<section class="econ-lab omitted-lab" data-lang={lang} aria-label={en ? 'Omitted variable bias simulation' : 'Simulación del sesgo de variable omitida'}>
+<section data-pagefind-ignore class="econ-lab omitted-lab" data-lang={lang} aria-label={en ? 'Omitted variable bias simulation' : 'Simulación del sesgo de variable omitida'}>
   <div class="econ-heading"><strong>{en ? 'The slope changes when a variable is missing' : 'La pendiente cambia al omitir una variable'}</strong><span>{en ? '90 synthetic observations' : '90 observaciones simuladas'}</span></div>
   <div class="econ-controls">
     <button type="button" data-mode="simple" aria-pressed="true">{en ? 'Simple regression' : 'Regresión Simple'}</button>

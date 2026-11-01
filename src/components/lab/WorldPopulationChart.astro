@@ -8,7 +8,7 @@ const initial = worldPopulation(0);
 const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 2 });
 ---
 
-<figure class="demography-lab world-population-chart" data-lang={lang}>
+<figure data-pagefind-ignore class="demography-lab world-population-chart" data-lang={lang}>
   <figcaption class="demo-heading"><strong>{en ? 'World population · 2024–2100' : 'Población mundial · 2024–2100'}</strong><span>{en ? 'Illustrative logistic model' : 'Modelo logístico didáctico'}</span></figcaption>
   <label>{en ? 'Expected fertility: shift relative to the UN medium path (births per woman)' : 'Fecundidad esperada: desvío respecto de la trayectoria media ONU (hijos por mujer)'}
     <input type="range" min="-0.5" max="0.5" step="0.01" value="0" data-fertility-offset />
