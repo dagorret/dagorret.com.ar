@@ -1,0 +1,67 @@
+---
+title: "The p-value under pressure"
+description: "Simulate hundreds of studies with no real effect. See how p-values are distributed under the null hypothesis and how fast false positives grow when many outcomes are tried and only the best one is reported."
+slug: "p-value-under-pressure"
+lang: "en"
+translation_key: "p-value-under-pressure"
+category: "Statistics · Inference"
+order: -5
+visual: "p-value"
+status: "interactive"
+---
+
+import PValueLab from '../../../components/lab/PValueLab.astro';
+
+A small p-value is often read as a sign that “something is there”. This lab starts from the opposite case: **nothing is there**. Every simulated study compares two groups drawn from the same population. Even so, some of them reach $p<0.05$. The experiment shows how many do, and how much that figure grows when the analysis adapts to the data.
+
+## What each study computes
+
+Each study takes $n$ subjects per group, all distributed $N(0,1)$, and runs a two-sample pooled-variance $t$ test:
+
+$$
+\begin{gathered}
+t=\frac{\bar Y_A-\bar Y_B}{s_p\sqrt{2/n}},\\[4pt]
+s_p^2=\frac{(n-1)\,s_A^2+(n-1)\,s_B^2}{2n-2},\\[4pt]
+p=P\big(|T_{2n-2}|\ge|t|\big).
+\end{gathered}
+$$
+
+The p-value is the probability of observing a difference at least as extreme as the one obtained **if the null hypothesis and the rest of the model were true**. It is a statement about the data, conditional on a hypothesis. It is not a statement about the hypothesis.
+
+<div className="figure-wide"><PValueLab lang="en" /></div>
+
+## Uniform under the null
+
+When the null hypothesis is true and the test is exact, the p-value is uniformly distributed between 0 and 1:
+
+$$
+P(p\le\alpha\mid H_0)=\alpha\quad\text{for every }\alpha\in[0,1].
+$$
+
+That is why the histogram is flat and about 5 % of studies land in the first bar. That 5 % is the type I error rate accepted by setting $\alpha=0.05$. It is not a flaw of the test. With finite $k$ the histogram wobbles: the $\pm 2$ SE margin shows how far the simulated share can drift from 5 % through simulation noise alone.
+
+## Testing until it works
+
+Now each study measures $m$ outcome variables, tests them all and reports the one with the smallest p-value. If the $m$ tests were independent, the probability that at least one crosses the threshold would be
+
+$$
+P\Big(\min_{j}p_j<\alpha\Big)=1-(1-\alpha)^m .
+$$
+
+With $m=5$ that is 22.6 %; with $m=20$, 64.2 %. No calculation was wrong: each test, on its own, is correct. The problem is reporting only the winner as if it were the only one examined.
+
+The correlation control $\rho$ makes the outcomes resemble one another. The more they overlap, the fewer independent chances there are and the smaller the inflation. It does not vanish unless the outcomes are practically the same variable.
+
+The **Bonferroni correction** compares each test with $\alpha/m$. By Boole's inequality,
+
+$$
+P\Big(\bigcup_{j=1}^m \{p_j<\alpha/m\}\Big)\le\sum_{j=1}^m\frac{\alpha}{m}=\alpha,
+$$
+
+whatever the dependence between outcomes. The price is power: a real effect has to be larger, or the sample bigger, to clear a stricter threshold. When outcomes are highly correlated, Bonferroni becomes conservative: with $\rho=0.9$ the simulated rate is close to 1 %.
+
+**Warning.** $p<0.05$ does **not** mean the hypothesis has a 95 % probability of being true, nor that the result has a 5 % probability of being due to chance. The American Statistical Association's statement says so explicitly: p-values do not measure the probability that the studied hypothesis is true. Nor do they measure the size of an effect or its importance. Talking about the probability of a hypothesis requires a different framework, one that includes how plausible it was before looking at the data.
+
+**What is illustrative and what is not.** The data are simulated: normal, with equal variances and equally correlated outcomes. The false-positive rates shown here are exact for that model, not estimates for any real discipline. Flexibility in real analyses is more varied than choosing among $m$ outcomes: it includes adding observations until the result appears, adding or dropping covariates, excluding cases or redefining groups. Simmons, Nelson and Simonsohn showed by simulation that combining such decisions can raise the false-positive rate a great deal. Their central proposal is not a statistical correction but transparency: report every measured variable, every condition and how the sample size was decided.
+
+References: [Wasserstein and Lazar (2016), “The ASA Statement on p-Values: Context, Process, and Purpose”, *The American Statistician* 70(2)](https://doi.org/10.1080/00031305.2016.1154108) and [Simmons, Nelson and Simonsohn (2011), “False-Positive Psychology”, *Psychological Science* 22(11)](https://doi.org/10.1177/0956797611417632).

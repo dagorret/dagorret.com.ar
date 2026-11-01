@@ -1,0 +1,164 @@
+---
+import '../../styles/econometrics.css';
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+---
+<section data-pagefind-ignore class="econ-lab pvalue-lab" data-lang={lang} aria-label={en ? 'Simulated p-values under the null hypothesis' : 'P-valores simulados bajo la hipótesis nula'}>
+  <div class="econ-heading"><strong>{en ? 'Many studies, no real effect' : 'Muchos estudios, ningún efecto real'}</strong><span>{en ? 'Synthetic data · two-sample t test · α = 0.05' : 'Datos simulados · t de dos muestras · α = 0,05'}</span></div>
+  <p class="econ-note">{en ? 'Each study compares two groups drawn from the same normal distribution. Any “discovery” is, by construction, a false positive.' : 'Cada estudio compara dos grupos extraídos de la misma distribución normal. Cualquier «hallazgo» es, por construcción, un falso positivo.'}</p>
+  <div class="econ-controls">
+    <label>{en ? 'Number of studies k' : 'Cantidad de estudios k'}<select data-studies><option value="500">500</option><option value="1000" selected>1000</option><option value="2000">2000</option></select></label>
+    <label>{en ? 'Subjects per group n' : 'Sujetos por grupo n'} <output data-n-value>20</output><input data-n type="range" min="5" max="50" step="1" value="20" /></label>
+    <button type="button" data-action="reseed">{en ? 'Simulate again (new seed)' : 'Simular de nuevo (otra semilla)'}</button>
+  </div>
+  <svg data-histogram viewBox="0 0 740 410" role="img" aria-label={en ? 'Histogram of reported p-values' : 'Histograma de los p-valores reportados'}></svg>
+  <p class="econ-legend"><span class="pv-key-hit">p &lt; {en ? '0.05' : '0,05'}</span><span class="pv-key-miss">p ≥ {en ? '0.05' : '0,05'}</span><span class="pv-key-line">{en ? 'Height if p were uniform' : 'Altura si p fuera uniforme'}</span></p>
+  <dl class="econ-metrics">
+    <div><dt>{en ? 'Studies with p < 0.05' : 'Estudios con p < 0,05'}</dt><dd data-hits>—</dd></div>
+    <div><dt>{en ? 'Simulated rate ± 2 SE' : 'Tasa simulada ± 2 EE'}</dt><dd data-rate>—</dd></div>
+    <div><dt>{en ? 'Theoretical rate' : 'Tasa teórica'}</dt><dd data-theory>—</dd></div>
+    <div><dt>{en ? 'Seed' : 'Semilla'}</dt><dd data-seed>—</dd></div>
+  </dl>
+  <p class="econ-status" data-status role="status" aria-live="polite"></p>
+
+  <h3>{en ? 'p-hacking mode: try m outcomes, report the best' : 'Modo p-hacking: probar m variables, reportar la mejor'}</h3>
+  <div class="econ-controls">
+    <label>{en ? 'Outcome variables tried m' : 'Variables de resultado probadas m'} <output data-m-value>1</output><input data-m type="range" min="1" max="20" step="1" value="1" /></label>
+    <label>{en ? 'Correlation between outcomes ρ' : 'Correlación entre variables ρ'} <output data-rho-value>0</output><input data-rho type="range" min="0" max="0.9" step="0.1" value="0" /></label>
+    <label class="econ-check"><input type="checkbox" data-bonferroni />{en ? 'Bonferroni correction (α / m)' : 'Corrección de Bonferroni (α / m)'}</label>
+  </div>
+  <svg data-curve viewBox="0 0 740 410" role="img" aria-label={en ? 'False-positive rate as a function of the number of outcomes tried' : 'Tasa de falsos positivos según la cantidad de variables probadas'}></svg>
+  <p class="econ-legend"><span class="pv-key-sim">{en ? 'Simulated, best of m' : 'Simulada, la mejor de m'}</span><span class="pv-key-theory">1 − {en ? '0.95' : '0,95'}<sup>m</sup> {en ? '(independent outcomes)' : '(variables independientes)'}</span><span class="pv-key-bonf" data-bonf-key hidden>{en ? 'Simulated, Bonferroni' : 'Simulada, Bonferroni'}</span></p>
+  <p class="econ-note">{en ? 'The histogram shows the p-value each study reports: the smallest of its m tests or, with Bonferroni, that value multiplied by m (capped at 1). Changing m or the correction reuses the same simulated subjects. Sliders for n and ρ re-simulate when released.' : 'El histograma muestra el p-valor que reporta cada estudio: el menor de sus m tests o, con Bonferroni, ese valor multiplicado por m (con tope en 1). Cambiar m o la corrección reutiliza los mismos sujetos simulados. Los controles de n y ρ vuelven a simular al soltarlos.'}</p>
+  <details><summary>{en ? 'First 50 studies' : 'Primeros 50 estudios'}</summary><div class="econ-table"><table><thead><tr><th>{en ? 'Study' : 'Estudio'}</th><th>{en ? 'Best outcome' : 'Mejor variable'}</th><th>{en ? 'Smallest p' : 'Menor p'}</th><th>{en ? 'Reported p' : 'p reportado'}</th></tr></thead><tbody data-rows></tbody></table></div></details>
+  <noscript>{en ? 'Enable JavaScript to run the simulation. The explanation and formulas remain available below.' : 'Activá JavaScript para ejecutar la simulación. La explicación y las fórmulas siguen disponibles debajo.'}</noscript>
+</section>
+
+<script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
+  import { nextSeed } from '../../lib/random';
+  import { MAX_OUTCOMES, simulateStudies, reportedP, falsePositiveRate, theoreticalRate, histogram, type Simulation } from '../../lib/pvalue';
+  import { chart, drawPath, svgNode, numberFormatter } from '../../lib/econometrics-chart';
+  onPageLoad('.pvalue-lab', root => {
+    const controller = new AbortController(), { signal } = controller;
+    const lang = root.dataset.lang!, en = lang === 'en', fmt = numberFormatter(lang);
+    const pct = (v: number) => new Intl.NumberFormat(lang, { style: 'percent', maximumFractionDigits: 1 }).format(v);
+    const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
+    const studiesInput = $<HTMLSelectElement>('[data-studies]');
+    const nInput = $<HTMLInputElement>('[data-n]'), mInput = $<HTMLInputElement>('[data-m]'), rhoInput = $<HTMLInputElement>('[data-rho]');
+    const bonfInput = $<HTMLInputElement>('[data-bonferroni]');
+    let seed = 20261101;
+    let sim: Simulation;
+    let curves: { plain: number[]; bonferroni: number[] };
+
+    function simulate() {
+      sim = simulateStudies(seed, Number(studiesInput.value), Number(nInput.value), Number(rhoInput.value));
+      curves = { plain: [], bonferroni: [] };
+      for (let m = 1; m <= MAX_OUTCOMES; m++) {
+        curves.plain.push(falsePositiveRate(reportedP(sim, m, false)));
+        curves.bonferroni.push(falsePositiveRate(reportedP(sim, m, true)));
+      }
+    }
+
+    function render() {
+      const m = Number(mInput.value), rho = Number(rhoInput.value), bonf = bonfInput.checked;
+      const k = sim.studies;
+      $('[data-n-value]').textContent = nInput.value;
+      $('[data-m-value]').textContent = String(m);
+      $('[data-rho-value]').textContent = fmt(rho);
+      $('[data-bonf-key]').hidden = !bonf;
+      const reported = reportedP(sim, m, bonf);
+      const rate = falsePositiveRate(reported);
+      const hits = Math.round(rate * k);
+
+      const counts = histogram(reported, 20);
+      const expected = k / 20;
+      const top = Math.ceil(Math.max(expected, ...counts) * 1.1 / 25) * 25;
+      const h = chart($<SVGSVGElement>('[data-histogram]'), [0, 1], [0, top], [en ? 'Reported p-value' : 'p-valor reportado', en ? 'Number of studies' : 'Cantidad de estudios'], lang);
+      counts.forEach((count, i) => {
+        const rect = svgNode('rect', { x: h.x(i / 20) + 1, y: h.y(count), width: h.x(1 / 20) - h.x(0) - 2, height: h.y(0) - h.y(count), class: i === 0 ? 'pv-bar pv-hit' : 'pv-bar' });
+        rect.append(svgNode('title', {}, `${fmt(i / 20)}–${fmt((i + 1) / 20)}: ${count}`));
+        h.layer.append(rect);
+      });
+      drawPath(h.layer, [{ x: 0, y: expected }, { x: 1, y: expected }], h.x, h.y, 'econ-secondary pv-dashed');
+
+      const c = chart($<SVGSVGElement>('[data-curve]'), [0, MAX_OUTCOMES], [0, 1], [en ? 'Outcome variables tried (m)' : 'Variables probadas (m)', en ? 'Share of studies with p < 0.05' : 'Proporción de estudios con p < 0,05'], lang);
+      const ms = curves.plain.map((_, i) => i + 1);
+      drawPath(c.layer, [{ x: 0, y: 0.05 }, { x: MAX_OUTCOMES, y: 0.05 }], c.x, c.y, 'pv-reference');
+      drawPath(c.layer, ms.map(mm => ({ x: mm, y: theoreticalRate(mm, false) })), c.x, c.y, 'econ-secondary pv-dashed');
+      drawPath(c.layer, ms.map(mm => ({ x: mm, y: curves.plain[mm - 1] })), c.x, c.y);
+      if (bonf) drawPath(c.layer, ms.map(mm => ({ x: mm, y: curves.bonferroni[mm - 1] })), c.x, c.y, 'econ-secondary');
+      const marker = svgNode('circle', { cx: c.x(m), cy: c.y(rate), r: 7, class: 'econ-point pv-marker' });
+      marker.append(svgNode('title', {}, `m = ${m}: ${pct(rate)}`));
+      c.layer.append(marker);
+
+      const theory = theoreticalRate(m, bonf);
+      const se = Math.sqrt(rate * (1 - rate) / k);
+      $('[data-hits]').textContent = `${hits} / ${k}`;
+      $('[data-rate]').textContent = `${pct(rate)} ± ${pct(2 * se)}`;
+      $('[data-theory]').textContent = rho > 0 && m > 1 ? `${pct(theory)} (ρ = 0)` : pct(theory);
+      $('[data-seed]').textContent = String(seed);
+
+      let text: string;
+      if (m === 1) {
+        text = en
+          ? `${hits} of ${k} studies without any effect reached p < 0.05 (${pct(rate)}). That is what α = 0.05 promises: about one in twenty tests of a true null hypothesis comes out “significant”.`
+          : `${hits} de ${k} estudios sin ningún efecto llegaron a p < 0,05 (${pct(rate)}). Es lo que promete α = 0,05: alrededor de una de cada veinte pruebas de una hipótesis nula verdadera sale «significativa».`;
+      } else if (!bonf) {
+        text = en
+          ? `Trying ${m} outcomes and reporting the best, ${pct(rate)} of studies “found” something. With independent outcomes the formula gives 1 − 0.95^${m} = ${pct(theory)}.`
+          : `Probando ${m} variables y reportando la mejor, el ${pct(rate)} de los estudios «encontró» algo. Con variables independientes, la fórmula da 1 − 0,95^${m} = ${pct(theory)}.`;
+        if (rho > 0) text += en ? ' Correlated outcomes overlap, so the inflation is smaller than the formula, but it does not disappear.' : ' Con variables correlacionadas la información se superpone y la inflación es menor que la fórmula, pero no desaparece.';
+      } else {
+        text = en
+          ? `With Bonferroni each outcome is judged at α/m = ${fmt(0.05 / m)}. The rate falls back to ${pct(rate)}: the bound is 5 %, give or take simulation noise. The price: real effects also become harder to detect.`
+          : `Con Bonferroni cada variable se juzga con α/m = ${fmt(0.05 / m)}. La tasa vuelve a ${pct(rate)}: la cota es 5 %, más o menos el ruido de la simulación. El costo: los efectos reales también se vuelven más difíciles de detectar.`;
+      }
+      $('[data-status]').textContent = text;
+
+      $('[data-rows]').replaceChildren(...Array.from({ length: Math.min(50, k) }, (_, s) => {
+        let best = 0;
+        for (let j = 1; j < m; j++) if (sim.p[s * sim.outcomes + j] < sim.p[s * sim.outcomes + best]) best = j;
+        const tr = document.createElement('tr');
+        for (const value of [String(s + 1), String(best + 1), fmt(sim.p[s * sim.outcomes + best]), fmt(reported[s])]) {
+          const td = document.createElement('td'); td.textContent = value; tr.append(td);
+        }
+        if (reported[s] < 0.05) tr.className = 'pv-row-hit';
+        return tr;
+      }));
+    }
+
+    root.addEventListener('input', event => {
+      const target = event.target;
+      if (target === mInput) render();
+      if (target === nInput) $('[data-n-value]').textContent = nInput.value;
+      if (target === rhoInput) $('[data-rho-value]').textContent = fmt(Number(rhoInput.value));
+    }, { signal });
+    root.addEventListener('change', event => {
+      const target = event.target;
+      if (target === nInput || target === rhoInput || target === studiesInput) simulate();
+      if (target !== mInput) render();
+    }, { signal });
+    root.addEventListener('click', event => {
+      if ((event.target as Element).closest<HTMLButtonElement>('[data-action="reseed"]')) { seed = nextSeed(seed); simulate(); render(); }
+    }, { signal });
+    simulate(); render();
+    return () => controller.abort();
+  });
+</script>
+
+<style>
+  .pvalue-lab :global(.pv-bar) { fill: var(--text-sub); fill-opacity: .3; }
+  .pvalue-lab :global(.pv-hit) { fill: var(--accent-rust); fill-opacity: .85; }
+  .pvalue-lab :global(.pv-dashed) { stroke-dasharray: 6 4; }
+  .pvalue-lab :global(.pv-reference) { fill: none; stroke: var(--text-sub); stroke-width: 1; stroke-dasharray: 2 4; }
+  .pvalue-lab :global(.pv-marker) { fill-opacity: 1; stroke: var(--text); stroke-width: 2; }
+  .pvalue-lab :global(.pv-row-hit) td { color: var(--accent-rust); font-weight: 600; }
+  .pvalue-lab .econ-legend span { color: var(--text-sub); }
+  .pvalue-lab .econ-legend span::before { background: var(--swatch); }
+  .pvalue-lab .econ-legend [hidden] { display: none; }
+  .pvalue-lab :is(.pv-key-hit, .pv-key-sim) { --swatch: var(--accent-rust); }
+  .pvalue-lab .pv-key-miss { --swatch: color-mix(in srgb, var(--text-sub) 45%, transparent); }
+  .pvalue-lab :is(.pv-key-line, .pv-key-theory, .pv-key-bonf) { --swatch: #468c9a; }
+</style>

@@ -1,0 +1,67 @@
+---
+title: "El p-valor bajo presión"
+description: "Simulá cientos de estudios sin ningún efecto real. Mirá cómo se distribuyen los p-valores bajo la hipótesis nula y cuánto crecen los falsos positivos cuando se prueban muchas variables y se reporta la mejor."
+slug: "p-valor-bajo-presion"
+lang: "es"
+translation_key: "p-value-under-pressure"
+category: "Estadística · Inferencia"
+order: -5
+visual: "p-value"
+status: "interactive"
+---
+
+import PValueLab from '../../../components/lab/PValueLab.astro';
+
+Un p-valor chico suele leerse como señal de que «hay algo». Este laboratorio parte del caso opuesto: **no hay nada**. Todos los estudios simulados comparan dos grupos que salen de la misma población. Aun así, algunos dan $p<0{,}05$. El experimento muestra cuántos lo hacen y cuánto crece esa cifra cuando el análisis se adapta a los datos.
+
+## Qué calcula cada estudio
+
+Cada estudio toma $n$ sujetos por grupo, todos con distribución $N(0,1)$, y aplica una prueba $t$ de dos muestras con varianza combinada:
+
+$$
+\begin{gathered}
+t=\frac{\bar Y_A-\bar Y_B}{s_p\sqrt{2/n}},\\[4pt]
+s_p^2=\frac{(n-1)\,s_A^2+(n-1)\,s_B^2}{2n-2},\\[4pt]
+p=P\big(|T_{2n-2}|\ge|t|\big).
+\end{gathered}
+$$
+
+El p-valor es la probabilidad de observar una diferencia al menos tan extrema como la obtenida **si la hipótesis nula y el resto del modelo fueran ciertos**. Es una afirmación sobre los datos, condicional a una hipótesis. No es una afirmación sobre la hipótesis.
+
+<div className="figure-wide"><PValueLab lang="es" /></div>
+
+## Uniforme bajo la nula
+
+Cuando la hipótesis nula es verdadera y la prueba es exacta, el p-valor tiene distribución uniforme entre 0 y 1:
+
+$$
+P(p\le\alpha\mid H_0)=\alpha\quad\text{para todo }\alpha\in[0,1].
+$$
+
+Por eso el histograma es plano y alrededor del 5 % de los estudios cae en la primera barra. Ese 5 % es la tasa de error tipo I que se acepta al fijar $\alpha=0{,}05$. No indica un defecto de la prueba. Con $k$ finito el histograma oscila: el margen $\pm 2$ EE indica cuánto puede alejarse la proporción simulada del 5 % por puro azar de la simulación.
+
+## Probar hasta que salga
+
+Ahora cada estudio mide $m$ variables de resultado, prueba todas y reporta la de menor p-valor. Si las $m$ pruebas fueran independientes, la probabilidad de que al menos una cruce el umbral sería
+
+$$
+P\Big(\min_{j}p_j<\alpha\Big)=1-(1-\alpha)^m .
+$$
+
+Con $m=5$ da 22,6 %; con $m=20$, 64,2 %. Nadie mintió en ninguna cuenta: cada prueba, por separado, es correcta. El problema es reportar solo la ganadora como si fuera la única que se miró.
+
+El control de correlación $\rho$ hace que las variables se parezcan entre sí. Cuanto más se superponen, menos oportunidades independientes hay y menor es la inflación. Pero no desaparece salvo que las variables sean prácticamente la misma.
+
+La **corrección de Bonferroni** compara cada prueba con $\alpha/m$. Por la desigualdad de Boole,
+
+$$
+P\Big(\bigcup_{j=1}^m \{p_j<\alpha/m\}\Big)\le\sum_{j=1}^m\frac{\alpha}{m}=\alpha,
+$$
+
+sin importar la dependencia entre variables. El precio es la potencia: un efecto real necesita ser más grande, o la muestra más numerosa, para superar un umbral más exigente. Cuando las variables están muy correlacionadas, Bonferroni se vuelve conservadora: con $\rho=0{,}9$ la tasa simulada queda cerca del 1 %.
+
+**Advertencia.** $p<0{,}05$ **no** significa que la hipótesis tenga un 95 % de probabilidad de ser cierta, ni que el resultado tenga un 5 % de probabilidad de deberse al azar. La declaración de la American Statistical Association lo dice de forma explícita: los p-valores no miden la probabilidad de que la hipótesis estudiada sea verdadera. Tampoco miden el tamaño de un efecto ni su importancia. Para hablar de la probabilidad de una hipótesis hace falta otro marco, que incluya cuán plausible era antes de mirar los datos.
+
+**Qué es ilustrativo y qué no.** Los datos son simulados: normales, con varianzas iguales y variables de resultado igualmente correlacionadas. Las tasas de falsos positivos que se ven aquí son exactas para ese modelo, no estimaciones de ninguna disciplina real. La flexibilidad de un análisis real es más variada que elegir entre $m$ variables: incluye agregar observaciones hasta que el resultado sale, sumar o quitar covariables, excluir casos o redefinir grupos. Simmons, Nelson y Simonsohn mostraron con simulaciones que combinar esas decisiones puede elevar mucho la tasa de falsos positivos. Su propuesta central no es una corrección estadística sino transparencia: informar todas las variables medidas, todas las condiciones y cómo se decidió el tamaño de la muestra.
+
+Referencias: [Wasserstein y Lazar (2016), «The ASA Statement on p-Values: Context, Process, and Purpose», *The American Statistician* 70(2)](https://doi.org/10.1080/00031305.2016.1154108) y [Simmons, Nelson y Simonsohn (2011), «False-Positive Psychology», *Psychological Science* 22(11)](https://doi.org/10.1177/0956797611417632).
