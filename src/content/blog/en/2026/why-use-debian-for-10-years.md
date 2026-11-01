@@ -3,8 +3,8 @@ title: "Why Use Debian for 10 Years?"
 date: 2026-05-29
 slug: "why-use-debian-for-10-years"
 translation_key: "why-use-debian-for-10-years"
-lang: "es"
-categories: ["Uncategorized"]
+lang: "en"
+categories: ["Technology"]
 tags: []
 ---
 

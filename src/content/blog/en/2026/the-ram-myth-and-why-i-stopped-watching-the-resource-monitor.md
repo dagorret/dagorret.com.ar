@@ -3,8 +3,8 @@ title: "The RAM Myth (And Why I Stopped Watching the Resource Monitor)"
 date: 2026-06-27
 slug: "the-ram-myth-and-why-i-stopped-watching-the-resource-monitor"
 translation_key: "the-ram-myth-and-why-i-stopped-watching-the-resource-monitor"
-lang: "es"
-categories: ["Capital"]
+lang: "en"
+categories: ["Technology"]
 tags: []
 ---
 

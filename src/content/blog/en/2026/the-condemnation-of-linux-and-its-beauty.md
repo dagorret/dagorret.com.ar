@@ -3,8 +3,8 @@ title: "The Condemnation of Linux, and Its Beauty"
 date: 2026-06-07
 slug: "the-condemnation-of-linux-and-its-beauty"
 translation_key: "the-condemnation-of-linux-and-its-beauty"
-lang: "es"
-categories: ["Uncategorized"]
+lang: "en"
+categories: ["Technology"]
 tags: []
 ---
 
