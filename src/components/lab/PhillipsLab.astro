@@ -5,7 +5,7 @@ interface Props { lang?: 'es' | 'en' }
 const { lang = 'es' } = Astro.props;
 const en = lang === 'en';
 ---
-<section class="econ-lab phillips-lab" data-lang={lang} data-observations={JSON.stringify(data.observations)} aria-label={en ? 'Phillips curve and expectations' : 'Curva de Phillips y expectativas'}>
+<section data-pagefind-ignore class="econ-lab phillips-lab" data-lang={lang} data-observations={JSON.stringify(data.observations)} aria-label={en ? 'Phillips curve and expectations' : 'Curva de Phillips y expectativas'}>
   <div class="econ-heading"><strong>π = πᵉ − β(u − uₙ)</strong><span>{en ? 'US annual observations · 1960–2020' : 'Observaciones anuales de EE. UU. · 1960–2020'}</span></div>
   <div class="econ-controls">
     <label>{en ? 'Historical period' : 'Época histórica'}<select data-era>

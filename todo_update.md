@@ -1,0 +1,1 @@
+Cuando salgan rehype-katex y micromark-extension-math con KaTeX ^0.19: actualizar los dos, poner katex en ^0.19, borrar overrides del package.json, hacer el build y revisar las fórmulas del lab de MCO.

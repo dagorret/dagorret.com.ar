@@ -1,0 +1,47 @@
+---
+title: "Entropía: lo que no se desmezcla"
+description: "Sacá el tabique de una caja y mirá cómo se mezclan las partículas. La entropía como cantidad de maneras posibles de ordenar algo, y por qué la segunda ley es estadística y no absoluta."
+slug: "entropia-mezcla"
+lang: "es"
+translation_key: "entropy-mixing"
+category: "Física · Termodinámica"
+order: -7
+visual: "entropy"
+status: "interactive"
+---
+
+import EntropyLab from '../../../components/lab/EntropyLab.astro';
+
+Si se saca el tabique que separa un gas del vacío, el gas ocupa toda la caja y no vuelve solo a su mitad. Nada en las leyes del movimiento de cada partícula lo prohíbe. La razón es otra: hay muchísimas más maneras de estar repartido que de estar juntado.
+
+## Entropía: contar maneras
+
+Dividimos la caja en 8 celdas y miramos solo cuántas partículas hay en cada una, no cuál es cuál. A cada reparto le corresponde una cantidad de ordenamientos posibles de las partículas individuales:
+
+$$
+W=\frac{N!}{n_1!\,n_2!\cdots n_8!},\qquad S=k_B\ln W .
+$$
+
+Si las $N$ partículas están todas en una celda, hay una sola manera ($W=1$, $S=0$). Si están repartidas por igual, hay muchísimas. Esa es la idea de Boltzmann: la entropía mide cuántas configuraciones microscópicas son compatibles con lo que vemos a gran escala. Acá tomamos $k_B=1$ y mostramos $S$ dividida por el máximo posible para ese $N$.
+
+<div className="figure-wide"><EntropyLab lang="es" /></div>
+
+Con el tabique puesto, la entropía ya no es cero, porque las partículas se reparten entre las cuatro celdas de la izquierda. Para $N$ grande vale cerca de $\ln 4/\ln 8=2/3$ del máximo. Al sacar el tabique sube hasta casi 1 y se queda ahí.
+
+## Improbable, no imposible
+
+En un instante cualquiera, la probabilidad de encontrar todas las partículas en una misma mitad es
+
+$$
+P=2\left(\tfrac12\right)^N .
+$$
+
+Con $N=4$ es 12,5 %: pasa todo el tiempo y el gráfico muestra caídas bruscas de $S$. Con $N=20$ son unas 2 veces en un millón. Con $N=100$, alrededor de $10^{-30}$. Un litro de aire a temperatura ambiente tiene unas $2{,}5\times10^{22}$ moléculas.
+
+Por eso la segunda ley de la termodinámica es **estadística**. No dice que la entropía no pueda bajar nunca. Dice que, en sistemas macroscópicos, bajar es tan improbable que en la práctica no se observa. Con pocas partículas, las fluctuaciones hacia el orden se ven a simple vista. Con muchas, desaparecen.
+
+**Qué es ilustrativo.** Las partículas son puntos que no chocan entre sí: rebotan en las paredes sin perder velocidad, con velocidades iniciales sorteadas con semilla. No es un gas real ni una dinámica molecular. Además, el valor de $S$ depende de cómo se elijan las celdas: con otra grilla los números cambian, aunque la tendencia es la misma. Lo que sí es general es la cuenta de $W$ y la probabilidad de la vuelta a una mitad. Esta dinámica es reversible: si se invirtieran todas las velocidades a la vez, las partículas volverían a la mitad izquierda. Que eso no pase espontáneamente es el centro del debate sobre la flecha del tiempo.
+
+Para seguir: la serie del blog *Entropía: física, información, sociedad*, que empieza en [La entropía como problema abierto](/la-entropia-como-problema-abierto-estado-del-arte-de-un-concepto-transversal/). [La flecha del tiempo: de las paradojas de Boltzmann al programa de Prigogine](/la-flecha-del-tiempo-de-las-paradojas-de-boltzmann-al-programa-de-prigogine/) discute justamente la reversibilidad y la recurrencia.
+
+Referencias: [Lebowitz (1993), «Boltzmann's Entropy and Time's Arrow», *Physics Today* 46(9)](https://doi.org/10.1063/1.881363) y [Sharp y Matschinsky (2015), traducción al inglés del artículo de Boltzmann de 1877, *Entropy* 17(4)](https://doi.org/10.3390/e17041971).

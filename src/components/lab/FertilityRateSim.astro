@@ -11,7 +11,7 @@ const number=new Intl.NumberFormat(lang,{maximumFractionDigits:2});
 const fertilityX=(value:number)=>270+value/3.5*400;
 ---
 
-<figure class="demography-lab fertility-rate-sim" data-lang={lang} data-regions={JSON.stringify(presets)}>
+<figure data-pagefind-ignore class="demography-lab fertility-rate-sim" data-lang={lang} data-regions={JSON.stringify(presets)}>
   <figcaption class="demo-heading"><strong>{en ? 'Fertility and generational replacement' : 'Fecundidad y reemplazo generacional'}</strong><span>{en ? 'Synthetic age-cohort model' : 'Modelo sintético por cohortes'}</span></figcaption>
   <div class="demo-controls">
     <label>{en ? 'Reference country / region (2023)' : 'País / región de referencia (2023)'}

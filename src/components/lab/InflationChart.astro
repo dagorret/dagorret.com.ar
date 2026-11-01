@@ -8,7 +8,7 @@ const month = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric', ti
 const rate = (value: number | null) => value === null ? '—' : `${new Intl.NumberFormat(lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value)}%`;
 ---
 
-<figure class="inflation-chart" data-lang={lang} data-series={JSON.stringify(snapshot.points)}>
+<figure data-pagefind-ignore class="inflation-chart" data-lang={lang} data-series={JSON.stringify(snapshot.points)}>
   <figcaption class="chart-heading">
     <strong>{en ? 'Argentina · National CPI' : 'Argentina · IPC nacional'}</strong>
     <span>{en ? 'Official observations through' : 'Datos oficiales hasta'} {month.format(new Date(snapshot.through))}</span>

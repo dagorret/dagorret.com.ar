@@ -347,8 +347,9 @@ const navigation = [
     .article-body :is(canvas, iframe) { max-width: 100%; }
 
     /* IMÁGENES Y DIAGRAMAS SVG */
+    /* KaTeX dibuja radicales, flechas y llaves con <svg> propios: no tocarlos. */
     .article-body img,
-    .article-body svg {
+    .article-body svg:not(.katex *) {
       max-width: 100% !important;
       height: auto !important;
       display: block;
@@ -357,10 +358,13 @@ const navigation = [
     }
 
     /* TABLAS Y FÓRMULAS */
+    /* En pantallas angostas las fórmulas largas se desplazan en vez de cortarse. */
     .katex-display {
+      max-width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
-      padding: 16px 0;
+      -webkit-overflow-scrolling: touch;
+      padding: 1rem 0.25rem;
     }
 
     .site-footer {

@@ -17,7 +17,7 @@ const nodes = [
 const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 4 });
 ---
 
-<figure class="neural-sim" data-lang={lang}>
+<figure data-pagefind-ignore class="neural-sim" data-lang={lang}>
   <figcaption class="nn-heading"><strong>{en ? 'Neural network · 2 → 3 → 1' : 'Red neuronal · 2 → 3 → 1'}</strong><span>{en ? 'One example, one training step' : 'Un ejemplo, un paso de entrenamiento'}</span></figcaption>
   <div class="nn-controls">
     <label>x₁ <output data-value="x1">0.5</output><input type="range" data-input="x1" min="-1" max="1" step="0.01" value="0.5" /></label>

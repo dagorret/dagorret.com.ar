@@ -4,7 +4,7 @@ interface Props { lang?: 'es' | 'en' }
 const { lang = 'es' } = Astro.props;
 const en = lang === 'en';
 ---
-<section class="econ-lab time-series-lab" data-lang={lang} aria-label={en ? 'AR(1) processes and spurious regression' : 'Procesos AR(1) y regresión espuria'}>
+<section data-pagefind-ignore class="econ-lab time-series-lab" data-lang={lang} aria-label={en ? 'AR(1) processes and spurious regression' : 'Procesos AR(1) y regresión espuria'}>
   <div class="econ-heading"><strong>{en ? 'Persistence and mean reversion' : 'Persistencia y reversión a la media'}</strong><span>n = 250 · c = 0 · σ² = 1 · X₀ = 0</span></div>
   <div class="econ-controls">
     <label>{en ? 'Persistence ρ' : 'Persistencia ρ'} <output data-rho-value>0,6</output><input data-rho type="range" min="-0.95" max="1" step="0.01" value="0.6" /></label>

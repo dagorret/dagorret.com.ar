@@ -28,7 +28,7 @@ const lab = defineCollection({
     translation_key: z.string().optional(),
     category: z.string(),
     order: z.number().int(),
-    visual: z.enum(['inflation', 'population', 'birth-rate', 'neural-network', 'ols', 'phillips', 'omitted-variable', 'time-series']),
+    visual: z.enum(['inflation', 'population', 'birth-rate', 'neural-network', 'ols', 'phillips', 'omitted-variable', 'time-series', 'p-value', 'entropy']),
     status: z.enum(['preparation', 'interactive']).default('preparation'),
   }),
 });

@@ -1,0 +1,47 @@
+---
+title: "Entropy: what does not unmix"
+description: "Remove the partition from a box and watch the particles mix. Entropy as the number of possible ways to arrange something, and why the second law is statistical rather than absolute."
+slug: "entropy-mixing"
+lang: "en"
+translation_key: "entropy-mixing"
+category: "Physics · Thermodynamics"
+order: -7
+visual: "entropy"
+status: "interactive"
+---
+
+import EntropyLab from '../../../components/lab/EntropyLab.astro';
+
+Remove the partition separating a gas from a vacuum and the gas fills the whole box; it does not go back to its half on its own. Nothing in the laws governing each particle's motion forbids it. The reason is different: there are vastly more ways to be spread out than to be bunched together.
+
+## Entropy: counting ways
+
+We divide the box into 8 cells and look only at how many particles are in each one, not which is which. Each split corresponds to a number of possible arrangements of the individual particles:
+
+$$
+W=\frac{N!}{n_1!\,n_2!\cdots n_8!},\qquad S=k_B\ln W .
+$$
+
+If all $N$ particles are in one cell there is a single way ($W=1$, $S=0$). If they are evenly spread there are a huge number. That is Boltzmann's idea: entropy measures how many microscopic configurations are compatible with what we see at large scale. Here we set $k_B=1$ and show $S$ divided by the largest value possible for that $N$.
+
+<div className="figure-wide"><EntropyLab lang="en" /></div>
+
+With the partition in place the entropy is not zero, because the particles spread over the four left cells. For large $N$ it is close to $\ln 4/\ln 8=2/3$ of the maximum. Once the partition is removed it rises to almost 1 and stays there.
+
+## Improbable, not impossible
+
+At any given instant, the probability of finding every particle in the same half is
+
+$$
+P=2\left(\tfrac12\right)^N .
+$$
+
+With $N=4$ that is 12.5 %: it happens all the time and the chart shows sharp drops in $S$. With $N=20$ it is about 2 times in a million. With $N=100$, around $10^{-30}$. A litre of air at room temperature holds about $2.5\times10^{22}$ molecules.
+
+That is why the second law of thermodynamics is **statistical**. It does not say entropy can never decrease. It says that, in macroscopic systems, a decrease is so improbable that in practice it is never observed. With few particles, fluctuations toward order are visible to the naked eye. With many, they disappear.
+
+**What is illustrative.** The particles are points that do not collide with each other: they bounce off the walls without losing speed, starting from velocities drawn from a seed. This is not a real gas or a molecular dynamics simulation. The value of $S$ also depends on how the cells are chosen: a different grid changes the numbers, though not the trend. What is general is the count of $W$ and the probability of a return to one half. This dynamics is reversible: if every velocity were reversed at once, the particles would go back to the left half. That this does not happen spontaneously is at the core of the debate about the arrow of time.
+
+Further reading (in Spanish): the blog series *Entropía: física, información, sociedad*, which starts with [La entropía como problema abierto](/la-entropia-como-problema-abierto-estado-del-arte-de-un-concepto-transversal/). [La flecha del tiempo: de las paradojas de Boltzmann al programa de Prigogine](/la-flecha-del-tiempo-de-las-paradojas-de-boltzmann-al-programa-de-prigogine/) deals precisely with reversibility and recurrence.
+
+References: [Lebowitz (1993), “Boltzmann's Entropy and Time's Arrow”, *Physics Today* 46(9)](https://doi.org/10.1063/1.881363) and [Sharp and Matschinsky (2015), English translation of Boltzmann's 1877 paper, *Entropy* 17(4)](https://doi.org/10.3390/e17041971).
