@@ -4,8 +4,8 @@ date: 2026-11-01
 slug: "se-puede-conocer-a-dios-sin-religion"
 translation_key: "se-puede-conocer-a-dios-sin-religion"
 lang: "es"
-categories: ["Filosofia"]
-tags: ["Epistemologia","Spinoza","Kant","Teologia natural"]
+categories: ["Filosofía"]
+tags: ["Epistemología","Spinoza","Kant","Teología natural"]
 ---
 
 Hace unos días alguien preguntó en un foro de filosofía si se puede conocer la verdad sobre Dios sin pasar por ninguna religión ni escritura sagrada. Pedía argumentos, evidencia y fuentes confiables, no creencias personales. Es una pregunta honesta, y tiene la virtud de las preguntas honestas: es más difícil de lo que parece.
