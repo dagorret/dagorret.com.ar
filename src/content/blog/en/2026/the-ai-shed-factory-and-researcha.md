@@ -5,7 +5,7 @@ slug: "the-ai-shed-factory-and-researcha"
 translation_key: "el-galpon-de-la-ia-fabrica-e-investigacion"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["Artificial Intelligence","Automation","s","University","Work"]
+tags: ["Artificial Intelligence","Automation","University","Work"]
 ---
 
 _Part one of a three-part series on the actual work inside artificial intelligence. Part two covers [what philosophers do in AI](https://en.dagorret.com.ar/what-philosophers-do-in-ai/); part three, [the philosophy engineers do without calling it that](https://en.dagorret.com.ar/the-philosophy-engineers-do-without-calling-it-that/)._ The public conversation about artificial intelligence and work has a flaw at its root: it talks about “AI companies” as if they were a single place where everyone does more or less the same thing. Every other simplification is built on top of that one. Programmers are about to disappear, the humanities are back in fashion, labs are hiring philosophers while universities stop training them. Each of those sentences may hold some truth, but none of them can be assessed until someone opens the side door and looks at what is going on inside the shed. What you see when you open it is that there is not one shed but two, with different logics of work, different profiles and different risks. One is a factory. The other is a research lab. Confusing them produces almost every misunderstanding about who is needed, who is redundant and what a university ought to teach.
