@@ -5,7 +5,7 @@ slug: "el-galpon-de-la-ia-fabrica-e-investigacion"
 translation_key: "el-galpon-de-la-ia-fabrica-e-investigacion"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Automatización","Inteligencia Artificial","s","Trabajo","Universidad"]
+tags: ["Automatización","Inteligencia Artificial","Trabajo","Universidad"]
 ---
 
 _Primera parte de una serie de tres sobre el trabajo real dentro de la inteligencia artificial. La segunda trata de [lo que hacen los filósofos](https://dagorret.com.ar/lo-que-hacen-los-filosofos-en-la-ia/); la tercera, de [la filosofía que hacen los ingenieros sin llamarla así](https://dagorret.com.ar/la-filosofia-que-hacen-los-ingenieros-sin-llamarla-asi/)._

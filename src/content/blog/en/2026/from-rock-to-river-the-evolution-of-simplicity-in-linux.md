@@ -1,10 +1,10 @@
 ---
-title: "Slackware: the immutable rock (1993)"
+title: "From Rock to River: The Evolution of Simplicity in Linux"
 date: 2026-06-24
 slug: "from-rock-to-river-the-evolution-of-simplicity-in-linux"
 translation_key: "from-rock-to-river-the-evolution-of-simplicity-in-linux"
-lang: "es"
-categories: ["Política"]
+lang: "en"
+categories: ["Technology"]
 tags: ["Comunicación","monetización","moralidada"]
 ---
 

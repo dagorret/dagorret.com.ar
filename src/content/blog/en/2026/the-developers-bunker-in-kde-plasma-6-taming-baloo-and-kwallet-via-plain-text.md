@@ -3,8 +3,8 @@ title: "The Developer's Bunker in KDE Plasma 6: Taming Baloo and KWallet via Pla
 date: 2026-06-16
 slug: "the-developers-bunker-in-kde-plasma-6-taming-baloo-and-kwallet-via-plain-text"
 translation_key: "the-developers-bunker-in-kde-plasma-6-taming-baloo-and-kwallet-via-plain-text"
-lang: "es"
-categories: ["Uncategorized"]
+lang: "en"
+categories: ["Technology"]
 tags: []
 ---
 

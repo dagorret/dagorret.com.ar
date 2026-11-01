@@ -3,8 +3,8 @@ title: "Inflation, Prices and Distributive Conflict"
 date: 2026-05-30
 slug: "inflation-distributive-conflict"
 translation_key: "inflation-distributive-conflict"
-lang: "es"
-categories: ["Cultura"]
+lang: "en"
+categories: ["Economics"]
 tags: ["Filosofía de la Tecnología","inteligencia artificial y creación","literatura contemporánea","proceso creativo","sarmiento"]
 ---
 

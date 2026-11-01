@@ -3,8 +3,8 @@ title: "How to Tame the Brother 161xNW Over the Network Without Losing Your Mind
 date: 2026-06-03
 slug: "how-to-tame-the-brother-161xnw-over-the-network-without-losing-your-mind"
 translation_key: "how-to-tame-the-brother-161xnw-over-the-network-without-losing-your-mind"
-lang: "es"
-categories: ["Capital"]
+lang: "en"
+categories: ["Technology"]
 tags: ["Automatización de Tareas","Gestión del Cambio","Gobernanza de IA","Inteligencia Artificial en el Trabajo","Productividad Laboral","Teoría Organizacional"]
 ---
 

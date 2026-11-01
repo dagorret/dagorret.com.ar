@@ -3,8 +3,8 @@ title: "The Edge of Control: The Epistemic Foundation of Arch Linux vs. the Illu
 date: 2026-05-28
 slug: "the-edge-of-control-the-epistemic-foundation-of-arch-linux-vs-the-illusion-of-cachyos"
 translation_key: "the-edge-of-control-the-epistemic-foundation-of-arch-linux-vs-the-illusion-of-cachyos"
-lang: "es"
-categories: ["Uncategorized"]
+lang: "en"
+categories: ["Technology"]
 tags: []
 ---
 

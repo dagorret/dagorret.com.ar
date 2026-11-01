@@ -5,7 +5,7 @@ slug: "lo-que-hacen-los-filosofos-en-la-ia"
 translation_key: "lo-que-hacen-los-filosofos-en-la-ia"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["2","Alineación","Conciencia artificial","Ética de la IA","Filosofía de la mente"]
+tags: ["Alineación","Conciencia artificial","Ética de la IA","Filosofía de la mente"]
 ---
 
 _Segunda parte de una serie de tres sobre el trabajo real dentro de la inteligencia artificial. La primera describe [el galpón de la IA: fábrica e investigación](https://dagorret.com.ar/el-galpon-de-la-ia-fabrica-e-investigacion/); la tercera trata de [la filosofía que hacen los ingenieros sin llamarla así](https://dagorret.com.ar/la-filosofia-que-hacen-los-ingenieros-sin-llamarla-asi/)._
