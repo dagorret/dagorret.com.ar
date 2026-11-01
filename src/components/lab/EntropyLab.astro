@@ -1,0 +1,149 @@
+---
+import '../../styles/econometrics.css';
+interface Props { lang?: 'es' | 'en' }
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
+---
+<section data-pagefind-ignore class="econ-lab entropy-lab" data-lang={lang} aria-label={en ? 'Particles mixing in a box and coarse-grained entropy' : 'Partículas que se mezclan en una caja y entropía de grano grueso'}>
+  <div class="econ-heading"><strong>{en ? 'Remove the partition' : 'Sacá el tabique'}</strong><span>{en ? 'Illustrative particles · 8 cells · S = ln W' : 'Partículas ilustrativas · 8 celdas · S = ln W'}</span></div>
+  <div class="econ-controls">
+    <label>{en ? 'Particles N' : 'Partículas N'} <output data-n-value>100</output><input data-n type="range" min="4" max="500" step="1" value="100" /></label>
+  </div>
+  <div class="econ-controls">
+    <button type="button" data-action="open" class="entropy-primary">{en ? 'Remove the partition' : 'Sacar el tabique'}</button>
+    <button type="button" data-action="pause" aria-pressed="false">{en ? 'Pause' : 'Pausa'}</button>
+    <button type="button" data-action="reset">{en ? 'Restart' : 'Reiniciar'}</button>
+    <button type="button" data-action="reseed">{en ? 'New seed' : 'Otra semilla'}</button>
+  </div>
+  <canvas data-box role="img" aria-label={en ? 'Box with particles divided into 8 cells' : 'Caja con partículas dividida en 8 celdas'}></canvas>
+  <dl class="econ-metrics">
+    <div><dt>S / S<sub>max</sub></dt><dd data-entropy>—</dd></div>
+    <div><dt>{en ? 'Left half' : 'Mitad izquierda'}</dt><dd data-left>—</dd></div>
+    <div><dt>{en ? 'Times all returned to one half' : 'Veces que todas volvieron a una mitad'}</dt><dd data-returns>—</dd></div>
+    <div><dt>{en ? 'Chance of that at an instant' : 'Probabilidad de eso en un instante'}</dt><dd data-chance>—</dd></div>
+  </dl>
+  <svg data-chart viewBox="0 0 740 410" role="img" aria-label={en ? 'Entropy over time' : 'Entropía a lo largo del tiempo'}></svg>
+  <p class="econ-status" data-status role="status" aria-live="polite"></p>
+  <p class="econ-note">{en ? 'S is computed from how many particles are in each of the 8 cells and divided by the largest value possible for that N, so 1 means “as spread out as it can be”. The dashed vertical line marks when the partition was removed. The chart shows the last 30 seconds. Seed: ' : 'S se calcula con cuántas partículas hay en cada una de las 8 celdas y se divide por el mayor valor posible para ese N: 1 significa «lo más repartido posible». La línea vertical punteada marca cuándo se sacó el tabique. El gráfico muestra los últimos 30 segundos. Semilla: '}<span data-seed>—</span>.</p>
+  <noscript>{en ? 'Enable JavaScript to run the simulation. The explanation remains available below.' : 'Activá JavaScript para ejecutar la simulación. La explicación sigue disponible debajo.'}</noscript>
+</section>
+
+<script>
+  import { onPageLoad } from '../../lib/page-lifecycle';
+  import { nextSeed } from '../../lib/random';
+  import { BOX, createGas, step, occupancy, lnW, maxLnW, oneSideProbability, leftCount, type Gas } from '../../lib/entropy';
+  import { chart, drawPath, numberFormatter } from '../../lib/econometrics-chart';
+  const DT = 1 / 60, WINDOW = 30;
+  onPageLoad('.entropy-lab', root => {
+    const controller = new AbortController(), { signal } = controller;
+    const lang = root.dataset.lang!, en = lang === 'en', fmt = numberFormatter(lang);
+    const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
+    const canvas = $<HTMLCanvasElement>('[data-box]'), ctx = canvas.getContext('2d')!;
+    const nInput = $<HTMLInputElement>('[data-n]'), pauseButton = $<HTMLButtonElement>('[data-action="pause"]'), openButton = $<HTMLButtonElement>('[data-action="open"]');
+    let seed = 20261101, gas: Gas, n = 0, time = 0, openedAt: number | null = null;
+    let samples: { t: number; s: number }[] = [], returns = 0, wasOneSide = true;
+    let paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let frame = 0, last = 0, accumulator = 0, ticks = 0;
+
+    function reset() {
+      n = Number(nInput.value);
+      gas = createGas(seed, n);
+      time = 0; openedAt = null; samples = []; returns = 0; wasOneSide = true;
+      openButton.disabled = false;
+      record(); draw(); drawChart(); metrics();
+    }
+
+    function entropy() { return n > 1 ? lnW(occupancy(gas)) / maxLnW(n) : 1; }
+
+    function record() {
+      samples.push({ t: time, s: entropy() });
+      while (samples.length && samples[0].t < time - WINDOW) samples.shift();
+      if (openedAt === null) return;
+      const left = leftCount(gas), oneSide = left === 0 || left === n;
+      if (oneSide && !wasOneSide) returns++;
+      wasOneSide = oneSide;
+    }
+
+    function draw() {
+      const width = canvas.clientWidth, height = width / 2, ratio = window.devicePixelRatio || 1;
+      if (canvas.width !== Math.round(width * ratio)) { canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio); }
+      const style = getComputedStyle(root);
+      const accent = style.getPropertyValue('--accent-rust').trim() || '#a0522d';
+      const border = style.getPropertyValue('--border').trim() || '#ccc';
+      const text = style.getPropertyValue('--text').trim() || '#222';
+      const scale = canvas.width / BOX.width;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = border; ctx.lineWidth = ratio;
+      for (let c = 1; c < BOX.columns; c++) { ctx.beginPath(); ctx.moveTo(c * scale / 2, 0); ctx.lineTo(c * scale / 2, canvas.height); ctx.stroke(); }
+      ctx.beginPath(); ctx.moveTo(0, canvas.height / 2); ctx.lineTo(canvas.width, canvas.height / 2); ctx.stroke();
+      ctx.strokeRect(ratio / 2, ratio / 2, canvas.width - ratio, canvas.height - ratio);
+      if (gas.partition) { ctx.strokeStyle = text; ctx.lineWidth = 4 * ratio; ctx.beginPath(); ctx.moveTo(canvas.width / 2, 0); ctx.lineTo(canvas.width / 2, canvas.height); ctx.stroke(); }
+      ctx.fillStyle = accent;
+      const radius = (n > 200 ? 2.5 : n > 50 ? 3.5 : 5) * ratio;
+      for (let i = 0; i < n; i++) { ctx.beginPath(); ctx.arc(gas.x[i] * scale, canvas.height - gas.y[i] * scale, radius, 0, 2 * Math.PI); ctx.fill(); }
+    }
+
+    function drawChart() {
+      const start = Math.max(0, time - WINDOW);
+      const { x, y, layer } = chart($<SVGSVGElement>('[data-chart]'), [start, start + WINDOW], [0, 1], [en ? 'Time (s)' : 'Tiempo (s)', 'S / Sₘₐₓ'], lang);
+      if (openedAt !== null && openedAt >= start) drawPath(layer, [{ x: openedAt, y: 0 }, { x: openedAt, y: 1 }], x, y, 'econ-secondary entropy-dashed');
+      if (samples.length > 1) drawPath(layer, samples.map(p => ({ x: p.t, y: p.s })), x, y);
+    }
+
+    function metrics() {
+      const s = entropy(), left = leftCount(gas), p = oneSideProbability(n);
+      $('[data-n-value]').textContent = String(Number(nInput.value));
+      $('[data-entropy]').textContent = fmt(s);
+      $('[data-left]').textContent = `${left} / ${n}`;
+      $('[data-returns]').textContent = openedAt === null ? '—' : String(returns);
+      $('[data-chance]').textContent = p >= 1e-4
+        ? new Intl.NumberFormat(lang, { style: 'percent', maximumSignificantDigits: 3 }).format(p)
+        : `≈ 10${String(Math.round(Math.log10(p))).replace(/[-0-9]/g, d => '⁻⁰¹²³⁴⁵⁶⁷⁸⁹'['-0123456789'.indexOf(d)])}`;
+      $('[data-seed]').textContent = String(seed);
+      $('[data-status]').textContent = openedAt === null
+        ? (en ? 'The particles are confined to the left half. Remove the partition to let them spread.' : 'Las partículas están confinadas en la mitad izquierda. Sacá el tabique para que se repartan.')
+        : n <= 12
+          ? (en ? `With N = ${n}, all particles sometimes gather in one half again and S drops. Nothing forbids it: it is just one of the possible arrangements.` : `Con N = ${n}, a veces todas las partículas vuelven a juntarse en una mitad y S baja. Nada lo prohíbe: es una de las ordenaciones posibles.`)
+          : n <= 40
+            ? (en ? `With N = ${n}, S fluctuates near its maximum. A full return to one half is possible but rare.` : `Con N = ${n}, S fluctúa cerca del máximo. Una vuelta completa a una mitad es posible, pero rara.`)
+            : (en ? `With N = ${n}, S settles near 1 and stays there. A return to one half is not impossible, only so improbable that you would never see it.` : `Con N = ${n}, S se estabiliza cerca de 1 y ahí se queda. Que vuelvan a una mitad no es imposible: es tan improbable que no lo vas a ver nunca.`);
+    }
+
+    function loop(now: number) {
+      accumulator = Math.min(accumulator + (last ? (now - last) / 1000 : DT), 0.25);
+      last = now;
+      while (accumulator >= DT) { step(gas, DT); time += DT; record(); accumulator -= DT; }
+      draw();
+      if (++ticks % 4 === 0) { drawChart(); metrics(); }
+      frame = requestAnimationFrame(loop);
+    }
+    function play() { if (!frame) { last = 0; frame = requestAnimationFrame(loop); } }
+    function stop() { cancelAnimationFrame(frame); frame = 0; }
+    function syncPause() {
+      pauseButton.setAttribute('aria-pressed', String(paused));
+      pauseButton.textContent = paused ? (en ? 'Resume' : 'Continuar') : (en ? 'Pause' : 'Pausa');
+      if (paused) stop(); else play();
+    }
+
+    root.addEventListener('click', event => {
+      const action = (event.target as Element).closest<HTMLButtonElement>('[data-action]')?.dataset.action;
+      if (action === 'open' && gas.partition) { gas.partition = false; openedAt = time; wasOneSide = true; openButton.disabled = true; if (paused) { paused = false; syncPause(); } }
+      if (action === 'pause') { paused = !paused; syncPause(); }
+      if (action === 'reseed') seed = nextSeed(seed);
+      if (action === 'reset' || action === 'reseed') reset();
+      metrics();
+    }, { signal });
+    nInput.addEventListener('input', () => { $('[data-n-value]').textContent = nInput.value; }, { signal });
+    nInput.addEventListener('change', reset, { signal });
+    window.addEventListener('resize', draw, { signal });
+    reset(); syncPause();
+    return () => { stop(); controller.abort(); };
+  });
+</script>
+
+<style>
+  .entropy-lab canvas { display: block; width: 100%; aspect-ratio: 2 / 1; margin: .75rem 0; background: var(--card-bg); border-radius: 4px; }
+  .entropy-lab button.entropy-primary { background: var(--accent-rust); color: var(--bg-body); border-color: var(--accent-rust); font-weight: 600; }
+  .entropy-lab button:disabled { opacity: .45; cursor: not-allowed; }
+  .entropy-lab :global(.entropy-dashed) { stroke-dasharray: 6 4; }
+</style>
