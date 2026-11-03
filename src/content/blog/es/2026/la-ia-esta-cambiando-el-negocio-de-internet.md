@@ -4,7 +4,7 @@ date: 2026-11-03
 slug: "la-inteligencia-artificial-esta-cambiando-el-negocio-de-internet"
 translation_key: "la-inteligencia-artificial-esta-cambiando-el-negocio-de-internet"
 lang: "es"
-categories: ["Tecnología y sociedad"]
+categories: ["Inteligencia Artificial"]
 tags: ["Inteligencia artificial", "Economía digital", "Internet", "Modelos de negocio", "Conocimiento"]
 ---
 
@@ -32,33 +32,23 @@ No hace falta especular sobre un futuro remoto. Hay mediciones que permiten obse
 
 En julio de 2025, el Pew Research Center publicó un estudio sobre el comportamiento de los usuarios de Google ante los resúmenes generados por inteligencia artificial. Los investigadores analizaron búsquedas realizadas por un panel de adultos estadounidenses.
 
-Cuando aparecía un resumen de IA, los usuarios hacían clic en un resultado tradicional en el 8 % de las visitas. Cuando no aparecía, lo hacían en el 15 %.
-
-La diferencia es considerable. La proporción observada se reducía casi a la mitad.
+Cuando aparecía un resumen de IA, los usuarios hacían clic en un resultado tradicional en el 8 % de las visitas. Cuando no aparecía, lo hacían en el 15 %. La diferencia es considerable. La proporción observada se reducía casi a la mitad.
 
 El mismo estudio encontró que los enlaces incluidos dentro de los propios resúmenes de IA recibían clics en apenas el 1 % de las visitas que mostraban esos resúmenes.
 
 Esto no significa que toda búsqueda con inteligencia artificial provoque una pérdida equivalente de tráfico. Los porcentajes corresponden a determinadas sesiones observadas, no a una ley universal del comportamiento de los usuarios. Tampoco permiten atribuir todos los cambios exclusivamente a la presencia de IA: las consultas que activan esos resúmenes pueden ser diferentes de las demás.
 
-Pero el resultado es suficientemente importante para mostrar que el mecanismo económico tradicional está bajo presión.
+Pero el resultado es suficientemente importante para mostrar que el mecanismo económico tradicional está bajo presión ([Pew Research Center, julio de 2025](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/)).
 
-[Fuente: Pew Research Center, julio de 2025](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/).
-
-La evidencia no termina allí.
-
-El *Digital News Report 2026*, elaborado por el Reuters Institute de la Universidad de Oxford, cita datos de Chartbeat correspondientes a más de 2.500 sitios informativos. Entre noviembre de 2024 y noviembre de 2025, el tráfico procedente de búsquedas orgánicas de Google disminuyó un 33 % a escala global y un 38 % en Estados Unidos.
+La evidencia no termina allí. El *Digital News Report 2026*, elaborado por el Reuters Institute de la Universidad de Oxford, cita datos de Chartbeat correspondientes a más de 2.500 sitios informativos. Entre noviembre de 2024 y noviembre de 2025, el tráfico procedente de búsquedas orgánicas de Google disminuyó un 33 % a escala global y un 38 % en Estados Unidos.
 
 Es una caída importante, aunque no corresponde adjudicarla íntegramente a la IA. Las modificaciones en los algoritmos de búsqueda, los hábitos de consumo, la competencia de otras plataformas y la evolución general de los medios también intervienen.
 
 El dato demuestra una reducción del tráfico en los sitios estudiados; no demuestra, por sí solo, cuánto de esa reducción causó la inteligencia artificial.
 
-Los editores consultados por Reuters Institute esperan, además, que el tráfico procedente de buscadores disminuya un 43 % durante los próximos tres años. Esta última cifra es una expectativa sectorial, no una predicción verificada.
+Los editores consultados por el Reuters Institute esperan, además, que el tráfico procedente de buscadores disminuya un 43 % durante los próximos tres años. Esta última cifra es una expectativa sectorial, no una predicción verificada ([Reuters Institute, *Digital News Report 2026*](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary)).
 
-[Fuente: Reuters Institute, *Digital News Report 2026*](https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary).
-
-La distinción entre lo observado y lo esperado importa. Los diagnósticos tecnológicos suelen exagerar cuando convierten una tendencia inicial en un destino inevitable.
-
-Aquí no hace falta hacerlo. Los cambios medidos son suficientemente significativos.
+La distinción entre lo observado y lo esperado importa. Los diagnósticos tecnológicos suelen exagerar cuando convierten una tendencia inicial en un destino inevitable. Aquí no hace falta hacerlo. Los cambios medidos son suficientemente significativos.
 
 ## Google ante una paradoja: más búsquedas, pero no necesariamente más ingresos por búsqueda
 
@@ -68,15 +58,11 @@ Durante muchos años, su negocio publicitario aprovechó una característica eco
 
 Una búsqueda sobre hoteles, préstamos, computadoras o seguros revelaba información valiosa sobre una posible decisión de compra.
 
-Los anunciantes pagaban por aparecer en ese momento. El buscador obtenía ingresos y los sitios que recibían visitas podían convertir una parte de ellas en actividad económica.
-
-La inteligencia artificial cambia la interfaz de esa relación.
+Los anunciantes pagaban por aparecer en ese momento. El buscador obtenía ingresos y los sitios que recibían visitas podían convertir una parte de ellas en actividad económica. La inteligencia artificial cambia la interfaz de esa relación.
 
 Cuando la consulta se convierte en una conversación, la respuesta puede prolongarse durante varios intercambios. El usuario compara opciones, solicita explicaciones, pide recomendaciones y eventualmente toma una decisión sin salir del sistema.
 
-La plataforma ya no se limita a ordenar posibles respuestas. Participa en la construcción de la respuesta y, cada vez más, en la decisión posterior.
-
-Desde la perspectiva comercial, esto abre oportunidades enormes. También introduce dificultades.
+La plataforma ya no se limita a ordenar posibles respuestas. Participa en la construcción de la respuesta y, cada vez más, en la decisión posterior. Desde la perspectiva comercial, esto abre oportunidades enormes. También introduce dificultades.
 
 En los resultados correspondientes al tercer trimestre de 2026, Alphabet comunicó ingresos de aproximadamente 63.300 millones de dólares en Google Search y publicidad relacionada, un crecimiento interanual del 12 %. El negocio seguía creciendo, y mucho.
 
@@ -84,15 +70,11 @@ Sin embargo, el crecimiento se había moderado respecto del 19 % registrado en e
 
 La compañía reconoció que la menor monetización de las consultas realizadas mediante AI Mode contribuía a esa desaceleración. También identificó otros factores, entre ellos los efectos cambiarios y cambios en determinadas categorías publicitarias. No atribuyó toda la desaceleración a la IA.
 
-El contraste resulta significativo: según Google, el número de consultas crecía a su ritmo interanual más elevado en cinco años, pero algunas de las nuevas experiencias generaban menos ingresos por consulta que la búsqueda tradicional.
-
-[Fuentes: resultados de Alphabet, tercer trimestre de 2026](https://abc.xyz/investor/events/event-details/2026/2026-Q3-Earnings-Call-2026-Ujou16CTw9/default.aspx) y [Search Engine Land, octubre de 2026](https://searchengineland.com/google-earnings-call-q3-2026-499706).
+El contraste resulta significativo: según Google, el número de consultas crecía a su ritmo interanual más elevado en cinco años, pero algunas de las nuevas experiencias generaban menos ingresos por consulta que la búsqueda tradicional ([resultados de Alphabet, tercer trimestre de 2026](https://abc.xyz/investor/events/event-details/2026/2026-Q3-Earnings-Call-2026-Ujou16CTw9/default.aspx) y [Search Engine Land, octubre de 2026](https://searchengineland.com/google-earnings-call-q3-2026-499706)).
 
 Conviene evitar una conclusión apresurada. Google no está dejando de ganar dinero, ni hay evidencia suficiente para afirmar que su negocio publicitario esté condenado.
 
-De hecho, la empresa está ampliando los anuncios en las experiencias de búsqueda con IA y sostiene que las consultas conversacionales permiten identificar nuevas intenciones comerciales. También puede beneficiarse de la infraestructura de computación, los servicios empresariales, las suscripciones y otros productos relacionados con inteligencia artificial.
-
-Lo que aparece, entonces, no es necesariamente una crisis de Google.
+De hecho, la empresa está ampliando los anuncios en las experiencias de búsqueda con IA y sostiene que las consultas conversacionales permiten identificar nuevas intenciones comerciales. También puede beneficiarse de la infraestructura de computación, los servicios empresariales, las suscripciones y otros productos relacionados con inteligencia artificial. Lo que aparece, entonces, no es necesariamente una crisis de Google.
 
 **Es una transición entre dos formas de capturar valor económico.**
 
@@ -108,21 +90,15 @@ Experiencias de consumidores, discusiones técnicas, recomendaciones, testimonio
 
 Ese material tiene valor para los usuarios, pero también para los sistemas que buscan comprender cómo hablan, comparan y razonan las personas.
 
-Durante años, Reddit se benefició de los visitantes enviados por Google. Los buscadores encontraban sus conversaciones y dirigían hacia ellas nuevas audiencias.
-
-Con el crecimiento de las respuestas generadas mediante IA, el equilibrio cambia.
+Durante años, Reddit se benefició de los visitantes enviados por Google. Los buscadores encontraban sus conversaciones y dirigían hacia ellas nuevas audiencias. Con el crecimiento de las respuestas generadas mediante IA, el equilibrio cambia.
 
 El contenido de Reddit puede ayudar a construir una respuesta sin que el usuario necesite visitar Reddit.
 
 La empresa ha respondido con una combinación de acuerdos de acceso a datos, restricciones a los rastreadores y una mayor insistencia en que los usuarios se identifiquen.
 
-Pero hay un matiz importante: Reddit no está atravesando simplemente un colapso económico.
+Pero hay un matiz importante: Reddit no está atravesando simplemente un colapso económico. En el tercer trimestre de 2026 registró aproximadamente 130,3 millones de usuarios activos diarios globales, un 12 % más que el año anterior. En Estados Unidos, en cambio, la cantidad disminuyó un 2 % interanual, hasta 50,7 millones.
 
-En el tercer trimestre de 2026 registró aproximadamente 130,3 millones de usuarios activos diarios globales, un 12 % más que el año anterior. En Estados Unidos, en cambio, la cantidad disminuyó un 2 % interanual, hasta 50,7 millones.
-
-La divergencia entre crecimiento global y retroceso estadounidense impide hablar de una caída uniforme de toda la plataforma.
-
-[Fuente: Reddit, resultados del tercer trimestre de 2026](https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-Reports-Third-Quarter-2026-Results/default.aspx).
+La divergencia entre crecimiento global y retroceso estadounidense impide hablar de una caída uniforme de toda la plataforma ([Reddit, resultados del tercer trimestre de 2026](https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-Reports-Third-Quarter-2026-Results/default.aspx)).
 
 La cuestión más interesante no es si Reddit gana o pierde dinero durante un trimestre determinado.
 
@@ -142,9 +118,7 @@ En mayo de 2024, OpenAI y News Corp anunciaron una asociación plurianual que pe
 
 El acuerdo contempla el uso de ese contenido para mejorar productos de inteligencia artificial y presentar información en respuesta a las consultas de los usuarios.
 
-Las condiciones financieras no fueron publicadas oficialmente. Diversos medios informaron que el acuerdo podría superar los 250 millones de dólares durante cinco años, una cifra periodística que no debe tratarse como un monto contractual confirmado.
-
-[Fuente: anuncio oficial de OpenAI y News Corp](https://openai.com/index/news-corp-and-openai-sign-landmark-multi-year-global-partnership/).
+Las condiciones financieras no fueron publicadas oficialmente. Diversos medios informaron que el acuerdo podría superar los 250 millones de dólares durante cinco años, una cifra periodística que no debe tratarse como un monto contractual confirmado ([anuncio oficial de OpenAI y News Corp](https://openai.com/index/news-corp-and-openai-sign-landmark-multi-year-global-partnership/)).
 
 Este tipo de operaciones anuncia una nueva posibilidad económica: cobrar por el acceso al contenido sin depender exclusivamente de que el lector llegue al sitio que lo produjo.
 
@@ -154,9 +128,7 @@ La novedad está en la escala potencial del mercado y en el uso del contenido.
 
 Una plataforma puede adquirir acceso a miles de publicaciones para alimentar un sistema capaz de responder a millones de consultas.
 
-Aquí aparece una asimetría importante.
-
-Los grandes grupos editoriales pueden negociar licencias. Poseen archivos extensos, marcas reconocidas y capacidad jurídica.
+Aquí aparece una asimetría importante. Los grandes grupos editoriales pueden negociar licencias. Poseen archivos extensos, marcas reconocidas y capacidad jurídica.
 
 Un pequeño medio regional, un investigador independiente, un docente que publica materiales educativos o un sitio especializado difícilmente tengan el mismo poder de negociación.
 
@@ -170,25 +142,19 @@ La existencia de un nuevo mercado no garantiza que sus beneficios alcancen a qui
 
 Hay una paradoja económica en todo esto.
 
-La inteligencia artificial reduce drásticamente el costo de generar textos, imágenes, resúmenes y explicaciones. Producir una página que se parezca a un artículo resulta más fácil que nunca.
-
-Pero esa abundancia no equivale a una abundancia de conocimiento confiable.
+La inteligencia artificial reduce drásticamente el costo de generar textos, imágenes, resúmenes y explicaciones. Producir una página que se parezca a un artículo resulta más fácil que nunca. Pero esa abundancia no equivale a una abundancia de conocimiento confiable.
 
 Una investigación periodística requiere fuentes, comprobaciones y responsabilidades. Un experimento científico necesita metodología, datos y posibilidad de reproducción. Un buen texto técnico exige comprensión del problema, no solamente fluidez en su exposición.
 
 La IA puede ayudar en todas esas tareas. Incluso puede disminuir de manera considerable sus costos. Pero no elimina automáticamente la diferencia entre generar una afirmación y establecer que es verdadera.
 
-La consecuencia económica podría ser inesperada: mientras el contenido genérico se abarata, la información original, verificable y actualizada podría adquirir mayor valor relativo.
-
-No necesariamente porque cada lector esté dispuesto a pagar por ella.
+La consecuencia económica podría ser inesperada: mientras el contenido genérico se abarata, la información original, verificable y actualizada podría adquirir mayor valor relativo. No necesariamente porque cada lector esté dispuesto a pagar por ella.
 
 Puede adquirir valor para sistemas que la necesitan como insumo para ofrecer respuestas mejores que las de sus competidores.
 
 El Reuters Institute ofrece un dato relevante sobre la extensión del fenómeno. Su estudio *Generative AI and News Report 2026*, que analiza varios mercados, encontró que el uso semanal de sistemas generativos pasó del 34 % al 51 % entre 2025 y 2026 en los seis países con datos comparables.
 
-También encontró que el 57 % de los encuestados en los países estudiados había encontrado resúmenes de IA integrados en buscadores durante la última semana.
-
-[Fuente: Reuters Institute, *Generative AI and News Report 2026*](https://reutersinstitute.politics.ox.ac.uk/generative-ai-and-news-report-2026-standalone-tools-information-infrastructure).
+También encontró que el 57 % de los encuestados en los países estudiados había encontrado resúmenes de IA integrados en buscadores durante la última semana ([Reuters Institute, *Generative AI and News Report 2026*](https://reutersinstitute.politics.ox.ac.uk/generative-ai-and-news-report-2026-standalone-tools-information-infrastructure)).
 
 La tecnología ha dejado de ser una herramienta marginal para convertirse en una nueva interfaz cotidiana de acceso a la información.
 
@@ -208,21 +174,13 @@ Para una empresa pequeña que intenta desarrollar un buscador o un asistente esp
 
 Cuanto más caro resulte acceder a los datos necesarios para competir, mayor será la ventaja de quienes ya cuentan con capital, infraestructura y relaciones comerciales.
 
-No se trata solamente de economías de escala.
+No se trata solamente de economías de escala. También aparecen economías de alcance: una misma empresa puede utilizar infraestructura, modelos y datos para ofrecer búsquedas, publicidad, servicios en la nube, productividad, comercio electrónico y asistentes personales. El costo de una inversión puede distribuirse entre numerosos productos.
 
-También aparecen economías de alcance: una misma empresa puede utilizar infraestructura, modelos y datos para ofrecer búsquedas, publicidad, servicios en la nube, productividad, comercio electrónico y asistentes personales.
-
-El costo de una inversión puede distribuirse entre numerosos productos.
-
-Además, una plataforma integrada puede observar más interacciones y obtener información útil sobre lo que sus usuarios necesitan, siempre dentro de los límites técnicos, contractuales y regulatorios aplicables.
-
-Este fenómeno podría reforzar posiciones dominantes.
+Además, una plataforma integrada puede observar más interacciones y obtener información útil sobre lo que sus usuarios necesitan, siempre dentro de los límites técnicos, contractuales y regulatorios aplicables. Este fenómeno podría reforzar posiciones dominantes.
 
 Pero hay que ser precisos: **que existan ventajas de escala no demuestra que la concentración sea inevitable**.
 
-Los modelos abiertos, las tecnologías de menor costo, las bases públicas de conocimiento, los protocolos interoperables y las regulaciones de competencia pueden reducir algunas barreras.
-
-La disputa no está cerrada.
+Los modelos abiertos, las tecnologías de menor costo, las bases públicas de conocimiento, los protocolos interoperables y las regulaciones de competencia pueden reducir algunas barreras. La disputa no está cerrada.
 
 Lo que sí parece claro es que el acceso al contenido y a la capacidad de procesamiento se está convirtiendo en una dimensión estratégica de la competencia.
 
@@ -248,17 +206,11 @@ En economía, situaciones de este tipo invitan a estudiar las externalidades: co
 
 Sin embargo, todavía debemos demostrar que la menor remuneración mediante tráfico no será compensada por nuevas fuentes de ingresos o por reducciones en los costos de producción.
 
-Es posible que algunos contenidos desaparezcan porque dejan de ser económicamente viables. También es posible que otros aparezcan precisamente porque las herramientas de IA permiten producirlos con recursos antes insuficientes.
-
-Ambos procesos pueden ocurrir simultáneamente.
-
-El desafío consiste en comprender el saldo y, especialmente, su distribución.
+Es posible que algunos contenidos desaparezcan porque dejan de ser económicamente viables. También es posible que otros aparezcan precisamente porque las herramientas de IA permiten producirlos con recursos antes insuficientes. Ambos procesos pueden ocurrir simultáneamente. El desafío consiste en comprender el saldo y, especialmente, su distribución.
 
 Una mayor cantidad de información disponible no equivale necesariamente a mayor diversidad de fuentes independientes.
 
-Y una menor cantidad de visitas tampoco implica automáticamente una menor calidad de conocimiento producido.
-
-Esas relaciones deben investigarse, no presumirse.
+Y una menor cantidad de visitas tampoco implica automáticamente una menor calidad de conocimiento producido. Esas relaciones deben investigarse, no presumirse.
 
 ## La economía de la atención no desaparece: cambia de propietario
 
@@ -268,25 +220,15 @@ Durante buena parte de la historia de Internet, la competencia por esa atención
 
 Los sitios necesitaban atraer usuarios, mantenerlos leyendo y conseguir que volvieran. Los buscadores competían por ordenar la información. Las redes sociales desarrollaron mecanismos para prolongar la permanencia y estimular la interacción.
 
-La inteligencia artificial no elimina la escasez de atención.
+La inteligencia artificial no elimina la escasez de atención. Puede reducir el tiempo necesario para encontrar una respuesta, pero concentra una proporción mayor de la interacción en el intermediario que la proporciona. Una conversación prolongada con un asistente puede reemplazar numerosas visitas a páginas diferentes. El usuario obtiene una experiencia integrada. La plataforma obtiene continuidad en la relación.
 
-Puede reducir el tiempo necesario para encontrar una respuesta, pero concentra una proporción mayor de la interacción en el intermediario que la proporciona.
-
-Una conversación prolongada con un asistente puede reemplazar numerosas visitas a páginas diferentes.
-
-El usuario obtiene una experiencia integrada. La plataforma obtiene continuidad en la relación.
-
-La diferencia es que el nuevo intermediario no solamente selecciona contenido: lo sintetiza, reorganiza y presenta mediante una voz propia.
-
-Esto puede ser útil, pero también modifica la distribución de visibilidad y reputación.
+La diferencia es que el nuevo intermediario no solamente selecciona contenido: lo sintetiza, reorganiza y presenta mediante una voz propia. Esto puede ser útil, pero también modifica la distribución de visibilidad y reputación.
 
 En la web tradicional, el usuario podía reconocer fácilmente que una explicación procedía de una universidad, una revista científica o un blog personal.
 
 En una respuesta sintética, las fuentes pueden aparecer como referencias secundarias, mientras que la plataforma ocupa el lugar principal de interlocución.
 
-La atribución del conocimiento deja de ser un resultado natural de la navegación y se convierte, en parte, en una decisión de diseño.
-
-Y las decisiones de diseño tienen consecuencias económicas y culturales.
+La atribución del conocimiento deja de ser un resultado natural de la navegación y se convierte, en parte, en una decisión de diseño. Y las decisiones de diseño tienen consecuencias económicas y culturales.
 
 ## No toda la evidencia apunta en la misma dirección
 
@@ -296,9 +238,7 @@ Google ha sostenido públicamente que el volumen agregado de clics orgánicos en
 
 Por mayor calidad entiende, entre otros indicadores, que los usuarios no regresen inmediatamente a la página de resultados, lo que puede sugerir un interés más profundo.
 
-La empresa también afirma que las nuevas funciones generan consultas que antes no se realizaban.
-
-[Fuente: Google, agosto de 2025](https://blog.google/products-and-platforms/products/search/ai-search-driving-more-queries-higher-quality-clicks/).
+La empresa también afirma que las nuevas funciones generan consultas que antes no se realizaban ([Google, agosto de 2025](https://blog.google/products-and-platforms/products/search/ai-search-driving-more-queries-higher-quality-clicks/)).
 
 Estas afirmaciones no deben aceptarse sin examen, pero tampoco descartarse porque proceden de una empresa interesada.
 
@@ -312,17 +252,9 @@ Un sitio puede recibir menos visitantes y, sin embargo, conseguir más suscripto
 
 La pregunta económicamente relevante no es solamente cuántos clics desaparecen, sino cuánto valor se pierde, cuánto se crea y quién puede apropiárselo.
 
-Además, la IA puede beneficiar a productores pequeños.
+Además, la IA puede beneficiar a productores pequeños. Un investigador independiente puede traducir sus trabajos, mejorar la accesibilidad de sus textos y desarrollar herramientas que antes requerían equipos de programación. Una empresa pequeña puede ofrecer atención especializada sin mantener una estructura comercial extensa. Un docente puede construir materiales interactivos y personalizados a costos comparativamente bajos.
 
-Un investigador independiente puede traducir sus trabajos, mejorar la accesibilidad de sus textos y desarrollar herramientas que antes requerían equipos de programación.
-
-Una empresa pequeña puede ofrecer atención especializada sin mantener una estructura comercial extensa.
-
-Un docente puede construir materiales interactivos y personalizados a costos comparativamente bajos.
-
-Por eso no resulta convincente describir la IA únicamente como un mecanismo de extracción de valor.
-
-Es también una tecnología capaz de reducir barreras de producción y distribución.
+Por eso no resulta convincente describir la IA únicamente como un mecanismo de extracción de valor. Es también una tecnología capaz de reducir barreras de producción y distribución.
 
 **La cuestión decisiva no es si crea valor. Lo crea. La cuestión es cómo se distribuye ese valor y qué actividades deja de remunerar.**
 
@@ -336,35 +268,21 @@ Algo parecido podría ocurrir con compras, trámites, servicios profesionales, c
 
 La plataforma dejaría de ser solamente el lugar donde comienza una búsqueda. Podría convertirse en el intermediario que propone opciones y realiza transacciones.
 
-Google ya ha señalado las experiencias de agentes capaces de completar formularios, reservar servicios y efectuar compras como una línea de desarrollo comercial.
+Google ya ha señalado las experiencias de agentes capaces de completar formularios, reservar servicios y efectuar compras como una línea de desarrollo comercial ([Alphabet, presentación de resultados del tercer trimestre de 2026](https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/)).
 
-[Fuente: Alphabet, presentación de resultados del tercer trimestre de 2026](https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/).
+En ese escenario, la competencia por atraer tráfico podría transformarse parcialmente en una competencia por ser seleccionado por un agente. La diferencia sería considerable.
 
-En ese escenario, la competencia por atraer tráfico podría transformarse parcialmente en una competencia por ser seleccionado por un agente.
+En lugar de diseñar una página para convencer directamente a una persona, las empresas podrían necesitar que sus productos, precios y condiciones fueran comprensibles y accesibles para sistemas automatizados. Aparecerían nuevos intermediarios, nuevas formas de publicidad y nuevos conflictos de interés.
 
-La diferencia sería considerable.
-
-En lugar de diseñar una página para convencer directamente a una persona, las empresas podrían necesitar que sus productos, precios y condiciones fueran comprensibles y accesibles para sistemas automatizados.
-
-Aparecerían nuevos intermediarios, nuevas formas de publicidad y nuevos conflictos de interés.
-
-Si un asistente recomienda un producto, ¿lo hace porque satisface mejor las necesidades del usuario, porque tiene información más completa o porque existe un acuerdo comercial?
-
-¿Quién responde si realiza una compra equivocada?
-
-¿Puede una plataforma favorecer sistemáticamente sus propios servicios?
+Si un asistente recomienda un producto, ¿lo hace porque satisface mejor las necesidades del usuario, porque tiene información más completa o porque existe un acuerdo comercial? ¿Quién responde si realiza una compra equivocada? ¿Puede una plataforma favorecer sistemáticamente sus propios servicios?
 
 Son preguntas técnicas, económicas y regulatorias. No se resuelven simplemente haciendo que el modelo sea más inteligente.
 
-Y conviene no confundir capacidad con adopción. El estudio del Reuters Institute publicado en 2026 encontró que, entre los encuestados de nueve países, solamente un 14 % había utilizado un agente de IA para realizar una tarea real durante la semana anterior.
-
-El potencial es considerable, pero todavía no constituye una práctica universal.
+Y conviene no confundir capacidad con adopción. El estudio del Reuters Institute publicado en 2026 encontró que, entre los encuestados de nueve países, solamente un 14 % había utilizado un agente de IA para realizar una tarea real durante la semana anterior. El potencial es considerable, pero todavía no constituye una práctica universal.
 
 ## ¿Quién financiará el conocimiento que todos quieren utilizar?
 
-Aquí llegamos al problema que me parece más importante.
-
-Una sociedad necesita producir información que no siempre tiene un comprador inmediato.
+Aquí llegamos al problema que me parece más importante. Una sociedad necesita producir información que no siempre tiene un comprador inmediato.
 
 Necesita investigaciones científicas, archivos históricos, periodismo de investigación, documentación técnica, estadísticas públicas, materiales educativos y espacios de discusión.
 
@@ -376,17 +294,11 @@ Una investigación científica no se realiza porque un sistema pueda redactar un
 
 La tecnología puede ayudar enormemente en esas tareas. Pero debemos distinguir entre disminuir su costo y hacer innecesaria su realización.
 
-Si las plataformas capturan una proporción creciente de los ingresos asociados al uso de información, mientras sus productores originales pierden mecanismos de financiación, podría aparecer un problema de sostenibilidad.
-
-No necesariamente en toda la web, ni de manera simultánea.
+Si las plataformas capturan una proporción creciente de los ingresos asociados al uso de información, mientras sus productores originales pierden mecanismos de financiación, podría aparecer un problema de sostenibilidad. No necesariamente en toda la web, ni de manera simultánea.
 
 Quizá los medios de gran prestigio consoliden suscripciones, los especialistas vendan servicios personalizados y los productores de información comercial encuentren nuevas formas de distribuir sus productos.
 
-Los contenidos genéricos podrían perder valor económico, mientras las investigaciones originales y los datos confiables lo incrementan.
-
-También podría aumentar el financiamiento público o cooperativo de determinados bienes informativos.
-
-La reorganización, por lo tanto, no tiene una única dirección.
+Los contenidos genéricos podrían perder valor económico, mientras las investigaciones originales y los datos confiables lo incrementan. También podría aumentar el financiamiento público o cooperativo de determinados bienes informativos. La reorganización, por lo tanto, no tiene una única dirección.
 
 Pero la pregunta persiste: ¿cómo se financia la producción de conocimiento cuando el consumo ya no conduce necesariamente hacia quien lo produjo?
 
@@ -400,9 +312,7 @@ Internet no nació con una obligación de sostener periódicos, blogs, buscadore
 
 Tampoco me parece razonable exigir a los usuarios que renuncien a herramientas más eficientes para preservar ingresos ajenos.
 
-Pero hay una diferencia entre permitir que los modelos económicos evolucionen y aceptar cualquier distribución de sus beneficios como si fuera inevitable.
-
-Una transición razonable debería prestar atención, al menos, a cuatro condiciones.
+Pero hay una diferencia entre permitir que los modelos económicos evolucionen y aceptar cualquier distribución de sus beneficios como si fuera inevitable. Una transición razonable debería prestar atención, al menos, a cuatro condiciones.
 
 La primera es la **competencia**. Si acceder a contenidos, modelos y capacidad de procesamiento exige inversiones que solamente unas pocas empresas pueden afrontar, el mercado podría concentrarse más de lo deseable. Los sistemas abiertos, la interoperabilidad y la supervisión de prácticas anticompetitivas adquieren relevancia.
 
@@ -412,9 +322,7 @@ La tercera es la **diversidad de mecanismos de financiación**. La publicidad y 
 
 La cuarta es la **transparencia en la intermediación**. A medida que los asistentes seleccionan información y participan en decisiones comerciales, resulta necesario distinguir las recomendaciones fundamentadas en criterios del usuario de aquellas condicionadas por incentivos publicitarios o acuerdos de distribución.
 
-Nada de esto exige oponerse a la inteligencia artificial.
-
-Exige reconocer que su desarrollo es también un problema de organización económica e institucional.
+Nada de esto exige oponerse a la inteligencia artificial. Exige reconocer que su desarrollo es también un problema de organización económica e institucional.
 
 ## La falsa nostalgia de la web anterior
 
@@ -430,13 +338,9 @@ La inteligencia artificial puede corregir algunos de esos defectos. Una buena re
 
 No deberíamos lamentar la desaparición de visitas cuyo único propósito económico consistía en mostrar anuncios antes de ofrecer una información trivial.
 
-El problema comienza cuando el mismo mecanismo perjudica indistintamente al contenido redundante y al conocimiento que requiere esfuerzo original.
+El problema comienza cuando el mismo mecanismo perjudica indistintamente al contenido redundante y al conocimiento que requiere esfuerzo original. Si una tecnología elimina intermediaciones innecesarias, puede aumentar el bienestar.
 
-Si una tecnología elimina intermediaciones innecesarias, puede aumentar el bienestar.
-
-Si elimina, junto con esas intermediaciones, los incentivos necesarios para producir información valiosa, el resultado es más ambiguo.
-
-La dificultad consiste en separar ambos efectos.
+Si elimina, junto con esas intermediaciones, los incentivos necesarios para producir información valiosa, el resultado es más ambiguo. La dificultad consiste en separar ambos efectos.
 
 Y esa separación no puede hacerse únicamente desde la perspectiva de las empresas afectadas, porque sus intereses comerciales no son idénticos al interés público.
 
@@ -454,17 +358,9 @@ La historia económica está llena de tecnologías que aumentaron la productivid
 
 La imprenta modificó las condiciones materiales de reproducción del conocimiento. La radio y la televisión transformaron la publicidad y la distribución cultural. Internet redujo los costos de publicación y alteró el poder de los intermediarios tradicionales.
 
-La inteligencia artificial introduce otra modificación: permite que una plataforma no solamente transporte o encuentre información, sino que elabore una respuesta a partir de ella.
+La inteligencia artificial introduce otra modificación: permite que una plataforma no solamente transporte o encuentre información, sino que elabore una respuesta a partir de ella. Y comienza a extender esa capacidad hacia las recomendaciones y las acciones. Su importancia económica reside en ese desplazamiento.
 
-Y comienza a extender esa capacidad hacia las recomendaciones y las acciones.
-
-Su importancia económica reside en ese desplazamiento.
-
-Antes, gran parte del negocio consistía en facilitar el encuentro entre una pregunta y una fuente.
-
-Ahora, una parte creciente consiste en proporcionar directamente la respuesta.
-
-La diferencia afecta a productores, distribuidores, anunciantes, usuarios y competidores.
+Antes, gran parte del negocio consistía en facilitar el encuentro entre una pregunta y una fuente. Ahora, una parte creciente consiste en proporcionar directamente la respuesta. La diferencia afecta a productores, distribuidores, anunciantes, usuarios y competidores.
 
 ## Conclusión: el modelo ya está cambiando
 
@@ -486,11 +382,7 @@ Lo que sí podemos afirmar es que la tecnología está desplazando la frontera e
 
 Durante décadas, publicar significaba, entre otras cosas, ofrecer algo que otros podían encontrar y visitar.
 
-En el nuevo entorno, publicar también puede significar alimentar sistemas que responderán sin necesidad de conducir al lector hasta la fuente.
-
-No es necesariamente una injusticia. Tampoco es necesariamente un progreso económico para todos.
-
-Es un cambio en las reglas de distribución del valor.
+En el nuevo entorno, publicar también puede significar alimentar sistemas que responderán sin necesidad de conducir al lector hasta la fuente. No es necesariamente una injusticia. Tampoco es necesariamente un progreso económico para todos. Es un cambio en las reglas de distribución del valor.
 
 La pregunta decisiva no es si las máquinas podrán responder mejor. Es cómo conseguiremos que siga siendo posible —y conveniente— producir las preguntas, investigaciones, datos, argumentos y descubrimientos de los cuales dependen esas respuestas.
 
@@ -510,7 +402,6 @@ Y una Internet que responde cada vez mejor, mientras pierde gradualmente la capa
 6. **Reddit Inc. (2026).** [Third Quarter 2026 Results](https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-Reports-Third-Quarter-2026-Results/default.aspx). Evolución de usuarios y resultados de la plataforma.
 7. **OpenAI y News Corp (2024).** [A landmark multi-year global partnership with News Corp](https://openai.com/index/news-corp-and-openai-sign-landmark-multi-year-global-partnership/). Ejemplo de acuerdos comerciales para utilización de contenido periodístico.
 8. **Google (2025).** [AI in Search: Driving more queries and higher quality clicks](https://blog.google/products-and-platforms/products/search/ai-search-driving-more-queries-higher-quality-clicks/). Perspectiva de Google sobre el tráfico derivado de las búsquedas con IA.
-9. **Cloudflare Radar (2025).** [Year in Review](https://blog.cloudflare.com/radar-2025-year-in-review/). Evolución del rastreo automatizado, infraestructura y actividad de agentes de IA.
-10. **Simon, Herbert A. (1971).** *Designing Organizations for an Information-Rich World*. Referencia conceptual sobre la relación entre abundancia informativa y escasez de atención.
+9. **Simon, Herbert A. (1971).** *Designing Organizations for an Information-Rich World*. Referencia conceptual sobre la relación entre abundancia informativa y escasez de atención.
 
 *Nota metodológica.* Los datos proceden de informes corporativos, estudios de comportamiento y análisis de terceros publicados hasta noviembre de 2026. Las proyecciones sobre concentración, financiación del conocimiento y evolución del mercado son interpretaciones argumentadas, no resultados establecidos por esos estudios. No debe confundirse una asociación observada entre adopción de IA y caída del tráfico con una demostración causal de que la primera explica íntegramente la segunda.
