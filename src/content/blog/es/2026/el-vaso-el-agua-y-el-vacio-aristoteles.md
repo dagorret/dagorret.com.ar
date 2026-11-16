@@ -4,7 +4,7 @@ date: 2026-07-06
 slug: "el-vaso-el-agua-y-el-vacio-aristoteles"
 translation_key: "el-vaso-el-agua-y-el-vacio-aristoteles"
 lang: "es"
-categories: ["Política"]
+categories: ["Filosofía"]
 tags: ["Aristóteles","Byung-Chul Han","Redes Sociales"]
 ---
 

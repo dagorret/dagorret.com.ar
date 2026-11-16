@@ -4,7 +4,7 @@ date: 2026-05-14
 slug: "la-fisica-de-la-elasticidad-humana"
 translation_key: "la-fisica-de-la-elasticidad-humana"
 lang: "es"
-categories: ["Matemáticas"]
+categories: ["Sistemas"]
 tags: ["Pierre Bourdieu","Gestión del Talento","Capital Simbólico"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-07-05
 slug: "cayetana-de-alba-iconoclasia"
 translation_key: "cayetana-de-alba-iconoclasia"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Cultura"]
 tags: ["Cayetana de Alba","Pablo Picasso","Capital Simbólico"]
 ---
 

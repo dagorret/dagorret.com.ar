@@ -4,7 +4,7 @@ date: 2026-07-16
 slug: "la-humildad-epistemica-y-el-arte-del-contrabando-conceptual"
 translation_key: "la-humildad-epistemica-y-el-arte-del-contrabando-conceptual"
 lang: "es"
-categories: ["Inteligencia Artificial"]
+categories: ["Filosofía"]
 tags: ["Epistemología","Falibilismo","Relativismo"]
 ---
 

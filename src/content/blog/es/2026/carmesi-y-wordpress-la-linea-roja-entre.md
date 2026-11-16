@@ -4,7 +4,7 @@ date: 2026-06-23
 slug: "carmesi-y-wordpress-la-linea-roja-entre"
 translation_key: "carmesi-y-wordpress-la-linea-roja-entre"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Tecnología"]
 tags: ["WordPress","Hugo","PHP"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-05-01
 slug: "el-mito-del-ttl-de-30-segundos"
 translation_key: "el-mito-del-ttl-de-30-segundos"
 lang: "es"
-categories: ["Capital"]
+categories: ["Tecnología"]
 tags: ["DNS","Unbound","AdGuard Home"]
 ---
 

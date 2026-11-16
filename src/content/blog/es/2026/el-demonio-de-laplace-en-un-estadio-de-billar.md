@@ -4,7 +4,7 @@ date: 2026-08-20
 slug: "el-demonio-de-laplace-en-un-estadio-de-billar"
 translation_key: "el-demonio-de-laplace-en-un-estadio-de-billar"
 lang: "es"
-categories: ["Ciencia","Filosofía","Ontología"]
+categories: ["Ciencia", "Filosofía"]
 tags: ["Laplace","Schrödinger","Leonid Bunimovich"]
 ---
 

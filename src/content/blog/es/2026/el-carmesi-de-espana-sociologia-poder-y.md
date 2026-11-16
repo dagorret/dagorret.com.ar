@@ -4,7 +4,7 @@ date: 2026-07-07
 slug: "el-carmesi-de-espana-sociologia-poder-y"
 translation_key: "el-carmesi-de-espana-sociologia-poder-y"
 lang: "es"
-categories: ["Política"]
+categories: ["Cultura"]
 tags: ["España","Capital Simbólico","Estética"]
 ---
 

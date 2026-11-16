@@ -4,7 +4,7 @@ date: 2026-04-29
 slug: "el-modelo-base-00-5"
 translation_key: "el-modelo-base-00-5"
 lang: "es"
-categories: ["Ontología"]
+categories: ["Capital"]
 tags: ["Automatización","Trabajo","Dirección estratégica"]
 ---
 

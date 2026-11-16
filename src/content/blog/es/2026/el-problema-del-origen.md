@@ -4,7 +4,7 @@ date: 2026-06-26
 slug: "el-problema-del-origen"
 translation_key: "el-problema-del-origen"
 lang: "es"
-categories: ["Política"]
+categories: ["Historia"]
 tags: ["Linux","Linus Torvalds","GNU"]
 ---
 

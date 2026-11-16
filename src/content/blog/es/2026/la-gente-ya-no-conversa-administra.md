@@ -4,7 +4,7 @@ date: 2026-06-08
 slug: "la-gente-ya-no-conversa-administra"
 translation_key: "la-gente-ya-no-conversa-administra"
 lang: "es"
-categories: ["Matemáticas"]
+categories: ["Sociología"]
 tags: ["Redes Sociales","Autenticidad"]
 ---
 

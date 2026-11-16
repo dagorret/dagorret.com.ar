@@ -4,7 +4,7 @@ date: 2026-10-24
 slug: "the-shape-of-the-probable-in-formulas"
 translation_key: "la-forma-de-lo-probable-en-formulas"
 lang: "en"
-categories: ["Technology"]
+categories: ["Artificial Intelligence"]
 tags: ["Transformers","LLaMA","Language Models"]
 ---
 

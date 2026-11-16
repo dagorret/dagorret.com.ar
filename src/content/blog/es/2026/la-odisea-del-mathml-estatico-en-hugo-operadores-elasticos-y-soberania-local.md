@@ -4,7 +4,7 @@ date: 2026-07-09
 slug: "la-odisea-del-mathml-estatico-en-hugo-operadores-elasticos-y-soberania-local"
 translation_key: "la-odisea-del-mathml-estatico-en-hugo-operadores-elasticos-y-soberania-local"
 lang: "es"
-categories: ["Inteligencia Artificial"]
+categories: ["Tecnología"]
 tags: ["Hugo","MathML","KaTeX"]
 ---
 

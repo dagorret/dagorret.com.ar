@@ -4,7 +4,7 @@ date: 2026-06-13
 slug: "el-mapa-invisible"
 translation_key: "el-mapa-invisible"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Cultura"]
 tags: ["Literatura"]
 ---
 

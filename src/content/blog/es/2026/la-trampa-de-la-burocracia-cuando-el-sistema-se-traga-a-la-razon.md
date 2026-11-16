@@ -4,7 +4,7 @@ date: 2026-07-10
 slug: "la-trampa-de-la-burocracia-cuando-el-sistema-se-traga-a-la-razon"
 translation_key: "la-trampa-de-la-burocracia-cuando-el-sistema-se-traga-a-la-razon"
 lang: "es"
-categories: ["Capital"]
+categories: ["Sistemas"]
 tags: ["Max Weber","Robert K. Merton","Burocracia"]
 ---
 

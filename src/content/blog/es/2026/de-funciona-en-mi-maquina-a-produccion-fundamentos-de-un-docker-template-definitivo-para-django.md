@@ -4,7 +4,7 @@ date: 2026-07-18
 slug: "de-funciona-en-mi-maquina-a-produccion-fundamentos-de-un-docker-template-definitivo-para-django"
 translation_key: "de-funciona-en-mi-maquina-a-produccion-fundamentos-de-un-docker-template-definitivo-para-django"
 lang: "es"
-categories: ["Ciencia"]
+categories: ["Tecnología"]
 tags: ["Docker","Django","PostgreSQL"]
 ---
 

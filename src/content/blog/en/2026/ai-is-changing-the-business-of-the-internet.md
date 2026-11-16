@@ -4,7 +4,7 @@ date: 2026-11-03
 slug: "ai-is-changing-the-business-of-the-internet"
 translation_key: "la-inteligencia-artificial-esta-cambiando-el-negocio-de-internet"
 lang: "en"
-categories: ["Technology"]
+categories: ["Artificial Intelligence"]
 tags: ["Google","Reddit","OpenAI"]
 ---
 

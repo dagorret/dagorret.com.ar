@@ -4,7 +4,7 @@ date: 2026-05-02
 slug: "el-dilema-de-1919-policia-del-mundo-o"
 translation_key: "el-dilema-de-1919-policia-del-mundo-o"
 lang: "es"
-categories: ["Ontología"]
+categories: ["Historia"]
 tags: ["Woodrow Wilson","Sociedad de Naciones","Estados Unidos"]
 ---
 

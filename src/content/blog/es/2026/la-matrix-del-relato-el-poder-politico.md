@@ -4,7 +4,7 @@ date: 2026-06-09
 slug: "la-matrix-del-relato-el-poder-politico"
 translation_key: "la-matrix-del-relato-el-poder-politico"
 lang: "es"
-categories: ["Inteligencia Artificial"]
+categories: ["Política"]
 tags: ["Polarización","Medios de Comunicación","Posverdad"]
 ---
 

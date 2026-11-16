@@ -4,7 +4,7 @@ date: 2026-10-25
 slug: "limites-de-la-metafora-del-codigo"
 translation_key: "limites-de-la-metafora-del-codigo"
 lang: "es"
-categories: ["Filosofía","Inteligencia Artificial"]
+categories: ["Filosofía", "Ciencia"]
 tags: ["ENCODE","Dan Graur","ADN"]
 ---
 

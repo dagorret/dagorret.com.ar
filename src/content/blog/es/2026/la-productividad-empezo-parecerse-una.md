@@ -4,7 +4,7 @@ date: 2026-05-04
 slug: "la-productividad-empezo-parecerse-una"
 translation_key: "la-productividad-empezo-parecerse-una"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Sociología"]
 tags: ["Quantified Self","Productividad Laboral"]
 ---
 

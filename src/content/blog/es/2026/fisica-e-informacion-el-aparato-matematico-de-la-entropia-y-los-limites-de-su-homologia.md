@@ -4,7 +4,7 @@ date: 2026-08-01
 slug: "fisica-e-informacion-el-aparato-matematico-de-la-entropia-y-los-limites-de-su-homologia"
 translation_key: "fisica-e-informacion-el-aparato-matematico-de-la-entropia-y-los-limites-de-su-homologia"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Ciencia"]
 tags: ["Boltzmann","Claude Shannon","Rolf Landauer"]
 ---
 

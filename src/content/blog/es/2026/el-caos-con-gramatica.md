@@ -4,7 +4,7 @@ date: 2026-07-25
 slug: "el-caos-con-gramatica"
 translation_key: "el-caos-con-gramatica"
 lang: "es"
-categories: ["Cultura"]
+categories: ["Matemáticas"]
 tags: ["Medalla Fields","Boltzmann","Geometría"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-05-22
 slug: "la-filosofia-como-armadura-mental-el"
 translation_key: "la-filosofia-como-armadura-mental-el"
 lang: "es"
-categories: ["Matemáticas"]
+categories: ["Filosofía"]
 tags: ["Epicteto","Marco Aurelio","Estoicismo"]
 ---
 

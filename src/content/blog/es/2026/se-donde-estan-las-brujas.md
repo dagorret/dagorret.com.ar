@@ -4,7 +4,7 @@ date: 2026-06-20
 slug: "se-donde-estan-las-brujas"
 translation_key: "se-donde-estan-las-brujas"
 lang: "es"
-categories: ["Cultura"]
+categories: ["Tecnología"]
 tags: ["Diagnóstico de Sistemas","Pensamiento Crítico"]
 ---
 

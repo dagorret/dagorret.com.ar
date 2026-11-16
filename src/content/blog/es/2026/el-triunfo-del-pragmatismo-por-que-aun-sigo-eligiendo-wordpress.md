@@ -4,7 +4,7 @@ date: 2026-07-11
 slug: "el-triunfo-del-pragmatismo-por-que-aun-sigo-eligiendo-wordpress"
 translation_key: "el-triunfo-del-pragmatismo-por-que-aun-sigo-eligiendo-wordpress"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Tecnología"]
 tags: ["WordPress","Hugo","Nginx"]
 ---
 

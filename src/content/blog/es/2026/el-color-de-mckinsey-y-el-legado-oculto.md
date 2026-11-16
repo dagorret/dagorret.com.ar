@@ -4,7 +4,7 @@ date: 2026-05-18
 slug: "el-color-de-mckinsey-y-el-legado-oculto"
 translation_key: "el-color-de-mckinsey-y-el-legado-oculto"
 lang: "es"
-categories: ["Política"]
+categories: ["Sistemas"]
 tags: ["McKinsey","Mary Parker Follett"]
 ---
 

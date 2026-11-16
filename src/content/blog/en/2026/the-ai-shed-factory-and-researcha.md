@@ -4,7 +4,7 @@ date: 2026-10-15
 slug: "the-ai-shed-factory-and-researcha"
 translation_key: "el-galpon-de-la-ia-fabrica-e-investigacion"
 lang: "en"
-categories: ["Philosophy"]
+categories: ["Artificial Intelligence"]
 tags: ["Language Models","Model Training","Work"]
 ---
 

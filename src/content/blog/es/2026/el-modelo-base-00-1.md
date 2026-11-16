@@ -4,7 +4,7 @@ date: 2026-04-25
 slug: "el-modelo-base-00-1"
 translation_key: "el-modelo-base-00-1"
 lang: "es"
-categories: ["Ontología"]
+categories: ["Capital"]
 tags: ["Adam Smith","James Watt","La riqueza de las naciones"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-07-10
 slug: "el-modelo-cierra-la-oficina-esta"
 translation_key: "el-modelo-cierra-la-oficina-esta"
 lang: "es"
-categories: ["Política"]
+categories: ["Sistemas"]
 tags: ["Max Weber","Rudolf Clausius","Termodinámica"]
 ---
 

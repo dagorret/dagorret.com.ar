@@ -4,7 +4,7 @@ date: 2026-10-24
 slug: "the-shape-of-the-probable"
 translation_key: "la-forma-de-lo-probable"
 lang: "en"
-categories: ["Technology"]
+categories: ["Artificial Intelligence"]
 tags: ["Transformers","Language Models","Neural Networks"]
 ---
 

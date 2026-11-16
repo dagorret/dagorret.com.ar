@@ -4,7 +4,7 @@ date: 2026-05-19
 slug: "la-economia-de-la-supercomputacion"
 translation_key: "la-economia-de-la-supercomputacion"
 lang: "es"
-categories: ["Política"]
+categories: ["Capital"]
 tags: ["Computación cuántica"]
 ---
 

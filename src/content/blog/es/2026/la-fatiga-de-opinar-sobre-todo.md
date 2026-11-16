@@ -4,7 +4,7 @@ date: 2026-05-03
 slug: "la-fatiga-de-opinar-sobre-todo"
 translation_key: "la-fatiga-de-opinar-sobre-todo"
 lang: "es"
-categories: ["Matemáticas"]
+categories: ["Sociología"]
 tags: ["Redes Sociales","Economía de la atención","Pensamiento Crítico"]
 ---
 

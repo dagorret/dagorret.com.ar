@@ -4,7 +4,7 @@ date: 2026-04-22
 slug: "initial-server-setup-with-ubuntu-16-04"
 translation_key: "initial-server-setup-with-ubuntu-16-04"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Tecnología"]
 tags: ["Ubuntu","OpenSSH","UFW"]
 ---
 

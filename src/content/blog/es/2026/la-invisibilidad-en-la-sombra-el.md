@@ -4,7 +4,7 @@ date: 2026-06-19
 slug: "la-invisibilidad-en-la-sombra-el"
 translation_key: "la-invisibilidad-en-la-sombra-el"
 lang: "es"
-categories: ["Inteligencia Artificial"]
+categories: ["Historia"]
 tags: ["Lockheed U-2","SR-71 Blackbird","Espionaje"]
 ---
 

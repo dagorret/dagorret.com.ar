@@ -4,7 +4,7 @@ date: 2026-05-06
 slug: "el-algoritmo-no-quiere-que-entiendas-el"
 translation_key: "el-algoritmo-no-quiere-que-entiendas-el"
 lang: "es"
-categories: ["Ontología"]
+categories: ["Sociología"]
 tags: ["Internet","Redes Sociales","Economía de la atención"]
 ---
 

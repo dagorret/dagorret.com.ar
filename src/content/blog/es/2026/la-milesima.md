@@ -4,7 +4,7 @@ date: 2026-06-03
 slug: "la-milesima"
 translation_key: "la-milesima"
 lang: "es"
-categories: ["Inteligencia Artificial"]
+categories: ["Capital"]
 tags: ["Joseph Schumpeter","Nick Srnicek","John Kenneth Galbraith"]
 ---
 

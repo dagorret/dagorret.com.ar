@@ -4,7 +4,7 @@ date: 2026-08-24
 slug: "la-guerra-de-sistemas-wildberries-las-tres-olas-de-toffler-y-el-fin-de-la-retaguardia-civil"
 translation_key: "la-guerra-de-sistemas-wildberries-las-tres-olas-de-toffler-y-el-fin-de-la-retaguardia-civil"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Política", "Sistemas"]
 tags: ["Wildberries","Alvin Toffler","Ucrania"]
 ---
 

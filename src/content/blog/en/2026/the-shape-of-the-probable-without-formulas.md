@@ -4,7 +4,7 @@ date: 2026-10-24
 slug: "the-shape-of-the-probable-without-formulas"
 translation_key: "la-forma-de-lo-probable-sin-formulas"
 lang: "en"
-categories: ["Technology"]
+categories: ["Artificial Intelligence"]
 tags: ["Language Models","Neural Networks"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-05-08
 slug: "26-del-26-reflexiones-despues-del-dia"
 translation_key: "26-del-26-reflexiones-despues-del-dia"
 lang: "es"
-categories: ["Capital"]
+categories: ["Política"]
 tags: ["Argentina","Byung-Chul Han","Polarización"]
 ---
 

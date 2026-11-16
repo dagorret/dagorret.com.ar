@@ -4,7 +4,7 @@ date: 2026-10-18
 slug: "iluminismo-cuantico"
 translation_key: "iluminismo-cuantico"
 lang: "es"
-categories: ["Cultura","Sistemas","Sociología","Tecnología"]
+categories: ["Filosofía", "Sociología"]
 tags: ["Immanuel Kant","Albert Camus","Jascha Sohl-Dickstein"]
 ---
 

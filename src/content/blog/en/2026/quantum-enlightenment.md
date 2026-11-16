@@ -4,7 +4,7 @@ date: 2026-10-18
 slug: "quantum-enlightenment"
 translation_key: "iluminismo-cuantico"
 lang: "en"
-categories: ["Sociology"]
+categories: ["Philosophy", "Sociology"]
 tags: ["Immanuel Kant","Albert Camus","Jascha Sohl-Dickstein"]
 ---
 

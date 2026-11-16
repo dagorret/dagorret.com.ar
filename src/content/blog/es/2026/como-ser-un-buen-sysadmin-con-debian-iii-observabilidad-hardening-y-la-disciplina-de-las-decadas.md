@@ -4,7 +4,7 @@ date: 2026-09-24
 slug: "como-ser-un-buen-sysadmin-con-debian-iii-observabilidad-hardening-y-la-disciplina-de-las-decadas"
 translation_key: "como-ser-un-buen-sysadmin-con-debian-iii-observabilidad-hardening-y-la-disciplina-de-las-decadas"
 lang: "es"
-categories: ["Sistemas","Tecnología"]
+categories: ["Tecnología"]
 tags: ["Debian","AppArmor","Mantenimiento de Servidores"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Graph Engineering: El arte de convertir una IA en un equipo de producción"
 date: 2026-08-26
-slug: "quien-pone-las-reglas-el-viejo-problema-detras-del-trabajador-de-plataforma"
+slug: "graph-engineering"
 translation_key: "quien-pone-las-reglas-el-viejo-problema-detras-del-trabajador-de-plataforma"
 lang: "es"
 categories: ["Inteligencia Artificial"]

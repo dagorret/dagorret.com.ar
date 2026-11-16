@@ -4,7 +4,7 @@ date: 2026-08-25
 slug: "gobernanza-disfrazada-de-autoritarismo"
 translation_key: "gobernanza-disfrazada-de-autoritarismo"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Política"]
 tags: ["Jan-Werner Müller","Steven Levitsky","John Rawls"]
 ---
 

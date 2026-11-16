@@ -4,7 +4,7 @@ date: 2026-10-21
 slug: "memoria-que-sobrevive-a-su-dueno"
 translation_key: "memoria-que-sobrevive-a-su-dueno"
 lang: "es"
-categories: ["Sistemas"]
+categories: ["Tecnología"]
 tags: ["PHP","PHP2Shell","Vulnerabilidad"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-09-12
 slug: "como-ser-un-buen-sysadmin-con-debian-i-la-disciplina-de-apt-y-la-gestion-de-paquetes"
 translation_key: "como-ser-un-buen-sysadmin-con-debian-i-la-disciplina-de-apt-y-la-gestion-de-paquetes"
 lang: "es"
-categories: ["Sistemas","Tecnología"]
+categories: ["Tecnología"]
 tags: ["Debian","APT","needrestart"]
 ---
 

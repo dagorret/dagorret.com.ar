@@ -4,8 +4,8 @@ date: 2026-08-26
 slug: "gobernanza-disfrazada-de-rebeldia"
 translation_key: "gobernanza-disfrazada-de-rebeldia"
 lang: "es"
-categories: ["Sistemas"]
-tags: ["X","Alexandre de Moraes","Censura"]
+categories: ["Política"]
+tags: ["Twitter","Alexandre de Moraes","Censura"]
 ---
 
 Hace no mucho la censura era fácil de señalar: alguien agarraba una tijera, tachaba una frase, apagaba un micrófono, y el gesto quedaba a la vista de todos. Hoy la tijera se disolvió en el código. Nadie tacha nada visiblemente. Se ajusta un peso en la matriz, se agrega un filtro, se redacta una cláusula en un archivo de configuración que casi nadie va a leer nunca. El efecto, sin embargo, es exactamente el mismo de siempre: alguien, desde un escritorio que no conocemos, decide qué parte del pensamiento colectivo pasa y cuál se hunde antes de llegar a nadie. Escribo esto con cierta incomodidad, no como analista que mira desde afuera, sino como alguien que usa estas herramientas todos los días para pensar y para escribir, y que cada vez se pregunta con más frecuencia qué parte de lo que produce fue decidida por él y qué parte se la sugirió, suavemente, la máquina.
