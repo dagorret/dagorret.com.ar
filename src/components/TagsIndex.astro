@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getTaxonomy, type TaxonomyItem } from '../lib/taxonomy';
+
+interface Props { lang: 'es' | 'en' }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const { tags } = await getTaxonomy(lang);
+const sorted = [...tags].sort((a, b) => a.label.localeCompare(b.label, lang));
+const groups = new Map<string, TaxonomyItem[]>();
+for (const tag of sorted) {
+  const initial = tag.label.normalize('NFC').charAt(0).toLocaleUpperCase(lang);
+  // Las vocales acentuadas comparten letra; la Ñ conserva su grupo en español.
+  const letter = initial === 'Ñ' ? initial : initial.normalize('NFD').replace(/\p{M}/gu, '');
+  if (!groups.has(letter)) groups.set(letter, []);
+  groups.get(letter)!.push(tag);
+}
+const letters = [...groups.keys()].sort((a, b) => a.localeCompare(b, lang));
+const title = en ? 'All tags' : 'Todas las etiquetas';
+const description = en
+  ? 'Find articles by tag: an alphabetical index of people, works, technologies and concepts, with article counts.'
+  : 'Encontrá artículos por etiqueta: un índice alfabético de personas, obras, tecnologías y conceptos, con la cantidad de artículos.';
+---
+
+<Layout title={title} lang={lang} description={description} translationUrl={en ? '/tags/' : '/en/tags/'}>
+  <header class="tags-heading">
+    <h1>{title}</h1>
+    <p>{en ? 'Browse tags in alphabetical order.' : 'Explorá las etiquetas en orden alfabético.'}</p>
+  </header>
+  {letters.map((letter, index) => (
+    <section aria-labelledby={`tag-letter-${index}`}>
+      <h2 id={`tag-letter-${index}`}>{letter}</h2>
+      <ul>
+        {groups.get(letter)!.map(tag => (
+          <li>
+            <a href={`${en ? '/en' : ''}/tags/${tag.slug}/`}>{tag.label}</a>
+            <span class="tag-count">{tag.count} {en
+              ? (tag.count === 1 ? 'article' : 'articles')
+              : (tag.count === 1 ? 'artículo' : 'artículos')}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Layout>
+
+<style>
+  .tags-heading { margin-bottom: 2rem; }
+  .tags-heading p, .tag-count { color: var(--text-sub); }
+  section { margin-bottom: 2.5rem; }
+  h2 { color: var(--accent-rust); font-size: 2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+  ul { list-style: none; }
+  li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.25rem 1.5rem; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+  a { overflow-wrap: anywhere; }
+  .tag-count { font-size: 0.85rem; }
+  a:hover, a:focus-visible { color: var(--accent-rust); text-decoration: underline; text-underline-offset: 0.2em; }
+</style>

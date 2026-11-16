@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getTaxonomy } from '../lib/taxonomy';
+
+interface Props { lang: 'es' | 'en' }
+const { lang } = Astro.props;
+const en = lang === 'en';
+const { categories } = await getTaxonomy(lang);
+const topics = categories.filter(category => category.count > 0)
+  .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
+const firstSentence = (text: string) => text.match(/^.*?[.!?](?=\s|$)/s)?.[0] ?? text;
+const title = en ? 'Topics' : 'Temas';
+const description = en
+  ? 'Browse articles by topic: category descriptions and article counts to help you find your next read.'
+  : 'Explorá los artículos por tema: descripciones de las categorías y cantidad de artículos para encontrar tu próxima lectura.';
+---
+
+<Layout title={title} lang={lang} description={description} translationUrl={en ? '/temas/' : '/en/topics/'}>
+  <header class="topics-heading">
+    <h1>{title}</h1>
+    <p>{en ? 'Explore the blog by subject.' : 'Explorá el blog por tema.'}</p>
+  </header>
+  <ul class="topics-list">
+    {topics.map(category => (
+      <li>
+        <h2><a href={`${en ? '/en' : ''}/category/${category.slug}/`}>{category.label}</a></h2>
+        <p>{firstSentence(category.description)}</p>
+        <span class="topic-count">{category.count} {en
+          ? (category.count === 1 ? 'article' : 'articles')
+          : (category.count === 1 ? 'artículo' : 'artículos')}</span>
+      </li>
+    ))}
+  </ul>
+  <p class="all-tags"><a href={en ? '/en/tags/' : '/tags/'}>{en ? 'All tags' : 'Todas las etiquetas'} →</a></p>
+</Layout>
+
+<style>
+  .topics-heading { margin-bottom: 2rem; }
+  .topics-heading p, .topics-list p, .topic-count { color: var(--text-sub); }
+  .topics-list { list-style: none; }
+  .topics-list li { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+  h2 { font-size: 1.65rem; margin-bottom: 0.5rem; }
+  .topics-list p { line-height: 1.75; margin-bottom: 0.65rem; }
+  .topic-count { font-size: 0.85rem; }
+  .all-tags { margin-top: 2rem; }
+  a:hover, a:focus-visible { color: var(--accent-rust); text-decoration: underline; text-underline-offset: 0.2em; }
+</style>
