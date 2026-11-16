@@ -5,7 +5,7 @@ slug: "la-falacia-del-derbi-cientifico-por-que-la-ciencia-no-se-juega-con-bander
 translation_key: "la-falacia-del-derbi-cientifico-por-que-la-ciencia-no-se-juega-con-banderas"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Eterno Retorno","Filología","Genealogía de la Moral","Nachlass","Nietzsche","Nihilismo"]
+tags: ["Tang Ruikang","Katsu Takahashi","USAG-1"]
 ---
 
 La narrativa popular ama los enfrentamientos simples. Nos fascina convertir cualquier avance científico en una carrera espacial del siglo XXI: un hipotético enfrentamiento entre potencias donde cada laboratorio representa un modelo ideológico y geopolítico.

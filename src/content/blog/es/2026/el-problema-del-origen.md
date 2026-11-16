@@ -5,7 +5,7 @@ slug: "el-problema-del-origen"
 translation_key: "el-problema-del-origen"
 lang: "es"
 categories: ["Política"]
-tags: ["Espionaje","Vigilancia Tecnológica"]
+tags: ["Linux","Linus Torvalds","GNU"]
 ---
 
 ## **1\. La historia en un renglón**

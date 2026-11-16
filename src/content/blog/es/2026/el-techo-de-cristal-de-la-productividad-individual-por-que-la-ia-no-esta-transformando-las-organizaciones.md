@@ -5,7 +5,7 @@ slug: "el-techo-de-cristal-de-la-productividad-individual-por-que-la-ia-no-esta-
 translation_key: "el-techo-de-cristal-de-la-productividad-individual-por-que-la-ia-no-esta-transformando-las-organizaciones"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Gestión del Cambio","Inteligencia Artificial","Productividad Laboral","Teoría Organizacional","transformación digital"]
+tags: ["Gallup","Gartner","Productividad Laboral"]
 ---
 
 Hay un patrón que se repite con una regularidad casi sospechosa en cada informe corporativo publicado en 2026 sobre inteligencia artificial en el trabajo: el uso individual crece con rapidez, mientras que el impacto organizacional se mueve mucho más despacio, cuando se mueve. Gallup lo describe sin rodeos en su serie trimestral de 2026: la IA está mejorando la productividad individual más de lo que está mejorando el desempeño organizacional ([Gallup, _Organizational AI Adoption Jumps Six Points_](https://www.gallup.com/workplace/712736/organizational-adoption-jumps-six-points.aspx)). No es una anomalía de una sola encuesta. The Conference Board, Gartner y la OCDE llegan, por caminos distintos, a la misma conclusión: las empresas están adoptando IA, pero no están rediseñando nada. Y esa distinción —entre adoptar una herramienta y rediseñar un proceso— es, me parece, el problema real que hay que nombrar antes de proponer cualquier plan de acción.

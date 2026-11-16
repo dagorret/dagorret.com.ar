@@ -5,7 +5,7 @@ slug: "el-banco-central-en-disputa-tres-visiones-y-la-evidencia-que-las-sostiene
 translation_key: "el-banco-central-en-disputa-tres-visiones-y-la-evidencia-que-las-sostiene"
 lang: "es"
 categories: ["Capital"]
-tags: ["Economía Argentina","inflacion","Sistema Bancario","teoria economica"]
+tags: ["BCRA","Inflación","Independencia de Bancos Centrales"]
 ---
 
 Cada vez que Argentina discute la independencia de su Banco Central, discute en realidad tres cosas distintas a la vez sin decirlo: qué es el dinero, qué causa la inflación y qué papel le corresponde al Estado en administrar ambas cosas. La reforma de la Carta Orgánica que hoy tramita el Congreso —mandato único de estabilidad monetaria, prohibición de financiar al Tesoro, blindaje del directorio contra remociones discrecionales— no es una discusión técnica aislada: es la reaparición, con vocabulario de 2026, de un debate que tiene genealogías teóricas completas detrás. Vale la pena reconstruir esas tres genealogías con el rigor que merecen, y preguntarse, al final, cuál acumula más evidencia empírica a su favor —sabiendo de antemano que “más evidencia” no es lo mismo que “sin objeciones serias”.

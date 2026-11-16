@@ -5,7 +5,7 @@ slug: "the-philosophy-engineers-do-without-calling-it-that"
 translation_key: "la-filosofia-que-hacen-los-ingenieros-sin-llamarla-asi"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["Engineering","Epistemology","Goodhart's law","Interpretability"]
+tags: ["Transformers","Richard Sutton","InstructGPT"]
 ---
 
 _Part three of a three-part series on the actual work inside artificial intelligence. Part one describes [the AI shed: factory and research](https://en.dagorret.com.ar/the-ai-shed-factory-and-research/); part two, [what philosophers do in AI](https://en.dagorret.com.ar/what-philosophers-do-in-ai/)._ In the usual picture, the philosopher asks questions and the engineer solves problems. Looked at closely, the last decade of artificial intelligence does not support that division. Several of the field’s central technical debates are, to a large extent, philosophical problems, even though they are published on arXiv, formulated in equations and argued over by people who never took a course in epistemology. This third part walks through that technical heart of the shed and the unnamed philosophy it contains.

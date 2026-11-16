@@ -5,7 +5,7 @@ slug: "gobernanza-disfrazada-de-autoritarismo"
 translation_key: "gobernanza-disfrazada-de-autoritarismo"
 lang: "es"
 categories: ["Sistemas"]
-tags: []
+tags: ["Jan-Werner Müller","Steven Levitsky","John Rawls"]
 ---
 
 En Roma, mucho antes de que existiera la palabra “populismo”, ya existía la cosa. Los historiadores Anthony Everitt y Mary Beard reconstruyen esa república tardía dividida entre Optimates y Populares: unos defendían las prerrogativas del Senado como custodio natural del orden; otros apelaban directamente a la plebe, saltando por encima de las instituciones que se suponía debían mediar entre el poder y la gente. Roma no resolvió esa tensión. La sepultó bajo un imperio, con un solo hombre —Augusto— que terminó ocupando el lugar de las dos facciones a la vez, disfrazado de restaurador de la república mientras la vaciaba por dentro. Escribo esto como quien mira una fractura repetida a lo largo de dos mil años y ya no sabe si llamarla ciclo o simplemente naturaleza del poder. La forma cambia. El mecanismo, no.

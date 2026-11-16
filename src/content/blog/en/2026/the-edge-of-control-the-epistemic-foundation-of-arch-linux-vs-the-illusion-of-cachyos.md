@@ -5,7 +5,7 @@ slug: "the-edge-of-control-the-epistemic-foundation-of-arch-linux-vs-the-illusio
 translation_key: "the-edge-of-control-the-epistemic-foundation-of-arch-linux-vs-the-illusion-of-cachyos"
 lang: "en"
 categories: ["Technology"]
-tags: []
+tags: ["CachyOS","Arch Linux","Scientific Reproducibility"]
 ---
 
 Keywords: Arch Llinux, CachyOS, Compilers, Epistemology, Operating Systems, Reproducibility

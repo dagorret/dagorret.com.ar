@@ -5,7 +5,7 @@ slug: "la-filosofia-que-hacen-los-ingenieros-sin-llamarla-asi"
 translation_key: "la-filosofia-que-hacen-los-ingenieros-sin-llamarla-asi"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Epistemología","Ingeniería","Interpretabilidad","Ley de Goodhart"]
+tags: ["Transformers","Richard Sutton","InstructGPT"]
 ---
 
 _Tercera parte de una serie de tres sobre el trabajo real dentro de la inteligencia artificial. La primera describe [el galpón de la IA: fábrica e investigación](https://dagorret.com.ar/el-galpon-de-la-ia-fabrica-e-investigacion/); la segunda, [lo que hacen los filósofos en la IA](https://dagorret.com.ar/lo-que-hacen-los-filosofos-en-la-ia/)._

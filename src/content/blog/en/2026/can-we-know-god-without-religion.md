@@ -5,7 +5,7 @@ slug: "can-we-know-god-without-religion"
 translation_key: "se-puede-conocer-a-dios-sin-religion"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["Epistemology","Spinoza","Kant","Natural Theology"]
+tags: ["Immanuel Kant","Spinoza","Natural Theology"]
 ---
 
 A few days ago, someone on a philosophy forum asked whether it is possible to know the truth about God without going through any religion or sacred scripture. He wanted arguments, evidence, and reliable sources, not personal beliefs. It is an honest question, and it has the virtue of honest questions: it is harder than it looks.

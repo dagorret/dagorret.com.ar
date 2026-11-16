@@ -6,10 +6,7 @@ translation_key: mito-colapso-digital
 lang: en
 categories:
   - Artificial Intelligence
-tags:
-  - model collapse
-  - synthetic data
-  - model training
+tags: ["Ilia Shumailov","AlphaZero","Model Collapse"]
 ---
 
 *This is the first part of a two-part series. The second, "Evolution with Memory," examines the mathematics of collapse.*

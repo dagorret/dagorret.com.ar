@@ -5,7 +5,7 @@ slug: "la-educacion-corre-detras-de-un-mundo"
 translation_key: "la-educacion-corre-detras-de-un-mundo"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Educación","Inteligencia Artificial","pedagogía","Pensamiento Crítico","transformación digital"]
+tags: ["Educación","Pedagogía","Pensamiento Crítico"]
 ---
 
 Durante décadas la educación prometió algo relativamente simple:  

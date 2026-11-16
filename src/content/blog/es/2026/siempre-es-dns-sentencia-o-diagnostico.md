@@ -5,7 +5,7 @@ slug: "siempre-es-dns-sentencia-o-diagnostico"
 translation_key: "siempre-es-dns-sentencia-o-diagnostico"
 lang: "es"
 categories: ["Tecnología"]
-tags: ["DNS"]
+tags: ["DNS","Diagnóstico de Sistemas"]
 ---
 
 Alguien aparece con la urgencia ya cargada. “No anda la wifi”, dice, y casi en la misma frase viene el nombre del culpable: lo dejó así el que estuvo antes, alguien tocó algo, hay un responsable y no soy yo. El veredicto llega antes que la evidencia. La sentencia está firmada antes de que nadie haya mirado una sola pantalla.

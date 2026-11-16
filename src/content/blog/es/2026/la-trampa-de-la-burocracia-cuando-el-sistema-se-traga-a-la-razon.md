@@ -5,7 +5,7 @@ slug: "la-trampa-de-la-burocracia-cuando-el-sistema-se-traga-a-la-razon"
 translation_key: "la-trampa-de-la-burocracia-cuando-el-sistema-se-traga-a-la-razon"
 lang: "es"
 categories: ["Capital"]
-tags: ["Burocracia","Gravitación Estructural","Max Weber","Teoría de Sistemas"]
+tags: ["Max Weber","Robert K. Merton","Burocracia"]
 ---
 
 ¿Cuánta energía vital disipamos en un casillero vacío, en un sello ausente o en una firma con el color de tinta equivocado? Todos hemos padecido la frustración de un trámite absurdo, pero rara vez nos detenemos a pensar que esa molestia administrativa es el síntoma visible de una patología que la sociología viene describiendo con precisión desde hace casi un siglo. Cruzando las ciencias sociales, la filosofía de la técnica y —con las reservas que hay que poner sobre la mesa— la física, la burocracia se revela como algo más que un dolor de cabeza: es un dispositivo que invierte su propia finalidad y que, en el proceso, va apagando algo del criterio humano de quienes la habitan. Y, como voy a intentar mostrar, es también un caso particular de un patrón más amplio que vengo rastreando en otros dominios: el de las estructuras que producen efectos sistemáticos sin que nadie los haya decidido.

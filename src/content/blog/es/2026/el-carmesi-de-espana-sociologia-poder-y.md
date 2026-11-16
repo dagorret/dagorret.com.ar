@@ -5,7 +5,7 @@ slug: "el-carmesi-de-espana-sociologia-poder-y"
 translation_key: "el-carmesi-de-espana-sociologia-poder-y"
 lang: "es"
 categories: ["Política"]
-tags: []
+tags: ["España","Capital Simbólico","Estética"]
 ---
 
 En la España del Siglo de Oro, el color no era una elección estética; era un documento de identidad y un arma de dominación. El rojo carmesí, profundo, vibrante y con ese matiz denso que recordaba a la sangre noble, era el pigmento más codiciado de Europa. Su obtención a través de la cochinilla americana era un proceso tan costoso que un solo metro de tela carmesí podía valer más que los ingresos anuales de un campesino.

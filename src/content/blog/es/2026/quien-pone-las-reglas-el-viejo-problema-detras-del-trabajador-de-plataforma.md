@@ -5,7 +5,7 @@ slug: "quien-pone-las-reglas-el-viejo-problema-detras-del-trabajador-de-platafor
 translation_key: "quien-pone-las-reglas-el-viejo-problema-detras-del-trabajador-de-plataforma"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Acreditación curricular","Certificación laboral","Precarización docente","Reforma universitaria","Tasa de graduación"]
+tags: ["Ingeniería de Grafos","Agentes de IA","Cursor"]
 ---
 
 La mayoría de los usuarios utiliza la inteligencia artificial como si fuera una conversación telefónica: escriben un mensaje, esperan la respuesta, corrigen sobre la marcha y repiten. El problema de este flujo lineal es que el contexto del modelo se satura rápidamente, la memoria falla y la tasa de error se dispara. La solución a este techo de rendimiento no requiere modelos más grandes, sino una arquitectura diferente: Graph Engineering (Ingeniería de Grafos).

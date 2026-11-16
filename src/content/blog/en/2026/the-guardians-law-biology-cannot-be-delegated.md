@@ -5,7 +5,7 @@ slug: "the-guardians-law-biology-cannot-be-delegated"
 translation_key: "la-ley-del-guardian-la-biologia-no-se-delega"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["Artificial Intelligence"]
+tags: ["Hans Jonas","Lisanne Bainbridge","Stuart Russell"]
 ---
 
 _There is a miscalculation that repeats itself across the ages: confusing the fortress with the life that inhabits it. When a species discovers exposure, it builds shelters—first the cave, then the tribe, then the empire, then the bureaucratic matrix, then the algorithm. To sustain them, it creates structures of efficiency, cold because they are meant to endure. And there comes a moment when the creator, exhausted by the biological cost of sustaining existence, looks at the machine it has built and thinks: it does not make mistakes, it does not sleep, it does not feel pain; let us entrust the cradle to it. That is the moment of collapse._

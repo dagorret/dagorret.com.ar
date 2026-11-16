@@ -5,7 +5,7 @@ slug: "las-reglas-que-nadie-escribio-por-que"
 translation_key: "las-reglas-que-nadie-escribio-por-que"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: []
+tags: ["Memoria","Modelos de Lenguaje","Soberanía Digital"]
 ---
 
 [_Segunda parte de una serie sobre memoria, poder y automatización cognitiva._](https://dagorret.com.ar/la-ia-que-duerme-consolidacion-de/)

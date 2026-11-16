@@ -5,7 +5,7 @@ slug: "teams-y-las-tareas-que-hacer-cuando-hay-problemas"
 translation_key: "teams-y-las-tareas-que-hacer-cuando-hay-problemas"
 lang: "es"
 categories: ["Tecnología"]
-tags: []
+tags: ["Microsoft Teams","WebView2","Educación"]
 ---
 
 Todos los cuatrimestres se repite la misma escena. Faltan minutos para el cierre de una entrega en Microsoft Teams, un alumno presiona el botón “Entregar” y la aplicación se queda pensando. No hay mensaje de error, no hay confirmación, solo una rueda que gira. El alumno recarga, vuelve a intentar, y en el peor de los casos pierde la entrega por un problema que no tiene nada que ver con si hizo o no la tarea.

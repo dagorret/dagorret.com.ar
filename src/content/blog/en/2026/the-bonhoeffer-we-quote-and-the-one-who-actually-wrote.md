@@ -5,7 +5,7 @@ slug: "the-bonhoeffer-we-quote-and-the-one-who-actually-wrote"
 translation_key: "el-bonhoeffer-que-circula-y-el-que-escribio"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["Bonhoeffer","Thought"]
+tags: ["Bonhoeffer","Widerstand und Ergebung"]
 ---
 
 ## A Phrase That Travels on Its Own

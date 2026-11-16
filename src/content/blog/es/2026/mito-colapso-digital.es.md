@@ -6,10 +6,7 @@ translation_key: mito-colapso-digital
 lang: es
 categories:
   - Inteligencia artificial
-tags:
-  - model collapse
-  - datos sintéticos
-  - entrenamiento de modelos
+tags: ["Ilia Shumailov","AlphaZero","Colapso de modelos"]
 ---
 
 *Este texto es la primera parte de un díptico. La segunda, «Evolución con memoria», discute la matemática del colapso.*

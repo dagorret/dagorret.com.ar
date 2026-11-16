@@ -5,7 +5,7 @@ slug: "las-tres-trampas-del-periodismo-digital-atencion-identidad-y-lenguaje"
 translation_key: "las-tres-trampas-del-periodismo-digital-atencion-identidad-y-lenguaje"
 lang: "es"
 categories: ["Sociología"]
-tags: ["medios-de-comunicacion","posverdad","sesgo-informativo"]
+tags: ["Medios de Comunicación","Economía de la atención","Sesgo Informativo"]
 ---
 
 Hay una pregunta que casi nunca nos hacemos frente a una noticia: ¿por qué está escrita así? No me refiero al tema que aborda, sino a la forma. Al título que elige, a las palabras que subraya, al tono que adopta antes de contarnos un solo hecho verificable. Esa pregunta, que parece menor, esconde en realidad el funcionamiento de gran parte del periodismo digital contemporáneo, que ya no se organiza primero alrededor de la información sino alrededor de tres mecanismos que se retroalimentan: el secuestro de la atención, la monetización de la identidad y la persuasión invisible. Y a diferencia de una crítica abstracta a “los medios”, estos tres mecanismos se pueden rastrear en casos concretos, con fecha y fuente, que vale la pena seguir hasta el original.

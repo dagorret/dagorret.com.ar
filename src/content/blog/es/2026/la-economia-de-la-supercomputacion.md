@@ -5,7 +5,7 @@ slug: "la-economia-de-la-supercomputacion"
 translation_key: "la-economia-de-la-supercomputacion"
 lang: "es"
 categories: ["Política"]
-tags: ["Autoritarismo","historia de Roma","Jan-Werner Müller","John Rawls","Martha Nussbaum","populismo","Steven Levitsky","Teoría Política"]
+tags: ["Computación cuántica"]
 ---
 
 Cuando pensamos en ciencia de vanguardia, solemos imaginar a investigadores en laboratorios aislados del mundo real. Sin embargo, en mayo de 2026, los mayores avances científicos ya no se financian solo por amor al conocimiento, sino porque **quien domine la física cuántica dominará la economía global de la próxima década.**

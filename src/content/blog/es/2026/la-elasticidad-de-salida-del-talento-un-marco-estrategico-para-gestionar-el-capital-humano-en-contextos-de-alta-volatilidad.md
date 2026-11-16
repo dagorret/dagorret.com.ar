@@ -5,7 +5,7 @@ slug: "la-elasticidad-de-salida-del-talento-un-marco-estrategico-para-gestionar-
 translation_key: "la-elasticidad-de-salida-del-talento-un-marco-estrategico-para-gestionar-el-capital-humano-en-contextos-de-alta-volatilidad"
 lang: "es"
 categories: ["Capital"]
-tags: ["Economía Argentina","Estructuralismo","Inconsistencia Temporal","Independencia de Bancos Centrales","Neuroplasticidad Institucional"]
+tags: ["Pierre Bourdieu","Gestión del Talento","Capital Simbólico"]
 ---
 
 ## Punto de partida

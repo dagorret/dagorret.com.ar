@@ -5,7 +5,7 @@ slug: "el-caos-con-gramatica"
 translation_key: "el-caos-con-gramatica"
 lang: "es"
 categories: ["Cultura"]
-tags: ["Filosofía de la Tecnología","Subjetividad Moderna"]
+tags: ["Medalla Fields","Boltzmann","Geometría"]
 ---
 
 _Sobre las cuatro Medallas Fields de 2026: el detalle matemático y qué frontera cruzamos realmente._

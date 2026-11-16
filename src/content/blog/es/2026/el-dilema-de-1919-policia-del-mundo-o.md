@@ -5,7 +5,7 @@ slug: "el-dilema-de-1919-policia-del-mundo-o"
 translation_key: "el-dilema-de-1919-policia-del-mundo-o"
 lang: "es"
 categories: ["Ontología"]
-tags: ["Estudios Culturales","Filosofía de la Tecnología"]
+tags: ["Woodrow Wilson","Sociedad de Naciones","Estados Unidos"]
 ---
 
 A finales de la segunda década del siglo XX, Estados Unidos se encontró en una encrucijada ética que redefiniría el mapa político y económico del planeta. Tras el armisticio que puso fin a la sangrienta Primera Guerra Mundial en 1918, el país ya no era el mismo: había entrado al conflicto como una nación deudora y emergía de él como la mayor superpotencia financiera y militar de Occidente.

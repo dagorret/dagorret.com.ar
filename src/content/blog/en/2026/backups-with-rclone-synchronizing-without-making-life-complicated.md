@@ -5,7 +5,7 @@ slug: "backups-with-rclone-synchronizing-without-making-life-complicated"
 translation_key: "backups-with-rclone-synchronizing-without-making-life-complicated"
 lang: "en"
 categories: ["Technology"]
-tags: ["rclone", "Backups", "Linux"]
+tags: ["rclone","Google Drive","Backups"]
 ---
 
 ### A simple strategy to avoid losing your work environment

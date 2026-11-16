@@ -5,7 +5,7 @@ slug: "el-modelo-base-00-5"
 translation_key: "el-modelo-base-00-5"
 lang: "es"
 categories: ["Ontología"]
-tags: ["Jean-Paul Sartre"]
+tags: ["Automatización","Trabajo","Dirección estratégica"]
 ---
 
 ## Parte V: Hacia una Nueva Ecuación — Reorganizar los Factores

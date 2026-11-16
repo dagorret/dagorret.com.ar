@@ -5,7 +5,7 @@ slug: "como-ser-un-buen-sysadmin-con-debian-i-la-disciplina-de-apt-y-la-gestion-
 translation_key: "como-ser-un-buen-sysadmin-con-debian-i-la-disciplina-de-apt-y-la-gestion-de-paquetes"
 lang: "es"
 categories: ["Sistemas","Tecnología"]
-tags: ["Debian","Infraestructura","Matenimiento","Sysadmin"]
+tags: ["Debian","APT","needrestart"]
 ---
 
 Hay un mito que circula en foros, en charlas de pasillo y, cada vez más, en las respuestas prolijas de cualquier IA generativa: que la estabilidad en administración de sistemas consiste en congelar un servidor y no tocarlo. Instalar, configurar, y después cruzar los dedos durante una década. El razonamiento implícito es tranquilizador — si no lo tocás, no se rompe — pero es exactamente al revés de cómo funciona el software en el mundo real.

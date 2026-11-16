@@ -5,7 +5,7 @@ slug: "inflation-distributive-conflict"
 translation_key: "inflation-distributive-conflict"
 lang: "en"
 categories: ["Economics"]
-tags: ["Inflation", "Argentina", "Distributive Conflict"]
+tags: ["Isabella Weber","Inflation","Distributive Conflict"]
 ---
 
 ## Introduction

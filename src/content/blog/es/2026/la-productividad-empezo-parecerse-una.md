@@ -5,7 +5,7 @@ slug: "la-productividad-empezo-parecerse-una"
 translation_key: "la-productividad-empezo-parecerse-una"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Productividad Laboral","sistemas productivos"]
+tags: ["Quantified Self","Productividad Laboral"]
 ---
 
 Asistimos a la consolidación de un nuevo dogma secular: la sacralización de la eficiencia individual. En la estructura social contemporánea, el descanso ha dejado de ser una pausa constitutiva de la condición humana para convertirse en un intervalo de mantenimiento técnico. El sujeto contemporáneo ya no habita el tiempo libre; lo **optimiza**. La higiene del sueño, los regímenes alimentarios, los patrones respiratorios y la gestión de los estados de atención han sido absorbidos por una lógica extractiva donde cada función biológica y cognitiva debe rendir dividendos.

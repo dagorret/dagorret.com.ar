@@ -5,7 +5,7 @@ slug: "el-triunfo-del-pragmatismo-por-que-aun-sigo-eligiendo-wordpress"
 translation_key: "el-triunfo-del-pragmatismo-por-que-aun-sigo-eligiendo-wordpress"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Linux Kernel"]
+tags: ["WordPress","Hugo","Nginx"]
 ---
 
 Es una tentación recurrente en el mundo de los sistemas: mirar de reojo el panel de administración de WordPress y sentir que uno arrastra una herramienta de 2003 mal disimulada bajo actualizaciones cosméticas. En una industria que durante la última década construyó buena parte de su prestigio técnico alrededor de los generadores de sitios estáticos, el aislamiento de contenedores y la pureza del código plano, WordPress suele quedar del lado equivocado del argumento, casi por default.

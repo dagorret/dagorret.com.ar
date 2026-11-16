@@ -5,7 +5,7 @@ slug: "el-mapa-del-filtro-guia-completa-de-software-open-source-y-saas-para-sele
 translation_key: "el-mapa-del-filtro-guia-completa-de-software-open-source-y-saas-para-seleccion-de-personal"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Reclutamiento","recursos humanos"]
+tags: ["OpenCATS","HireVue","Reclutamiento"]
 ---
 
 Cualquiera que haya buscado “software para selección de personal” en los últimos años sabe lo que encuentra: un archipiélago de landing pages, cada una prometiendo resolver un problema distinto —tests, entrevistas, matching, agenda— sin que exista, en ningún lado, una página que junte el panorama completo. Esa dispersión no es casual: cada proveedor vive de que el comprador no compare, y los directorios que sí comparan suelen ser generados automáticamente para SEO, sin criterio editorial. Esta nota intenta ser lo que falta: un mapa, ordenado por función, de las herramientas que hoy se usan para automatizar tramos del proceso de selección, y de las alternativas que existen para no depender de ellas.

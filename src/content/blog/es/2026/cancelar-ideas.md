@@ -6,12 +6,7 @@ translation_key: "cancelar-ideas"
 lang: "es"
 categories:
   - "Filosofía"
-tags:
-  - "Censura"
-  - "Epistemologia"
-  - "Falacia Genética"
-  - "Filosofía de la ciencia"
-  - "pensamiento crítico"
+tags: ["Robert K. Merton","Hans Reichenbach","Falacia Genética"]
 ---
 
 Desde mediados del siglo XX, la biología molecular describe el ADN con metáforas de lenguaje e información: código, mensaje, transcripción, traducción, programa. La historiadora Lily Kay reconstruyó el origen de ese vocabulario en *Who Wrote the Book of Life? A History of the Genetic Code* (Stanford University Press, 2000) y mostró que no nació en la biología sino en la cibernética y la teoría de la información de posguerra, y que moldeó la manera en que pensamos el genoma mucho antes de que hubiera evidencia para sostenerlo.

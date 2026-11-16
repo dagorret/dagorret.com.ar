@@ -5,7 +5,7 @@ slug: "limites-de-la-metafora-del-codigo"
 translation_key: "limites-de-la-metafora-del-codigo"
 lang: "es"
 categories: ["Filosofía","Inteligencia Artificial"]
-tags: ["ADN","Dan Graur","Filosofía de la Biología","Hub Zwart","Inteligencia Artificial","Lily Kay","Michael Lynch","Susan Oyama","Tecnociencia","W. Ford Doolittle"]
+tags: ["ENCODE","Dan Graur","ADN"]
 ---
 
 ## Introducción: el genoma como libro y como código

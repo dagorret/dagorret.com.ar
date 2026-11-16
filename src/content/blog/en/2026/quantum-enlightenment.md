@@ -5,7 +5,7 @@ slug: "quantum-enlightenment"
 translation_key: "iluminismo-cuantico"
 lang: "en"
 categories: ["Sociology"]
-tags: ["Artificial Intelligence","Biocentrism","Politics"]
+tags: ["Immanuel Kant","Albert Camus","Jascha Sohl-Dickstein"]
 ---
 
 _A manifesto against servitude by comfort_

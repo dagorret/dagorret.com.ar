@@ -5,7 +5,7 @@ slug: "sobre-la-asimetria-de-la-aprehension-empirica-correlacion-causalidad-y-la
 translation_key: "sobre-la-asimetria-de-la-aprehension-empirica-correlacion-causalidad-y-la-arquitectura-contrafactica"
 lang: "es"
 categories: ["Filosofía"]
-tags: []
+tags: ["David Hume","Judea Pearl","Clive Granger"]
 ---
 
 ## Resumen

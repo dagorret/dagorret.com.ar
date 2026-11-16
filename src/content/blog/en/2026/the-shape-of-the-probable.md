@@ -5,7 +5,7 @@ slug: "the-shape-of-the-probable"
 translation_key: "la-forma-de-lo-probable"
 lang: "en"
 categories: ["Technology"]
-tags: ["How AI Works","Language Models","Neural Networks","Science Communication"]
+tags: ["Transformers","Language Models","Neural Networks"]
 ---
 
 _First part of a triptych. The second, [The Shape of the Probable, Without Formulas](https://dagorret.com.ar/the-shape-of-the-probable-without-formulas/), explains the same mechanism with diagrams and no mathematics; the third, [The Shape of the Probable, in Formulas](https://dagorret.com.ar/the-shape-of-the-probable-in-formulas/), develops it with its full formal apparatus._

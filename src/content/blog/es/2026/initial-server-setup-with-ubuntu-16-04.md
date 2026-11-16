@@ -5,7 +5,7 @@ slug: "initial-server-setup-with-ubuntu-16-04"
 translation_key: "initial-server-setup-with-ubuntu-16-04"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Agujeros negros","Entropía","Gravedad cuántica","Gravedad entrópica","Principio holográfico"]
+tags: ["Ubuntu","OpenSSH","UFW"]
 ---
 
 > **Versión:** Ubuntu Server 24.04 LTS  

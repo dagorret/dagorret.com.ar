@@ -5,7 +5,7 @@ slug: "la-frontera-fisica-dura-holografia-y-gravedad-entropica"
 translation_key: "la-frontera-fisica-dura-holografia-y-gravedad-entropica"
 lang: "es"
 categories: ["Ciencia"]
-tags: ["bekenstein-hawking","Entropía","holografia","Termodinámica","verlinde"]
+tags: ["Bekenstein-Hawking","Juan Maldacena","Verlinde"]
 ---
 
 ### _Tercer artículo de la serie Entropía: física, información, sociedad_

@@ -6,11 +6,7 @@ translation_key: evolucion-con-memoria
 lang: en
 categories:
   - Artificial Intelligence
-tags:
-  - model collapse
-  - synthetic data
-  - bounded drift
-  - probability
+tags: ["Ilia Shumailov","Synthetic Data","Model Collapse"]
 ---
 
 *This is the second part of ["The Myth of Digital Collapse"](/digital-collapse-myth/). There I discussed the story; here I discuss the mathematics.*

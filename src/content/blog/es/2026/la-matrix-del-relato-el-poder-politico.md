@@ -5,7 +5,7 @@ slug: "la-matrix-del-relato-el-poder-politico"
 translation_key: "la-matrix-del-relato-el-poder-politico"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["entretenimiento","medios-de-comunicacion","polarización","posverdad","tecnologia-y-sociedad"]
+tags: ["Polarización","Medios de Comunicación","Posverdad"]
 ---
 
 Quien intente analizar la política de la segunda mitad de esta década con los manuales de ciencia política del siglo XX está condenado a no entender absolutamente nada. Hoy la gestión pública ha sido sutil pero vorazmente desplazada por la gestión de la percepción. Los gobiernos ya no buscan resolver problemas estructurales; buscan, ante todo, **dominar la conversación**.

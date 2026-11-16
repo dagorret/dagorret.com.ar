@@ -5,7 +5,7 @@ slug: "la-trampa-de-lo-urgente-por-que"
 translation_key: "la-trampa-de-lo-urgente-por-que"
 lang: "es"
 categories: ["Sociología"]
-tags: []
+tags: ["Productividad Laboral","Trabajo"]
 ---
 
 A veces, cuando nos detenemos a mirar el ritmo frenético de nuestros días, le echamos la culpa a las pantallas. Es la respuesta más a mano: los teléfonos, las notificaciones, el flujo constante de información digital. Pero si rascamos un poco la superficie y dejamos de lado los cristales templados, nos encontramos con algo mucho más profundo y complejo. Las pantallas no son la causa de nuestra prisa; son simplemente el síntoma, la herramienta perfecta que encontró una sociedad que ya venía enferma de inmediatez.

@@ -5,7 +5,7 @@ slug: "cerebro-del-pleistoceno"
 translation_key: "cerebro-del-pleistoceno"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Andy Clark","Arnold Gehlen","Bernard Stiegler","Cecilia Heyes","Evolución Cultural","Filosofía de la Técnica","Gaston Bachelard","Hans Jonas","Hub Zwart","Joseph Henrich","Stanislas Dehaene","Tecnociencia"]
+tags: ["Arnold Gehlen","Andy Clark","Bernard Stiegler"]
 ---
 
 ## Introducción: el descalce evolutivo

@@ -5,7 +5,7 @@ slug: "memory-that-outlives-its-owner"
 translation_key: "memoria-que-sobrevive-a-su-dueno"
 lang: "en"
 categories: ["Technology"]
-tags: ["Debian","php","Vulnerability"]
+tags: ["PHP","PHP2Shell","Vulnerability"]
 ---
 
 _Draft of October 21, 2026, written a few hours after PHP published the patches. The technical facts were checked against the two official php-src advisories; my own readings are marked as such._

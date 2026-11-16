@@ -5,7 +5,7 @@ slug: "de-la-retencion-la-elasticidad-de"
 translation_key: "de-la-retencion-la-elasticidad-de"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Epistemología","Estoicismo"]
+tags: ["David Hume","Pensamiento Crítico"]
 ---
 
 Urge escribir para que el pensamiento no escape a zona del nunca jamas.  

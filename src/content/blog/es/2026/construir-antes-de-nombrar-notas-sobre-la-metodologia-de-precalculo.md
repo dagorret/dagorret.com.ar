@@ -5,7 +5,7 @@ slug: "construir-antes-de-nombrar-notas-sobre-la-metodologia-de-precalculo"
 translation_key: "construir-antes-de-nombrar-notas-sobre-la-metodologia-de-precalculo"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Axiomas"]
+tags: ["Precálculo","Axiomas","Demostración Matemática"]
 ---
 
 ## El principio detrás de todo

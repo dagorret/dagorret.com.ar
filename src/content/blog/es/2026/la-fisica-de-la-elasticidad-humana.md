@@ -5,7 +5,7 @@ slug: "la-fisica-de-la-elasticidad-humana"
 translation_key: "la-fisica-de-la-elasticidad-humana"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Michel Foucault","Riesgo Absoluto","Riesgo Relativo","Teorema de Bayes"]
+tags: ["Pierre Bourdieu","Gestión del Talento","Capital Simbólico"]
 ---
 
 #### El límite elástico entre la conveniencia del pertenecer y la intemperie del ser

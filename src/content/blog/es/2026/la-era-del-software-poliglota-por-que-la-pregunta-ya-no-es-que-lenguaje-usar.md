@@ -5,7 +5,7 @@ slug: "la-era-del-software-poliglota-por-que-la-pregunta-ya-no-es-que-lenguaje-u
 translation_key: "la-era-del-software-poliglota-por-que-la-pregunta-ya-no-es-que-lenguaje-usar"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Apercepción Trascendental","Fichte","Identidad Personal","Immanuel Kant","John Locke","Leibniz"]
+tags: ["TypeScript","Python","Rust"]
 ---
 
 ## Introducción

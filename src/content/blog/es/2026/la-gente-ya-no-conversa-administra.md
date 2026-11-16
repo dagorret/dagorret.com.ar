@@ -5,7 +5,7 @@ slug: "la-gente-ya-no-conversa-administra"
 translation_key: "la-gente-ya-no-conversa-administra"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Bruno de Finetti","Incertidumbre Knightiana","Nassim Taleb","Paradoja de Ellsberg"]
+tags: ["Redes Sociales","Autenticidad"]
 ---
 
 Hay algo extraño pasando en internet.

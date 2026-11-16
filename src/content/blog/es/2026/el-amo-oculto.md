@@ -5,7 +5,7 @@ slug: "el-amo-oculto"
 translation_key: "el-amo-oculto"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Byung-Chul Han","Charles Perrow","Georges Bataille","Hub Zwart","Jacques Lacan","Ley de Goodhart","Louis Althusser","Max Weber","Michel Foucault","Tecnociencia","Ulrich Beck"]
+tags: ["Hub Zwart","Jacques Lacan","Byung-Chul Han"]
 ---
 
 ## Introducción

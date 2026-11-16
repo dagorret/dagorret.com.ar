@@ -5,7 +5,7 @@ slug: "la-fabrica-de-estupidez-en-2026"
 translation_key: "la-fabrica-de-estupidez-en-2026"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Inteligencia Artificial"]
+tags: ["Bonhoeffer","Byung-Chul Han","Shoshana Zuboff"]
 ---
 
 _Segundo artículo de la serie sobre Bonhoeffer y la estupidez. El primero es [El Bonhoeffer que circula y el que escribió](https://dagorret.com.ar/el-bonhoeffer-que-circula-y-el-que-escribio/)._

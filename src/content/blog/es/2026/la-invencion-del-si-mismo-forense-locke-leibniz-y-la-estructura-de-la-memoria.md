@@ -5,7 +5,7 @@ slug: "la-invencion-del-si-mismo-forense-locke-leibniz-y-la-estructura-de-la-mem
 translation_key: "la-invencion-del-si-mismo-forense-locke-leibniz-y-la-estructura-de-la-memoria"
 lang: "es"
 categories: ["Filosofía"]
-tags: []
+tags: ["John Locke","Leibniz","Immanuel Kant"]
 ---
 
 ## 1\. El escándalo funcional de John Locke

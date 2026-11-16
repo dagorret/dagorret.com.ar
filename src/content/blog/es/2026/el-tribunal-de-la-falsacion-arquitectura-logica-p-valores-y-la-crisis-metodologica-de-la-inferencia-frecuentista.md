@@ -5,7 +5,7 @@ slug: "el-tribunal-de-la-falsacion-arquitectura-logica-p-valores-y-la-crisis-met
 translation_key: "el-tribunal-de-la-falsacion-arquitectura-logica-p-valores-y-la-crisis-metodologica-de-la-inferencia-frecuentista"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Inferencia Estadística"]
+tags: ["Ronald Fisher","Karl Popper","Inferencia Estadística"]
 ---
 
 ### Resumen

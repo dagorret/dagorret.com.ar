@@ -5,7 +5,7 @@ slug: "por-que-optimizar-al-maximo-puede"
 translation_key: "por-que-optimizar-al-maximo-puede"
 lang: "es"
 categories: ["Sistemas"]
-tags: []
+tags: ["CachyOS","Arch Linux","Reproducibilidad Científica"]
 ---
 
 Cuando armamos un entorno para investigar, analizar datos econométricos o correr modelos estadísticos, la tentación de la velocidad es enorme. Queremos exprimir cada ciclo del procesador. Es ahí donde entran alternativas de nicho espectaculares como **CachyOS**, prometiendo exprimir el silicio con kernels modificados y binarios hiper-optimizados bajo la agresiva bandera **\-O3** del compilador.

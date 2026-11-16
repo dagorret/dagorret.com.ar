@@ -5,7 +5,7 @@ slug: "la-humildad-epistemica-y-el-arte-del-contrabando-conceptual"
 translation_key: "la-humildad-epistemica-y-el-arte-del-contrabando-conceptual"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Agentes de IA","Diseño de Sistemas","El Futuro de la Programación","Estrategia Tecnológica","Ingeniería de Grafos","Ingeniería de Software","Inteligencia Artificial","Procesamiento Paralelo","Productividad","Topología de Equipos"]
+tags: ["Epistemología","Falibilismo","Relativismo"]
 ---
 
 El parque estaba vacío. No por casualidad: a esa misma hora, del otro lado de la ciudad, un país entero estaba pegado a una pantalla viendo a Argentina jugarse la final contra Inglaterra. Yo me había quedado afuera de esa multitud, y en ese vacío, sin nada urgente que atender, apareció esto. Quizás no sea casual que un texto sobre la diferencia entre saber y creer saber haya salido en un momento en que nadie a mi alrededor estaba pensando en otra cosa que en si Argentina iba a ganar.

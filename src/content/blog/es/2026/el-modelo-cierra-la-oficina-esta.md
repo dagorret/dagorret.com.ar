@@ -5,7 +5,7 @@ slug: "el-modelo-cierra-la-oficina-esta"
 translation_key: "el-modelo-cierra-la-oficina-esta"
 lang: "es"
 categories: ["Política"]
-tags: ["Estudios Culturales","Historia del Pensamiento","Informática"]
+tags: ["Max Weber","Rudolf Clausius","Termodinámica"]
 ---
 
 La oficina está a veintidós grados. Siempre a veintidós grados. Hay un sistema de climatización que lo garantiza con la misma indiferencia con que un servidor garantiza el _uptime_: sin descanso, sin queja, sin necesidad de que nadie lo note. El analista no lo nota. Lleva años trabajando en ese edificio y hace mucho dejó de registrar la temperatura como una variable. Es el fondo invariable sobre el que ocurren las cosas que importan, que son las que parpadean en la pantalla.

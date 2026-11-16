@@ -5,7 +5,7 @@ slug: "el-carmesi-del-ahora-telas-bailando"
 translation_key: "el-carmesi-del-ahora-telas-bailando"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Epistemología","escepticismo","Filosofía de la ciencia","humildad epistémica","Karl Popper","método científico","relativismo"]
+tags: ["Rosalía","El Mal Querer","Estética"]
 ---
 
 El gris pertenece a las estructuras que no quieren ser vistas. Es el color de lo que resiste en silencio: el cemento armado, el búnker enterrado, la terminal abierta en la madrugada, el servidor que replica datos sin pedir aplausos, el almacenamiento en la nube que termina de consolidarse mientras el mundo duerme. El gris no seduce; sostiene. No baila; aguanta. Su tarea es permanecer cuando todo lo demás tiembla.

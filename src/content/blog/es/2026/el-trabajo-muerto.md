@@ -5,7 +5,7 @@ slug: "el-trabajo-muerto"
 translation_key: "el-trabajo-muerto"
 lang: "es"
 categories: ["Capital"]
-tags: []
+tags: ["Karl Marx","John Kenneth Galbraith","Shoshana Zuboff"]
 ---
 
 ## De los telares de Manchester a la cristalización del código

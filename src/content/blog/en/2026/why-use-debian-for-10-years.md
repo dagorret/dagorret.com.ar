@@ -5,7 +5,7 @@ slug: "why-use-debian-for-10-years"
 translation_key: "why-use-debian-for-10-years"
 lang: "en"
 categories: ["Technology"]
-tags: []
+tags: ["Debian","APT","Linux"]
 ---
 
 Debian does not try to impress you. It does not want to be the newest distro, the flashiest one, or the fastest to adopt everything. Its proposal is different: to be a reliable, maintainable, and predictable base for a long time.

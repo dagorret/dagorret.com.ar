@@ -5,7 +5,7 @@ slug: "the-shape-of-the-probable-in-formulas"
 translation_key: "la-forma-de-lo-probable-en-formulas"
 lang: "en"
 categories: ["Technology"]
-tags: ["Epistemology","Language Models","Mathematics","Transformers"]
+tags: ["Transformers","LLaMA","Language Models"]
 ---
 
 _Third part of a triptych. The first, [The Shape of the Probable](https://dagorret.com.ar/the-shape-of-the-probable/), sets out the argument; the second, [The Shape of the Probable, Without Formulas](https://dagorret.com.ar/the-shape-of-the-probable-without-formulas/), tells it with diagrams. This part writes out the complete mechanism, equation by equation._

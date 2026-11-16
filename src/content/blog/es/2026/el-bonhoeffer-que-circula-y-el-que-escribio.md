@@ -5,7 +5,7 @@ slug: "el-bonhoeffer-que-circula-y-el-que-escribio"
 translation_key: "el-bonhoeffer-que-circula-y-el-que-escribio"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Bonhoeffer","Pensamiento"]
+tags: ["Bonhoeffer","Widerstand und Ergebung"]
 ---
 
 ## Una frase que viaja sola

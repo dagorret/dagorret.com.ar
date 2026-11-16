@@ -5,7 +5,7 @@ slug: "de-funciona-en-mi-maquina-a-produccion-fundamentos-de-un-docker-template-
 translation_key: "de-funciona-en-mi-maquina-a-produccion-fundamentos-de-un-docker-template-definitivo-para-django"
 lang: "es"
 categories: ["Ciencia"]
-tags: ["biotecnología","desinformación","Divulgación científica","física de materiales","genética","geopolítica y ciencia","investigación médica","Katsu Takahashi","Odontología regenerativa","regeneración dental","Robert K. Merton","Tang Ruikang","USAG-1"]
+tags: ["Docker","Django","PostgreSQL"]
 ---
 
 Cualquiera que haya trabajado con Django sabe que el framework es una maravilla de la productividad. Sin embargo, el verdadero reto empieza cuando pasamos del entorno local a un servidor de producción real. Configurar bases de datos, aislar las dependencias, gestionar las variables de entorno y escribir scripts repetitivos para levantar contenedores puede convertirse rápidamente en un verdadero dolor de cabeza.

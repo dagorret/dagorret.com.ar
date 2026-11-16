@@ -5,7 +5,7 @@ slug: "iluminismo-cuantico"
 translation_key: "iluminismo-cuantico"
 lang: "es"
 categories: ["Cultura","Sistemas","Sociología","Tecnología"]
-tags: ["Biocentrismo","Inteligencia Artificial","política"]
+tags: ["Immanuel Kant","Albert Camus","Jascha Sohl-Dickstein"]
 ---
 
 _Manifiesto contra la servidumbre por comodidad_

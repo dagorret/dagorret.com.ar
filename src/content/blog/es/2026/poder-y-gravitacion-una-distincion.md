@@ -5,7 +5,7 @@ slug: "poder-y-gravitacion-una-distincion"
 translation_key: "poder-y-gravitacion-una-distincion"
 lang: "es"
 categories: ["Filosofía"]
-tags: []
+tags: ["Pierre Bourdieu","Michel Foucault","Richard Emerson"]
 ---
 
 ## Resumen

@@ -5,7 +5,7 @@ slug: "el-mapa-invisible"
 translation_key: "el-mapa-invisible"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Hugo","MathML"]
+tags: ["Literatura"]
 ---
 
 _Un cuento de Carlos._

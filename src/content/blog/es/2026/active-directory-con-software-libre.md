@@ -5,7 +5,7 @@ slug: "active-directory-con-software-libre"
 translation_key: "active-directory-con-software-libre"
 lang: "es"
 categories: ["Tecnología"]
-tags: ["Linux"]
+tags: ["Active Directory","Samba","rsync"]
 ---
 
 En la **Parte 1 (en revision)** montamos el Controlador de Dominio bien: realm que no es `.local`, reloj firmado, backup versionado. Pero dejamos tres promesas explícitamente para después, porque son justo el punto donde los tutoriales abandonan al lector: el servidor de archivos **fuera** del DC, los permisos por rol que de verdad funcionan, y la alta disponibilidad con un segundo DC. Acá las cumplimos. Y, fiel al estilo de la casa, sin vender humo: cada cosa viene con su asterisco honesto.

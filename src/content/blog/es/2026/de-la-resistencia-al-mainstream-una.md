@@ -5,7 +5,7 @@ slug: "de-la-resistencia-al-mainstream-una"
 translation_key: "de-la-resistencia-al-mainstream-una"
 lang: "es"
 categories: ["Cultura"]
-tags: ["Estudios Culturales"]
+tags: ["Linux","Slackware","CentOS"]
 ---
 
 Introducción: Cuando el Software se Domaba a Mano

@@ -5,7 +5,7 @@ slug: "el-limite-elastico-entre-la"
 translation_key: "el-limite-elastico-entre-la"
 lang: "es"
 categories: ["Cultura"]
-tags: ["Estudios Culturales"]
+tags: ["David Hume","Pierre Bourdieu","Capital Simbólico"]
 ---
 
 **Por Carlos Dagorret**

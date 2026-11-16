@@ -5,7 +5,7 @@ slug: "el-algoritmo-no-quiere-que-entiendas-el"
 translation_key: "el-algoritmo-no-quiere-que-entiendas-el"
 lang: "es"
 categories: ["Ontología"]
-tags: ["Estudios Culturales","Sistemas Complejos"]
+tags: ["Internet","Redes Sociales","Economía de la atención"]
 ---
 
 Internet alguna vez prometió democratizar el conocimiento.

@@ -5,7 +5,7 @@ slug: "la-ley-del-guardian-la-biologia-no-se-delega"
 translation_key: "la-ley-del-guardian-la-biologia-no-se-delega"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Inteligencia Artificial"]
+tags: ["Hans Jonas","Lisanne Bainbridge","Stuart Russell"]
 ---
 
 _Hay un error de cálculo que se repite a lo largo de las eras: confundir la fortaleza con la vida que habita dentro. Cuando una especie descubre la intemperie construye refugios, primero cueva, luego tribu, luego imperio, luego matriz burocrática, luego algoritmo. Para sostenerlos crea estructuras de eficiencia, frías porque necesitan ser eternas. Y llega un momento en que el creador, fatigado por el costo biológico de sostener la existencia, mira a la máquina que construyó y piensa: ella no se equivoca, no se duerme, no siente dolor; entreguémosle la cuna. Ese es el instante del colapso._

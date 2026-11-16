@@ -5,7 +5,7 @@ slug: "byung-chul-han-y-la-crisis-del-relato"
 translation_key: "byung-chul-han-y-la-crisis-del-relato"
 lang: "es"
 categories: ["Sociología"]
-tags: ["Capital Humano","Elasticidad Organizacional","Organizaciones","Sociología","Teoría"]
+tags: ["Byung-Chul Han","El espíritu de la narración"]
 ---
 
 Vivimos en la era del relato. Desde las campañas de marketing de las multinacionales hasta los discursos de los líderes políticos de la región, todo se ha reducido a una técnica: el _storytelling_. Nos repiten hasta el cansancio que “quien domina la historia, domina el poder”.

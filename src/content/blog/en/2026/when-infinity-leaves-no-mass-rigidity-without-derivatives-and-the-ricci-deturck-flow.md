@@ -5,7 +5,7 @@ slug: "when-infinity-leaves-no-mass-rigidity-without-derivatives-and-the-ricci-d
 translation_key: "when-infinity-leaves-no-mass-rigidity-without-derivatives-and-the-ricci-deturck-flow"
 lang: "en"
 categories: ["Mathematics"]
-tags: ["ADM mass","Differential Geometry","Edward Witten","General Relativity","Gromov conjecture","Jianchun Chu","Jingbo Wan","Man-Chun Lee","Mikhail Gromov","Positive Mass Theorem","Ricci flow","Ricci–DeTurck flow","Richard Schoen","Rigidity","Scalar Curvature","Schwarzschild metric","Shing-Tung Yau"]
+tags: ["Jianchun Chu","Man-Chun Lee","Jingbo Wan"]
 ---
 
 _A reading of the work of Chu, Lee and Wan_

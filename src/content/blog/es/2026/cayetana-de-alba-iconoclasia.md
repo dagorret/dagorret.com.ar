@@ -5,7 +5,7 @@ slug: "cayetana-de-alba-iconoclasia"
 translation_key: "cayetana-de-alba-iconoclasia"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Capital Simbólico","Estética"]
+tags: ["Cayetana de Alba","Pablo Picasso","Capital Simbólico"]
 ---
 
 ## I. La Subversión del Capital Simbólico

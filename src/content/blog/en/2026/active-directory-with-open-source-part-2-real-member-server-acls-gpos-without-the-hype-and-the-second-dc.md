@@ -5,7 +5,7 @@ slug: "active-directory-with-open-source-part-2-real-member-server-acls-gpos-wit
 translation_key: "active-directory-with-open-source-part-2-real-member-server-acls-gpos-without-the-hype-and-the-second-dc"
 lang: "en"
 categories: ["Technology"]
-tags: ["Active Directory", "System Administration", "Open Source", "Linux", "Samba", "Servers"]
+tags: ["Active Directory","Samba","Debian"]
 ---
 
 [In Part 1](/active-directory-with-open-source-for-smbs-the-version-that-survives-production-debian-13/), we set up our Domain Controller correctly: an operational realm that bypasses the `.local` trap, signed time protocols, and a robust versioned backup routine. However, we explicitly left three core promises for later because they represent the exact threshold where superficial tutorials abandon the reader: the file server operating completely decoupled from the DC, role-based folder privileges that actually work, and high availability via a secondary DC. Here, we deliver on those promises. And, keeping with our house style, we do it without the marketing fluff—every milestone comes with its honest infrastructure caveat.

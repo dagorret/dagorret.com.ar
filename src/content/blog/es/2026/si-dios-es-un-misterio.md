@@ -5,7 +5,7 @@ slug: "si-dios-es-un-misterio"
 translation_key: "si-dios-es-un-misterio"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Filosofía de la religión", "Problema del mal", "Poder"]
+tags: ["William Rowe","Spinoza","Problema del mal"]
 ---
 
 ## Un animal que no sabe que Dios existe

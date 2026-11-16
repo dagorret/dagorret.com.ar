@@ -5,7 +5,7 @@ slug: "como-ser-un-buen-sysadmin-con-debian-ii-el-protocolo-de-salto-de-version-
 translation_key: "como-ser-un-buen-sysadmin-con-debian-ii-el-protocolo-de-salto-de-version-mayor"
 lang: "es"
 categories: ["Sistemas","Tecnología"]
-tags: ["Debian","Infraestructura","Mantenimiento de Servidores","Sysadmin"]
+tags: ["Debian","APT","Mantenimiento de Servidores"]
 ---
 
 Este articulo es para un serie:  

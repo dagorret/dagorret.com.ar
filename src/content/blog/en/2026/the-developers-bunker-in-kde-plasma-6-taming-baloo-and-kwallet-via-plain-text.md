@@ -5,7 +5,7 @@ slug: "the-developers-bunker-in-kde-plasma-6-taming-baloo-and-kwallet-via-plain-
 translation_key: "the-developers-bunker-in-kde-plasma-6-taming-baloo-and-kwallet-via-plain-text"
 lang: "en"
 categories: ["Technology"]
-tags: []
+tags: ["KDE Plasma","Baloo","KWallet"]
 ---
 
 Keywords: Baloo, CachyOS, KDE, KWallet, Plasma, Sysadmin

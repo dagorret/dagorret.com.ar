@@ -5,7 +5,7 @@ slug: "el-modelo-base-00-4"
 translation_key: "el-modelo-base-00-4"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Ingeniería de Software","Metodología Científica"]
+tags: ["Dirección estratégica","Sistemas Complejos","Trabajo"]
 ---
 
 ## Parte IV: El Click de la Extinción — Decisiones Estratégicas como Eventos Históricos

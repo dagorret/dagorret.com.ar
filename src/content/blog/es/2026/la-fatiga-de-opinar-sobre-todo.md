@@ -5,7 +5,7 @@ slug: "la-fatiga-de-opinar-sobre-todo"
 translation_key: "la-fatiga-de-opinar-sobre-todo"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["David Hume","Inferencia Causal","Judea Pearl","Paradoja de Simpson"]
+tags: ["Redes Sociales","Economía de la atención","Pensamiento Crítico"]
 ---
 
 Existe una transformación silenciosa pero profunda en la economía de la atención contemporánea: la mutación de la opinión en acto reflejo. Históricamente, la formulación de un juicio crítico —un posicionamiento reflexivo sobre la realidad— presuponía un intervalo temporal dedicado a la digestión de la información, el contraste de fuentes y la deliberación interna. Hoy, la arquitectura de las plataformas digitales ha colapsado ese intervalo, reduciéndolo a la inmediatez de la respuesta biológica.

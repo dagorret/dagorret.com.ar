@@ -5,7 +5,7 @@ slug: "el-mito-del-ttl-de-30-segundos"
 translation_key: "el-mito-del-ttl-de-30-segundos"
 lang: "es"
 categories: ["Capital"]
-tags: ["Filosofía de la Tecnología"]
+tags: ["DNS","Unbound","AdGuard Home"]
 ---
 
 En el papel, una latencia de 25 ms desde el borde de mi red hogareña hasta mi Servidor Privado Virtual (VPS) en el datacenter regional es una velocidad envidiable. Para transferir archivos, hacer streaming en 4K o jugar en línea, 25 ms es sinónimo de fluidez. Sin embargo, en el ecosistema web actual, descubrí que **25 ms es una eternidad para un protocolo DNS que ha sido desfigurado por las decisiones de arquitectura de las Big Tech**.

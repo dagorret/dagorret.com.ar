@@ -5,7 +5,7 @@ slug: "from-rock-to-river-the-evolution-of-simplicity-in-linux"
 translation_key: "from-rock-to-river-the-evolution-of-simplicity-in-linux"
 lang: "en"
 categories: ["Technology"]
-tags: ["Comunicación","monetización","moralidada"]
+tags: ["Slackware","Arch Linux","Pacman"]
 ---
 
 Keywords: Arch History, Philosophy, Software,Slackware

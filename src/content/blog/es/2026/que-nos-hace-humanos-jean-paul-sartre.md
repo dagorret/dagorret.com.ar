@@ -5,7 +5,7 @@ slug: "que-nos-hace-humanos-jean-paul-sartre"
 translation_key: "que-nos-hace-humanos-jean-paul-sartre"
 lang: "es"
 categories: ["Filosofía"]
-tags: []
+tags: ["Jean-Paul Sartre","Existencialismo"]
 ---
 
 Estamos viviendo una de las revoluciones más rápidas de la historia humana. En pleno 2026, las herramientas de Inteligencia Artificial ya no solo automatizan tareas repetitivas; ahora redactan contratos, diseñan campañas de marketing, programan código complejo y crean obras de arte en segundos.

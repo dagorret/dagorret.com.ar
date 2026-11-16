@@ -5,7 +5,7 @@ slug: "la-milesima"
 translation_key: "la-milesima"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: []
+tags: ["Joseph Schumpeter","Nick Srnicek","John Kenneth Galbraith"]
 ---
 
 ## La paradoja de Schumpeter y el peaje invisible

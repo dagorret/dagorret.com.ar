@@ -5,7 +5,7 @@ slug: "ubuntu-en-sus-ultimos-tiempos"
 translation_key: "ubuntu-en-sus-ultimos-tiempos"
 lang: "es"
 categories: ["Tecnología"]
-tags: ["Linux","sistemas operativos"]
+tags: ["Ubuntu","Linux"]
 ---
 
 Hubo una época en que instalar Ubuntu parecía una pequeña declaración filosófica.

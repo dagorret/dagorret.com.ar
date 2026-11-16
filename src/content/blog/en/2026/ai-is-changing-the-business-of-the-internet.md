@@ -5,7 +5,7 @@ slug: "ai-is-changing-the-business-of-the-internet"
 translation_key: "la-inteligencia-artificial-esta-cambiando-el-negocio-de-internet"
 lang: "en"
 categories: ["Technology"]
-tags: ["Artificial Intelligence", "Digital Economy", "Internet", "Business Models", "Knowledge"]
+tags: ["Google","Reddit","OpenAI"]
 ---
 
 *For three decades, the web ran on a relatively simple exchange: someone produced information, search engines helped people find it, and a share of readers made their way to the source. Artificial intelligence is rewriting that arrangement. Not necessarily for the worse, but in a way that forces us to reconsider who creates value, who captures it, and who pays to sustain it.*

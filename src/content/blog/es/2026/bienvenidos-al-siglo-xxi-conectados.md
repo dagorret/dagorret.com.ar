@@ -5,7 +5,7 @@ slug: "bienvenidos-al-siglo-xxi-conectados"
 translation_key: "bienvenidos-al-siglo-xxi-conectados"
 lang: "es"
 categories: ["Cultura"]
-tags: ["Análisis Institucional","Filosofía de la Tecnología"]
+tags: ["Redes Sociales","Comunicación"]
 ---
 
 Vivimos en una época fascinante, no hay duda. El avance tecnológico nos ha regalado comodidades que nuestros abuelos ni siquiera habrían soñado en sus noches más creativas. Sin embargo, a veces da la sensación de que, en medio de tanta actualización de software, nos hemos olvidado de actualizar lo más importante: **nuestra humanidad**.

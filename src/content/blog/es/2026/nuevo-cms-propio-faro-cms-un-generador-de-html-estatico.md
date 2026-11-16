@@ -5,7 +5,7 @@ slug: "nuevo-cms-propio-faro-cms-un-generador-de-html-estatico"
 translation_key: "nuevo-cms-propio-faro-cms-un-generador-de-html-estatico"
 lang: "es"
 categories: ["Tecnología"]
-tags: ["CMS","generador estático","HTML","php","SSG"]
+tags: ["Faro CMS","Laravel","Filament"]
 ---
 
 **Después de años publicando sobre tecnología con herramientas de otros, llegó el momento de construir la mía. Faro CMS separa la gestión del contenido de su publicación y convierte cada entrada en HTML estático listo para ser servido directamente por Nginx. El resultado: menos piezas, menos recursos y una web que vuelve a ser simple.**

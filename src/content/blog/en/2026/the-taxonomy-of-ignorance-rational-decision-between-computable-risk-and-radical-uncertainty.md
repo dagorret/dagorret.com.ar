@@ -5,7 +5,7 @@ slug: "the-taxonomy-of-ignorance-rational-decision-between-computable-risk-and-r
 translation_key: "la-taxonomia-de-la-ignorancia-decision-racional-entre-el-riesgo-computable-y-la-incertidumbre-radical"
 lang: "en"
 categories: ["Mathematics","Philosophy"]
-tags: ["Black swan","Decision theory","Ellsberg paradox","Knightian uncertainty"]
+tags: ["Frank Knight","Daniel Ellsberg","Nassim Taleb"]
 ---
 
 _**Abstract**_
