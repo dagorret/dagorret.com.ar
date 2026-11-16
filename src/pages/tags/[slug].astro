@@ -1,0 +1,32 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import Archive from '../../components/Archive.astro';
+import { getTaxonomy } from '../../lib/taxonomy';
+
+export async function getStaticPaths() {
+  const [spanish, english] = await Promise.all([getTaxonomy('es'), getTaxonomy('en')]);
+  const englishSlugs = new Set(english.tags.map(tag => tag.slug));
+
+  return spanish.tags.map(tag => ({
+    params: { slug: tag.slug },
+    props: {
+      tag,
+      translationUrl: englishSlugs.has(tag.slug) ? `/en/tags/${tag.slug}/` : null,
+    },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { tag, translationUrl } = Astro.props;
+const intro = `${tag.count} ${tag.count === 1 ? 'artículo' : 'artículos'} con la etiqueta ${tag.label}.`;
+---
+
+<Archive
+  lang="es"
+  posts={tag.posts}
+  title={tag.label}
+  intro={intro}
+  description={intro.slice(0, 160)}
+  translationUrl={translationUrl}
+  noindex={!tag.indexable}
+/>
