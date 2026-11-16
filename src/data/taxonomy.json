@@ -1,0 +1,119 @@
+{
+  "threshold": 3,
+  "tagAliases": {
+    "es": {},
+    "en": {}
+  },
+  "categoryAliases": {
+    "es": {},
+    "en": {}
+  },
+  "categories": {
+    "filosofia": {
+      "es": {
+        "label": "Filosofía",
+        "description": "Preguntas que ninguna disciplina resuelve sola: qué existe, qué podemos conocer, cómo conviene vivir. Escribo desde la sospecha de que casi toda gran discusión técnica o política descansa sobre una tesis filosófica que nadie se tomó el trabajo de explicitar. Acá las saco a la superficie."
+      },
+      "en": {
+        "label": "Philosophy",
+        "description": "Questions no single discipline can settle on its own: what exists, what we can know, how we should live. I write from the suspicion that most big technical or political arguments rest on a philosophical thesis nobody bothered to state. Here I bring them to the surface."
+      }
+    },
+    "sistemas": {
+      "es": {
+        "label": "Sistemas",
+        "description": "Teoría de sistemas y sistemas organizacionales: cómo se relacionan las partes de un todo y por qué el todo se comporta distinto de lo que cada parte promete. Me interesa sobre todo lo que no se ve: la retroalimentación, el costo oculto de optimizar y las fallas que esperan, ya instaladas, a que cambie una condición."
+      }
+    },
+    "tecnologia": {
+      "es": {
+        "label": "Tecnología",
+        "description": "Sistemas de información y ciencias de la computación aplicadas: infraestructura, software y redes puestos a trabajar en producción. Escribo desde la sala de máquinas. Cada decisión técnica es también una decisión institucional, y conviene leerla así, con sus costos de mantenimiento incluidos."
+      },
+      "en": {
+        "label": "Technology",
+        "description": "Information systems and applied computing: infrastructure, software and networks put to work in production. I write from the machine room. Every technical decision is also an institutional one, and it is worth reading it that way, maintenance costs included."
+      }
+    },
+    "inteligencia-artificial": {
+      "es": {
+        "label": "Inteligencia Artificial",
+        "description": "Qué es realmente una inteligencia artificial, qué puede hacer y qué le atribuimos de más o de menos. Desconfío tanto del entusiasmo como del pánico. Prefiero mirar el mecanismo, la evidencia disponible y las condiciones en que las organizaciones la adoptan."
+      },
+      "en": {
+        "label": "Artificial Intelligence",
+        "description": "What an artificial intelligence really is, what it can do, and what we credit it with, for better or for worse. I distrust both enthusiasm and panic. I prefer to look at the mechanism, the evidence available and the conditions under which organizations adopt it."
+      }
+    },
+    "matematicas": {
+      "es": {
+        "label": "Matemáticas",
+        "description": "Estructuras, demostraciones y el lenguaje con que se modelan casi todos los otros temas de este sitio. Escribo matemática para entenderla yo, y por eso me detengo en lo que los textos suelen dar por sabido: de dónde sale una definición y qué costaría cambiarla."
+      },
+      "en": {
+        "label": "Mathematics",
+        "description": "Structures, proofs and the language used to model most of the other subjects on this site. I write mathematics to understand it myself, so I linger on what texts usually take for granted: where a definition comes from and what it would cost to change it."
+      }
+    },
+    "sociologia": {
+      "es": {
+        "label": "Sociología",
+        "description": "Cómo las instituciones, las clases, las redes y las costumbres moldean lo que cada uno cree que elige libremente. Leo el trabajo, las plataformas y las organizaciones buscando las reglas que nadie escribió pero todos cumplen."
+      },
+      "en": {
+        "label": "Sociology",
+        "description": "How institutions, classes, networks and customs shape what each of us believes we freely choose. I read work, platforms and organizations looking for the rules nobody wrote but everyone follows."
+      }
+    },
+    "capital": {
+      "es": {
+        "label": "Capital",
+        "description": "Capital en sentido amplio: el dinero y los medios de producción, y también el capital humano, social y simbólico que se acumula y se hereda. Me interesa quién lo controla, cómo se reproduce y qué ocurre con el trabajo cuando se vuelve código."
+      },
+      "en": {
+        "label": "Economics",
+        "description": "Capital in its broad sense: money and means of production, as well as the human, social and symbolic capital that accumulates and is inherited. I read economics as political economy: who controls resources, how that control reproduces, and what happens to labor when it turns into code."
+      }
+    },
+    "ciencia": {
+      "es": {
+        "label": "Ciencia",
+        "description": "Cómo se produce el conocimiento científico, con qué evidencia se sostiene y dónde empiezan sus límites. Defiendo el método y desconfío de su uso retórico: la ciencia es una práctica falible, con instituciones, incentivos y puntos ciegos que también hay que estudiar."
+      },
+      "en": {
+        "label": "Science",
+        "description": "How scientific knowledge is produced, what evidence supports it and where its limits begin. I defend the method and distrust its rhetorical use: science is a fallible practice, with institutions, incentives and blind spots that also deserve study."
+      }
+    },
+    "politica": {
+      "es": {
+        "label": "Política",
+        "description": "Cómo se decide en común: el poder, las instituciones y el conflicto por la distribución de recursos y derechos. Examino qué mecanismos sostienen realmente una decisión colectiva, sin quedarme con el relato del caos ni con el del orden impuesto."
+      }
+    },
+    "cultura": {
+      "es": {
+        "label": "Cultura",
+        "description": "Los marcos de sentido, símbolos y costumbres con que una comunidad se explica a sí misma. Me quedo con la tensión entre pertenecer y ser: lo que el grupo ofrece por comodidad y lo que cobra a cambio."
+      }
+    },
+    "ontologia": {
+      "es": {
+        "label": "Ontología",
+        "description": "La pregunta por el ser: qué entidades existen, cómo se clasifican y qué tipo de existencia les corresponde. Es la más abstracta de mis categorías y también la más práctica, porque todo modelo, base de datos o teoría decide en silencio qué cosas cuentan como existentes."
+      }
+    },
+    "historia": {
+      "es": {
+        "label": "Historia",
+        "description": "El pasado leído con sus fuentes a la vista: qué ocurrió, qué se dijo que ocurrió y quién gana con cada versión. La uso como contrapeso del presentismo, para recordar que casi nada de lo que hoy llamamos nuevo lo es del todo."
+      }
+    },
+    "ensayos": {
+      "es": {
+        "label": "Ensayos",
+        "description": "Textos de pensamiento en voz propia, que no caben en una sola disciplina. Es el género que mejor sirve a una mirada integradora: cruzar técnica, ciencias sociales y filosofía para ver qué sale, dejando marcado qué es evidencia y qué es opinión."
+      }
+    }
+  }
+}

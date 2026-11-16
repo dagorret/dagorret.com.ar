@@ -1,0 +1,27 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import Archive from '../../../components/Archive.astro';
+import { getTaxonomy } from '../../../lib/taxonomy';
+
+export async function getStaticPaths() {
+  const { categories } = await getTaxonomy('en');
+  return categories.map(category => ({
+    params: { slug: category.slug },
+    props: { category },
+  }));
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { category } = Astro.props;
+const description = category.description.split(/(?<=[.!?])\s/u)[0].slice(0, 160);
+const translationUrl = category.translationSlug ? `/category/${category.translationSlug}/` : null;
+---
+
+<Archive
+  lang="en"
+  posts={category.posts}
+  title={category.label}
+  intro={category.description}
+  description={description}
+  translationUrl={translationUrl}
+/>

@@ -3,9 +3,22 @@ import type { CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import type { BlogLanguage } from '../lib/posts';
 
-interface Props { lang: BlogLanguage; posts: CollectionEntry<'blog'>[]; }
-const { lang, posts } = Astro.props;
+interface Props {
+  lang: BlogLanguage;
+  posts: CollectionEntry<'blog'>[];
+  title?: string;
+  intro?: string;
+  translationUrl?: string | null;
+  description?: string;
+  noindex?: boolean;
+}
+const { lang, posts, description, noindex } = Astro.props;
 const en = lang === 'en';
+const {
+  title = en ? 'Archive' : 'Archivo',
+  intro = `${posts.length} ${en ? 'articles, organized by year and month.' : 'artículos, organizados por año y mes.'}`,
+  translationUrl = en ? '/archivo/' : '/en/archive/',
+} = Astro.props;
 const groups = new Map<number, Map<number, CollectionEntry<'blog'>[]>>();
 for (const post of posts) {
   const year = post.data.date.getUTCFullYear();
@@ -18,10 +31,10 @@ for (const post of posts) {
 const monthFormat = new Intl.DateTimeFormat(en ? 'en' : 'es', { month: 'long', timeZone: 'UTC' });
 ---
 
-<Layout title={en ? 'Archive' : 'Archivo'} lang={lang} translationUrl={en ? '/archivo/' : '/en/archive/'}>
+<Layout title={title} lang={lang} translationUrl={translationUrl} description={description} noindex={noindex}>
   <header class="archive-heading">
-    <h1>{en ? 'Archive' : 'Archivo'}</h1>
-    <p>{posts.length} {en ? 'articles, organized by year and month.' : 'artículos, organizados por año y mes.'}</p>
+    <h1>{title}</h1>
+    <p>{intro}</p>
   </header>
   {[...groups].map(([year, months]) => (
     <section class="archive-year" aria-labelledby={`year-${year}`}>
