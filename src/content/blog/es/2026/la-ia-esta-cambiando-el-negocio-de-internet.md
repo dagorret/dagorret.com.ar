@@ -5,7 +5,7 @@ slug: "la-inteligencia-artificial-esta-cambiando-el-negocio-de-internet"
 translation_key: "la-inteligencia-artificial-esta-cambiando-el-negocio-de-internet"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Inteligencia artificial", "Economía digital", "Internet", "Modelos de negocio", "Conocimiento"]
+tags: ["Inteligencia Artificial", "Economía digital", "Internet", "Modelos de negocio", "Conocimiento"]
 ---
 
 *Durante tres décadas, la web funcionó gracias a un intercambio relativamente sencillo: alguien producía información, los buscadores ayudaban a encontrarla y una parte de los lectores llegaba hasta su fuente. La inteligencia artificial está modificando ese acuerdo. No necesariamente para peor, pero sí de una manera que obliga a revisar quién produce valor, quién lo captura y quién paga por mantenerlo.*

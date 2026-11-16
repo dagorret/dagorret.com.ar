@@ -5,7 +5,7 @@ slug: "active-directory-with-open-source-for-smbs-the-version-that-survives-prod
 translation_key: "active-directory-with-open-source-for-smbs-the-version-that-survives-production-debian-13"
 lang: "en"
 categories: ["Política"]
-tags: ["Epistemologia","Filosofía de la Tecnología","Infraestructura","Inteligencia Estatal","Teoría Política"]
+tags: ["Epistemología","Filosofía de la Tecnología","Infraestructura","Inteligencia Estatal","Teoría Política"]
 ---
 
 Keywords: Active Directory, Backup, Debian, Kerberos, Networking, NTP, Samba, Sysadmin, Wireguard

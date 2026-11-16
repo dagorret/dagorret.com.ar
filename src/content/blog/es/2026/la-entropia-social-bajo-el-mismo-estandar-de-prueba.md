@@ -5,7 +5,7 @@ slug: "la-entropia-social-bajo-el-mismo-estandar-de-prueba"
 translation_key: "la-entropia-social-bajo-el-mismo-estandar-de-prueba"
 lang: "es"
 categories: ["Ciencia"]
-tags: ["Entropía","Georgescu-Roegen","Luhmann","Tainter","termodinamica"]
+tags: ["Entropía","Georgescu-Roegen","Luhmann","Tainter","Termodinámica"]
 ---
 
 ### _Artículo 3.5 (auxiliar) de la serie Entropía: física, información, sociedad_

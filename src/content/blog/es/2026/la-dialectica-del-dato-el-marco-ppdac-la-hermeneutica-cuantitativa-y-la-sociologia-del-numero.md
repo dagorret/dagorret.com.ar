@@ -5,7 +5,7 @@ slug: "la-dialectica-del-dato-el-marco-ppdac-la-hermeneutica-cuantitativa-y-la-s
 translation_key: "la-dialectica-del-dato-el-marco-ppdac-la-hermeneutica-cuantitativa-y-la-sociologia-del-numero"
 lang: "es"
 categories: ["Ciencia"]
-tags: ["Big-Data","Epistemologia","hermeneutica"]
+tags: ["Big-Data","Epistemología","hermeneutica"]
 ---
 
 ### Resumen

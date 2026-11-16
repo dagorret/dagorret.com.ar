@@ -5,7 +5,7 @@ slug: "de-la-retencion-la-elasticidad-de"
 translation_key: "de-la-retencion-la-elasticidad-de"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Epistemologia","Estoicismo"]
+tags: ["Epistemología","Estoicismo"]
 ---
 
 Urge escribir para que el pensamiento no escape a zona del nunca jamas.  

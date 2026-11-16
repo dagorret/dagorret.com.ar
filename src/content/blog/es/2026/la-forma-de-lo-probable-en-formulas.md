@@ -5,7 +5,7 @@ slug: "la-forma-de-lo-probable-en-formulas"
 translation_key: "la-forma-de-lo-probable-en-formulas"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Epistemologia","Matemática","Modelos de Lenguaje","Transformers"]
+tags: ["Epistemología","Matemática","Modelos de Lenguaje","Transformers"]
 ---
 
 _Tercera parte de un tríptico. La primera, [La forma de lo probable](https://dagorret.com.ar/la-forma-de-lo-probable/), plantea el argumento; la segunda, [La forma de lo probable, sin fórmulas](https://dagorret.com.ar/la-forma-de-lo-probable-sin-formulas/), lo cuenta con esquemas. Esta parte escribe el mecanismo completo, ecuación por ecuación._

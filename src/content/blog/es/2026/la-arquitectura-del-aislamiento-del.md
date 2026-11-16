@@ -5,7 +5,7 @@ slug: "la-arquitectura-del-aislamiento-del"
 translation_key: "la-arquitectura-del-aislamiento-del"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Entropía","Epistemologia","Georgescu-Roegen","Niklas Luhmann","Tainter","Termodinámica"]
+tags: ["Entropía","Epistemología","Georgescu-Roegen","Niklas Luhmann","Tainter","Termodinámica"]
 ---
 
 ### El Peso del Cemento vs. el Peso del Bit
