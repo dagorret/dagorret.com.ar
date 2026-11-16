@@ -13,7 +13,7 @@ const match = translation_key
 const { Content } = await render(entry);
 ---
 
-<Layout title={title} lang={lang} translationUrl={match ? labUrl(match.data.lang, match.data.slug) : undefined}>
+<Layout title={title} lang={lang} translationUrl={match ? labUrl(match.data.lang, match.data.slug) : undefined} description={description}>
   <header class="article-header">
     <a class="back" href={labUrl(lang)}>{en ? '← Back to Lab' : '← Volver al Lab'}</a>
     <p class="experiment-meta">{category} · {status === 'interactive' ? (en ? 'Interactive' : 'Interactivo') : (en ? 'In preparation' : 'En preparación')}</p>

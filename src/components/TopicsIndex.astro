@@ -12,13 +12,13 @@ const firstSentence = (text: string) => text.match(/^.*?[.!?](?=\s|$)/s)?.[0] ??
 const title = en ? 'Topics' : 'Temas';
 const description = en
   ? 'Browse articles by topic: category descriptions and article counts to help you find your next read.'
-  : 'Explorá los artículos por tema: descripciones de las categorías y cantidad de artículos para encontrar tu próxima lectura.';
+  : 'Explora los artículos por tema: descripciones de las categorías y cantidad de artículos para encontrar tu próxima lectura.';
 ---
 
 <Layout title={title} lang={lang} description={description} translationUrl={en ? '/temas/' : '/en/topics/'}>
   <header class="topics-heading">
     <h1>{title}</h1>
-    <p>{en ? 'Explore the blog by subject.' : 'Explorá el blog por tema.'}</p>
+    <p>{en ? 'Explore the blog by subject.' : 'Explora el blog por tema.'}</p>
   </header>
   <ul class="topics-list">
     {topics.map(category => (

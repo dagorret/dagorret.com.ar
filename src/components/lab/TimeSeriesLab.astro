@@ -21,7 +21,7 @@ const en = lang === 'en';
   <p class="econ-status" data-spurious-status role="status" aria-live="polite"></p>
   <p class="econ-note">{en ? 'R² > DW is a warning heuristic, not a formal test. Independent draws do not always satisfy it. Samples are never filtered to force the result; seeds make the displayed draws reproducible.' : 'R² > DW es una señal orientativa, no una prueba formal. No todas las muestras independientes la cumplen. No se seleccionan muestras para forzar el resultado; las semillas permiten reproducir cada realización.'}</p>
   <details><summary>{en ? 'Simulated observations' : 'Observaciones simuladas'}</summary><div class="econ-table"><table><thead><tr><th>t</th><th>AR(1)</th><th>Xₜ</th><th>Yₜ</th></tr></thead><tbody data-rows></tbody></table></div></details>
-  <noscript>{en ? 'Enable JavaScript to simulate paths and regressions.' : 'Activá JavaScript para simular trayectorias y regresiones.'}</noscript>
+  <noscript>{en ? 'Enable JavaScript to simulate paths and regressions.' : 'Activa JavaScript para simular trayectorias y regresiones.'}</noscript>
 </section>
 <script>
   import { onPageLoad } from '../../lib/page-lifecycle';

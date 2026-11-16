@@ -47,7 +47,7 @@ const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 4 });
     </svg>
   </div>
   <p class="nn-legend"><span class="positive">●</span> {en ? 'Positive contribution' : 'Contribución positiva'} <span class="negative">●</span> {en ? 'Negative contribution' : 'Contribución negativa'}</p>
-  <p class="nn-help">{en ? 'Edge thickness shows |weight × source activation|. Node intensity shows activation magnitude, saturating at 1. The output always uses sigmoid. On small screens, scroll the diagram horizontally.' : 'El grosor muestra |peso × activación de origen|. La intensidad del nodo muestra la magnitud de activación y se satura en 1. La salida siempre usa sigmoide. En pantallas pequeñas, desplazá el diagrama horizontalmente.'}</p>
+  <p class="nn-help">{en ? 'Edge thickness shows |weight × source activation|. Node intensity shows activation magnitude, saturating at 1. The output always uses sigmoid. On small screens, scroll the diagram horizontally.' : 'El grosor muestra |peso × activación de origen|. La intensidad del nodo muestra la magnitud de activación y se satura en 1. La salida siempre usa sigmoide. En pantallas pequeñas, desplaza el diagrama horizontalmente.'}</p>
   <dl class="nn-metrics">
     <div><dt>{en ? 'Prediction ŷ' : 'Predicción ŷ'}</dt><dd data-prediction>{format.format(pass.output)}</dd></div>
     <div><dt>{en ? 'Loss ½(ŷ − t)²' : 'Pérdida ½(ŷ − t)²'}</dt><dd data-loss>{format.format(pass.loss)}</dd></div>
@@ -57,14 +57,14 @@ const format = new Intl.NumberFormat(lang, { maximumFractionDigits: 4 });
     <button type="button" data-train>{en ? 'Training step / Adjust weights' : 'Paso de entrenamiento / Ajustar pesos'}</button>
     <button type="button" data-reset>{en ? 'Reset' : 'Reiniciar'}</button>
   </div>
-  <p class="nn-feedback" role="status" aria-live="polite">{en ? 'Adjust the inputs, choose a target, and train on this example.' : 'Ajustá las entradas, elegí un objetivo y entrená sobre este ejemplo.'}</p>
+  <p class="nn-feedback" role="status" aria-live="polite">{en ? 'Adjust the inputs, choose a target, and train on this example.' : 'Ajusta las entradas, elige un objetivo y entrena sobre este ejemplo.'}</p>
   <details class="nn-details"><summary>{en ? 'Inspect calculations and weights' : 'Inspeccionar cálculos y pesos'}</summary>
     <div class="table-scroll"><table>
       <thead><tr><th>{en ? 'Neuron' : 'Neurona'}</th><th>z</th><th>{en ? 'Activation' : 'Activación'}</th><th>{en ? 'Weights' : 'Pesos'}</th><th>{en ? 'Bias' : 'Sesgo'}</th></tr></thead>
       <tbody>{[0, 1, 2, 3].map(j => <tr data-calculation={j}><th>{j === 3 ? 'ŷ' : `h${j + 1}`}</th><td data-z></td><td data-a></td><td data-w></td><td data-b></td></tr>)}</tbody>
     </table></div>
   </details>
-  <noscript><p>{en ? 'Enable JavaScript to change inputs and train the network. The diagram shows its initial prediction.' : 'Activá JavaScript para modificar las entradas y entrenar la red. El diagrama muestra la predicción inicial.'}</p></noscript>
+  <noscript><p>{en ? 'Enable JavaScript to change inputs and train the network. The diagram shows its initial prediction.' : 'Activa JavaScript para modificar las entradas y entrenar la red. El diagrama muestra la predicción inicial.'}</p></noscript>
 </figure>
 
 <style is:global>

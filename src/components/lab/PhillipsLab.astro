@@ -24,7 +24,7 @@ const en = lang === 'en';
     <p class="econ-note">{en ? 'Unemployment: annual mean of the 12 seasonally adjusted monthly observations (BLS). Inflation: annual consumer-price inflation (World Bank). Snapshot: October 31, 2026; values rounded to 3 decimals.' : 'Desempleo: promedio anual de las 12 observaciones mensuales desestacionalizadas (BLS). Inflación: variación anual de precios al consumidor (Banco Mundial). Corte: 31 de octubre de 2026; valores redondeados a 3 decimales.'} <a href={data.sources.unemployment}>FRED · UNRATE</a> · <a href={data.sources.inflation}>FRED · FPCPITOTLZGUSA</a></p>
     <div class="econ-table"><table><thead><tr><th>{en ? 'Year' : 'Año'}</th><th>{en ? 'Unemployment (%)' : 'Desempleo (%)'}</th><th>{en ? 'Inflation (%)' : 'Inflación (%)'}</th></tr></thead><tbody data-rows></tbody></table></div>
   </details>
-  <noscript>{en ? 'Enable JavaScript to move the theoretical curve.' : 'Activá JavaScript para desplazar la curva teórica.'}</noscript>
+  <noscript>{en ? 'Enable JavaScript to move the theoretical curve.' : 'Activa JavaScript para desplazar la curva teórica.'}</noscript>
 </section>
 <script>
   import { onPageLoad } from '../../lib/page-lifecycle';

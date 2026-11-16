@@ -19,13 +19,13 @@ const letters = [...groups.keys()].sort((a, b) => a.localeCompare(b, lang));
 const title = en ? 'All tags' : 'Todas las etiquetas';
 const description = en
   ? 'Find articles by tag: an alphabetical index of people, works, technologies and concepts, with article counts.'
-  : 'Encontrá artículos por etiqueta: un índice alfabético de personas, obras, tecnologías y conceptos, con la cantidad de artículos.';
+  : 'Encuentra artículos por etiqueta: un índice alfabético de personas, obras, tecnologías y conceptos, con la cantidad de artículos.';
 ---
 
 <Layout title={title} lang={lang} description={description} translationUrl={en ? '/tags/' : '/en/tags/'}>
   <header class="tags-heading">
     <h1>{title}</h1>
-    <p>{en ? 'Browse tags in alphabetical order.' : 'Explorá las etiquetas en orden alfabético.'}</p>
+    <p>{en ? 'Browse tags in alphabetical order.' : 'Explora las etiquetas en orden alfabético.'}</p>
   </header>
   {letters.map((letter, index) => (
     <section aria-labelledby={`tag-letter-${index}`}>

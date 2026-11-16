@@ -9,8 +9,6 @@ categories:
 tags: ["Robert K. Merton","Hans Reichenbach","Falacia Genética"]
 ---
 
-Desde mediados del siglo XX, la biología molecular describe el ADN con metáforas de lenguaje e información: código, mensaje, transcripción, traducción, programa. La historiadora Lily Kay reconstruyó el origen de ese vocabulario en *Who Wrote the Book of Life? A History of the Genetic Code* (Stanford University Press, 2000) y mostró que no nació en la biología sino en la cibernética y la teoría de la información de posguerra, y que moldeó la manera en que pensamos el genoma mucho antes de que hubiera evidencia para sostenerlo.
-
 En un artículo anterior, [«Los límites de la metáfora del código»](/limites-de-la-metafora-del-codigo/), sostuve que describir el ADN como código parece explicar más de lo que explica: la evidencia sobre el ADN no codificante obliga a considerar que buena parte del genoma es historia evolutiva acumulada, no un mensaje escrito con un propósito. Con la etiqueta «lo escribió una IA» ocurre algo parecido, pero en sentido inverso: parece refutar más de lo que refuta. En ambos casos, la palabra ocupa el lugar del análisis.
 
 La pregunta que ordena este texto es simple: ¿se puede descartar una idea solo porque intervino una inteligencia artificial en su producción? La respuesta rápida es que no. Pero la respuesta rápida esconde una distinción que conviene hacer con cuidado, porque la procedencia de una idea no es irrelevante; lo que no puede es reemplazar el examen.

@@ -38,7 +38,7 @@ const { entry, translationUrl, prevPost, nextPost } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Layout title={entry.data.title} lang="en" translationUrl={translationUrl}>
+<Layout title={entry.data.title} lang="en" translationUrl={translationUrl} type="article" description={entry.data.description} articleBody={entry.body}>
   <article data-pagefind-body>
     <header class="article-header">
       <h1 class="article-title">{entry.data.title}</h1>
