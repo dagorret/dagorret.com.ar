@@ -4,8 +4,8 @@ date: 2026-05-05
 slug: "el-superpoder-de-las-matematicas-por"
 translation_key: "el-superpoder-de-las-matematicas-por"
 lang: "es"
-categories: ["Uncategorized"]
-tags: ["Linux"]
+categories: ["Matemáticas"]
+tags: []
 ---
 
 ¿Alguna vez has sentido que las matemáticas son un idioma alienígena? No estás solo. A casi todos nos han enseñado las matemáticas como un montón de reglas aburridas que hay que memorizar para aprobar un examen.

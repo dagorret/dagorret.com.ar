@@ -4,7 +4,7 @@ date: 2026-09-04
 slug: "sobre-la-asimetria-de-la-aprehension-empirica-correlacion-causalidad-y-la-arquitectura-contrafactica"
 translation_key: "sobre-la-asimetria-de-la-aprehension-empirica-correlacion-causalidad-y-la-arquitectura-contrafactica"
 lang: "es"
-categories: ["Uncategorized"]
+categories: ["Filosofía"]
 tags: []
 ---
 

@@ -5,7 +5,7 @@ slug: "inflation-distributive-conflict"
 translation_key: "inflation-distributive-conflict"
 lang: "en"
 categories: ["Economics"]
-tags: ["Filosofía de la Tecnología","inteligencia artificial y creación","literatura contemporánea","proceso creativo","sarmiento"]
+tags: ["Inflation", "Argentina", "Distributive Conflict"]
 ---
 
 ## Introduction

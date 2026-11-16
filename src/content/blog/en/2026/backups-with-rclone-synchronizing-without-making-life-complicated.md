@@ -4,8 +4,8 @@ date: 2026-05-23
 slug: "backups-with-rclone-synchronizing-without-making-life-complicated"
 translation_key: "backups-with-rclone-synchronizing-without-making-life-complicated"
 lang: "en"
-categories: ["Capital"]
-tags: ["Astrofísica","Filosofía de la Tecnología","Silicon Valley"]
+categories: ["Technology"]
+tags: ["rclone", "Backups", "Linux"]
 ---
 
 ### A simple strategy to avoid losing your work environment

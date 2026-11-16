@@ -4,7 +4,7 @@ date: 2026-05-31
 slug: "la-trampa-de-lo-urgente-por-que"
 translation_key: "la-trampa-de-lo-urgente-por-que"
 lang: "es"
-categories: ["Uncategorized"]
+categories: ["Sociología"]
 tags: []
 ---
 

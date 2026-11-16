@@ -4,7 +4,7 @@ date: 2026-06-25
 slug: "active-directory-con-software-libre"
 translation_key: "active-directory-con-software-libre"
 lang: "es"
-categories: ["Uncategorized"]
+categories: ["Sistemas"]
 tags: ["Linux"]
 ---
 

@@ -4,7 +4,7 @@ date: 2026-06-02
 slug: "la-jaula-que-no-se-ve"
 translation_key: "la-jaula-que-no-se-ve"
 lang: "es"
-categories: ["Uncategorized"]
+categories: ["Filosofía"]
 tags: []
 ---
 

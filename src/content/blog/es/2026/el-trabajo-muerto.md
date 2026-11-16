@@ -4,8 +4,8 @@ date: 2026-06-05
 slug: "el-trabajo-muerto"
 translation_key: "el-trabajo-muerto"
 lang: "es"
-categories: ["Uncategorized"]
-tags: ["Linux"]
+categories: ["Capital"]
+tags: []
 ---
 
 ## De los telares de Manchester a la cristalización del código

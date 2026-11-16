@@ -4,7 +4,7 @@ date: 2026-09-02
 slug: "la-invencion-del-si-mismo-forense-locke-leibniz-y-la-estructura-de-la-memoria"
 translation_key: "la-invencion-del-si-mismo-forense-locke-leibniz-y-la-estructura-de-la-memoria"
 lang: "es"
-categories: ["Uncategorized"]
+categories: ["Filosofía"]
 tags: []
 ---
 
