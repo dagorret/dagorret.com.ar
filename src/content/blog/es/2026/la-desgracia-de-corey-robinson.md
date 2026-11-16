@@ -5,7 +5,7 @@ slug: "la-desgracia-de-corey-robinson"
 translation_key: "la-desgracia-de-corey-robinson"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["liderazgo ejecutivo","psicología organizacional","recursos humanos","reestructuración corporativa"]
+tags: ["Corey Robinson","Sprint","Recursos Humanos"]
 ---
 
 El caso de Corey Robinson en Sprint Corporation se presenta tradicionalmente en la academia como un testimonio de liderazgo heroico y adaptabilidad gerencial. Sin embargo, detrás del maquillaje de la mitología corporativa se esconde una métrica de carnicero impuesta por la asamblea de accionistas y la junta directiva: la reducción drástica de la plantilla de 68.000 a 59.000 colaboradores. Presentar la desvinculación de 9.000 familias como un entorno de “logro” o “reestructuración necesaria” no es un éxito, sino una masacre humana y laboral legitimada por los balances financieros.

@@ -5,7 +5,7 @@ slug: "soberania-digital-00-1"
 translation_key: "soberania-digital-00-1"
 lang: "es"
 categories: ["Tecnología"]
-tags: ["Creatividad","Linux","modernidad","privacidad"]
+tags: ["Nextcloud","Unbound","Soberanía Digital"]
 ---
 
 Hay una contradicción silenciosa en la informática contemporánea, y no se discute lo suficiente. Nunca fue tan barato almacenar información, ni tan trivial moverla a través del planeta, ni tan accesible la potencia de cómputo. Y, sin embargo, nunca fue tan difícil poseer lo que uno almacena. La nube vendió durante una década una narrativa impecable —comodidad, sincronización, productividad, escalabilidad—, pero detrás de esa fachada hay un hecho técnico que no admite discusión: quien controla la infraestructura controla los datos. Y quien controla los datos, controla la memoria, las comunicaciones, los hábitos y, en último término, la autonomía de quien los produce.

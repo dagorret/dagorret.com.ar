@@ -5,7 +5,7 @@ slug: "estamos-siendo"
 translation_key: "estamos-siendo"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Conciencia","Existencialismo","Inteligencia Artificial","Lenguaje","Mente"]
+tags: ["René Descartes","David Chalmers","Conciencia artificial"]
 ---
 
 _Sobre la incógnita X._

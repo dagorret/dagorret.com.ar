@@ -5,7 +5,7 @@ slug: "lo-gratis-se-paga-en-otra-moneda"
 translation_key: "lo-gratis-se-paga-en-otra-moneda"
 lang: "es"
 categories: ["Capital","Sociología","Tecnología"]
-tags: ["economía del freemium","IA gratuita","OpenCode","protección de datos personales","universidad pública"]
+tags: ["OpenCode","Freemium","Protección de Datos Personales"]
 ---
 
 Un modelo aparece en el menú de OpenCode con la etiqueta _Free_. Quince horas después ya no está. Quien lo había configurado para trabajar se encuentra con un mensaje de límite alcanzado y, en el mismo lugar de la pantalla, con la invitación a suscribirse a un plan de diez dólares mensuales. La escena la cuenta uno de los tantos videos que enseñan a “montar un equipo de programación por cero dólares”: un chat avanzado como arquitecto, modelos gratuitos rotando en la terminal como becarios, y una advertencia final, casi al pasar, de no mandar código confidencial.

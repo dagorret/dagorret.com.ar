@@ -4,8 +4,8 @@ date: 2026-08-24
 slug: "la-guerra-de-sistemas-wildberries-las-tres-olas-de-toffler-y-el-fin-de-la-retaguardia-civil"
 translation_key: "la-guerra-de-sistemas-wildberries-las-tres-olas-de-toffler-y-el-fin-de-la-retaguardia-civil"
 lang: "es"
-categories: ["Sistemas"]
-tags: ["Drones","guerra-asimétrica","infraestructura-critica","Logistica Militar"]
+categories: ["Política", "Sistemas"]
+tags: ["Wildberries","Alvin Toffler","Ucrania"]
 ---
 
 El mapa de operaciones en Europa del Este ha entrado en una fase donde la distinción entre el frente táctico y la retaguardia civil-comercial ha quedado pulverizada. La campaña contra la infraestructura logística de Wildberries no es un episodio aislado: es la manifestación física de una guerra que mutó de la fricción territorial de la era industrial a la parálisis de sistemas complejos propia de la era de la información. Vale la pena reconstruir esa campaña con el detalle que merece —fechas, cifras, actores— y leerla después bajo el marco de la prospectiva estratégica y, en particular, bajo la teoría del cambio que Alvin Toffler desarrolló en _The Third Wave_ (1980).

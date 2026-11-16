@@ -4,8 +4,8 @@ date: 2026-05-08
 slug: "26-del-26-reflexiones-despues-del-dia"
 translation_key: "26-del-26-reflexiones-despues-del-dia"
 lang: "es"
-categories: ["Capital"]
-tags: ["Macroeconomía"]
+categories: ["Política"]
+tags: ["Argentina","Byung-Chul Han","Polarización"]
 ---
 
 El invierno se adelantó este año sobre la ciudad, como si quisiera congelar las tensiones antes de tiempo. Ayer fue 25 de mayo. Hubo escarapelas de plástico, discursos encendidos desde los atriles oficiales, desfiles programados para la pantalla y el consumo ritual de un patriotismo de cotillón que dura lo que tarda en enfriarse el locro. Hoy es 26 de mayo de 2026. La escenografía ha sido desmontada, las banderas guardadas en los cajones y la realidad, con su frío seco y sus cifras de inflación, vuelve a ocupar el centro del escenario.

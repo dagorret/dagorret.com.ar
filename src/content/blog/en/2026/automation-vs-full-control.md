@@ -4,8 +4,8 @@ date: 2026-05-26
 slug: "automation-vs-full-control"
 translation_key: "automation-vs-full-control"
 lang: "en"
-categories: ["Tecnología"]
-tags: ["automatización de sistemas","KDE Plasma","Linux","rsync"]
+categories: ["Technology"]
+tags: ["KDE Plasma","Kup","rsync"]
 ---
 
 Keywords: Arch, Backup, KDE, Kup, rsync

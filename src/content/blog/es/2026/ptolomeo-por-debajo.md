@@ -5,7 +5,7 @@ slug: "ptolomeo-por-debajo"
 translation_key: "ptolomeo-por-debajo"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Cuadriláteros","Demostración Matemática","Desigualdad de Ptolomeo","Geometría","Inteligencia Artificial"]
+tags: ["Desigualdad de Ptolomeo","Geometría","Demostración Matemática"]
 ---
 
 Alguien abre una [pregunta en Mathematics Stack Exchange](https://math.stackexchange.com/questions/5152789/is-this-reverse-ptolemy-inequality-true). Conoce el teorema de Ptolomeo para cuadriláteros inscritos en una circunferencia y se pregunta qué queda de él cuando el cuadrilátero es cualquiera. Mide, prueba casos y encuentra algo: el producto de las diagonales parece no bajar de cierta fracción de la suma de los productos de lados opuestos, y esa fracción depende únicamente de cómo se cortan las diagonales. Pregunta si eso se puede demostrar. Dice que no encontró una referencia en la literatura.

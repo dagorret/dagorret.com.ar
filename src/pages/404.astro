@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Página no encontrada"
+  lang="es"
+  description="La página que buscas no está disponible. Vuelve al inicio o usa el buscador para encontrar artículos de Carlos Dagorret."
+  noindex
+>
+  <header>
+    <h1>Página no encontrada</h1>
+    <p>No encontramos la página que buscas.</p>
+  </header>
+  <nav aria-label="Opciones para continuar">
+    <a href="/">Volver al inicio</a>
+    <a href="/buscar/">Buscar artículos</a>
+  </nav>
+</Layout>
+
+<style>
+  nav { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin-top: 2rem; }
+  nav a { color: var(--accent-rust); text-decoration: underline; text-underline-offset: 0.18em; }
+  nav a:hover, nav a:focus-visible { text-decoration-thickness: 0.14em; }
+</style>

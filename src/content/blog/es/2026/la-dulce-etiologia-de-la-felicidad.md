@@ -5,7 +5,7 @@ slug: "la-dulce-etiologia-de-la-felicidad"
 translation_key: "la-dulce-etiologia-de-la-felicidad"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["felicidad","Filosofía de la ciencia","psicología positiva"]
+tags: ["Spinoza","Byung-Chul Han","Felicidad"]
 ---
 
 _Una exploración filosófica y vivencial sobre el contraste, la presencia, la certeza sin miedo y la disolución del tiempo._

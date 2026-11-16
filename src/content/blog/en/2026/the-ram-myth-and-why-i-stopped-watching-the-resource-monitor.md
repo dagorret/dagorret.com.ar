@@ -5,7 +5,7 @@ slug: "the-ram-myth-and-why-i-stopped-watching-the-resource-monitor"
 translation_key: "the-ram-myth-and-why-i-stopped-watching-the-resource-monitor"
 lang: "en"
 categories: ["Technology"]
-tags: []
+tags: ["Linux","KDE Plasma","Reproducible Automation"]
 ---
 
 **Keywords**: Productivity, Reproducibility, Sysadmin

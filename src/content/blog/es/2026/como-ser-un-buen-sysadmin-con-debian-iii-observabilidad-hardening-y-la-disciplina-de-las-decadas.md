@@ -4,8 +4,8 @@ date: 2026-09-24
 slug: "como-ser-un-buen-sysadmin-con-debian-iii-observabilidad-hardening-y-la-disciplina-de-las-decadas"
 translation_key: "como-ser-un-buen-sysadmin-con-debian-iii-observabilidad-hardening-y-la-disciplina-de-las-decadas"
 lang: "es"
-categories: ["Sistemas","Tecnología"]
-tags: ["Debian","Infraestructura","Mantenimiento de Servidores","Sysadmin"]
+categories: ["Tecnología"]
+tags: ["Debian","AppArmor","Mantenimiento de Servidores"]
 ---
 
 Las dos primeras partes de esta serie cubrieron el ciclo de vida técnico de un paquete Debian: cómo mantenerlo al día sin sorpresas (parte I) y cómo moverlo de una versión mayor a la siguiente sin romper nada (parte II). Ese conocimiento es necesario, pero no es suficiente para explicar por qué hay servidores Debian corriendo veinte años sin una caída catastrófica mientras otros, administrados por gente igual de capaz técnicamente, terminan reconstruidos desde cero cada cuatro o cinco.

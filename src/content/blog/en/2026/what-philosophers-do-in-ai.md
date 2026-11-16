@@ -5,7 +5,7 @@ slug: "what-philosophers-do-in-ai"
 translation_key: "lo-que-hacen-los-filosofos-en-la-ia"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["AI ethics","Alignment","Artificial consciousness","Philosophy of mind"]
+tags: ["Amanda Askell","Iason Gabriel","Anthropic"]
 ---
 
 _Part two of a three-part series on the actual work inside artificial intelligence. Part one describes [the AI shed: factory and research](https://en.dagorret.com.ar/the-ai-shed-factory-and-research/); part three covers [the philosophy engineers do without calling it that](https://en.dagorret.com.ar/the-philosophy-engineers-do-without-calling-it-that/)._

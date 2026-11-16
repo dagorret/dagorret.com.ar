@@ -6,11 +6,7 @@ translation_key: evolucion-con-memoria
 lang: es
 categories:
   - Inteligencia artificial
-tags:
-  - model collapse
-  - datos sintéticos
-  - deriva acotada
-  - probabilidad
+tags: ["Ilia Shumailov","Datos sintéticos","Colapso de modelos"]
 ---
 
 *Este texto es la segunda parte de [«El mito del colapso digital»](/mito-colapso-digital/). Allá discutí el relato; acá discuto la matemática.*

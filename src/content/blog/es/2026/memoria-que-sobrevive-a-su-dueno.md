@@ -4,8 +4,8 @@ date: 2026-10-21
 slug: "memoria-que-sobrevive-a-su-dueno"
 translation_key: "memoria-que-sobrevive-a-su-dueno"
 lang: "es"
-categories: ["Sistemas"]
-tags: ["Debian","php","Vulnerabilidad"]
+categories: ["Tecnología"]
+tags: ["PHP","PHP2Shell","Vulnerabilidad"]
 ---
 
 _Borrador del 21 de octubre de 2026, escrito pocas horas después de que PHP publicara los parches. Los hechos técnicos se verificaron contra los dos avisos oficiales de php-src; las lecturas propias están marcadas como tales._

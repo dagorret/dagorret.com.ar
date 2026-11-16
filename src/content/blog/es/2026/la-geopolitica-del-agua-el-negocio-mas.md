@@ -5,7 +5,7 @@ slug: "la-geopolitica-del-agua-el-negocio-mas"
 translation_key: "la-geopolitica-del-agua-el-negocio-mas"
 lang: "es"
 categories: ["Sociología"]
-tags: ["recursos naturales","tecnología profunda"]
+tags: ["Agua","Grafeno","Recursos Naturales"]
 ---
 
 Cuando pensamos en los recursos que mueven la economía global, la mente se nos va directo al petróleo, al litio para las baterías o a los microchips de Inteligencia Artificial. Pero los grandes fondos de inversión de Wall Street ya están redirigiendo sus miles de millones de dólares hacia un recurso mucho más básico, escaso y vital: **el agua potable.**

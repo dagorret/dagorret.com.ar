@@ -4,8 +4,8 @@ date: 2026-05-22
 slug: "la-filosofia-como-armadura-mental-el"
 translation_key: "la-filosofia-como-armadura-mental-el"
 lang: "es"
-categories: ["Matemáticas"]
-tags: ["Factores de Bayes","Inferencia Frecuentista","Karl Popper","P-Valor"]
+categories: ["Filosofía"]
+tags: ["Epicteto","Marco Aurelio","Estoicismo"]
 ---
 
 Vivimos en un mundo obsesionado con el control. Queremos controlar los mercados, el algoritmo de las redes sociales, la economía global y hasta el clima. Sin embargo, la realidad siempre encuentra una forma de recordarnos lo frágiles que son nuestros planes. ¿Cómo se sobrevive a nivel mental y empresarial en un entorno tan caótico?

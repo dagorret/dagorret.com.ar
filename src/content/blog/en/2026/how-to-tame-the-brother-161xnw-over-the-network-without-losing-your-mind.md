@@ -5,7 +5,7 @@ slug: "how-to-tame-the-brother-161xnw-over-the-network-without-losing-your-mind"
 translation_key: "how-to-tame-the-brother-161xnw-over-the-network-without-losing-your-mind"
 lang: "en"
 categories: ["Technology"]
-tags: ["Automatización de Tareas","Gestión del Cambio","Gobernanza de IA","Inteligencia Artificial en el Trabajo","Productividad Laboral","Teoría Organizacional"]
+tags: ["Brother DCP-1610NW","CUPS","SANE"]
 ---
 
 Keywords: Arch, Brother, CachyOS, dcp-1617nw

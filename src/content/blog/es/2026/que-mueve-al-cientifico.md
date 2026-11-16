@@ -5,7 +5,7 @@ slug: "que-mueve-al-cientifico"
 translation_key: "que-mueve-al-cientifico"
 lang: "es"
 categories: ["Ciencia","Filosofía"]
-tags: ["David Hull","Hub Zwart","Jaak Panksepp","Jacques Lacan","Karl Friston","Kent Berridge","Mark Solms","Psicoanálisis","Robert K. Merton","Sociología","Tecnociencia"]
+tags: ["Robert K. Merton","Hub Zwart","Jacques Lacan"]
 ---
 
 ## Introducción

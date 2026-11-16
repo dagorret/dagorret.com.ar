@@ -5,7 +5,7 @@ slug: "la-ilusion-del-estado-fijo-neuroplasticidad-entropia-mental-y-la-fisica-d
 translation_key: "la-ilusion-del-estado-fijo-neuroplasticidad-entropia-mental-y-la-fisica-de-la-accion"
 lang: "es"
 categories: ["Ciencia"]
-tags: ["Entropía","neurociencia"]
+tags: ["Prigogine","Barbara Arrowsmith-Young","Neuroplasticidad"]
 ---
 
 Existe una narrativa profundamente arraigada en la sociología, la medicina y la cultura de la productividad: la idea del estado fijo. Se nos enseña que las estructuras —sean organizaciones, instituciones o la arquitectura neuronal de un individuo— poseen una condición de contorno inalterable. Que la masa acumulada de memoria, trauma o condicionamiento es un destino termodinámicamente irreversible. Esta es la gran mentira de la norma: tratar el síntoma (la fijeza) como una ley fundamental, cuando en realidad es solo el resultado de una acreción no fiscalizada.

@@ -35,13 +35,13 @@ const rate = (value: number | null) => value === null ? '—' : `${new Intl.Numb
     </label>
   </div>
   <div class="chart-plot">
-    <svg class="chart-svg" viewBox="0 0 960 420" tabindex="0" role="img" aria-label={en ? 'Inflation time series. Use Left and Right arrows to inspect each month; Home and End jump to the first and last.' : 'Serie temporal de inflación. Usá las flechas izquierda y derecha para recorrer los meses; Inicio y Fin van al primero y al último.'}></svg>
+    <svg class="chart-svg" viewBox="0 0 960 420" tabindex="0" role="img" aria-label={en ? 'Inflation time series. Use Left and Right arrows to inspect each month; Home and End jump to the first and last.' : 'Serie temporal de inflación. Usa las flechas izquierda y derecha para recorrer los meses; Inicio y Fin van al primero y al último.'}></svg>
     <div class="chart-tooltip" role="tooltip" hidden></div>
   </div>
   <output class="chart-readout" aria-live="polite"></output>
-  <p class="chart-help">{en ? 'Hover, tap, or focus the chart and use the arrow keys. Rates are shown as published by INDEC, to one decimal place. The last five years are the latest 60 published months.' : 'Mové el cursor, tocá el gráfico o usá las flechas del teclado al enfocarlo. Las tasas se muestran como las publica INDEC, con un decimal. Los últimos cinco años son los últimos 60 meses publicados.'}</p>
+  <p class="chart-help">{en ? 'Hover, tap, or focus the chart and use the arrow keys. Rates are shown as published by INDEC, to one decimal place. The last five years are the latest 60 published months.' : 'Mueve el cursor, toca el gráfico o usa las flechas del teclado al enfocarlo. Las tasas se muestran como las publica INDEC, con un decimal. Los últimos cinco años son los últimos 60 meses publicados.'}</p>
   <p class="chart-help" data-log-note hidden>{en ? 'Logarithmic scale is only available for strictly positive rates.' : 'La escala logarítmica solo está disponible para tasas estrictamente positivas.'}</p>
-  <noscript><p>{en ? 'Enable JavaScript to use the controls, or consult the table below.' : 'Activá JavaScript para usar los controles o consultá la tabla inferior.'}</p></noscript>
+  <noscript><p>{en ? 'Enable JavaScript to use the controls, or consult the table below.' : 'Activa JavaScript para usar los controles o consulta la tabla inferior.'}</p></noscript>
   <details class="chart-data">
     <summary>{en ? 'View official observations' : 'Ver observaciones oficiales'}</summary>
     <div class="table-scroll"><table>

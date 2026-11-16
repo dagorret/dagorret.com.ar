@@ -6,7 +6,7 @@ date: 2026-09-30
 lang: "es"
 slug: "la-taxonomia-de-la-ignorancia-decision-racional-entre-el-riesgo-computable-y-la-incertidumbre-radical"
 categories: ["Filosofía", "Matemáticas"]
-tags: ["Cisne negro", "Incertidumbre Knightiana", "Paradoja de Ellsberg", "Teoría de la decisión"]
+tags: ["Frank Knight","Daniel Ellsberg","Nassim Taleb"]
 draft: false
 ---
 

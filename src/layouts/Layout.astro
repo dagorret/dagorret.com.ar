@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { resolveArticleDescription } from '../lib/article-description.mjs';
 import 'katex/dist/katex.min.css';
 import '@fontsource/playfair-display/400.css';
 import '@fontsource/playfair-display/700.css';
@@ -15,8 +16,13 @@ interface Props {
   title?: string;
   lang?: 'es' | 'en';
   frontmatter?: { title?: string; lang?: 'es' | 'en' };
-  translationUrl?: string;
+  translationUrl?: string | null;
   category?: string;
+  description?: string;
+  articleBody?: string;
+  noindex?: boolean;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
 const {
@@ -24,8 +30,22 @@ const {
   lang = Astro.props.frontmatter?.lang ?? 'es',
   translationUrl,
   category = 'MATEMÁTICAS',
+  description: suppliedDescription,
+  articleBody,
+  noindex = false,
+  image = '/og-default.jpg',
+  type = 'website',
 } = Astro.props;
+const description = type === 'article'
+  ? resolveArticleDescription({ description: suppliedDescription, body: articleBody, lang }).description
+  : suppliedDescription;
 const isEnglish = lang === 'en';
+const pageTitle = `${title} — Carlos Dagorret`;
+const imageUrl = new URL(image, Astro.site);
+const isDefaultImage = imageUrl.href === new URL('/og-default.jpg', Astro.site).href;
+const canonicalUrl = new URL(`${Astro.url.pathname.replace(/\/+$/, '')}/`, Astro.site);
+const alternateUrl = translationUrl ? new URL(translationUrl, Astro.site) : undefined;
+if (alternateUrl) alternateUrl.pathname = `${alternateUrl.pathname.replace(/\/+$/, '')}/`;
 const homeUrl = isEnglish ? '/en/' : '/';
 const rssUrl = isEnglish ? '/en/rss.xml' : '/rss.xml';
 const booksUrl = 'https://matematicas.dagorret.com.ar';
@@ -33,6 +53,7 @@ const navigation = [
   { href: booksUrl, label: isEnglish ? 'Books' : 'Libros', external: true },
   { href: isEnglish ? '/en/lab/' : '/lab/', label: 'Lab' },
   { href: isEnglish ? '/en/archive/' : '/archivo/', label: isEnglish ? 'Archive' : 'Archivo' },
+  { href: isEnglish ? '/en/topics/' : '/temas/', label: isEnglish ? 'Topics' : 'Temas' },
   { href: isEnglish ? '/en/search/' : '/buscar/', label: isEnglish ? 'Search' : 'Buscador' },
   { href: rssUrl, label: 'RSS' },
 ];
@@ -43,8 +64,37 @@ const navigation = [
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" type="image/x-icon" />
+  <link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="icon" href="/icon-512.png" sizes="512x512" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <link rel="manifest" href="/site.webmanifest" />
   <ClientRouter />
-  <title>{title} — Carlos Dagorret</title>
+  <title>{pageTitle}</title>
+  <link rel="canonical" href={canonicalUrl.href} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  {description && <meta name="description" content={description} />}
+  {alternateUrl && (
+    <>
+      <link rel="alternate" hreflang="es" href={isEnglish ? alternateUrl.href : canonicalUrl.href} />
+      <link rel="alternate" hreflang="en" href={isEnglish ? canonicalUrl.href : alternateUrl.href} />
+      <link rel="alternate" hreflang="x-default" href={isEnglish ? alternateUrl.href : canonicalUrl.href} />
+    </>
+  )}
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalUrl.href} />
+  <meta property="og:locale" content={isEnglish ? 'en' : 'es_AR'} />
+  <meta property="og:image" content={imageUrl.href} />
+  {isDefaultImage && <meta property="og:image:width" content="1200" />}
+  {isDefaultImage && <meta property="og:image:height" content="630" />}
+  <meta property="og:image:alt" content={isEnglish
+    ? 'Carlos Dagorret, dagorret.com.ar: systems, philosophy, technology, capital, AI'
+    : 'Carlos Dagorret, dagorret.com.ar: sistemas, filosofía, tecnología, capital, IA'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={imageUrl.href} />
+  {description && <meta property="og:description" content={description} />}
+  {description && <meta name="twitter:description" content={description} />}
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="alternate" type="application/rss+xml" title={isEnglish ? 'Carlos Dagorret — English articles' : 'Carlos Dagorret — Artículos en español'} href={rssUrl} />
 
@@ -251,6 +301,26 @@ const navigation = [
       color: var(--text);
     }
 
+    /* Solo enlaces de lectura: excluye anclas, notas, controles y taxonomías. */
+    .article-body a[href]:not(:where(
+      [href^="#"], [role="button"], .pill-btn,
+      [data-footnote-ref], [data-footnote-backref],
+      :is(h1, h2, h3, h4, h5, h6, nav, .footnotes, [data-footnotes], .katex) a,
+      [href^="/category/"], [href^="/en/category/"],
+      [href^="/tags/"], [href^="/en/tags/"],
+      [href^="https://dagorret.com.ar/category/"], [href^="https://dagorret.com.ar/en/category/"],
+      [href^="https://dagorret.com.ar/tags/"], [href^="https://dagorret.com.ar/en/tags/"]
+    )) {
+      color: var(--accent-rust);
+      text-decoration-line: underline;
+      text-decoration-thickness: 0.07em;
+      text-underline-offset: 0.18em;
+
+      &:hover, &:focus-visible {
+        text-decoration-thickness: 0.14em;
+      }
+    }
+
     .article-body h2 {
       font-family: var(--font-serif);
       font-size: 2.15rem;
@@ -401,7 +471,7 @@ const navigation = [
           <a href={translationUrl} class="pill-btn" aria-label={isEnglish ? 'Read in Spanish' : 'Leer en inglés'}>
             {lang === 'es' ? 'EN' : 'ES'}
           </a>
-        ) : (
+        ) : translationUrl !== null && (
           <span class="pill-btn disabled" aria-disabled="true" aria-label={isEnglish ? 'Translation unavailable' : 'Traducción no disponible'}>
             {lang === 'es' ? 'EN' : 'ES'}
           </span>

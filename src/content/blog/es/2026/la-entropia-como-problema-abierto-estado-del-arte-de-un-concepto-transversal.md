@@ -4,8 +4,8 @@ date: 2026-07-14
 slug: "la-entropia-como-problema-abierto-estado-del-arte-de-un-concepto-transversal"
 translation_key: "la-entropia-como-problema-abierto-estado-del-arte-de-un-concepto-transversal"
 lang: "es"
-categories: ["Sistemas"]
-tags: ["Drones"]
+categories: ["Ciencia"]
+tags: ["Boltzmann","Claude Shannon","Entropía"]
 ---
 
 ### _Primer artículo de la serie Entropía: física, información, sociedad_

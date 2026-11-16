@@ -5,7 +5,7 @@ slug: "la-retorica-de-las-magnitudes-analisis-etico-y-matematico-del-riesgo-abso
 translation_key: "la-retorica-de-las-magnitudes-analisis-etico-y-matematico-del-riesgo-absoluto-y-el-riesgo-relativo"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Estadística","salud"]
+tags: ["Daniel Kahneman","Amos Tversky","Gerd Gigerenzer"]
 ---
 
 ## Resumen

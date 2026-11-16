@@ -4,8 +4,8 @@ date: 2026-06-23
 slug: "carmesi-y-wordpress-la-linea-roja-entre"
 translation_key: "carmesi-y-wordpress-la-linea-roja-entre"
 lang: "es"
-categories: ["Sistemas"]
-tags: ["Divulgación científica","Entropía","Epistemologia","Filosofía de la ciencia","Termodinámica"]
+categories: ["Tecnología"]
+tags: ["WordPress","Hugo","PHP"]
 ---
 
 La web moderna está sangrando. Entrar a la mayoría de los sitios actuales es una experiencia traumática: animaciones que bloquean el navegador, carteles de cookies que tapan la pantalla, contadores de scripts que se ejecutan en segundo plano devorando la memoria de tu máquina y, por supuesto, ese delay eterno de cuatro o cinco segundos mientras un servidor remoto pelea contra una base de datos mal indexada para escupir un mísero párrafo de texto.

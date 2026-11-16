@@ -5,7 +5,7 @@ slug: "el-modelo-base-00-6"
 translation_key: "el-modelo-base-00-6"
 lang: "es"
 categories: ["Capital"]
-tags: ["Cultura Corporativa"]
+tags: ["Dirección estratégica"]
 ---
 
 ## Conclusión: El Mapa como Primer Paso

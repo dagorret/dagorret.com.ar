@@ -5,7 +5,7 @@ slug: "el-dilema-de-2019-polarizacion-big-tech"
 translation_key: "el-dilema-de-2019-polarizacion-big-tech"
 lang: "es"
 categories: ["Política"]
-tags: ["Teoría Política"]
+tags: ["Facebook","Google","Polarización"]
 ---
 
 Exactamente un siglo después de la crisis de 1919, a finales de la segunda década del siglo XXI, Estados Unidos volvió a enfrentarse a un abismo moral. Sin embargo, esta vez el enemigo no estaba al otro lado del océano, ni se debatía en pomposos salones europeos. El dilema de 2019 fue de carácter interno, invisible y digital, erosionando los cimientos mismos de la sociedad norteamericana.

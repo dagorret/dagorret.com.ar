@@ -5,7 +5,7 @@ slug: "recursos-humanos-sin-filtro-el-manual"
 translation_key: "recursos-humanos-sin-filtro-el-manual"
 lang: "es"
 categories: ["Sistemas","Sociología"]
-tags: ["Ecología","sistemas"]
+tags: ["Ventana de Johari","Valerie Young","Recursos Humanos"]
 ---
 
 ## EJE 1: La Estafa Verde (Créditos de Carbono)

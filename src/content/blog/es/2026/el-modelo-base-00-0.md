@@ -5,7 +5,7 @@ slug: "el-modelo-base-00-0"
 translation_key: "el-modelo-base-00-0"
 lang: "es"
 categories: ["Sociología"]
-tags: ["Burocracia","Gravitación Estructural","Teoría de Sistemas"]
+tags: ["Dirección estratégica"]
 ---
 
 ## El Modelo Base

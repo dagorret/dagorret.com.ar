@@ -5,7 +5,7 @@ slug: "el-ajuste-que-dos-argentinas-pagan-distinto"
 translation_key: "el-ajuste-que-dos-argentinas-pagan-distinto"
 lang: "es"
 categories: ["Política"]
-tags: ["Argentina","Economía","opinión"]
+tags: ["Argentina","Javier Milei","Carlos Menem"]
 ---
 
 _Nota antes de empezar: lo que sigue es opinión y especulación política, no un pronóstico verificable ni una afirmación de ciencia exacta. Está construido sobre datos públicos de encuestas, mercados e historia económica, pero la interpretación es mía y puede estar equivocada._

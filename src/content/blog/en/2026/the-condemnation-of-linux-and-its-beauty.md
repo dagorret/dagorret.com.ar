@@ -5,7 +5,7 @@ slug: "the-condemnation-of-linux-and-its-beauty"
 translation_key: "the-condemnation-of-linux-and-its-beauty"
 lang: "en"
 categories: ["Technology"]
-tags: []
+tags: ["Linux","Digital Sovereignty"]
 ---
 
 **Keywords**: Digital Sovereignty, Linux, Open Source

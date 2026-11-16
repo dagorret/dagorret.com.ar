@@ -5,7 +5,7 @@ slug: "epilogo-la-entropia-como-caso-de-estudio-de-una-higiene-epistemica"
 translation_key: "epilogo-la-entropia-como-caso-de-estudio-de-una-higiene-epistemica"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Entropía","Epistemologia","Termodinámica"]
+tags: ["Entropía","Alan Sokal","Jean Bricmont"]
 ---
 
 ### _Quinto artículo (síntesis) de la serie Entropía: física, información, sociedad_

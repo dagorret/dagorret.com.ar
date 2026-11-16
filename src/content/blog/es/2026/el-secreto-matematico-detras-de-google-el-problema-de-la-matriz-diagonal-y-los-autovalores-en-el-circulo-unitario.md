@@ -5,7 +5,7 @@ slug: "el-secreto-matematico-detras-de-google-el-problema-de-la-matriz-diagonal-
 translation_key: "el-secreto-matematico-detras-de-google-el-problema-de-la-matriz-diagonal-y-los-autovalores-en-el-circulo-unitario"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Álgebra Lineal","Autovalores","Google","matemática aplicada.","Matrices"]
+tags: ["Google","PageRank","Álgebra Lineal"]
 ---
 
 ¿Cómo se relaciona un problema abstracto de álgebra lineal avanzada con el motor de búsqueda que cambió la historia de la humanidad? La respuesta está en una elegante manipulación de matrices: encontrar una matriz diagonal positiva $D$ que sea capaz de domar los autovalores de una matriz cualquiera $M$.

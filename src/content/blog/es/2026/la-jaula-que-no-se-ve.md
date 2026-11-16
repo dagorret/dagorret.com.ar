@@ -4,8 +4,8 @@ date: 2026-06-02
 slug: "la-jaula-que-no-se-ve"
 translation_key: "la-jaula-que-no-se-ve"
 lang: "es"
-categories: ["Uncategorized"]
-tags: []
+categories: ["Filosofía"]
+tags: ["Max Weber","Burocracia"]
 ---
 
 Max Weber murió en 1920 sin haber visto internet, sin haber visto una computadora, sin haber visto un algoritmo de recomendación decidir qué música escuchás o qué candidato político te aparece en el _feed_. Murió de neumonía, en Múnich, con cincuenta y seis años, justo cuando Alemania terminaba de colapsar después de la Primera Guerra Mundial. Pero antes de morirse dejó escrita una advertencia que hoy suena menos a sociología del siglo pasado y más a descripción del presente inmediato.

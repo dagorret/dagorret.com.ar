@@ -6,12 +6,7 @@ translation_key: "cancelar-ideas"
 lang: "en"
 categories:
   - "Philosophy"
-tags:
-  - "Censorship"
-  - "Critical Thinking"
-  - "Epistemology"
-  - "Genetic Fallacy"
-  - "Philosophy of Science"
+tags: ["Robert K. Merton","Hans Reichenbach","Genetic Fallacy"]
 ---
 
 Since the mid-twentieth century, molecular biology has described DNA through metaphors of language and information: code, message, transcription, translation, program. The historian Lily Kay reconstructed the origin of that vocabulary in *Who Wrote the Book of Life? A History of the Genetic Code* (Stanford University Press, 2000). She showed that it was not born in biology but in postwar cybernetics and information theory, and that it shaped the way we think about the genome long before there was evidence to support it.

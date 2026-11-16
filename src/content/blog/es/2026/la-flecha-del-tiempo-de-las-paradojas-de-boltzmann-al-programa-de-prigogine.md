@@ -4,8 +4,8 @@ date: 2026-08-16
 slug: "la-flecha-del-tiempo-de-las-paradojas-de-boltzmann-al-programa-de-prigogine"
 translation_key: "la-flecha-del-tiempo-de-las-paradojas-de-boltzmann-al-programa-de-prigogine"
 lang: "es"
-categories: ["Filosofía"]
-tags: ["Boltzmann","Entropía","prigogine"]
+categories: ["Ciencia", "Filosofía"]
+tags: ["Boltzmann","Prigogine","Entropía"]
 ---
 
 ### _Cuarto artículo de la serie Entropía: física, información, sociedad_

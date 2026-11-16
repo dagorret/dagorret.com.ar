@@ -6,11 +6,7 @@ translation_key: la-higiene-del-archivo
 lang: en
 categories:
   - Artificial Intelligence
-tags:
-  - model collapse
-  - sanitization
-  - linguistic diversity
-  - bounded drift
+tags: ["Model Collapse","Synthetic Data","Linguistic Diversity"]
 ---
 
 *This text is the third part of the series that began with [“The Myth of Digital Collapse”](/mito-colapso-digital/) and went on with [“Evolution with Memory”](/evolucion-con-memoria/). There I argued that model collapse depends on one assumption, that human data gets replaced, and that once data accumulates what remains is a bounded drift. Here I look at what happens when a different assumption breaks: that human data stays human.*

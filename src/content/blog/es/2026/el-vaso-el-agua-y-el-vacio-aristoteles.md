@@ -4,8 +4,8 @@ date: 2026-07-06
 slug: "el-vaso-el-agua-y-el-vacio-aristoteles"
 translation_key: "el-vaso-el-agua-y-el-vacio-aristoteles"
 lang: "es"
-categories: ["Política"]
-tags: ["Astrofísica","Metodología Científica"]
+categories: ["Filosofía"]
+tags: ["Aristóteles","Byung-Chul Han","Redes Sociales"]
 ---
 
 En su _Física_, Aristóteles dejó planteada una idea aparentemente simple pero conceptualmente revolucionaria: **el lugar es el límite inmóvil que contornea a un cuerpo**. Para el filósofo estagirita, el espacio no es un vacío infinito; el lugar es siempre un **contenedor** (como un vaso) que define, abraza y le da forma a un **contenido** (como el agua). Si quitas el agua, el aire ocupa de inmediato su lugar. El vacío absoluto no existe.

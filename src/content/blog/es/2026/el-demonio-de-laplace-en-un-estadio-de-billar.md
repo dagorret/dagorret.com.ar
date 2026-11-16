@@ -4,8 +4,8 @@ date: 2026-08-20
 slug: "el-demonio-de-laplace-en-un-estadio-de-billar"
 translation_key: "el-demonio-de-laplace-en-un-estadio-de-billar"
 lang: "es"
-categories: ["Ciencia","Filosofía","Ontología"]
-tags: ["física teórica","Laplace","Schrödinger"]
+categories: ["Ciencia", "Filosofía"]
+tags: ["Laplace","Schrödinger","Leonid Bunimovich"]
 ---
 
 ## De la mesa de pool a la ecuación que gobierna el electrón, y de ahí a la pregunta de si el futuro ya está escrito

@@ -4,8 +4,8 @@ date: 2026-04-26
 slug: "el-modelo-base-00-2"
 translation_key: "el-modelo-base-00-2"
 lang: "es"
-categories: ["Historia"]
-tags: ["Estudios Culturales","Subjetividad Moderna"]
+categories: ["Capital"]
+tags: ["Club de Roma","Automatización","Trabajo"]
 ---
 
 ## Parte II: Las Mutaciones del Modelo — Adaptación sin Transformación

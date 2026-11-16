@@ -14,7 +14,6 @@
 /the-condemnation-of-linux-and-its-beauty  /en/the-condemnation-of-linux-and-its-beauty/  301
 /inflation-distributive-conflict/  /en/inflation-distributive-conflict/  301
 /inflation-distributive-conflict  /en/inflation-distributive-conflict/  301
-/tags/*  /archivo/  301
-/tags  /archivo/  301
-/en/tags/*  /en/archive/  301
-/en/tags  /en/archive/  301
+/tag/*  /tags/:splat  301
+/category/ia/  /category/inteligencia-artificial/  301
+/quien-pone-las-reglas-el-viejo-problema-detras-del-trabajador-de-plataforma/  /graph-engineering/  301

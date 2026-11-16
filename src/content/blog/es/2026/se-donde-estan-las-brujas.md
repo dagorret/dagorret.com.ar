@@ -4,8 +4,8 @@ date: 2026-06-20
 slug: "se-donde-estan-las-brujas"
 translation_key: "se-donde-estan-las-brujas"
 lang: "es"
-categories: ["Cultura"]
-tags: []
+categories: ["Tecnología"]
+tags: ["Diagnóstico de Sistemas","Pensamiento Crítico"]
 ---
 
 > Acá en Informática no hay histeria. Hay argumento. No anda la Wi-Fi por el DNS, el cable, el viento, el sol o un terremoto. Porque las brujas, sé dónde están… y no es ahí.»

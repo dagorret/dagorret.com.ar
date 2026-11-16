@@ -5,7 +5,7 @@ slug: "the-collision-of-two-scales-hazard-erosion-and-disaster"
 translation_key: "la-colision-de-dos-escalas-fenomeno-desgaste-y-desastre"
 lang: "en"
 categories: ["Science","Sociology"]
-tags: ["Climate Change","Córdoba","Land-Use Planning","Public Science","Risk Management","Wildfires"]
+tags: ["Córdoba","IPCC","Risk Management"]
 ---
 
 ## Introduction

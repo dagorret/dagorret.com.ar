@@ -5,7 +5,7 @@ slug: "ptolemy-from-below"
 translation_key: "ptolomeo-por-debajo"
 lang: "en"
 categories: ["Mathematics"]
-tags: ["Artificial Intelligence","Geometry","Mathematical Proof","Ptolemy's Inequality","Quadrilaterals"]
+tags: ["Ptolemy's Inequality","Geometry","Mathematical Proof"]
 ---
 
 Someone opens a [question on Mathematics Stack Exchange](https://math.stackexchange.com/questions/5152789/is-this-reverse-ptolemy-inequality-true). They know Ptolemy’s theorem for quadrilaterals inscribed in a circle, and they wonder what is left of it when the quadrilateral is arbitrary. They measure, try cases, and find something: the product of the diagonals never seems to drop below a certain fraction of the sum of the products of opposite sides, and that fraction depends only on how the diagonals cut each other. They ask whether this can be proved. They say they could not find a reference in the literature.

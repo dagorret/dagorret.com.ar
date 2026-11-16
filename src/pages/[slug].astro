@@ -39,7 +39,7 @@ const { Content } = await render(entry);
 const category = entry.data.categories?.[0] || 'MATEMÁTICAS';
 ---
 
-<Layout title={entry.data.title} lang="es" translationUrl={translationUrl} category={category}>
+<Layout title={entry.data.title} lang="es" translationUrl={translationUrl} category={category} type="article" description={entry.data.description} articleBody={entry.body}>
   <article data-pagefind-body>
     <header class="article-header">
       <div class="article-kicker">

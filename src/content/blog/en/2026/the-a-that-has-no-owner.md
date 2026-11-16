@@ -4,8 +4,8 @@ date: 2026-11-14
 slug: "the-a-that-has-no-owner"
 translation_key: "la-a-que-no-tiene-dueno"
 lang: "en"
-categories: ["Essays"]
-tags: ["Economics", "Development", "Argentina"]
+categories: ["Economics"]
+tags: ["Argentina","Mancur Olson","Elinor Ostrom"]
 ---
 
 *An essay in the political economy of development*

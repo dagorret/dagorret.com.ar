@@ -5,7 +5,7 @@ slug: "the-stupidity-factory-in-2026"
 translation_key: "la-fabrica-de-estupidez-en-2026"
 lang: "en"
 categories: ["Philosophy"]
-tags: ["Artificial Intelligence"]
+tags: ["Bonhoeffer","Byung-Chul Han","Shoshana Zuboff"]
 ---
 
 _Second article in the series on Bonhoeffer and stupidity. The first is [The Bonhoeffer Who Circulates and the One Who Wrote](https://en.dagorret.com.ar/the-bonhoeffer-who-circulates-and-the-one-who-wrote/)._

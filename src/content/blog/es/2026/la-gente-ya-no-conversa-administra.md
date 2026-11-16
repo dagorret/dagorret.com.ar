@@ -4,8 +4,8 @@ date: 2026-06-08
 slug: "la-gente-ya-no-conversa-administra"
 translation_key: "la-gente-ya-no-conversa-administra"
 lang: "es"
-categories: ["Matemáticas"]
-tags: ["Bruno de Finetti","Incertidumbre Knightiana","Nassim Taleb","Paradoja de Ellsberg"]
+categories: ["Sociología"]
+tags: ["Redes Sociales","Autenticidad"]
 ---
 
 Hay algo extraño pasando en internet.

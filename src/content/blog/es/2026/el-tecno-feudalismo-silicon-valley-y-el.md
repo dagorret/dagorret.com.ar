@@ -4,8 +4,8 @@ date: 2026-06-14
 slug: "el-tecno-feudalismo-silicon-valley-y-el"
 translation_key: "el-tecno-feudalismo-silicon-valley-y-el"
 lang: "es"
-categories: ["Uncategorized"]
-tags: ["Linux"]
+categories: ["Capital"]
+tags: ["Silicon Valley","Economía digital"]
 ---
 
 Si abres cualquier periódico financiero o escuchas los discursos políticos de este invierno de 2026, notarás que todos siguen usando las mismas palabras de siempre: “libre mercado”, “capitalismo”, “oferta y demanda” o “competencia”. Sin embargo, los analistas más lúcidos de la economía política global están advirtiendo algo perturbador: **el capitalismo ha muerto, y lo que lo ha reemplazado es algo mucho más antiguo y oscuro.**

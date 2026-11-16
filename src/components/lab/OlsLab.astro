@@ -6,8 +6,8 @@ const en = lang === 'en';
 ---
 
 <section data-pagefind-ignore class="econ-lab ols-lab" data-lang={lang} aria-label={en ? 'Interactive ordinary least squares' : 'Mínimos cuadrados interactivos'}>
-  <div class="econ-heading"><strong>{en ? 'Draw a sample. Fit a line.' : 'Dibujá una muestra. Ajustá una recta.'}</strong><span>{en ? 'Synthetic data · n ≤ 250' : 'Datos simulados · n ≤ 250'}</span></div>
-  <p class="econ-note">{en ? 'Click inside the plot or enter coordinates below. Salary is in arbitrary units; the example is not a real earnings estimate.' : 'Hacé clic dentro del gráfico o ingresá coordenadas debajo. El salario usa unidades arbitrarias; el ejemplo no es una estimación salarial real.'}</p>
+  <div class="econ-heading"><strong>{en ? 'Draw a sample. Fit a line.' : 'Dibuja una muestra. Ajusta una recta.'}</strong><span>{en ? 'Synthetic data · n ≤ 250' : 'Datos simulados · n ≤ 250'}</span></div>
+  <p class="econ-note">{en ? 'Click inside the plot or enter coordinates below. Salary is in arbitrary units; the example is not a real earnings estimate.' : 'Haz clic dentro del gráfico o ingresa coordenadas debajo. El salario usa unidades arbitrarias; el ejemplo no es una estimación salarial real.'}</p>
   <div class="econ-controls">
     <button type="button" data-action="sample">{en ? 'Load sample data' : 'Precargar datos de prueba'}</button>
     <button type="button" data-action="clear">{en ? 'Clear plot' : 'Limpiar lienzo'}</button>
@@ -29,7 +29,7 @@ const en = lang === 'en';
     <button type="button" data-action="vertical" disabled>{en ? 'Vertical outlier' : 'Outlier vertical'}</button>
     <button type="button" data-action="leverage" disabled>{en ? 'High-leverage point' : 'Punto de alto apalancamiento (Leverage)'}</button>
   </div>
-  <p class="econ-note">{en ? 'Each witness adds one point to the current sample and activates OLS. Reload the sample between the two experiments for a fair comparison. The sample concentrates x between 8 and 12 to make leverage at the edge visible.' : 'Cada testigo agrega un punto a la muestra actual y activa MCO. Recargá la muestra entre ambos experimentos para comparar. Los datos de prueba concentran x entre 8 y 12 para hacer visible el apalancamiento en el extremo.'}</p>
+  <p class="econ-note">{en ? 'Each witness adds one point to the current sample and activates OLS. Reload the sample between the two experiments for a fair comparison. The sample concentrates x between 8 and 12 to make leverage at the edge visible.' : 'Cada testigo agrega un punto a la muestra actual y activa MCO. Recarga la muestra entre ambos experimentos para comparar. Los datos de prueba concentran x entre 8 y 12 para hacer visible el apalancamiento en el extremo.'}</p>
   <svg class="econ-click-plot" data-plot viewBox="0 0 740 410" role="img" aria-label={en ? 'Education versus salary, fitted line and residuals' : 'Educación frente a salario, recta ajustada y residuos'}></svg>
   <div data-diagnostics hidden>
     <p class="econ-status" data-witness-status role="status" aria-live="polite"></p>
@@ -56,7 +56,7 @@ const en = lang === 'en';
   <p class="econ-status" data-status role="status" aria-live="polite"></p>
   <p class="econ-note">{en ? 'Residuals, squares and the table follow the current line. Coefficients with hats, R² and residual standard error refer to the OLS minimum. That minimum changes when the sample changes.' : 'Los residuos, cuadrados y la tabla siguen la recta actual. Los coeficientes con gorro, R² y el error estándar residual corresponden al mínimo MCO. Ese mínimo cambia cuando cambia la muestra.'}</p>
   <details><summary>{en ? 'Observations and current-line residuals' : 'Observaciones y residuos de la recta actual'}</summary><div class="econ-table"><table><thead><tr><th>xᵢ</th><th>yᵢ</th><th>b₀ + b₁xᵢ</th><th>eᵢ</th><th>eᵢ²</th></tr></thead><tbody data-rows></tbody></table></div></details>
-  <noscript>{en ? 'Enable JavaScript to fit a sample. The formulas and methodological notes remain available below.' : 'Activá JavaScript para ajustar una muestra. Las fórmulas y notas metodológicas siguen disponibles debajo.'}</noscript>
+  <noscript>{en ? 'Enable JavaScript to fit a sample. The formulas and methodological notes remain available below.' : 'Activa JavaScript para ajustar una muestra. Las fórmulas y notas metodológicas siguen disponibles debajo.'}</noscript>
 </section>
 
 <script>
@@ -99,7 +99,7 @@ const en = lang === 'en';
       root.querySelector('[data-value="gap"]')!.textContent = fmt(atMinimum ? 0 : gap);
       root.querySelector('[data-fit-status]')!.textContent = atMinimum
         ? (en ? 'OLS minimum reached: the current SSR equals the absolute minimum for this sample.' : 'Mínimo MCO alcanzado: el SSR actual coincide con el mínimo absoluto para esta muestra.')
-        : (en ? 'Manual fit: move b₀ and b₁ to lower SSR, then compare with the exact OLS minimum.' : 'Ajuste manual: mové b₀ y b₁ para bajar el SSR y compará con el mínimo MCO exacto.');
+        : (en ? 'Manual fit: move b₀ and b₁ to lower SSR, then compare with the exact OLS minimum.' : 'Ajuste manual: mueve b₀ y b₁ para bajar el SSR y compara con el mínimo MCO exacto.');
       root.querySelector<HTMLButtonElement>('[data-action="fit"]')!.disabled = !fit;
       for (const action of ['vertical', 'leverage']) root.querySelector<HTMLButtonElement>(`[data-action="${action}"]`)!.disabled = !fit || points.length >= 250;
       const { x, y, layer } = chart(svg, [0, 20], [0, 100], [en ? 'Education (years)' : 'Educación (años)', en ? 'Salary (arbitrary units)' : 'Salario (unidades arbitrarias)'], lang);

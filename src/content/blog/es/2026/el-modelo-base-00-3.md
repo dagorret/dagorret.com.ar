@@ -5,7 +5,7 @@ slug: "el-modelo-base-00-3"
 translation_key: "el-modelo-base-00-3"
 lang: "es"
 categories: ["Sociología"]
-tags: ["Análisis Institucional","Metodología Científica","Teoría"]
+tags: ["Evolución Cultural","Trabajo"]
 ---
 
 ## Parte III: La Dimensión Evolutiva — Mucho más Atrás de 1776

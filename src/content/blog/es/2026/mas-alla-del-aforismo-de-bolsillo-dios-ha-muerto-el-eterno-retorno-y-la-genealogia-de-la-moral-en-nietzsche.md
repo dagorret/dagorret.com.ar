@@ -5,7 +5,7 @@ slug: "mas-alla-del-aforismo-de-bolsillo-dios-ha-muerto-el-eterno-retorno-y-la-g
 translation_key: "mas-alla-del-aforismo-de-bolsillo-dios-ha-muerto-el-eterno-retorno-y-la-genealogia-de-la-moral-en-nietzsche"
 lang: "es"
 categories: ["Filosofía"]
-tags: ["Filología","Nietzsche"]
+tags: ["Nietzsche","La gaya ciencia","La genealogía de la moral"]
 ---
 
 Hay pocos filósofos tan citados y tan poco leídos como Friedrich Nietzsche. Su prosa aforística, pensada para golpear y no para sistematizarse, lo vuelve particularmente vulnerable a la extracción de frases sueltas —”Dios ha muerto”, “conviértete en lo que eres”, “lo que no me mata me fortalece”— que circulan sin el aparato conceptual que las sostiene y que, descontextualizadas, dicen casi lo contrario de lo que Nietzsche quiso decir. Vale la pena reconstruir con rigor tres de los núcleos que peor sobreviven a esa extracción: la muerte de Dios, el eterno retorno de lo mismo, y la genealogía de la moral. Y vale la pena, también, detenerse en un problema que no es anecdótico sino filológico y político: la historia editorial del corpus póstumo de Nietzsche, sin la cual buena parte de las lecturas más groseras —incluida su apropiación por el nazismo— resultan simplemente incomprensibles.

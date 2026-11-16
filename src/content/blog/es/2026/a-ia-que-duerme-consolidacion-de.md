@@ -5,7 +5,7 @@ slug: "a-ia-que-duerme-consolidacion-de"
 translation_key: "a-ia-que-duerme-consolidacion-de"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: []
+tags: ["Memoria","Modelos de Lenguaje","Soberanía Digital"]
 ---
 
 Hay una paradoja en el centro de la inteligencia artificial contemporánea. Los modelos más capaces del planeta tienen la memoria de un pez. Cada conversación empieza de cero. Si una IA demuestra ser un cirujano infalible en una sesión, o si un físico trabaja con ella durante semanas para aproximarse a una teoría unificada, todo ese conocimiento acumulado se evapora al cerrar la pestaña. Mantener esa capacidad en amnesia permanente es, sin exageración, un desperdicio civilizatorio.

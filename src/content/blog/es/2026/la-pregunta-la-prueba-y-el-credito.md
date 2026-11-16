@@ -6,12 +6,7 @@ translation_key: "la-pregunta-la-prueba-y-el-credito"
 lang: "es"
 categories:
   - "Filosofía"
-tags:
-  - "Epistemologia"
-  - "Filosofía de la ciencia"
-  - "Inteligencia Artificial"
-  - "Pensamiento Crítico"
-  - "Responsabilidad Intelectual"
+tags: ["Hans Reichenbach","Robert K. Merton","Pensamiento Crítico"]
 ---
 
 *Pensar con inteligencia artificial y hacerse cargo de lo que se afirma*

@@ -5,7 +5,7 @@ slug: "la-colision-de-dos-escalas-fenomeno-desgaste-y-desastre"
 translation_key: "la-colision-de-dos-escalas-fenomeno-desgaste-y-desastre"
 lang: "es"
 categories: ["Ciencia","Sociología"]
-tags: ["Cambio Climático","Ciencia Pública","Córdoba","Gestión del Riesgo","Incendios Forestales","Ordenamiento Territorial"]
+tags: ["Córdoba","IPCC","Gestión del Riesgo"]
 ---
 
 ## Introducción

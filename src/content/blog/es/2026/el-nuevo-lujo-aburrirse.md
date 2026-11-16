@@ -4,8 +4,8 @@ date: 2026-05-11
 slug: "el-nuevo-lujo-aburrirse"
 translation_key: "el-nuevo-lujo-aburrirse"
 lang: "es"
-categories: ["Sistemas"]
-tags: ["Resolución de Nombres"]
+categories: ["Sociología"]
+tags: ["Economía de la atención"]
 ---
 
 Hubo una época en la que aburrirse era un problema.

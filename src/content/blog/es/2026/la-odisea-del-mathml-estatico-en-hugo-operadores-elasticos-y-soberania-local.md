@@ -4,8 +4,8 @@ date: 2026-07-09
 slug: "la-odisea-del-mathml-estatico-en-hugo-operadores-elasticos-y-soberania-local"
 translation_key: "la-odisea-del-mathml-estatico-en-hugo-operadores-elasticos-y-soberania-local"
 lang: "es"
-categories: ["Inteligencia Artificial"]
-tags: ["Chromium","Hugo SSG","KaTeX","MathML","Soberanía Digital","Web Publishing"]
+categories: ["Tecnología"]
+tags: ["Hugo","MathML","KaTeX"]
 ---
 
 Estaba escribiendo un artículo sobre DNS. Sobre cómo las Big Tech te empujan a usar sus servidores de resolución, o los del ISP, o ninguno que controles vos. El artículo tenía fórmulas simples: latencias de ida y vuelta, sumas con etiquetas descriptivas en español. Nada exótico. La ecuación más compleja era una suma de tres términos con texto explicativo.

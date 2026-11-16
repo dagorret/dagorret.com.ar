@@ -5,7 +5,7 @@ slug: "el-candidato-como-cliente-por-que-el-reclutamiento-tradicional-se-esta-qu
 translation_key: "el-candidato-como-cliente-por-que-el-reclutamiento-tradicional-se-esta-quedando-sin-talento"
 lang: "es"
 categories: ["Sistemas"]
-tags: ["Capital Humano","recursos humanos"]
+tags: ["Talent Clue","Martha Alles","Reclutamiento"]
 ---
 
 Durante décadas, el reclutamiento funcionó según una lógica simple: aparece una vacante, se publica un aviso, llegan currículums, se filtra, se contrata. Es un modelo reactivo, que solo se activa ante la urgencia y que trata al mercado laboral como si fuera un depósito estático de candidatos esperando ser encontrados. El problema es que ese depósito, en la práctica, está casi vacío. La inmensa mayoría de los profesionales mejor calificados —lo que en la jerga del sector se conoce como “ardillas rojas”— ya tiene empleo y no está buscando activamente en portales ni respondiendo avisos clasificados. Si el reclutamiento tradicional solo mira hacia el mercado activo, está renunciando de entrada a la porción más valiosa del talento disponible.

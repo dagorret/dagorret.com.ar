@@ -6,11 +6,7 @@ translation_key: la-higiene-del-archivo
 lang: es
 categories:
   - Inteligencia artificial
-tags:
-  - model collapse
-  - sanitización
-  - diversidad lingüística
-  - deriva acotada
+tags: ["Colapso de modelos","Datos sintéticos","Diversidad Lingüística"]
 ---
 
 *Este texto es la tercera parte de la serie que empezó con [«El mito del colapso digital»](/mito-colapso-digital/) y siguió con [«Evolución con memoria»](/evolucion-con-memoria/). Allá sostuve que el colapso de los modelos depende de un supuesto, el reemplazo de los datos humanos, y que con acumulación lo que queda es una deriva acotada. Acá examino qué pasa cuando el supuesto que se rompe es otro: que los datos humanos sigan siendo humanos.*

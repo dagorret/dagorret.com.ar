@@ -5,7 +5,7 @@ slug: "el-hardware-del-secreto-cuando-la"
 translation_key: "el-hardware-del-secreto-cuando-la"
 lang: "es"
 categories: ["Historia"]
-tags: ["Estudios Culturales"]
+tags: ["Stuxnet","Georgi Markov","Espionaje"]
 ---
 
 Quizá recuerde aquellas imágenes de las pantallas en blanco y negro: el peligro era un bloque de cemento macizo en el Muro de Berlín, un tanque soviético T-54 patrullando el barro o un misil intercontinental oculto en un silo de acero gris mate. Aquella era una época de certezas físicas. En los años sesenta, el enemigo hacía ruido, pesaba toneladas y los radares lo veían venir a miles de kilómetros. Se sabía con precisión de dónde vendría el golpe y cuánto metal se necesitaba para contenerlo.

@@ -4,8 +4,8 @@ date: 2026-05-18
 slug: "el-color-de-mckinsey-y-el-legado-oculto"
 translation_key: "el-color-de-mckinsey-y-el-legado-oculto"
 lang: "es"
-categories: ["Política"]
-tags: ["Inteligencia Estatal"]
+categories: ["Sistemas"]
+tags: ["McKinsey","Mary Parker Follett"]
 ---
 
 ¡Ay, no, no, no! Agarrate de la baranda del balcón porque lo que te voy a contar no tiene desperdicio. Traete el termo, sentate acá al fresco y escuchá este chisme porque es de esos que te hacen quedar con la boca abierta. ¡El puterío corporativo del siglo, mi amor!

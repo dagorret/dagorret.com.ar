@@ -5,7 +5,7 @@ slug: "la-inteligencia-artificial-ya-empezo-a-escribir-nuestros-recuerdos"
 translation_key: "la-inteligencia-artificial-ya-empezo-a-escribir-nuestros-recuerdos"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Inteligencia Artificial","Memoria","Nostalgia","Redes Sociales","sociedad"]
+tags: ["Memoria","Nostalgia","Redes Sociales"]
 ---
 
 Antes las fotografías servían para recordar momentos.

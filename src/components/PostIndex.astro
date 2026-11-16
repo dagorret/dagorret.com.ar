@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { homePageUrl, type BlogLanguage } from '../lib/posts';
+import { siteDescriptions } from '../lib/article-description.mjs';
 
 interface Props {
   lang: BlogLanguage;
@@ -15,7 +16,7 @@ const en = lang === 'en';
 const title = en ? 'Writing' : 'Ensayos y Artículos';
 ---
 
-<Layout title={currentPage === 1 ? title : `${title} — ${currentPage}`} lang={lang} translationUrl={en ? '/' : '/en/'}>
+<Layout title={currentPage === 1 ? title : `${title} — ${currentPage}`} lang={lang} translationUrl={currentPage === 1 ? (en ? '/' : '/en/') : undefined} description={currentPage === 1 ? siteDescriptions[lang] : undefined}>
   <header class="index-heading">
     <h1>{title}</h1>
     <p>{en ? 'Essays, models, and technical notes.' : 'Notas sobre sistemas, modelos matemáticos y tecnología.'}</p>

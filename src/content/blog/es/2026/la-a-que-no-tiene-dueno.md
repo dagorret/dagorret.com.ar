@@ -4,8 +4,8 @@ date: 2026-11-14
 slug: "la-a-que-no-tiene-dueno"
 translation_key: "la-a-que-no-tiene-dueno"
 lang: "es"
-categories: ["Ensayos"]
-tags: ["Economía", "Desarrollo", "Argentina"]
+categories: ["Capital"]
+tags: ["Argentina","Mancur Olson","Elinor Ostrom"]
 ---
 
 *Ensayo de economía política del desarrollo*

@@ -5,7 +5,7 @@ slug: "cuando-el-infinito-no-deja-masa-rigidez-sin-derivadas-y-flujo-de-ricci-de
 translation_key: "cuando-el-infinito-no-deja-masa-rigidez-sin-derivadas-y-flujo-de-ricci-deturck"
 lang: "es"
 categories: ["Matemáticas"]
-tags: ["Conjetura de Gromov","Curvatura Escalar","Edward Witten","Flujo de Ricci","Flujo de Ricci–DeTurck","Geometría Diferencial","Jianchun Chu","Jingbo Wan","Man-Chun Lee","Masa ADM","Métrica de Schwarzschild","Mikhail Gromov","Relatividad General","Richard Schoen","Shing-Tung Yau"]
+tags: ["Jianchun Chu","Man-Chun Lee","Jingbo Wan"]
 ---
 
 Hay resultados geométricos cuya fuerza no está sólo en la conclusión, sino en la desproporción entre lo que suponen y lo que terminan afirmando. El trabajo que Jianchun Chu (Peking), Man-Chun Lee (Hong Kong) y Jingbo Wan (Sorbonne) subieron a arXiv este año, _Rigidity of positive mass theorem with fast metric decay_, pertenece a esa familia. Parten de una métrica que, lejos de un conjunto compacto, se parece a la euclídea un poco más de lo que permite la huella de una masa aislada. Ese parecido se controla sólo en el valor de la métrica, no en cómo cambia de un punto a otro. Y sin embargo concluyen que la geometría entera, también en el interior, tiene que ser exactamente la del espacio plano.

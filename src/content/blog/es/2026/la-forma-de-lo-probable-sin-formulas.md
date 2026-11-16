@@ -5,7 +5,7 @@ slug: "la-forma-de-lo-probable-sin-formulas"
 translation_key: "la-forma-de-lo-probable-sin-formulas"
 lang: "es"
 categories: ["Inteligencia Artificial"]
-tags: ["Cómo Funciona la IA","Divulgación científica","Modelos de Lenguaje","Redes Neuronales"]
+tags: ["Modelos de Lenguaje","Redes Neuronales"]
 ---
 
 _Segunda parte de un tríptico. La primera, [La forma de lo probable](https://dagorret.com.ar/la-forma-de-lo-probable/), plantea el argumento; la tercera, [La forma de lo probable, en fórmulas](https://dagorret.com.ar/la-forma-de-lo-probable-en-formulas/), lo desarrolla con todo su aparato matemático. Esta versión cuenta lo mismo con esquemas y sin una sola ecuación._
