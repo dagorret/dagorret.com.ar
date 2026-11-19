@@ -1,5 +1,7 @@
 ---
 title: "The Thermometer That Sells the Remedy"
+slug: "the-thermometer-that-sells-the-remedy"
+lang: "en"
 description: "The Global Workplace Joy Index 2026 ranks Argentina seventh out of 27. Who does the measuring, what gap the average hides, and which variable actually moves."
 date: 2026-11-19
 categories: ["Recursos Humanos"]

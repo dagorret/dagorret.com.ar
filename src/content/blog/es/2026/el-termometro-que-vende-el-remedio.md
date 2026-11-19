@@ -1,5 +1,7 @@
 ---
 title: "El termómetro que vende el remedio"
+slug: "el-termometro-que-vende-el-remedio"
+lang: "es"
 description: "El Global Workplace Joy Index 2026 pone a la Argentina séptima de 27. Quién mide, qué distancia esconde el promedio y qué variable se mueve de verdad."
 date: 2026-11-19
 categories: ["Recursos Humanos"]
